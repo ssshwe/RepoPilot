@@ -1,0 +1,296 @@
+{
+  "task": "Stage 4 / Task 1",
+  "completed": true,
+  "run_date": "2026-10-13",
+  "created_at": "2026-10-13T14:27:10.786901+00:00",
+  "baseline": {
+    "path": "evaluation/reports/stage4_dense_20261013_task1.json",
+    "sha256": "c4e6a7bd89446f7600ab546dd6fe00a1120ec7327c5b7e223b350ad825cf5d2d"
+  },
+  "stage3_acceptance": {
+    "path": "docs/stage-3-task-13-verification.json",
+    "sha256": "4be19d5fdc5ae63628c6796d5e0cf7c5b5bdebaa73b0c6e3b70f52c94b1c75e8"
+  },
+  "identity": {
+    "repository": "demo-repository",
+    "collection": "repopilot_code",
+    "source_snapshot_sha256": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115",
+    "index_snapshot_sha256": "f6b5cc04cbcf26ff0bb28c7442a6c7670722ce88b64bd185be84f6da9173fd2c",
+    "repository_index_sha256": "110a42eee4422dfc505d2ac030d015e58ba48583f32f19668fbafb9f1cc9ef53",
+    "chunk_count": 17,
+    "git_revision": null,
+    "native_index_revision": null,
+    "chunking_profile": {
+      "chunking_version": "ast-v1",
+      "fallback_chunking_version": "ast-fallback-line-v1",
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "max_chunk_characters": 8192
+    },
+    "embedding_dimension": 1024
+  },
+  "offline_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "offline_network_attempts": 0,
+  "additional_calls": {
+    "embedding_provider_calls": 6,
+    "generation_calls": 0
+  },
+  "diagnostic_queries": 6,
+  "all_diagnostic_prefixes_match": true,
+  "bad_case_count": 12,
+  "classification_observations": {
+    "generation_error": 11,
+    "ranking_low": 9,
+    "context_missing": 1
+  },
+  "index_or_recall_missing_observations": 0,
+  "summary": {
+    "http_dense": {
+      "queries": 12,
+      "file": {
+        "labelled_queries": 12,
+        "at_k": {
+          "1": {
+            "hits": 8,
+            "total": 12,
+            "hit_rate": 0.6666666666666666,
+            "macro_recall": 0.6666666666666666
+          },
+          "3": {
+            "hits": 10,
+            "total": 12,
+            "hit_rate": 0.8333333333333334,
+            "macro_recall": 0.7777777777777778
+          },
+          "5": {
+            "hits": 11,
+            "total": 12,
+            "hit_rate": 0.9166666666666666,
+            "macro_recall": 0.8472222222222222
+          }
+        }
+      },
+      "annotated_lines": {
+        "labelled_queries": 12,
+        "at_k": {
+          "1": {
+            "hits": 6,
+            "total": 12,
+            "hit_rate": 0.5,
+            "macro_recall": 0.5
+          },
+          "3": {
+            "hits": 7,
+            "total": 12,
+            "hit_rate": 0.5833333333333334,
+            "macro_recall": 0.5833333333333334
+          },
+          "5": {
+            "hits": 10,
+            "total": 12,
+            "hit_rate": 0.8333333333333334,
+            "macro_recall": 0.7361111111111112
+          }
+        }
+      },
+      "symbols": {
+        "labelled_queries": 7,
+        "at_k": {
+          "1": {
+            "hits": 3,
+            "total": 7,
+            "hit_rate": 0.42857142857142855,
+            "macro_recall": 0.42857142857142855
+          },
+          "3": {
+            "hits": 3,
+            "total": 7,
+            "hit_rate": 0.42857142857142855,
+            "macro_recall": 0.42857142857142855
+          },
+          "5": {
+            "hits": 6,
+            "total": 7,
+            "hit_rate": 0.8571428571428571,
+            "macro_recall": 0.6904761904761905
+          }
+        }
+      },
+      "context_full_annotated_coverage": {
+        "hits": 8,
+        "total": 12,
+        "macro_recall": 0.7361111111111112
+      }
+    },
+    "same_request_grounding": {
+      "queries": 12,
+      "file": {
+        "labelled_queries": 12,
+        "at_k": {
+          "1": {
+            "hits": 8,
+            "total": 12,
+            "hit_rate": 0.6666666666666666,
+            "macro_recall": 0.6666666666666666
+          },
+          "3": {
+            "hits": 10,
+            "total": 12,
+            "hit_rate": 0.8333333333333334,
+            "macro_recall": 0.7777777777777778
+          },
+          "5": {
+            "hits": 11,
+            "total": 12,
+            "hit_rate": 0.9166666666666666,
+            "macro_recall": 0.8472222222222222
+          }
+        }
+      },
+      "annotated_lines": {
+        "labelled_queries": 12,
+        "at_k": {
+          "1": {
+            "hits": 6,
+            "total": 12,
+            "hit_rate": 0.5,
+            "macro_recall": 0.5
+          },
+          "3": {
+            "hits": 7,
+            "total": 12,
+            "hit_rate": 0.5833333333333334,
+            "macro_recall": 0.5833333333333334
+          },
+          "5": {
+            "hits": 10,
+            "total": 12,
+            "hit_rate": 0.8333333333333334,
+            "macro_recall": 0.7361111111111112
+          }
+        }
+      },
+      "symbols": {
+        "labelled_queries": 7,
+        "at_k": {
+          "1": {
+            "hits": 3,
+            "total": 7,
+            "hit_rate": 0.42857142857142855,
+            "macro_recall": 0.42857142857142855
+          },
+          "3": {
+            "hits": 3,
+            "total": 7,
+            "hit_rate": 0.42857142857142855,
+            "macro_recall": 0.42857142857142855
+          },
+          "5": {
+            "hits": 6,
+            "total": 7,
+            "hit_rate": 0.8571428571428571,
+            "macro_recall": 0.6904761904761905
+          }
+        }
+      },
+      "context_full_annotated_coverage": {
+        "hits": 8,
+        "total": 12,
+        "macro_recall": 0.7361111111111112
+      }
+    },
+    "answer_quality": {
+      "canonical": {
+        "cases": 12,
+        "outcomes": {
+          "supported": 5,
+          "unsupported": 6,
+          "nonresponsive": 1
+        },
+        "supported_answers": 5,
+        "support_applicable": 12,
+        "support_rate": 0.4166666666666667,
+        "complete_responses": 3,
+        "complete_substantive_answers": 3,
+        "support_unjudged_or_abstained": 0,
+        "citation_metadata": {
+          "valid_batches": 12,
+          "cited_batches": 12,
+          "citations": 39,
+          "non_applicable_batches": 0
+        },
+        "all_selected_citations_support_answer": 2
+      },
+      "all": {
+        "cases": 16,
+        "outcomes": {
+          "supported": 5,
+          "unsupported": 8,
+          "nonresponsive": 2,
+          "abstention": 1
+        },
+        "supported_answers": 5,
+        "support_applicable": 15,
+        "support_rate": 0.3333333333333333,
+        "complete_responses": 4,
+        "complete_substantive_answers": 3,
+        "support_unjudged_or_abstained": 0,
+        "citation_metadata": {
+          "valid_batches": 15,
+          "cited_batches": 15,
+          "citations": 46,
+          "non_applicable_batches": 1
+        },
+        "all_selected_citations_support_answer": 2
+      }
+    }
+  },
+  "tests": {
+    "backend_passed": 1006,
+    "backend_skipped": 1,
+    "real_integration_cases": 5,
+    "evaluation_passed": 81,
+    "baseline_tests_included": 20,
+    "frontend_passed": 46,
+    "frontend_build_passed": true
+  },
+  "preservation": {
+    "protected_files": 607,
+    "expected_changed_files": [
+      ".env.example",
+      "README.md",
+      "apps/web/src/stores/retrieval.ts",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 603,
+    "env_unchanged": true,
+    "qdrant_unchanged": true,
+    "configuration_unchanged": true,
+    "sources_unchanged": true
+  },
+  "artifacts": {
+    "index": {
+      "path": "evaluation/reports/stage4_dense_20261013_task1_artifacts/index-snapshot.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "configuration": {
+      "path": "evaluation/reports/stage4_dense_20261013_task1_artifacts/configuration.json",
+      "sha256": "a76f41c9cbcf497246d14f3210dde137561d43a33950240107e9990c3c02d133"
+    },
+    "chunks": {
+      "path": "evaluation/reports/stage4_dense_20261013_task1_artifacts/chunks.json",
+      "sha256": "6a55541b5a221029cb0760151bf13a90cff9c2b1ae290e556b7be0d4c924264b"
+    },
+    "bad_cases": {
+      "path": "evaluation/reports/stage4_dense_20261013_task1_artifacts/bad-cases.json",
+      "sha256": "ea0cf84bdfcdc09ff59ca6e8b8af932ab0a786dd42359b4167da431086d32785"
+    }
+  },
+  "next_task": "Stage 4 / Task 2; not started"
+}

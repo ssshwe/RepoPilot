@@ -1,0 +1,21 @@
+{
+  "kind": "controlled pure replay of saved real hits; no new retrieval or synthetic code",
+  "duplicate_input_chunks": 6,
+  "removed_duplicate_chunks": 1,
+  "formatted_text_matches_original": true,
+  "one_character_budget": {
+    "repository": "demo-repository",
+    "text": "",
+    "sources": [],
+    "retrieved_chunks": 5,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 5,
+    "omitted_sources": 5,
+    "max_context_chunks": 5,
+    "max_context_characters": 1,
+    "characters_used": 0,
+    "budget_limited": true,
+    "empty_reason": "budget_too_small"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "ast": {
+    "cards": [
+      {
+        "heading": "Path backend/service/RefundService.java",
+        "horizontal_overflow": false,
+        "metadata": [
+          {
+            "label": "Symbol",
+            "value": "RefundService.refund"
+          },
+          {
+            "label": "Node Type",
+            "value": "method_declaration"
+          },
+          {
+            "label": "Parent Symbol",
+            "value": "RefundService"
+          },
+          {
+            "label": "Chunking Strategy",
+            "value": "ast\nast-v1"
+          }
+        ],
+        "score": "Score 0.628160"
+      },
+      {
+        "heading": "Path README.md",
+        "horizontal_overflow": false,
+        "metadata": [
+          {
+            "label": "Symbol",
+            "value": "—（无 Symbol）"
+          },
+          {
+            "label": "Node Type",
+            "value": "—（文本切块）"
+          },
+          {
+            "label": "Parent Symbol",
+            "value": "—"
+          },
+          {
+            "label": "Chunking Strategy",
+            "value": "fallback\nast-fallback-line-v1"
+          }
+        ],
+        "score": "Score 0.615731"
+      },
+      {
+        "heading": "Path backend/controller/OrderController.java",
+        "horizontal_overflow": false,
+        "metadata": [
+          {
+            "label": "Symbol",
+            "value": "OrderController.refundOrder"
+          },
+          {
+            "label": "Node Type",
+            "value": "method_declaration"
+          },
+          {
+            "label": "Parent Symbol",
+            "value": "OrderController"
+          },
+          {
+            "label": "Chunking Strategy",
+            "value": "ast\nast-v1"
+          }
+        ],
+        "score": "Score 0.594493"
+      },
+      {
+        "heading": "Path backend/controller/OrderController.java",
+        "horizontal_overflow": false,
+        "metadata": [
+          {
+            "label": "Symbol",
+            "value": "—（无 Symbol）"
+          },
+          {
+            "label": "Node Type",
+            "value": "program"
+          },
+          {
+            "label": "Parent Symbol",
+            "value": "—"
+          },
+          {
+            "label": "Chunking Strategy",
+            "value": "ast\nast-v1"
+          }
+        ],
+        "score": "Score 0.553995"
+      },
+      {
+        "heading": "Path frontend/src/types.ts",
+        "horizontal_overflow": false,
+        "metadata": [
+          {
+            "label": "Symbol",
+            "value": "RefundRequest"
+          },
+          {
+            "label": "Node Type",
+            "value": "interface_declaration"
+          },
+          {
+            "label": "Parent Symbol",
+            "value": "—"
+          },
+          {
+            "label": "Chunking Strategy",
+            "value": "ast\nast-v1"
+          }
+        ],
+        "score": "Score 0.541852"
+      }
+    ],
+    "page_overflow": false,
+    "viewport": {
+      "height": 668,
+      "width": 488
+    }
+  },
+  "fallback_verified": true,
+  "console": []
+}

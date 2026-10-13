@@ -1,0 +1,18 @@
+{
+  "input": [],
+  "context": {
+    "repository": "stage3-task10-not-indexed",
+    "text": "",
+    "sources": [],
+    "retrieved_chunks": 0,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 0,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 0,
+    "budget_limited": false,
+    "empty_reason": "no_results"
+  }
+}

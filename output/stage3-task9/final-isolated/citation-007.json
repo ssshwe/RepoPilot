@@ -1,0 +1,26 @@
+{
+  "repository": "stage3-task9-readme",
+  "input_ids": [
+    "S1",
+    "S2"
+  ],
+  "context_characters": 1626,
+  "citations": [
+    {
+      "repository": "stage3-task9-readme",
+      "source_id": "S1",
+      "path": "README.md",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 11
+    },
+    {
+      "repository": "stage3-task9-readme",
+      "source_id": "S2",
+      "path": "refund.py",
+      "symbol": "refund",
+      "start_line": 1,
+      "end_line": 4
+    }
+  ]
+}

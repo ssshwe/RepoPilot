@@ -1,0 +1,70 @@
+{
+  "recorded_at": "2026-10-03T18:34:07.631296+00:00",
+  "dataset_sha256": "ce03abcda9f247f32122a5bb556baf81cbd4f61ff181ef6d576af5b726d6b5fc",
+  "source_sha256": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "qdrant_data_sha256": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "persistent_points": 8,
+  "before": {
+    "recorded_at": "2026-10-03T18:32:34.636993+00:00",
+    "dataset_sha256": "ce03abcda9f247f32122a5bb556baf81cbd4f61ff181ef6d576af5b726d6b5fc",
+    "source_sha256": {
+      "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+      "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+      "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+      "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+      "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+      "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+      "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+      "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+      "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+      "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+    },
+    "qdrant_data_sha256": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+    "persistent_points": 8
+  },
+  "report": "evaluation\\reports\\stage2_retrieval_20261004_01.json",
+  "report_sha256": "f8bf6a246767ac21194474ba3f11f043b048867290ed25f602e90e10a7924626",
+  "all_metrics_independently_verified": true,
+  "dataset_unchanged_during_run": true,
+  "source_unchanged_during_run": true,
+  "index_unchanged_during_run": true,
+  "summary": {
+    "queries": 12,
+    "hit_at_k": {
+      "1": {
+        "hits": 6,
+        "total": 12,
+        "rate": 0.5
+      },
+      "3": {
+        "hits": 10,
+        "total": 12,
+        "rate": 0.8333333333333334
+      },
+      "5": {
+        "hits": 12,
+        "total": 12,
+        "rate": 1
+      }
+    },
+    "macro_recall_at_k": {
+      "1": 0.5,
+      "3": 0.7777777777777778,
+      "5": 0.9305555555555556
+    }
+  },
+  "offline_evaluation_tests": {
+    "passed": 32
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "recorded_at": "2026-10-04T23:17:21.599036+08:00",
+  "stage": 3,
+  "task": 1,
+  "phase": "task2",
+  "qdrant_operations": [
+    "GET collections",
+    "GET collection info",
+    "POST points/scroll (read-only)"
+  ],
+  "collections": [
+    {
+      "name": "repopilot_code",
+      "status": "green",
+      "points_count": 8,
+      "vectors": {
+        "size": 1024,
+        "distance": "Cosine"
+      },
+      "metadata": {
+        "repopilot_index": {
+          "schema_version": "code-points-v1",
+          "embedding_provider": "openai_compatible",
+          "embedding_model": "qwen3-embedding:0.6b",
+          "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+        }
+      },
+      "payload_schema": {},
+      "points_sha256": "1a4ab856204e4e19b946e808965227c9c9f1dddb9ac3a6b1bede590880bf254b",
+      "payload_fields": [
+        "chunk_id",
+        "chunk_lines",
+        "content",
+        "embedding_model",
+        "end_line",
+        "language",
+        "overlap_lines",
+        "path",
+        "repository",
+        "schema_version",
+        "start_line"
+      ]
+    },
+    {
+      "name": "repopilot_infra_smoke",
+      "status": "green",
+      "points_count": 0,
+      "vectors": {
+        "size": 3,
+        "distance": "Cosine"
+      },
+      "metadata": null,
+      "payload_schema": {},
+      "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "payload_fields": []
+    }
+  ],
+  "embedding": {
+    "provider": "openai_compatible",
+    "model": "qwen3-embedding:0.6b",
+    "endpoint_is_loopback": true
+  },
+  "llm_model": "qwen2.5:0.5b",
+  "chunking": {
+    "class": "SimpleCodeChunker",
+    "chunk_lines": 60,
+    "overlap_lines": 10,
+    "max_chunk_characters": 8192,
+    "id_version": "line-window-v1",
+    "payload_chunking_version_present": false
+  },
+  "scan": {
+    "repository": "demo-repository",
+    "files_scanned": 10,
+    "supported_files": 8,
+    "skipped_files": 2,
+    "total_bytes": 4076,
+    "languages": [
+      "java",
+      "json",
+      "markdown",
+      "sql",
+      "typescript",
+      "vue"
+    ]
+  },
+  "metadata_checks": [
+    {
+      "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+      "path": "config/repository.json",
+      "language": "json",
+      "start_line": 1,
+      "end_line": 5,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+      "path": "frontend/src/types.ts",
+      "language": "typescript",
+      "start_line": 1,
+      "end_line": 5,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+      "path": "README.md",
+      "language": "markdown",
+      "start_line": 1,
+      "end_line": 21,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 19,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+      "path": "backend/service/WalletService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 23,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+      "path": "backend/controller/OrderController.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 16,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+      "path": "frontend/src/RefundPanel.vue",
+      "language": "vue",
+      "start_line": 1,
+      "end_line": 22,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+      "path": "database/schema.sql",
+      "language": "sql",
+      "start_line": 1,
+      "end_line": 11,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    }
+  ],
+  "point_sample": {
+    "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+    "repository": "demo-repository",
+    "path": "backend/service/RefundService.java",
+    "language": "java",
+    "start_line": 1,
+    "end_line": 19,
+    "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "schema_version": "code-points-v1",
+    "chunk_lines": 60,
+    "overlap_lines": 10
+  },
+  "sensitive_name_probes": {
+    "files": {
+      ".env": true,
+      ".env.production": true,
+      "private.pem": true,
+      "private.key": true,
+      "credentials.json": false,
+      "secrets.yaml": false
+    },
+    "directories": {
+      "credentials": false,
+      "secrets": false,
+      "node_modules": true,
+      ".git": true
+    }
+  }
+}

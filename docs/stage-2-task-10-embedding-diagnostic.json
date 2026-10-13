@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-03T18:52:48.325618+00:00",
+  "model": "qwen3-embedding:0.6b",
+  "text_a": "订单退款",
+  "text_b": "订单退款",
+  "dimension": 1024,
+  "vectors_exactly_equal": false,
+  "maximum_coordinate_difference": 0.0023201399999999983,
+  "independently_computed_cosine": 0.9997323919289495,
+  "application_cosine": 0.9997323919289494,
+  "calculation_difference": 1.1102230246251565e-16,
+  "same_vector_cosine": 1.0,
+  "initial_integration_observation": 0.9997323919289494
+}

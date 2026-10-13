@@ -1,0 +1,193 @@
+{
+  "verified_at": "2026-10-04T00:30:29.550874+08:00",
+  "task": 4,
+  "api_base_url": "http://127.0.0.1:49725",
+  "fixture": "Hand-written local test repository, not an imported production repository.",
+  "scan": {
+    "input": {
+      "repository": "demo-repository"
+    },
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "total_bytes": 4076,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "size_bytes": 1093,
+          "line_count": 21
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "size_bytes": 398,
+          "line_count": 16
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "size_bytes": 554,
+          "line_count": 19
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "size_bytes": 751,
+          "line_count": 23
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "size_bytes": 149,
+          "line_count": 5
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "size_bytes": 269,
+          "line_count": 11
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "size_bytes": 775,
+          "line_count": 22
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "size_bytes": 87,
+          "line_count": 5
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 21.29
+  },
+  "repeat_scan_equal": true,
+  "languages": {
+    "java": 3,
+    "json": 1,
+    "markdown": 1,
+    "sql": 1,
+    "typescript": 1,
+    "vue": 1
+  },
+  "skip_reasons": {
+    "ignored_file": 1,
+    "unsupported_extension": 1
+  },
+  "invalid_path": {
+    "status_code": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "value_error",
+          "loc": [
+            "body",
+            "repository"
+          ],
+          "msg": "Value error, Repository must be a valid single directory name.",
+          "input": "../outside",
+          "ctx": {
+            "error": {}
+          }
+        }
+      ]
+    },
+    "latency_ms": 12.06
+  },
+  "missing_repository": {
+    "status_code": 404,
+    "response": {
+      "detail": "Repository directory was not found."
+    },
+    "latency_ms": 3.57
+  },
+  "path_override": {
+    "status_code": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "extra_forbidden",
+          "loc": [
+            "body",
+            "path"
+          ],
+          "msg": "Extra inputs are not permitted",
+          "input": "D:/outside"
+        }
+      ]
+    },
+    "latency_ms": 0.88
+  },
+  "health": {
+    "status_code": 200,
+    "response": {
+      "status": "ok"
+    },
+    "latency_ms": 18.23
+  },
+  "source_files_count_on_disk": 10,
+  "source_hashes_before": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "source_hashes_after": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "source_contents_unchanged": true,
+  "validation": {
+    "offline_backend": {
+      "command": "python -m uv run --locked pytest -rs",
+      "passed": 277,
+      "skipped": 3,
+      "warnings": 2,
+      "skip_reasons": [
+        "Embedding integration requires explicit opt-in.",
+        "Qdrant integration requires explicit opt-in.",
+        "File symbolic link creation unavailable: Windows error 1314."
+      ]
+    },
+    "scanner_cases": {
+      "passed": 95,
+      "skipped": 1,
+      "native_windows_checks": "Directory junctions, linked roots, directory cycles and actual opened-file containment passed."
+    },
+    "frontend_build": {
+      "command": "npm.cmd run build",
+      "result": "passed (vue-tsc and Vite)"
+    }
+  }
+}

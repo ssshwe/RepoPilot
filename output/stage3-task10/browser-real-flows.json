@@ -1,0 +1,21 @@
+{
+  "kind": "real browser requests, no mocked inference",
+  "checks": {
+    "blank_question_does_not_call_api": true,
+    "real_empty_evidence_skips_generation": true,
+    "real_refund_answer_and_preview": true,
+    "desktop_no_page_overflow": true,
+    "mobile_no_page_overflow": true
+  },
+  "api_calls": 2,
+  "answer": "RefundService.refund",
+  "citation": {
+    "repository": "demo-repository",
+    "source_id": "S1",
+    "path": "backend/service/RefundService.java",
+    "symbol": "RefundService.refund",
+    "start_line": 12,
+    "end_line": 18
+  },
+  "empty_reason": "no_results"
+}

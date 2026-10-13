@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "refund-form",
+    "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+    "expected_paths": [
+      "frontend/src/RefundPanel.vue"
+    ],
+    "evidence": [
+      {
+        "path": "frontend/src/RefundPanel.vue",
+        "start_line": 5,
+        "end_line": 12,
+        "snippet": "emit('refund', { ...form })"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2923.4398000007786,
+    "retrieval_latency_ms": 739.7,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "score": 0.6797179,
+        "path": "frontend/src/RefundPanel.vue",
+        "language": "vue",
+        "start_line": 1,
+        "end_line": 22
+      },
+      {
+        "rank": 2,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.66804445,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 3,
+        "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+        "repository": "demo-repository",
+        "score": 0.6629944,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 13,
+        "end_line": 15
+      },
+      {
+        "rank": 4,
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "score": 0.65665364,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 12,
+        "end_line": 18
+      },
+      {
+        "rank": 5,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.651402,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/RefundPanel.vue"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/RefundPanel.vue"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/RefundPanel.vue"
+        ]
+      }
+    }
+  }
+}

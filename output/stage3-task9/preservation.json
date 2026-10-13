@@ -1,0 +1,15 @@
+{
+  "protected_files": 331,
+  "changed_existing_files": [
+    "README.md",
+    "services/api/app/rag/prompt.py",
+    "services/api/app/rag/service.py"
+  ],
+  "unexpected_changes": [],
+  "env_and_locks_unchanged": true,
+  "prior_task_evidence_unchanged": true,
+  "original_fixture_dataset_frontend_context_and_citations_unchanged": true,
+  "qdrant_exact_match": true,
+  "temporary_collection_deleted": true,
+  "temporary_apis_stopped": true
+}

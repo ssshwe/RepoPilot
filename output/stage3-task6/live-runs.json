@@ -1,0 +1,21 @@
+{
+  "runs": [
+    {
+      "file": "real-context-full.json",
+      "budget": 16000,
+      "source_count": 3,
+      "characters_used": 3015,
+      "query_utf8_roundtrip": true
+    },
+    {
+      "file": "real-context-budget.json",
+      "budget": 700,
+      "source_count": 1,
+      "characters_used": 698,
+      "query_utf8_roundtrip": true
+    }
+  ],
+  "llm_factory_calls": 0,
+  "embedding_calls": "real configured local Ollama Provider; not mocked",
+  "index_mutations": false
+}

@@ -1,0 +1,94 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "wallets-schema",
+    "query": "钱包表余额的默认值在哪里设置为零？",
+    "expected_paths": [
+      "database/schema.sql"
+    ],
+    "evidence": [
+      {
+        "path": "database/schema.sql",
+        "start_line": 8,
+        "end_line": 11,
+        "snippet": "balance DECIMAL(12, 2) NOT NULL DEFAULT 0"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2892.951099998754,
+    "retrieval_latency_ms": 782.69,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+        "repository": "demo-repository",
+        "score": 0.47480482,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 7,
+        "end_line": 9
+      },
+      {
+        "rank": 2,
+        "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+        "repository": "demo-repository",
+        "score": 0.3898392,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 20,
+        "end_line": 22
+      },
+      {
+        "rank": 3,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.3569379,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.3545336,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 5,
+        "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+        "repository": "demo-repository",
+        "score": 0.35060537,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 5,
+        "end_line": 7
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": false,
+        "recall": 0.0,
+        "matched_paths": []
+      },
+      "3": {
+        "hit": false,
+        "recall": 0.0,
+        "matched_paths": []
+      },
+      "5": {
+        "hit": false,
+        "recall": 0.0,
+        "matched_paths": []
+      }
+    }
+  }
+}

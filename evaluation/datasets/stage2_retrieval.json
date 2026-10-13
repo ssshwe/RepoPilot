@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "name": "stage2-demo-repository-v1",
+  "repository": "demo-repository",
+  "description": "12 manually annotated queries grounded in the existing handwritten fixture; labels fixed before evaluation.",
+  "relevance_policy": "Implementation questions count their implementation files, not README descriptions. Documentation, type, schema and metadata questions count the file defining that information. Multi-file questions require all listed files for full recall.",
+  "source_sha256": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "cases": [
+    {
+      "id": "refund-service",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "expected_paths": ["backend/service/RefundService.java"],
+      "evidence": [{"path": "backend/service/RefundService.java", "start_line": 12, "end_line": 18, "snippet": "wallets.credit(userId, amount);"}]
+    },
+    {
+      "id": "wallet-credit",
+      "query": "哪里校验钱包入账金额必须为正数，并累加余额？",
+      "expected_paths": ["backend/service/WalletService.java"],
+      "evidence": [{"path": "backend/service/WalletService.java", "start_line": 10, "end_line": 18, "snippet": "balances.merge(userId, amount, BigDecimal::add);"}]
+    },
+    {
+      "id": "wallet-default-balance",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "expected_paths": ["backend/service/WalletService.java"],
+      "evidence": [{"path": "backend/service/WalletService.java", "start_line": 20, "end_line": 22, "snippet": "balances.getOrDefault(userId, BigDecimal.ZERO)"}]
+    },
+    {
+      "id": "refund-controller",
+      "query": "哪个后端入口接收退款请求并调用退款服务？",
+      "expected_paths": ["backend/controller/OrderController.java"],
+      "evidence": [{"path": "backend/controller/OrderController.java", "start_line": 13, "end_line": 15, "snippet": "refunds.refund(orderId, userId, amount);"}]
+    },
+    {
+      "id": "refund-form",
+      "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+      "expected_paths": ["frontend/src/RefundPanel.vue"],
+      "evidence": [{"path": "frontend/src/RefundPanel.vue", "start_line": 5, "end_line": 12, "snippet": "emit('refund', { ...form })"}]
+    },
+    {
+      "id": "refund-request-type",
+      "query": "RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？",
+      "expected_paths": ["frontend/src/types.ts"],
+      "evidence": [{"path": "frontend/src/types.ts", "start_line": 1, "end_line": 5, "snippet": "export interface RefundRequest"}]
+    },
+    {
+      "id": "orders-schema",
+      "query": "订单表的状态字段和金额字段在哪里定义？",
+      "expected_paths": ["database/schema.sql"],
+      "evidence": [{"path": "database/schema.sql", "start_line": 1, "end_line": 6, "snippet": "status VARCHAR(20) NOT NULL"}]
+    },
+    {
+      "id": "wallets-schema",
+      "query": "钱包表余额的默认值在哪里设置为零？",
+      "expected_paths": ["database/schema.sql"],
+      "evidence": [{"path": "database/schema.sql", "start_line": 8, "end_line": 11, "snippet": "balance DECIMAL(12, 2) NOT NULL DEFAULT 0"}]
+    },
+    {
+      "id": "fixture-documentation",
+      "query": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+      "expected_paths": ["README.md"],
+      "evidence": [{"path": "README.md", "start_line": 8, "end_line": 21, "snippet": "`notes.txt` is intentionally outside the scanner's supported extensions."}]
+    },
+    {
+      "id": "repository-metadata",
+      "query": "仓库的 name、purpose 和 features 元数据写在哪里？",
+      "expected_paths": ["config/repository.json"],
+      "evidence": [{"path": "config/repository.json", "start_line": 2, "end_line": 4, "snippet": "\"features\": [\"order-refund\", \"wallet-balance\"]"}]
+    },
+    {
+      "id": "refund-validation-files",
+      "query": "退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？",
+      "expected_paths": ["backend/service/RefundService.java", "backend/service/WalletService.java"],
+      "evidence": [
+        {"path": "backend/service/RefundService.java", "start_line": 12, "end_line": 18, "snippet": "orderId == null || orderId.isBlank()"},
+        {"path": "backend/service/WalletService.java", "start_line": 10, "end_line": 18, "snippet": "amount == null || amount.signum() <= 0"}
+      ]
+    },
+    {
+      "id": "refund-call-chain",
+      "query": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+      "expected_paths": ["backend/controller/OrderController.java", "backend/service/RefundService.java", "backend/service/WalletService.java"],
+      "evidence": [
+        {"path": "backend/controller/OrderController.java", "start_line": 13, "end_line": 15, "snippet": "refunds.refund(orderId, userId, amount);"},
+        {"path": "backend/service/RefundService.java", "start_line": 12, "end_line": 18, "snippet": "wallets.credit(userId, amount);"},
+        {"path": "backend/service/WalletService.java", "start_line": 10, "end_line": 18, "snippet": "balances.merge(userId, amount, BigDecimal::add);"}
+      ]
+    }
+  ]
+}

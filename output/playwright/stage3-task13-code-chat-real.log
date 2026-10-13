@@ -1,0 +1,4 @@
+### Ran Playwright code
+```js
+await (async (page) => { const pending = page.waitForResponse(r => r.url().endsWith('/api/code-chat') && r.request().method() === 'POST'); await page.getByRole('textbox', { name: 'Question · 你的问题' }).fill('退款服务在哪里校验订单编号，然后把退款金额转回钱包？'); await page.getByRole('button', { name: '提问', exact: true }).click(); const response = await pending; console.log(JSON.stringify({ scenario: 'real_code_chat', status: response.status(), body: await response.json() })); })(page);
+```

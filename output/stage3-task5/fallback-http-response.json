@@ -1,0 +1,27 @@
+{
+  "repository": "demo-repository",
+  "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+  "top_k": 1,
+  "collection": "repopilot_code",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimension": 1024,
+  "retrieval_latency_ms": 593.64,
+  "results": [
+    {
+      "rank": 1,
+      "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+      "repository": "demo-repository",
+      "score": 0.6801285,
+      "path": "frontend/src/RefundPanel.vue",
+      "language": "vue",
+      "start_line": 1,
+      "end_line": 22,
+      "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+      "symbol": null,
+      "node_type": null,
+      "parent_symbol": null,
+      "chunking_strategy": "fallback",
+      "chunking_version": "ast-fallback-line-v1"
+    }
+  ]
+}

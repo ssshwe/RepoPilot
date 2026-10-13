@@ -1,0 +1,19 @@
+
+> @repopilot/web@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ accepts valid inputs and counts Unicode code points like the backend (1.0593ms)
+✔ rejects empty queries, unsafe repository names and invalid TopK (0.2039ms)
+✔ preserves source whitespace and raw score, projects only known fields (0.3266ms)
+✔ accepts fewer than TopK results and an empty matching repository (0.5714ms)
+✔ rejects stale request echoes and foreign repository payloads (0.377ms)
+✔ rejects invalid ranking, duplicate chunk IDs and excess results (0.1855ms)
+✔ rejects malformed numeric metadata and source bounds (0.3072ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 297.2801

@@ -1,0 +1,200 @@
+{
+  "recorded_at": "2026-10-03T18:12:31.550Z",
+  "browser_url": "http://localhost:5173/#retrieval",
+  "api_base_url": "http://localhost:8000",
+  "fixture_kind": "Handwritten local repository with actual indexed code",
+  "request": {
+    "repository": "demo-repository",
+    "query": "退款逻辑在哪里？",
+    "top_k": 5
+  },
+  "displayed_summary": "找到 5 个代码块 · 请求 TopK 5\n\ndemo-repository · 退款逻辑在哪里？\n\nqwen3-embedding:0.6b\nDimension 1024\n665.0 ms",
+  "results_from_rendered_dom": [
+    {
+      "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+      "metadata": "markdownLines 1–21demo-repository",
+      "path": "README.md",
+      "rank": "#1",
+      "score": "0.48684692"
+    },
+    {
+      "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+      "metadata": "typescriptLines 1–5demo-repository",
+      "path": "frontend/src/types.ts",
+      "rank": "#2",
+      "score": "0.4854089"
+    },
+    {
+      "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+      "metadata": "javaLines 1–19demo-repository",
+      "path": "backend/service/RefundService.java",
+      "rank": "#3",
+      "score": "0.44492742"
+    },
+    {
+      "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+      "metadata": "vueLines 1–22demo-repository",
+      "path": "frontend/src/RefundPanel.vue",
+      "rank": "#4",
+      "score": "0.44356453"
+    },
+    {
+      "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+      "metadata": "jsonLines 1–5demo-repository",
+      "path": "config/repository.json",
+      "rank": "#5",
+      "score": "0.44177508"
+    }
+  ],
+  "browser_checks": {
+    "blankQueryMessageVerified": true,
+    "loadingDisabledControlsVerified": true,
+    "parameterChangeNoticeVerified": true,
+    "topOneVerified": true,
+    "customRepositoryAndEmptyStateVerified": true,
+    "workspaceStatePreserved": true,
+    "simulated503MessageVerified": true,
+    "simulatedCancellationMessageVerified": true,
+    "topKInputMatchesRequestAfterImmediateSearch": true,
+    "topKValidationMessageVerified": true,
+    "clearResultsVerified": true
+  },
+  "error_checks_method": "Separate ephemeral API fixture: delayed 503 and cancellation; normal backend/Qdrant remained running",
+  "browser_console_warnings_or_errors": [],
+  "screenshot": "assets/stage-2-task-8-retrieval.jpg",
+  "validation": {
+    "frontend_contract_tests": {
+      "passed": 7
+    },
+    "frontend_typescript_vite_build": "passed",
+    "backend_suite": {
+      "passed": 466,
+      "skipped": 5,
+      "existing_deprecation_warnings": 2
+    }
+  },
+  "initial_browser_run": {
+    "displayed_summary": "找到 5 个代码块 · 请求 TopK 5\n\ndemo-repository · 退款逻辑在哪里？\n\nqwen3-embedding:0.6b\nDimension 1024\n2374.9 ms",
+    "results_from_rendered_dom": [
+      {
+        "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+        "metadata": "markdownLines 1–21demo-repository",
+        "path": "README.md",
+        "rank": "#1",
+        "score": "0.4860013"
+      },
+      {
+        "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+        "metadata": "typescriptLines 1–5demo-repository",
+        "path": "frontend/src/types.ts",
+        "rank": "#2",
+        "score": "0.48496866"
+      },
+      {
+        "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+        "metadata": "javaLines 1–19demo-repository",
+        "path": "backend/service/RefundService.java",
+        "rank": "#3",
+        "score": "0.44413948"
+      },
+      {
+        "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+        "metadata": "vueLines 1–22demo-repository",
+        "path": "frontend/src/RefundPanel.vue",
+        "rank": "#4",
+        "score": "0.44266585"
+      },
+      {
+        "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+        "metadata": "jsonLines 1–5demo-repository",
+        "path": "config/repository.json",
+        "rank": "#5",
+        "score": "0.44116864"
+      }
+    ]
+  },
+  "stage1_live_stream": {
+    "model": "qwen2.5:0.5b",
+    "user_message": "只回复：已连接",
+    "assistant_message": "已连接",
+    "completed": true
+  },
+  "verified_rendered_results": [
+    {
+      "rank": 1,
+      "score": 0.48684692,
+      "path": "README.md",
+      "language": "markdown",
+      "start_line": 1,
+      "end_line": 21,
+      "repository": "demo-repository",
+      "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+    },
+    {
+      "rank": 2,
+      "score": 0.4854089,
+      "path": "frontend/src/types.ts",
+      "language": "typescript",
+      "start_line": 1,
+      "end_line": 5,
+      "repository": "demo-repository",
+      "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+    },
+    {
+      "rank": 3,
+      "score": 0.44492742,
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 19,
+      "repository": "demo-repository",
+      "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+    },
+    {
+      "rank": 4,
+      "score": 0.44356453,
+      "path": "frontend/src/RefundPanel.vue",
+      "language": "vue",
+      "start_line": 1,
+      "end_line": 22,
+      "repository": "demo-repository",
+      "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+    },
+    {
+      "rank": 5,
+      "score": 0.44177508,
+      "path": "config/repository.json",
+      "language": "json",
+      "start_line": 1,
+      "end_line": 5,
+      "repository": "demo-repository",
+      "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+    }
+  ],
+  "all_rendered_source_slices_match": true,
+  "source_hashes_match_task7_record": true,
+  "source_sha256": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "collection": "repopilot_code",
+  "persistent_points": 8,
+  "qdrant_data_sha256": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "qdrant_hash_matches_task7_record": true,
+  "normal_services_health": {
+    "api": 200,
+    "web": 200
+  },
+  "temporary_error_fixture_stopped": true,
+  "temporary_vite_process_stopped": true,
+  "client_timeout_exercised": false,
+  "mobile_viewport_acceptance_performed": false
+}

@@ -1,0 +1,125 @@
+tests/test_parsing.py::test_registry_enables_core_languages_and_rejects_duplicate_registration
+tests/test_parsing.py::test_unsupported_language_is_explicit_not_a_partial_success[vue-vue]
+tests/test_parsing.py::test_unsupported_language_is_explicit_not_a_partial_success[md-markdown]
+tests/test_parsing.py::test_unsupported_language_is_explicit_not_a_partial_success[json-json]
+tests/test_parsing.py::test_registry_rejects_inconsistent_language_and_detects_uppercase_extension
+tests/test_parsing.py::test_real_repository_symbols_and_source_ranges[backend/service/RefundService.java-expected0]
+tests/test_parsing.py::test_real_repository_symbols_and_source_ranges[backend/service/WalletService.java-expected1]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[False-\n]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[False-\r\n]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[False-\r]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[True-\n]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[True-\r\n]
+tests/test_parsing.py::test_unicode_names_and_byte_offsets_preserve_inclusive_lines[True-\r]
+tests/test_parsing.py::test_annotations_nested_classes_and_local_class_scope
+tests/test_parsing.py::test_overloaded_inline_methods_have_distinct_bytes_even_when_name_and_lines_match
+tests/test_parsing.py::test_other_named_java_type_declarations[interface Wallet { void credit(); }-expected0]
+tests/test_parsing.py::test_other_named_java_type_declarations[record Order(int amount) { Order {} }-expected1]
+tests/test_parsing.py::test_other_named_java_type_declarations[enum Status { DONE; void check() {} }-expected2]
+tests/test_parsing.py::test_other_named_java_type_declarations[@interface Flag {}-expected3]
+tests/test_parsing.py::test_anonymous_class_and_lambda_do_not_fabricate_outer_method_symbols[class Wallet {\n  Object value = new Object() { void hidden() {} };\n  Runnable job = () -> { class Local { void hidden() {} } };\n  void credit() {}\n}\n-expected0]
+tests/test_parsing.py::test_anonymous_class_and_lambda_do_not_fabricate_outer_method_symbols[enum Status { DONE { void hidden() {} }; void check() {} }-expected1]
+tests/test_parsing.py::test_empty_or_comment_only_source_has_no_symbols[]
+tests/test_parsing.py::test_empty_or_comment_only_source_has_no_symbols[ \r\n\t]
+tests/test_parsing.py::test_empty_or_comment_only_source_has_no_symbols[// comment only\n]
+tests/test_parsing.py::test_recovered_syntax_errors_are_controlled_failures_without_source_in_message[class Wallet { void credit( {]
+tests/test_parsing.py::test_recovered_syntax_errors_are_controlled_failures_without_source_in_message[class { }]
+tests/test_parsing.py::test_recovered_syntax_errors_are_controlled_failures_without_source_in_message[class Wallet {\u2028 void credit() {}\u2028}]
+tests/test_parsing.py::test_recovered_syntax_errors_are_controlled_failures_without_source_in_message[class Wallet {\u2029 void credit() {}\u2029}]
+tests/test_parsing.py::test_unencodable_source_fails_safely_and_next_parse_is_independent
+tests/test_parsing_languages.py::test_python_decorators_async_methods_and_nested_function_have_lexical_ranges
+tests/test_parsing_languages.py::test_javascript_fixture_extracts_exported_function_and_bound_arrow
+tests/test_parsing_languages.py::test_bound_expressions_object_methods_and_anonymous_callbacks_are_distinguished[javascript]
+tests/test_parsing_languages.py::test_bound_expressions_object_methods_and_anonymous_callbacks_are_distinguished[typescript]
+tests/test_parsing_languages.py::test_class_constructor_accessors_fields_and_computed_names[javascript]
+tests/test_parsing_languages.py::test_class_constructor_accessors_fields_and_computed_names[typescript]
+tests/test_parsing_languages.py::test_typescript_named_types_and_abstract_signatures
+tests/test_parsing_languages.py::test_typescript_namespace_and_enum_keep_named_lexical_owner
+tests/test_parsing_languages.py::test_each_core_grammar_reports_recovered_errors_without_source[python-def refund(:\n  pass\n]
+tests/test_parsing_languages.py::test_each_core_grammar_reports_recovered_errors_without_source[javascript-function refund( {]
+tests/test_parsing_languages.py::test_each_core_grammar_reports_recovered_errors_without_source[typescript-interface Request { amount: }]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\n-python-# \u94b1\u5305\nclass \u94b1\u5305:\n    def \u5165\u8d26(self):\n        return 1\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\n-javascript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26() { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\n-typescript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26(): number { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r\n-python-# \u94b1\u5305\nclass \u94b1\u5305:\n    def \u5165\u8d26(self):\n        return 1\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r\n-javascript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26() { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r\n-typescript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26(): number { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r-python-# \u94b1\u5305\nclass \u94b1\u5305:\n    def \u5165\u8d26(self):\n        return 1\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r-javascript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26() { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_core_languages_preserve_chinese_names_and_original_newlines[\r-typescript-// \u94b1\u5305\nclass \u94b1\u5305 {\n  \u5165\u8d26(): number { return 1 }\n}\n-\u94b1\u5305.\u5165\u8d26]
+tests/test_parsing_languages.py::test_new_grammars_accept_empty_source[python]
+tests/test_parsing_languages.py::test_new_grammars_accept_empty_source[javascript]
+tests/test_parsing_languages.py::test_new_grammars_accept_empty_source[typescript]
+tests/test_ast_chunker.py::test_real_java_methods_stay_whole_and_class_body_is_not_duplicated[backend/service/RefundService.java-expected0]
+tests/test_ast_chunker.py::test_real_java_methods_stay_whole_and_class_body_is_not_duplicated[backend/service/WalletService.java-expected1]
+tests/test_ast_chunker.py::test_real_typescript_interface_is_one_semantic_chunk
+tests/test_ast_chunker.py::test_javascript_fixture_chunks_have_exact_boundaries
+tests/test_ast_chunker.py::test_python_nested_function_keeps_outer_before_and_after_code_with_no_overlap
+tests/test_ast_chunker.py::test_oversized_method_is_split_inside_its_boundary_with_symbol_retained
+tests/test_ast_chunker.py::test_character_budget_splits_a_valid_method_before_line_limit
+tests/test_ast_chunker.py::test_large_class_is_declaration_and_methods_instead_of_a_whole_class_vector
+tests/test_ast_chunker.py::test_short_getter_and_setter_are_kept_individually_without_fake_padding
+tests/test_ast_chunker.py::test_anonymous_java_body_remains_in_outer_chunk_without_invented_symbol
+tests/test_ast_chunker.py::test_unbound_js_callback_remains_module_text_without_hidden_global_symbol
+tests/test_ast_chunker.py::test_adjacent_inline_declarations_fallback_without_mislabeled_symbols[java-class Wallet { void a() {} void a(int n) {} }\n]
+tests/test_ast_chunker.py::test_adjacent_inline_declarations_fallback_without_mislabeled_symbols[javascript-function a() {} function b() {}\n]
+tests/test_ast_chunker.py::test_adjacent_inline_declarations_fallback_without_mislabeled_symbols[typescript-type A = string; type B = number;\n]
+tests/test_ast_chunker.py::test_syntax_error_is_per_file_fallback_and_next_file_still_parses[java-class Wallet { void bad( {\n]
+tests/test_ast_chunker.py::test_syntax_error_is_per_file_fallback_and_next_file_still_parses[python-def bad(:\n]
+tests/test_ast_chunker.py::test_syntax_error_is_per_file_fallback_and_next_file_still_parses[javascript-function bad( {\n]
+tests/test_ast_chunker.py::test_syntax_error_is_per_file_fallback_and_next_file_still_parses[typescript-interface Bad { a: }\n]
+tests/test_ast_chunker.py::test_unsupported_language_reuses_simple_content_and_ranges_with_fallback_metadata[vue-<script setup>const n = 1</script>\n<template>{{ n }}</template>\n]
+tests/test_ast_chunker.py::test_unsupported_language_reuses_simple_content_and_ranges_with_fallback_metadata[markdown-# title\n\nrefund\n]
+tests/test_ast_chunker.py::test_unsupported_language_reuses_simple_content_and_ranges_with_fallback_metadata[json-{"amount": 1}\n]
+tests/test_ast_chunker.py::test_unsupported_language_reuses_simple_content_and_ranges_with_fallback_metadata[yaml-amount: 1\n]
+tests/test_ast_chunker.py::test_unsupported_language_reuses_simple_content_and_ranges_with_fallback_metadata[sql-SELECT amount FROM orders;\n]
+tests/test_ast_chunker.py::test_parser_failure_falls_back_without_logging_exception_or_source
+tests/test_ast_chunker.py::test_native_parser_failure_is_converted_to_controlled_fallback
+tests/test_ast_chunker.py::test_programming_errors_are_not_silently_classified_as_source_parse_failures
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change0]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change1]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change2]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change3]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change4]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change5]
+tests/test_ast_chunker.py::test_inconsistent_parser_metadata_is_not_used_for_chunk_citations[change6]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-java]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-python]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-javascript]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-typescript]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-vue]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[-markdown]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-java]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-python]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-javascript]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-typescript]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-vue]
+tests/test_ast_chunker.py::test_empty_files_have_no_chunks_and_explicit_strategy[ \t\n\n-markdown]
+tests/test_ast_chunker.py::test_valid_file_without_declarations_is_ast_module_text[java-// comment\n]
+tests/test_ast_chunker.py::test_valid_file_without_declarations_is_ast_module_text[python-# comment\n]
+tests/test_ast_chunker.py::test_valid_file_without_declarations_is_ast_module_text[javascript-// comment\n]
+tests/test_ast_chunker.py::test_valid_file_without_declarations_is_ast_module_text[typescript-// comment\n]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[False-\n]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[False-\r\n]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[False-\r]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[True-\n]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[True-\r\n]
+tests/test_ast_chunker.py::test_chinese_and_newlines_keep_exact_inclusive_ranges[True-\r]
+tests/test_ast_chunker.py::test_ids_are_stable_uuids_and_change_for_content_identity_and_version
+tests/test_ast_chunker.py::test_repeated_overloads_on_separate_lines_have_distinct_chunk_ids
+tests/test_ast_chunker.py::test_oversized_single_line_is_rejected_not_truncated_or_hidden_by_fallback[java-class Wallet { void credit() {} }\n]
+tests/test_ast_chunker.py::test_oversized_single_line_is_rejected_not_truncated_or_hidden_by_fallback[vue-<template>too long</template>\n]
+tests/test_ast_chunker.py::test_actual_utf8_byte_budget_is_checked_before_parser_or_fallback
+tests/test_ast_chunker.py::test_chunk_count_limit_rejects_entire_file_before_first_yield
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options0]
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options1]
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options2]
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options3]
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options4]
+tests/test_ast_chunker.py::test_invalid_configuration_is_rejected[options5]
+tests/test_ast_chunker.py::test_legacy_simple_factory_ids_and_debug_api_are_not_switched_to_ast
+tests/test_ast_chunker.py::test_ast_chunking_does_not_create_embedding_or_qdrant_clients
+tests/test_ast_chunk_spike.py::test_spike_reports_ast_fallback_and_failed_files_while_continuing
+tests/test_ast_chunk_spike.py::test_spike_uses_scanner_approval_and_selected_path
+
+123 tests collected in 0.11s

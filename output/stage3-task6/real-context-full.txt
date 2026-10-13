@@ -1,0 +1,71 @@
+[SOURCE S1]
+{
+  "repository": "demo-repository",
+  "path": "backend/service/RefundService.java",
+  "language": "java",
+  "symbol": "RefundService.refund",
+  "node_type": "method_declaration",
+  "parent_symbol": "RefundService",
+  "lines": {
+    "start": 12,
+    "end": 18
+  },
+  "original_lines": {
+    "start": 12,
+    "end": 18
+  },
+  "chunking_strategy": "ast",
+  "chunking_version": "ast-v1",
+  "overlap_trimmed": false,
+  "budget_truncated": false,
+  "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+}
+[/SOURCE S1]
+
+[SOURCE S2]
+{
+  "repository": "demo-repository",
+  "path": "README.md",
+  "language": "markdown",
+  "symbol": null,
+  "node_type": null,
+  "parent_symbol": null,
+  "lines": {
+    "start": 1,
+    "end": 21
+  },
+  "original_lines": {
+    "start": 1,
+    "end": 21
+  },
+  "chunking_strategy": "fallback",
+  "chunking_version": "ast-fallback-line-v1",
+  "overlap_trimmed": false,
+  "budget_truncated": false,
+  "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+}
+[/SOURCE S2]
+
+[SOURCE S3]
+{
+  "repository": "demo-repository",
+  "path": "backend/controller/OrderController.java",
+  "language": "java",
+  "symbol": "OrderController.refundOrder",
+  "node_type": "method_declaration",
+  "parent_symbol": "OrderController",
+  "lines": {
+    "start": 13,
+    "end": 15
+  },
+  "original_lines": {
+    "start": 13,
+    "end": 15
+  },
+  "chunking_strategy": "ast",
+  "chunking_version": "ast-v1",
+  "overlap_trimmed": false,
+  "budget_truncated": false,
+  "content": "    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n"
+}
+[/SOURCE S3]

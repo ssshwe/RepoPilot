@@ -1,0 +1,565 @@
+{
+  "grammar_abi": {
+    "java": 14,
+    "python": 15,
+    "javascript": 15,
+    "typescript": 14
+  },
+  "sources": [
+    {
+      "input_kind": "existing_project_source",
+      "decoded_source_sha256": "37e4ea1c06be20ab3489e7a9bb611149dcfd25a79921c2865180d127cb52294b",
+      "parsed": {
+        "repository": "repopilot",
+        "path": "services/api/app/repository/language.py",
+        "language": "python",
+        "root_node_type": "module",
+        "symbols": [
+          {
+            "node_type": "function_definition",
+            "name": "detect_language",
+            "symbol": "detect_language",
+            "parent_symbol": null,
+            "start_line": 11,
+            "end_line": 13,
+            "start_byte": 246,
+            "end_byte": 448,
+            "start_point": [
+              10,
+              0
+            ],
+            "end_point": [
+              12,
+              65
+            ]
+          }
+        ]
+      },
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 2,
+      "chunks": [
+        {
+          "chunk_id": "9e3c7af3-cae0-5e89-93e4-31a44bb8bb0b",
+          "repository": "repopilot",
+          "path": "services/api/app/repository/language.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "from pathlib import PurePath\n\n\nEXTENSION_LANGUAGES = {\n    \".py\": \"python\", \".java\": \"java\", \".js\": \"javascript\",\n    \".ts\": \"typescript\", \".vue\": \"vue\", \".json\": \"json\",\n    \".yml\": \"yaml\", \".yaml\": \"yaml\", \".md\": \"markdown\", \".sql\": \"sql\",\n}\n\n\n",
+          "symbol": null,
+          "node_type": "module",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "3fcf4332-3ec5-5c3d-bd96-f39855abaf40",
+          "repository": "repopilot",
+          "path": "services/api/app/repository/language.py",
+          "language": "python",
+          "start_line": 11,
+          "end_line": 13,
+          "content": "def detect_language(path: str | PurePath) -> str | None:\n    \"\"\"Use the supported extension; content parsing belongs to later stages.\"\"\"\n    return EXTENSION_LANGUAGES.get(PurePath(path).suffix.lower())\n",
+          "symbol": "detect_language",
+          "node_type": "function_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ]
+    },
+    {
+      "input_kind": "new_project_source",
+      "decoded_source_sha256": "1dadb5b696c540e6334d50576bc26d91a10d56a4c7c1e266f6c5979f3bf50230",
+      "parsed": {
+        "repository": "repopilot",
+        "path": "services/api/app/indexing/ast_chunker.py",
+        "language": "python",
+        "root_node_type": "module",
+        "symbols": [
+          {
+            "node_type": "class_definition",
+            "name": "FileChunkingResult",
+            "symbol": "FileChunkingResult",
+            "parent_symbol": null,
+            "start_line": 27,
+            "end_line": 31,
+            "start_byte": 987,
+            "end_byte": 1166,
+            "start_point": [
+              26,
+              0
+            ],
+            "end_point": [
+              30,
+              33
+            ]
+          },
+          {
+            "node_type": "class_definition",
+            "name": "_Declaration",
+            "symbol": "_Declaration",
+            "parent_symbol": null,
+            "start_line": 34,
+            "end_line": 37,
+            "start_byte": 1169,
+            "end_byte": 1301,
+            "start_point": [
+              33,
+              0
+            ],
+            "end_point": [
+              36,
+              64
+            ]
+          },
+          {
+            "node_type": "class_definition",
+            "name": "_SharedLineBoundaries",
+            "symbol": "_SharedLineBoundaries",
+            "parent_symbol": null,
+            "start_line": 40,
+            "end_line": 41,
+            "start_byte": 1304,
+            "end_byte": 1431,
+            "start_point": [
+              39,
+              0
+            ],
+            "end_point": [
+              40,
+              80
+            ]
+          },
+          {
+            "node_type": "class_definition",
+            "name": "ASTCodeChunker",
+            "symbol": "ASTCodeChunker",
+            "parent_symbol": null,
+            "start_line": 44,
+            "end_line": 217,
+            "start_byte": 1434,
+            "end_byte": 11224,
+            "start_point": [
+              43,
+              0
+            ],
+            "end_point": [
+              216,
+              76
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "__init__",
+            "symbol": "ASTCodeChunker.__init__",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 52,
+            "end_line": 69,
+            "start_byte": 1792,
+            "end_byte": 2733,
+            "start_point": [
+              51,
+              4
+            ],
+            "end_point": [
+              68,
+              36
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "chunk_file",
+            "symbol": "ASTCodeChunker.chunk_file",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 71,
+            "end_line": 72,
+            "start_byte": 2739,
+            "end_byte": 2858,
+            "start_point": [
+              70,
+              4
+            ],
+            "end_point": [
+              71,
+              56
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "iter_file_chunks",
+            "symbol": "ASTCodeChunker.iter_file_chunks",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 74,
+            "end_line": 77,
+            "start_byte": 2864,
+            "end_byte": 3146,
+            "start_point": [
+              73,
+              4
+            ],
+            "end_point": [
+              76,
+              54
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "chunk_file_result",
+            "symbol": "ASTCodeChunker.chunk_file_result",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 79,
+            "end_line": 106,
+            "start_byte": 3152,
+            "end_byte": 4689,
+            "start_point": [
+              78,
+              4
+            ],
+            "end_point": [
+              105,
+              21
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "_fallback_result",
+            "symbol": "ASTCodeChunker._fallback_result",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 108,
+            "end_line": 115,
+            "start_byte": 4695,
+            "end_byte": 5159,
+            "start_point": [
+              107,
+              4
+            ],
+            "end_point": [
+              114,
+              68
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "_ast_chunks",
+            "symbol": "ASTCodeChunker._ast_chunks",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 117,
+            "end_line": 203,
+            "start_byte": 5165,
+            "end_byte": 10232,
+            "start_point": [
+              116,
+              4
+            ],
+            "end_point": [
+              202,
+              21
+            ]
+          },
+          {
+            "node_type": "function_definition",
+            "name": "_chunk_id",
+            "symbol": "ASTCodeChunker._chunk_id",
+            "parent_symbol": "ASTCodeChunker",
+            "start_line": 205,
+            "end_line": 217,
+            "start_byte": 10238,
+            "end_byte": 11224,
+            "start_point": [
+              204,
+              4
+            ],
+            "end_point": [
+              216,
+              76
+            ]
+          }
+        ]
+      },
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 13,
+      "chunks": [
+        {
+          "chunk_id": "aaa56c39-5ddb-5deb-b079-b2b1e29abaa1",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 26,
+          "content": "\"\"\"Offline AST chunk construction. The Stage 2 indexing factory is unchanged.\"\"\"\n\nfrom bisect import bisect_right\nfrom collections.abc import Iterator\nfrom dataclasses import dataclass, field, replace\nimport hashlib\nimport json\nimport logging\nfrom typing import Literal\nfrom uuid import NAMESPACE_URL, uuid5\n\nfrom app.core.exceptions import ChunkingLimitError\nfrom app.embedding.validation import MAX_EMBEDDING_TEXT_LENGTH\nfrom app.indexing.chunker import SimpleCodeChunker\nfrom app.indexing.models import CodeChunk\nfrom app.parsing.base import CodeParsingError, ParsedSource, SourceSyntaxError, SyntaxSymbol, UnsupportedLanguageError\nfrom app.parsing.registry import ParserRegistry, create_parser_registry\nfrom app.repository.models import RepositoryFile\n\n\nlogger = logging.getLogger(__name__)\nAST_CHUNKING_VERSION = \"ast-v1\"\nFALLBACK_CHUNKING_VERSION = \"ast-fallback-line-v1\"\nFallbackReason = Literal[\"unsupported_language\", \"syntax_error\", \"parser_error\", \"shared_line_boundaries\"]\n\n\n",
+          "symbol": null,
+          "node_type": "module",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "d665c70e-0b55-5142-8328-c49050546b97",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 27,
+          "end_line": 31,
+          "content": "@dataclass(frozen=True, slots=True)\nclass FileChunkingResult:\n    strategy: Literal[\"ast\", \"fallback\"]\n    fallback_reason: FallbackReason | None\n    chunks: tuple[CodeChunk, ...]\n",
+          "symbol": "FileChunkingResult",
+          "node_type": "class_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "0a3c9f9d-2d92-5114-b752-340e5fb44663",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 34,
+          "end_line": 37,
+          "content": "@dataclass(slots=True)\nclass _Declaration:\n    syntax: SyntaxSymbol\n    children: list[\"_Declaration\"] = field(default_factory=list)\n",
+          "symbol": "_Declaration",
+          "node_type": "class_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "fbb4634e-58a4-5f8c-8dc3-345d78465ece",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 40,
+          "end_line": 41,
+          "content": "class _SharedLineBoundaries(CodeParsingError):\n    \"\"\"Whole-line citations cannot isolate adjacent declarations on one line.\"\"\"\n",
+          "symbol": "_SharedLineBoundaries",
+          "node_type": "class_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "c1231ea5-b90b-5118-9efb-fd45d49d60cb",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 44,
+          "end_line": 51,
+          "content": "class ASTCodeChunker:\n    \"\"\"Named declarations plus module/class gaps, with bounded exact line slices.\n\n    Named nested declarations own their lines; their parent owns only the gaps.\n    Anonymous bodies stay in the containing declaration/module text. AST slices\n    have no overlap. Fallback uses the unchanged Stage 2 line-window algorithm.\n    \"\"\"\n\n",
+          "symbol": "ASTCodeChunker",
+          "node_type": "class_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "187dd2d3-d645-5492-9863-01be8e5a8c02",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 52,
+          "end_line": 69,
+          "content": "    def __init__(\n        self, *, registry: ParserRegistry | None = None, chunk_lines: int = 60,\n        overlap_lines: int = 10, max_file_bytes: int = 1_048_576,\n        max_chunk_characters: int = 8_192, max_chunks: int = 10_000,\n    ) -> None:\n        self._fallback = SimpleCodeChunker(\n            chunk_lines=chunk_lines, overlap_lines=overlap_lines,\n            max_file_bytes=max_file_bytes, max_chunk_characters=max_chunk_characters,\n            max_chunks=max_chunks,\n        )\n        if max_chunk_characters > MAX_EMBEDDING_TEXT_LENGTH:\n            raise ValueError(\"AST chunks must fit the embedding text character limit.\")\n        self.registry = registry if registry is not None else create_parser_registry()\n        self.chunk_lines = chunk_lines\n        self.overlap_lines = overlap_lines\n        self.max_file_bytes = max_file_bytes\n        self.max_chunk_characters = max_chunk_characters\n        self.max_chunks = max_chunks\n",
+          "symbol": "ASTCodeChunker.__init__",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "09a0b091-f937-58ee-9698-44e49c6a05c8",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 71,
+          "end_line": 72,
+          "content": "    def chunk_file(self, file: RepositoryFile) -> list[CodeChunk]:\n        return list(self.chunk_file_result(file).chunks)\n",
+          "symbol": "ASTCodeChunker.chunk_file",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "17784473-af27-594b-9e68-ce007230fe4a",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 74,
+          "end_line": 77,
+          "content": "    def iter_file_chunks(self, file: RepositoryFile) -> Iterator[CodeChunk]:\n        # Validate the entire file before yielding so a later limit failure does\n        # not expose a partial set of chunks as a successful file result.\n        yield from self.chunk_file_result(file).chunks\n",
+          "symbol": "ASTCodeChunker.iter_file_chunks",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "aa9205ca-a72c-51ec-882e-6f05df463c80",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 79,
+          "end_line": 106,
+          "content": "    def chunk_file_result(self, file: RepositoryFile) -> FileChunkingResult:\n        try:\n            try:\n                encoded = file.content.encode(\"utf-8\")\n            except UnicodeEncodeError as exc:\n                raise CodeParsingError(\"Source cannot be encoded as UTF-8.\") from exc\n            if max(file.size_bytes, len(encoded)) > self.max_file_bytes:\n                raise ChunkingLimitError(\"A source file exceeds the chunking file byte limit.\")\n            try:\n                parsed = self.registry.parse(file)\n                chunks = self._ast_chunks(file, encoded, parsed)\n                result = FileChunkingResult(\"ast\", None, tuple(chunks))\n            except UnsupportedLanguageError:\n                result = self._fallback_result(file, \"unsupported_language\")\n            except SourceSyntaxError:\n                result = self._fallback_result(file, \"syntax_error\")\n            except _SharedLineBoundaries:\n                result = self._fallback_result(file, \"shared_line_boundaries\")\n            except CodeParsingError:\n                result = self._fallback_result(file, \"parser_error\")\n        except (ChunkingLimitError, CodeParsingError):\n            logger.info(\"chunk_file repository=%s path=%s status=failed\", file.repository, file.path)\n            raise\n        logger.info(\n            \"chunk_file repository=%s path=%s strategy=%s fallback_reason=%s chunks=%d\",\n            file.repository, file.path, result.strategy, result.fallback_reason, len(result.chunks),\n        )\n        return result\n",
+          "symbol": "ASTCodeChunker.chunk_file_result",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "457e9331-ffe6-5634-b232-6c4f7830f370",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 108,
+          "end_line": 115,
+          "content": "    def _fallback_result(self, file: RepositoryFile, reason: FallbackReason) -> FileChunkingResult:\n        chunks = []\n        for chunk in self._fallback.iter_file_chunks(file):\n            chunk = replace(\n                chunk, chunking_strategy=\"fallback\", chunking_version=FALLBACK_CHUNKING_VERSION,\n            )\n            chunks.append(replace(chunk, chunk_id=self._chunk_id(chunk, None)))\n        return FileChunkingResult(\"fallback\", reason, tuple(chunks))\n",
+          "symbol": "ASTCodeChunker._fallback_result",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "b3f3b58e-d26a-51d8-823d-fa2b05be3b78",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 117,
+          "end_line": 176,
+          "content": "    def _ast_chunks(self, file: RepositoryFile, encoded: bytes, parsed: ParsedSource) -> list[CodeChunk]:\n        if (parsed.repository, parsed.path, parsed.language) != (file.repository, file.path, file.language):\n            raise CodeParsingError(\"Parsed metadata does not belong to the selected source.\")\n        if not parsed.root_node_type:\n            raise CodeParsingError(\"Parsed metadata has no root node type.\")\n        lines = file.content.splitlines(keepends=True)\n        starts = []\n        offset = 0\n        for line in lines:\n            starts.append(offset)\n            offset += len(line.encode(\"utf-8\"))\n        roots: list[_Declaration] = []\n        stack: list[_Declaration] = []\n        for syntax in sorted(parsed.symbols, key=lambda item: (item.start_byte, -item.end_byte)):\n            if not (\n                all(type(value) is int for value in (\n                    syntax.start_byte, syntax.end_byte, syntax.start_line, syntax.end_line,\n                ))\n                and 0 <= syntax.start_byte < syntax.end_byte <= len(encoded)\n                and syntax.start_line == bisect_right(starts, syntax.start_byte)\n                and syntax.end_line == bisect_right(starts, syntax.end_byte - 1)\n                and syntax.symbol and syntax.name and syntax.node_type\n                and syntax.symbol == (f\"{syntax.parent_symbol}.{syntax.name}\" if syntax.parent_symbol else syntax.name)\n            ):\n                raise CodeParsingError(\"A declaration has inconsistent source metadata.\")\n            while stack and syntax.start_byte >= stack[-1].syntax.end_byte:\n                stack.pop()\n            siblings = stack[-1].children if stack else roots\n            if stack and syntax.end_byte > stack[-1].syntax.end_byte:\n                raise CodeParsingError(\"Declaration source ranges cross each other.\")\n            if stack and (syntax.start_byte, syntax.end_byte) == (\n                stack[-1].syntax.start_byte, stack[-1].syntax.end_byte,\n            ):\n                raise CodeParsingError(\"Declaration source ranges are duplicated.\")\n            if siblings and siblings[-1].syntax.end_line >= syntax.start_line:\n                raise _SharedLineBoundaries()\n            declaration = _Declaration(syntax)\n            siblings.append(declaration)\n            stack.append(declaration)\n\n        # Iterative traversal also handles deeply nested declarations. All\n        # segments are disjoint whole-line ranges, ordered in original source.\n        pending = [(1, len(lines), None, roots)]\n        segments: list[tuple[int, int, SyntaxSymbol | None]] = []\n        while pending:\n            start, end, owner, children = pending.pop()\n            cursor = start\n            for child in children:\n                if cursor < child.syntax.start_line:\n                    segments.append((cursor, child.syntax.start_line - 1, owner))\n                pending.append((child.syntax.start_line, child.syntax.end_line, child.syntax, child.children))\n                cursor = child.syntax.end_line + 1\n            if cursor <= end:\n                segments.append((cursor, end, owner))\n        chunks: list[CodeChunk] = []\n        for start, end, owner in sorted(segments, key=lambda item: item[0]):\n            # Closing braces/separators alone carry no useful retrieval evidence.\n            # No meaningful source text is stripped or synthetically prepended.\n            if not \"\".join(lines[start - 1:end]).strip(\" \\t\\r\\n{}();,\"):\n                continue\n",
+          "symbol": "ASTCodeChunker._ast_chunks",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "13e32f46-406f-5f64-abc8-eb03cd6767ca",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 177,
+          "end_line": 203,
+          "content": "            cursor = start\n            while cursor <= end:\n                slice_end = cursor - 1\n                length = 0\n                while slice_end < end and slice_end - cursor + 1 < self.chunk_lines:\n                    line_length = len(lines[slice_end])\n                    if line_length > self.max_chunk_characters:\n                        raise ChunkingLimitError(\"A source line exceeds the chunk character limit.\")\n                    if length + line_length > self.max_chunk_characters:\n                        break\n                    length += line_length\n                    slice_end += 1\n                content = \"\".join(lines[cursor - 1:slice_end])\n                if content.strip():\n                    if len(chunks) >= self.max_chunks:\n                        raise ChunkingLimitError(\"Chunking exceeds the chunk count limit.\")\n                    chunk = CodeChunk(\n                        chunk_id=\"\", repository=file.repository, path=file.path, language=file.language,\n                        start_line=cursor, end_line=slice_end, content=content,\n                        symbol=owner.symbol if owner else None,\n                        node_type=owner.node_type if owner else parsed.root_node_type,\n                        parent_symbol=owner.parent_symbol if owner else None,\n                        chunking_strategy=\"ast\", chunking_version=AST_CHUNKING_VERSION,\n                    )\n                    chunks.append(replace(chunk, chunk_id=self._chunk_id(chunk, owner)))\n                cursor = slice_end + 1\n        return chunks\n",
+          "symbol": "ASTCodeChunker._ast_chunks",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "72ab9415-47f3-5ff3-a9b2-fc52cfdaa18b",
+          "repository": "repopilot",
+          "path": "services/api/app/indexing/ast_chunker.py",
+          "language": "python",
+          "start_line": 205,
+          "end_line": 217,
+          "content": "    def _chunk_id(self, chunk: CodeChunk, owner: SyntaxSymbol | None) -> str:\n        identity = json.dumps({\n            \"version\": chunk.chunking_version, \"strategy\": chunk.chunking_strategy,\n            \"repository\": chunk.repository, \"path\": chunk.path, \"language\": chunk.language,\n            \"symbol\": chunk.symbol, \"node_type\": chunk.node_type, \"parent_symbol\": chunk.parent_symbol,\n            \"declaration_bytes\": [owner.start_byte, owner.end_byte] if owner else None,\n            \"start_line\": chunk.start_line, \"end_line\": chunk.end_line,\n            \"chunk_lines\": self.chunk_lines,\n            \"overlap_lines\": self.overlap_lines if chunk.chunking_strategy == \"fallback\" else 0,\n            \"max_chunk_characters\": self.max_chunk_characters,\n            \"content_sha256\": hashlib.sha256(chunk.content.encode(\"utf-8\")).hexdigest(),\n        }, sort_keys=True, ensure_ascii=False, separators=(\",\", \":\"))\n        return str(uuid5(NAMESPACE_URL, \"repopilot:code-chunk:\" + identity))\n",
+          "symbol": "ASTCodeChunker._chunk_id",
+          "node_type": "function_definition",
+          "parent_symbol": "ASTCodeChunker",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ]
+    },
+    {
+      "input_kind": "hand_written_test_fixture",
+      "decoded_source_sha256": "735f5ad409a84c91df8e6e26f0419e95a46e0e9229c36e46b4801015d00757e2",
+      "parsed": {
+        "repository": "repopilot",
+        "path": "services/api/tests/fixtures/parsing/refund.js",
+        "language": "javascript",
+        "root_node_type": "program",
+        "symbols": [
+          {
+            "node_type": "function_declaration",
+            "name": "refund",
+            "symbol": "refund",
+            "parent_symbol": null,
+            "start_line": 2,
+            "end_line": 7,
+            "start_byte": 76,
+            "end_byte": 235,
+            "start_point": [
+              1,
+              0
+            ],
+            "end_point": [
+              6,
+              1
+            ]
+          },
+          {
+            "node_type": "arrow_function",
+            "name": "canRefund",
+            "symbol": "canRefund",
+            "parent_symbol": null,
+            "start_line": 9,
+            "end_line": 11,
+            "start_byte": 250,
+            "end_byte": 323,
+            "start_point": [
+              8,
+              13
+            ],
+            "end_point": [
+              10,
+              1
+            ]
+          }
+        ]
+      },
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 3,
+      "chunks": [
+        {
+          "chunk_id": "ea239014-aa63-50cb-b8b8-82e933254416",
+          "repository": "repopilot",
+          "path": "services/api/tests/fixtures/parsing/refund.js",
+          "language": "javascript",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "// Hand-written JavaScript fixture for parser and chunker acceptance tests.\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "dfe83fc9-04dd-5c81-8c1f-2c5ed0d6c50d",
+          "repository": "repopilot",
+          "path": "services/api/tests/fixtures/parsing/refund.js",
+          "language": "javascript",
+          "start_line": 2,
+          "end_line": 7,
+          "content": "export function refund(order, wallet) {\n  if (!order.id) {\n    throw new Error('Order ID is required')\n  }\n  return wallet.credit(order.userId, order.amount)\n}\n",
+          "symbol": "refund",
+          "node_type": "function_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "chunk_id": "de76cc65-2801-595b-9e4c-8038546e8def",
+          "repository": "repopilot",
+          "path": "services/api/tests/fixtures/parsing/refund.js",
+          "language": "javascript",
+          "start_line": 9,
+          "end_line": 11,
+          "content": "export const canRefund = (order) => {\n  return Boolean(order.id) && order.amount > 0\n}\n",
+          "symbol": "canRefund",
+          "node_type": "arrow_function",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ]
+    }
+  ]
+}

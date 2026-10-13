@@ -1,0 +1,527 @@
+{
+  "run_date": "2026-10-13",
+  "passed": true,
+  "checks": {
+    "real_retrieval": true,
+    "real_code_chat": true,
+    "real_issue": true,
+    "sources_expand_collapse": true,
+    "retrieval_empty": true,
+    "code-chat_empty": true,
+    "issue_empty": true,
+    "retrieval_late_delivery_guard": true,
+    "code-chat_late_delivery_guard": true,
+    "issue_late_delivery_guard": true,
+    "preview_coordinates": true,
+    "desktop_screenshots_visually_checked": true
+  },
+  "real_responses": {
+    "retrieval": {
+      "repository": "demo-repository",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "top_k": 5,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "retrieval_latency_ms": 865.67,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+          "repository": "demo-repository",
+          "score": 0.6294383,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 12,
+          "end_line": 18,
+          "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+          "repository": "demo-repository",
+          "score": 0.61479956,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+          "repository": "demo-repository",
+          "score": 0.59556794,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 13,
+          "end_line": 15,
+          "content": "    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+          "repository": "demo-repository",
+          "score": 0.55443716,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+          "repository": "demo-repository",
+          "score": 0.54227555,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ]
+    },
+    "code_chat": {
+      "answer": "RefundService.refund",
+      "source_ids": [
+        "S1"
+      ],
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S1",
+          "language": "java",
+          "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+        }
+      ],
+      "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "repository": "demo-repository",
+      "status": "answered",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 4110,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 660.97
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 1780.28
+      }
+    },
+    "issue": {
+      "repository": "demo-repository",
+      "issue": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+      "summary": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+      "related_code": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController",
+          "start_line": 6,
+          "end_line": 8
+        }
+      ],
+      "possible_call_chain": [],
+      "analysis": [
+        "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+      ],
+      "modification_suggestions": [
+        "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+      ],
+      "test_suggestions": [
+        "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+      ],
+      "risks": [
+        "重复退款问题"
+      ],
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "sources": [
+        {
+          "source_id": "S1",
+          "language": "markdown",
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+        },
+        {
+          "source_id": "S2",
+          "language": "java",
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n"
+        },
+        {
+          "source_id": "S3",
+          "language": "vue",
+          "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+        },
+        {
+          "source_id": "S4",
+          "language": "java",
+          "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+        },
+        {
+          "source_id": "S5",
+          "language": "java",
+          "content": "public final class OrderController {\n    private final RefundService refunds;\n\n"
+        }
+      ],
+      "status": "analyzed",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 4706,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 2833.35
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 1831.22
+      }
+    }
+  },
+  "empty_controls": {
+    "retrieval": {
+      "scenario": "real_retrieval_empty",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "repository": "stage3-task13-not-indexed",
+        "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+        "top_k": 5,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 1005.33,
+        "results": []
+      }
+    },
+    "code-chat": {
+      "scenario": "real_code_chat_empty",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+        "source_ids": [],
+        "citations": [],
+        "sources": [],
+        "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+        "repository": "stage3-task13-not-indexed",
+        "status": "insufficient_evidence",
+        "model": null,
+        "retrieval": {
+          "top_k": 5,
+          "retrieved_chunks": 0,
+          "used_sources": 0,
+          "context_characters": 0,
+          "context_budget_characters": 16000,
+          "budget_limited": false,
+          "empty_reason": "no_results",
+          "collection": "repopilot_code",
+          "embedding_model": "qwen3-embedding:0.6b",
+          "embedding_dimension": 1024,
+          "latency_ms": 797.77
+        },
+        "generation": {
+          "called": false,
+          "latency_ms": 0
+        }
+      }
+    },
+    "issue": {
+      "scenario": "real_issue_empty",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "repository": "stage3-task13-not-indexed",
+        "issue": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+        "summary": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+        "related_code": [],
+        "possible_call_chain": [],
+        "analysis": [],
+        "modification_suggestions": [],
+        "test_suggestions": [],
+        "risks": [],
+        "source_ids": [],
+        "sources": [],
+        "status": "insufficient_evidence",
+        "model": null,
+        "retrieval": {
+          "top_k": 5,
+          "retrieved_chunks": 0,
+          "used_sources": 0,
+          "context_characters": 0,
+          "context_budget_characters": 16000,
+          "budget_limited": false,
+          "empty_reason": "no_results",
+          "collection": "repopilot_code",
+          "embedding_model": "qwen3-embedding:0.6b",
+          "embedding_dimension": 1024,
+          "latency_ms": 753.46
+        },
+        "generation": {
+          "called": false,
+          "latency_ms": 0
+        }
+      }
+    }
+  },
+  "controlled_late_responses": {
+    "retrieval": {
+      "scenario": "controlled_real_late_response",
+      "endpoint": "/api/retrieval/search",
+      "passed": true,
+      "before": "等待检索\n选择已索引的仓库，输入你要寻找的代码逻辑。",
+      "after": "等待检索\n选择已索引的仓库，输入你要寻找的代码逻辑。",
+      "delivered_after_clear": true,
+      "real_response": {
+        "status": 200,
+        "body": {
+          "repository": "stage3-task13-not-indexed",
+          "query": "退款逻辑在哪里？",
+          "top_k": 5,
+          "collection": "repopilot_code",
+          "embedding_model": "qwen3-embedding:0.6b",
+          "embedding_dimension": 1024,
+          "retrieval_latency_ms": 4574.52,
+          "results": []
+        }
+      },
+      "response_content_mocked": false
+    },
+    "code-chat": {
+      "scenario": "controlled_real_late_response",
+      "endpoint": "/api/code-chat",
+      "passed": true,
+      "before": "从一个代码问题开始\n每个问题独立检索，引用片段可展开核对。\n试试：退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "after": "从一个代码问题开始\n每个问题独立检索，引用片段可展开核对。\n试试：退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "delivered_after_clear": true,
+      "real_response": {
+        "status": 200,
+        "body": {
+          "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+          "source_ids": [],
+          "citations": [],
+          "sources": [],
+          "question": "退款逻辑在哪里？",
+          "repository": "stage3-task13-not-indexed",
+          "status": "insufficient_evidence",
+          "model": null,
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 0,
+            "used_sources": 0,
+            "context_characters": 0,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": "no_results",
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 925.42
+          },
+          "generation": {
+            "called": false,
+            "latency_ms": 0
+          }
+        }
+      },
+      "response_content_mocked": false
+    },
+    "issue": {
+      "scenario": "controlled_real_late_response",
+      "endpoint": "/api/issue-analysis",
+      "passed": true,
+      "before": "从一个待检查的 Issue 开始\n输入问题，查看相关代码、分析和测试建议。",
+      "after": "从一个待检查的 Issue 开始\n输入问题，查看相关代码、分析和测试建议。",
+      "delivered_after_clear": true,
+      "real_response": {
+        "status": 200,
+        "body": {
+          "repository": "stage3-task13-not-indexed",
+          "issue": "退款逻辑在哪里？",
+          "summary": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+          "related_code": [],
+          "possible_call_chain": [],
+          "analysis": [],
+          "modification_suggestions": [],
+          "test_suggestions": [],
+          "risks": [],
+          "source_ids": [],
+          "sources": [],
+          "status": "insufficient_evidence",
+          "model": null,
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 0,
+            "used_sources": 0,
+            "context_characters": 0,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": "no_results",
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 978
+          },
+          "generation": {
+            "called": false,
+            "latency_ms": 0
+          }
+        }
+      },
+      "response_content_mocked": false
+    }
+  },
+  "artifacts": {
+    "stage3-task13-retrieval.png": {
+      "path": "output/playwright/stage3-task13-retrieval.png",
+      "sha256": "2511519f176e6d645147c30f9054225702320224e88532a810bb9d40c9042ece"
+    },
+    "stage3-task13-code-chat.png": {
+      "path": "output/playwright/stage3-task13-code-chat.png",
+      "sha256": "8e3fd8ffc7912d16cfb099edabfe3478310c087102d86cb3790e4ebd43073a87"
+    },
+    "stage3-task13-issue.png": {
+      "path": "output/playwright/stage3-task13-issue.png",
+      "sha256": "cafbaed416c2708447e182af2d3d120b2d56344fa7bce81c17bb7e0d1dd43d44"
+    },
+    "stage3-task13-retrieval-response.log": {
+      "path": "output/playwright/stage3-task13-retrieval-response.log",
+      "sha256": "4aeee66b2fb9e8a29396515d3911c11e2c9984d7e177eeaffcf09a89eaf13dd8"
+    },
+    "stage3-task13-code-chat-response.log": {
+      "path": "output/playwright/stage3-task13-code-chat-response.log",
+      "sha256": "8c5f0d5ba53dd6314f25c6520b5a0e908cdbc9e35384e843e5cdcd75aa514c23"
+    },
+    "stage3-task13-issue-real.log": {
+      "path": "output/playwright/stage3-task13-issue-real.log",
+      "sha256": "6f6f726389bf31d45c457a4970a2c06467799a7b355292b40e771f1c708aaa11"
+    },
+    "stage3-task13-sources.log": {
+      "path": "output/playwright/stage3-task13-sources.log",
+      "sha256": "ca372ed6fb72fb755d6ab4c9b985f7ed0610af0b1f09b72aea7c0e12b600c37e"
+    },
+    "stage3-task13-retrieval-late.log": {
+      "path": "output/playwright/stage3-task13-retrieval-late.log",
+      "sha256": "d05fc1b344ac38ebee443dcb9a045d09fe0c8c9591bd59841ec9b2c67f759aa6"
+    },
+    "stage3-task13-late-response.js": {
+      "path": "output/playwright/stage3-task13-late-response.js",
+      "sha256": "db09dd7faec8a83d1282d652fc4c0874d846f1b24c4884ca2ccc7e139cb59d2f"
+    },
+    "stage3-task13-retrieval-empty.log": {
+      "path": "output/playwright/stage3-task13-retrieval-empty.log",
+      "sha256": "c02d83f7e4bc1b9980a75482c5b0a3f599517a9c6c67d2ef0f08f5852c1b6b96"
+    },
+    "stage3-task13-code-chat-empty.log": {
+      "path": "output/playwright/stage3-task13-code-chat-empty.log",
+      "sha256": "bad1c1fabc02fd95616a402b84e1a81ab9a4d1638c9c51cd4460fc2426bb8644"
+    },
+    "stage3-task13-issue-empty.log": {
+      "path": "output/playwright/stage3-task13-issue-empty.log",
+      "sha256": "805950b743cf82adf46aefb63a60d14f5325c3efdb1c285464aa10bd00c97d5f"
+    },
+    "stage3-task13-retrieval-late-after-fix.log": {
+      "path": "output/playwright/stage3-task13-retrieval-late-after-fix.log",
+      "sha256": "0879e4f8138b6d1cabd6ec1fbaa706d7a8d9c20bff4ccc6a28e72d4da937b656"
+    },
+    "stage3-task13-code-chat-late.log": {
+      "path": "output/playwright/stage3-task13-code-chat-late.log",
+      "sha256": "a127ddab06605b89440193f9fbf814d9fd9b6b820c2e33a4999cfcc062bfe894"
+    },
+    "stage3-task13-issue-late-final.log": {
+      "path": "output/playwright/stage3-task13-issue-late-final.log",
+      "sha256": "a85d66e3954b06cd68b80feabe766028c21fcc5c3eeabd35c8834d2923245d7d"
+    }
+  },
+  "reviewer": "development assistant; actual screenshots and browser UI snapshots inspected",
+  "regression_fixed": "Retrieval Debug late delivery after cancellation; failed first log retained",
+  "generation_quality_note": "Normal Issue reply copied Context markers into suggestions; this is a separately saved failure, outside the fixed 16-case denominator",
+  "timing_note": "Late-response controls delay real API response delivery and ignore AbortSignal; they do not assert server inference cancellation"
+}

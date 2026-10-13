@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "refund-service",
+    "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+    "expected_paths": [
+      "backend/service/RefundService.java"
+    ],
+    "evidence": [
+      {
+        "path": "backend/service/RefundService.java",
+        "start_line": 12,
+        "end_line": 18,
+        "snippet": "wallets.credit(userId, amount);"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 3677.6513999993767,
+    "retrieval_latency_ms": 1518.63,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "score": 0.62815964,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 12,
+        "end_line": 18
+      },
+      {
+        "rank": 2,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.6157311,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 3,
+        "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+        "repository": "demo-repository",
+        "score": 0.5944926,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 13,
+        "end_line": 15
+      },
+      {
+        "rank": 4,
+        "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+        "repository": "demo-repository",
+        "score": 0.5539951,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.5418521,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/RefundService.java"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/RefundService.java"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/RefundService.java"
+        ]
+      }
+    }
+  }
+}

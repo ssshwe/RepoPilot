@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "refund-controller",
+    "query": "哪个后端入口接收退款请求并调用退款服务？",
+    "expected_paths": [
+      "backend/controller/OrderController.java"
+    ],
+    "evidence": [
+      {
+        "path": "backend/controller/OrderController.java",
+        "start_line": 13,
+        "end_line": 15,
+        "snippet": "refunds.refund(orderId, userId, amount);"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2769.3742999999813,
+    "retrieval_latency_ms": 663.15,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+        "repository": "demo-repository",
+        "score": 0.6575569,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 2,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.63925385,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 3,
+        "chunk_id": "efd3b6e3-0833-5a54-80c3-32167dd61515",
+        "repository": "demo-repository",
+        "score": 0.59468627,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 6,
+        "end_line": 8
+      },
+      {
+        "rank": 4,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.5822567,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+        "repository": "demo-repository",
+        "score": 0.5723741,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 5,
+        "end_line": 7
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/controller/OrderController.java"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/controller/OrderController.java"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/controller/OrderController.java"
+        ]
+      }
+    }
+  }
+}

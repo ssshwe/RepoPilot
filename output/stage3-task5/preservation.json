@@ -1,0 +1,36 @@
+{
+  "existing_files_checked": 160,
+  "changed_existing_files": [
+    "apps/web/src/App.vue",
+    "apps/web/src/api/retrieval-contract.ts",
+    "apps/web/src/components/RetrievalDebug.vue",
+    "apps/web/src/style.css",
+    "apps/web/src/types/retrieval.ts",
+    "apps/web/tests/retrieval-contract.test.mjs",
+    "evaluation/README.md",
+    "services/api/app/retrieval/service.py",
+    "services/api/app/retrieval/vector_store.py",
+    "services/api/app/schemas/retrieval.py",
+    "services/api/tests/test_retrieval.py",
+    "services/api/tests/test_retrieval_integration.py"
+  ],
+  "unexpected_changes": [],
+  "env_dependencies_fixture_dataset_history_unchanged": true,
+  "existing_collections_unchanged": true,
+  "remaining_collections": [
+    {
+      "name": "repopilot_code",
+      "points_count": 17,
+      "points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+    },
+    {
+      "name": "repopilot_infra_smoke",
+      "points_count": 0,
+      "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "metrics_independently_recomputed": true,
+  "baseline_simple_result_ids_match_original_stage2_index": true,
+  "ast_result_ids_match_preserved_stage4_index": true,
+  "temporary_comparison_and_integration_collections_deleted": true
+}

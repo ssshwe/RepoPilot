@@ -1,0 +1,17 @@
+{
+  "repository": "stage3-task9-comment",
+  "input_ids": [
+    "S1"
+  ],
+  "context_characters": 938,
+  "citations": [
+    {
+      "repository": "stage3-task9-comment",
+      "source_id": "S1",
+      "path": "refund.py",
+      "symbol": "refund",
+      "start_line": 1,
+      "end_line": 9
+    }
+  ]
+}

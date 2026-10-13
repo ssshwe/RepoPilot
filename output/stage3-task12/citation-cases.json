@@ -1,0 +1,714 @@
+{
+  "kind": "replayed coordinates/previews and separate semantic review",
+  "cases": [
+    {
+      "id": "refund-service",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        }
+      ],
+      "preview_line_counts": [
+        7
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": true,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "wallet-credit",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService",
+          "start_line": 7,
+          "end_line": 9
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit",
+          "start_line": 10,
+          "end_line": 18
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "start_line": 5,
+          "end_line": 7
+        }
+      ],
+      "preview_line_counts": [
+        3,
+        5,
+        21,
+        9,
+        3
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "wallet-default-balance",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf",
+          "start_line": 20,
+          "end_line": 22
+        }
+      ],
+      "preview_line_counts": [
+        3
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-controller",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController",
+          "start_line": 6,
+          "end_line": 8
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "start_line": 5,
+          "end_line": 7
+        }
+      ],
+      "preview_line_counts": [
+        5,
+        21,
+        3,
+        5,
+        3
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-form",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder",
+          "start_line": 13,
+          "end_line": 15
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        }
+      ],
+      "preview_line_counts": [
+        22,
+        21,
+        3,
+        7,
+        5
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-request-type",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        }
+      ],
+      "preview_line_counts": [
+        5
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": true,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "orders-schema",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "database/schema.sql",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 11
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 4
+        }
+      ],
+      "preview_line_counts": [
+        11,
+        21,
+        5,
+        5,
+        4
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "wallets-schema",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService",
+          "start_line": 7,
+          "end_line": 9
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf",
+          "start_line": 20,
+          "end_line": 22
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "start_line": 5,
+          "end_line": 7
+        }
+      ],
+      "preview_line_counts": [
+        3,
+        3,
+        5,
+        21,
+        3
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "fixture-documentation",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        }
+      ],
+      "preview_line_counts": [
+        5
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "repository-metadata",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "backend/service/WalletService.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 6
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 4
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "database/schema.sql",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 11
+        }
+      ],
+      "preview_line_counts": [
+        5,
+        6,
+        4,
+        21,
+        11
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-validation-files",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 2,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 22
+        }
+      ],
+      "preview_line_counts": [
+        7,
+        22
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-call-chain",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 3,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        }
+      ],
+      "preview_line_counts": [
+        5,
+        5,
+        7
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "issue-refund",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 5,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController",
+          "start_line": 6,
+          "end_line": 8
+        }
+      ],
+      "preview_line_counts": [
+        21,
+        5,
+        22,
+        7,
+        3
+      ],
+      "possible_call_chain": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "issue-direct",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        }
+      ],
+      "preview_line_counts": [
+        21
+      ],
+      "possible_call_chain": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "README.md",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 21
+        }
+      ],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": false
+    },
+    {
+      "id": "empty-repository",
+      "metadata_check": {
+        "metadata_valid": null,
+        "citation_count": 0,
+        "applicable": false,
+        "response_received": true,
+        "empty_arrays_consistent": true,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [],
+      "preview_line_counts": [],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": null,
+      "candidate_chain_supported": null
+    },
+    {
+      "id": "refund-budget700",
+      "metadata_check": {
+        "metadata_valid": true,
+        "citation_count": 1,
+        "applicable": true,
+        "response_received": true,
+        "empty_arrays_consistent": false,
+        "reason": "Coordinates/previews match current context and local files; semantic support requires separate review"
+      },
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 15
+        }
+      ],
+      "preview_line_counts": [
+        4
+      ],
+      "possible_call_chain": null,
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null
+    }
+  ]
+}

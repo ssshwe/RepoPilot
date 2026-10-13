@@ -1,0 +1,2514 @@
+{
+  "schema_version": 1,
+  "name": "stage4-commerce-retrieval-v1",
+  "repositories": {
+    "demo-repository": {
+      "source_revision": null,
+      "source_sha256": {
+        "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c",
+        "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+        "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+        "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+        "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+        "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+        "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+        "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5"
+      },
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115",
+      "role": "historical"
+    },
+    "stage4-commerce": {
+      "source_revision": null,
+      "source_sha256": {
+        "README.md": "128586086e93a92755569fa751770d47fb6bce3e07085b329a3f5c96dd563d3c",
+        "backend/auth/AuthService.java": "41fc9bc51966edbaf5861a5230060b627df83eac6ee71632080f9239191dbfd7",
+        "backend/auth/WorkflowController.java": "67876ea4eb906abba587c71fe218cc215ad06ce415e9533250536fe54d47fb6d",
+        "backend/coupon/CouponService.java": "bd30590a78b877e21ca51e6a39d51fefe1f51c773ae91ccfb733476ff93bf927",
+        "backend/coupon/WorkflowController.java": "0c82d44b55487c00eff0f635b95134334328f66ee1b2bb26f6914b444fffd1f2",
+        "backend/fraud/FraudService.java": "953511ce0d3ba4b1d550b2816fa169e95954d47071199351a28a4d56390a9a75",
+        "backend/fraud/WorkflowController.java": "3347fcbaacd87d086b00552e8c1b788d938235520211d16bf2fc5e1335ab852c",
+        "backend/inventory/InventoryService.java": "a8f604cb0556f3f40639d5351c74a1382aa885d02e94fd50ac617fd4d8336e30",
+        "backend/inventory/WorkflowController.java": "f8b2a45976645c4146d6e1ceebf547b464ef12a053558b0067336efb6a11e500",
+        "backend/invoice/InvoiceService.java": "076336fdb5a78dc8d62182cad00f761be921faceb890fb9a80a4e1b08fb6cede",
+        "backend/invoice/WorkflowController.java": "dbdf380f738e3fc6d7fdc8a3d06fb8a63edc6c46f5b6a697371685475b6abd95",
+        "backend/ledger/LedgerService.java": "381b5b6c2ec3d672bb2979f80b6da97d434a332a70fd32bd4b2b1373a6c292cb",
+        "backend/ledger/WorkflowController.java": "24688a633c39044150156474ac25112ce13049098775c8e3ae65955258c2e9a5",
+        "backend/legacy/WalletService.java": "61ba030e99e0aa9e059a0313aa3e7832af0c7eaf4d7dbb8076cd1adbbc192dcd",
+        "backend/notification/NotificationService.java": "c1bc12f3019f1c42c6bc32d0fc4dd0b4faaf9c44f530a9e61d12512b531d4442",
+        "backend/notification/WorkflowController.java": "db9d7e0e2e7f1d96d5dcf720234296cf353aee8a832e8bef770bba78fd86f16f",
+        "backend/orders/OrderService.java": "2ae116c235cdfcd0042280ee5a627d241aae66acdc2f253a3691e286d3fc41a4",
+        "backend/orders/WorkflowController.java": "0bd641963d50c9354d722f8287db0917266c2051d9b96682056abee488f80144",
+        "backend/refund/RefundService.java": "b446ab56758583f58d4d33429e1178b0cfe063ea90a0a463510beb1d3d2d9d99",
+        "backend/refund/WorkflowController.java": "b8da80da6806a58b3b017bcfc6f296d71199533361fea2c61063b5935f0be387",
+        "backend/shared/SharedRecorder.java": "cb89de1e0c153d02baecc854d386274f1cd684dd6f93ded8a2d5d228f1b6770c",
+        "backend/shipping/ShippingService.java": "327603d53c559a13dcc0131918933a12c98a486a5b2dd48b125ec659220c7155",
+        "backend/shipping/WorkflowController.java": "1c5e7d299ba33b1ff8d87e31c6221acdad7411c1d7a2386aaadae2a4b2ba445b",
+        "backend/subscription/SubscriptionService.java": "f7552de4084b92376a13741682b929399616fa06e01fe80972e53e75a4391499",
+        "backend/subscription/WorkflowController.java": "ab2d625ab9cca3b6f0bffe9e4d25ed4fcdd13a30de7a41fcce0ea259b9bcf028",
+        "backend/wallet/WalletService.java": "f57e42da232502ad530bc079b6f4f4d6297e071f5458b2e54b43ba0324b3a5cf",
+        "backend/wallet/WorkflowController.java": "12577d1a0ae31951384c7aa281628061dea32e6d779a42121d65b71e6dd7f5a0",
+        "config/application.json": "3aed9ab77a413e00e664e2f8ec2ab6a9a289aa98bce75210491581c38ff30591",
+        "database/schema.sql": "1ca4e3bd4c0341197a5757a005e17c6a834b7ff365b8464a634d200a409cc5c5"
+      },
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1",
+      "role": "learning_fixture"
+    },
+    "stage4-shadow": {
+      "source_revision": null,
+      "source_sha256": {
+        "backend/ShadowGateway.java": "9f15050e69902e26ffc5c483c57da566a70293834c7251a24206e0b465b5916f",
+        "backend/wallet/WalletService.java": "668eff34664c5a370fa3ff8b39f81c0b9f93c39f40bff03624e3624c7da07b0e"
+      },
+      "source_hash": "6c7848634720863cf81ca7f50edfd3855d41442c9325870eadfc5bc6404609a2",
+      "role": "distractor"
+    },
+    "stage4-empty": {
+      "source_revision": null,
+      "source_sha256": {},
+      "source_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "role": "empty_control"
+    }
+  },
+  "source_note": "Handwritten controlled learning fixtures; not production or a statistically blind benchmark. Labels authored before retrieval. Independent human review pending.",
+  "split_policy": "Historical 12 separate; feature-domain families and all negative rewrites stay in one split; holdout not queried during Task 2",
+  "cases": [
+    {
+      "id": "refund-service",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/service/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        }
+      ],
+      "required_facts": [
+        "RefundService.refund 在 12–18 行检查 orderId 为空或空白，再调用 wallets.credit(userId, amount)。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "wallet-credit",
+      "query": "哪里校验钱包入账金额必须为正数，并累加余额？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "required_facts": [
+        "WalletService.credit 在 10–18 行检查 userId 和正金额，用 balances.merge 与 BigDecimal::add 累加余额。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "wallet-default-balance",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 20,
+          "end_line": 22,
+          "snippet": "balances.getOrDefault(userId, BigDecimal.ZERO)"
+        }
+      ],
+      "required_facts": [
+        "WalletService.balanceOf 在 20–22 行调用 getOrDefault(userId, BigDecimal.ZERO)。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "refund-controller",
+      "query": "哪个后端入口接收退款请求并调用退款服务？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/controller/OrderController.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        }
+      ],
+      "required_facts": [
+        "OrderController.refundOrder 在 13–15 行调用 refunds.refund(orderId, userId, amount)。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "refund-form",
+      "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "frontend/src/RefundPanel.vue"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "start_line": 5,
+          "end_line": 12,
+          "snippet": "emit('refund', { ...form })"
+        }
+      ],
+      "required_facts": [
+        "RefundPanel.vue 用 reactive 收集三字段；submitRefund 检查空白 ID 与正金额，再 emit refund 事件。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "refund-request-type",
+      "query": "RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "frontend/src/types.ts"
+      ],
+      "expected_symbols": [
+        {
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "frontend/src/types.ts",
+          "start_line": 1,
+          "end_line": 5,
+          "snippet": "export interface RefundRequest"
+        }
+      ],
+      "required_facts": [
+        "types.ts 的 RefundRequest 定义 orderId、userId 为 string，amount 为 number。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "orders-schema",
+      "query": "订单表的状态字段和金额字段在哪里定义？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 1,
+          "end_line": 6,
+          "snippet": "status VARCHAR(20) NOT NULL"
+        }
+      ],
+      "required_facts": [
+        "schema.sql 的 orders 表 amount 是 DECIMAL(12, 2) NOT NULL，status 是 VARCHAR(20) NOT NULL。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "wallets-schema",
+      "query": "钱包表余额的默认值在哪里设置为零？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 11,
+          "snippet": "balance DECIMAL(12, 2) NOT NULL DEFAULT 0"
+        }
+      ],
+      "required_facts": [
+        "schema.sql 的 wallets.balance 是 DECIMAL(12, 2) NOT NULL DEFAULT 0。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "fixture-documentation",
+      "query": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "README.md"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "README.md",
+          "start_line": 8,
+          "end_line": 21,
+          "snippet": "`notes.txt` is intentionally outside the scanner's supported extensions."
+        }
+      ],
+      "required_facts": [
+        "README 列出主要源文件；notes.txt 扩展名不支持，package-lock.json 被固定忽略规则排除。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "repository-metadata",
+      "query": "仓库的 name、purpose 和 features 元数据写在哪里？",
+      "repository": "demo-repository",
+      "category": "natural_language",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "config/repository.json"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "config/repository.json",
+          "start_line": 2,
+          "end_line": 4,
+          "snippet": "\"features\": [\"order-refund\", \"wallet-balance\"]"
+        }
+      ],
+      "required_facts": [
+        "config/repository.json 定义 name、purpose、features，包含 order-refund 与 wallet-balance。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "refund-validation-files",
+      "query": "退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？",
+      "repository": "demo-repository",
+      "category": "multi_file",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "orderId == null || orderId.isBlank()"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "amount == null || amount.signum() <= 0"
+        }
+      ],
+      "required_facts": [
+        "orderId 校验在 RefundService.refund；钱包 userId 和金额校验在 WalletService.credit。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "refund-call-chain",
+      "query": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+      "repository": "demo-repository",
+      "category": "multi_file",
+      "group_id": "historical-12",
+      "split": "regression",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "required_facts": [
+        "三处实现为 OrderController.refundOrder → RefundService.refund → WalletService.credit；不能用 README 代替实现证据。"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "6eb154185723f69b27d7eb9643ea057c4f8904ac7b85ad25fac439cc1f408115"
+    },
+    {
+      "id": "wallet-symbol",
+      "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-wallet",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/wallet/WalletService.java",
+        "backend/legacy/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "symbol": "WalletService.credit"
+        },
+        {
+          "path": "backend/legacy/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }"
+        },
+        {
+          "path": "backend/legacy/WalletService.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 WalletService.credit 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "wallet-behavior",
+      "query": "在 backend/wallet 的钱包入账流程中，钱包余额增加入账金额的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-wallet",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/wallet/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "钱包余额增加入账金额"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "wallet-error",
+      "query": "哪段钱包入账代码抛出错误 \"Amount must be positive\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-wallet",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/wallet/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Amount must be positive\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Amount must be positive"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "wallet-chain",
+      "query": "backend/wallet 的钱包入账请求如何从 WorkflowController.handle 到 WalletService.credit 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-wallet",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/wallet/WorkflowController.java",
+        "backend/wallet/WalletService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/wallet/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/wallet/WalletService.java",
+          "symbol": "WalletService.credit"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/wallet/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.credit",
+        "钱包余额增加入账金额",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "refund-symbol",
+      "query": "backend/refund 中的 RefundService.refund 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-refund",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/refund/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 RefundService.refund 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "refund-behavior",
+      "query": "在 backend/refund 的订单退款流程中，累计退款金额增加的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-refund",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/refund/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "累计退款金额增加"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "refund-literal",
+      "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-refund",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/refund/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"refund.refund\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 refund.refund"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "refund-chain",
+      "query": "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-refund",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/refund/WorkflowController.java",
+        "backend/refund/RefundService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/refund/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/refund/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/refund/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.refund",
+        "累计退款金额增加",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "orders-symbol",
+      "query": "backend/orders 中的 OrderService.submit 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-orders",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/orders/OrderService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "symbol": "OrderService.submit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 OrderService.submit 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "orders-behavior",
+      "query": "在 backend/orders 的提交订单流程中，订单状态设为 PAID的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-orders",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/orders/OrderService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "symbol": "OrderService.submit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "订单状态设为 PAID"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "orders-error",
+      "query": "哪段提交订单代码抛出错误 \"Cart must contain an item\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-orders",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/orders/OrderService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "symbol": "OrderService.submit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Cart must contain an item\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Cart must contain an item"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "orders-chain",
+      "query": "backend/orders 的提交订单请求如何从 WorkflowController.handle 到 OrderService.submit 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-orders",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/orders/WorkflowController.java",
+        "backend/orders/OrderService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/orders/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/orders/OrderService.java",
+          "symbol": "OrderService.submit"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/orders/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.submit(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.submit",
+        "订单状态设为 PAID",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "inventory-symbol",
+      "query": "backend/inventory 中的 InventoryService.reserve 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-inventory",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/inventory/InventoryService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "symbol": "InventoryService.reserve"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 InventoryService.reserve 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "inventory-behavior",
+      "query": "在 backend/inventory 的库存预留流程中，可用库存扣减预留数量的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-inventory",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/inventory/InventoryService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "symbol": "InventoryService.reserve"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "可用库存扣减预留数量"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "inventory-literal",
+      "query": "哪个库存预留方法写入代码字面量 \"inventory.reserve\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-inventory",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/inventory/InventoryService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "symbol": "InventoryService.reserve"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"inventory.reserve\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 inventory.reserve"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "inventory-chain",
+      "query": "backend/inventory 的库存预留请求如何从 WorkflowController.handle 到 InventoryService.reserve 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-inventory",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/inventory/WorkflowController.java",
+        "backend/inventory/InventoryService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/inventory/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "symbol": "InventoryService.reserve"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/inventory/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.reserve",
+        "可用库存扣减预留数量",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "shipping-symbol",
+      "query": "backend/shipping 中的 ShippingService.dispatch 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-shipping",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/shipping/ShippingService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "symbol": "ShippingService.dispatch"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 ShippingService.dispatch 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "shipping-behavior",
+      "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-shipping",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/shipping/ShippingService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "symbol": "ShippingService.dispatch"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "追踪号由 TRACK- 前缀和地址编号构成"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "shipping-error",
+      "query": "哪段发货代码抛出错误 \"Shipping postcode invalid\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-shipping",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/shipping/ShippingService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "symbol": "ShippingService.dispatch"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Shipping postcode invalid\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Shipping postcode invalid"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "shipping-chain",
+      "query": "backend/shipping 的发货请求如何从 WorkflowController.handle 到 ShippingService.dispatch 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-shipping",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/shipping/WorkflowController.java",
+        "backend/shipping/ShippingService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/shipping/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "symbol": "ShippingService.dispatch"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/shipping/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.dispatch(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.dispatch",
+        "追踪号由 TRACK- 前缀和地址编号构成",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "auth-symbol",
+      "query": "backend/auth 中的 AuthService.login 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-auth",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/auth/AuthService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "symbol": "AuthService.login"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void login(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Invalid credentials\");\n        }\n        attempts += 1;\n        recorder.record(\"auth.login\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 AuthService.login 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "auth-behavior",
+      "query": "在 backend/auth 的登录流程中，成功登录计数增加的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-auth",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/auth/AuthService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "symbol": "AuthService.login"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void login(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Invalid credentials\");\n        }\n        attempts += 1;\n        recorder.record(\"auth.login\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "成功登录计数增加"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "auth-literal",
+      "query": "哪个登录方法写入代码字面量 \"auth.login\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-auth",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/auth/AuthService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "symbol": "AuthService.login"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"auth.login\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 auth.login"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "auth-chain",
+      "query": "backend/auth 的登录请求如何从 WorkflowController.handle 到 AuthService.login 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-auth",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/auth/WorkflowController.java",
+        "backend/auth/AuthService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/auth/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/auth/AuthService.java",
+          "symbol": "AuthService.login"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/auth/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void login(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Invalid credentials\");\n        }\n        attempts += 1;\n        recorder.record(\"auth.login\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.login",
+        "成功登录计数增加",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "ledger-symbol",
+      "query": "backend/ledger 中的 LedgerService.transfer 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-ledger",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/ledger/LedgerService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "symbol": "LedgerService.transfer"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void transfer(String reference, int amount) {\n        if (amount > balance) {\n            throw new IllegalArgumentException(\"Ledger balance insufficient\");\n        }\n        balance -= amount;\n        recorder.record(\"ledger.transfer\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 LedgerService.transfer 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "ledger-behavior",
+      "query": "在 backend/ledger 的账本转账流程中，转账扣减账本可用余额的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-ledger",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/ledger/LedgerService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "symbol": "LedgerService.transfer"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void transfer(String reference, int amount) {\n        if (amount > balance) {\n            throw new IllegalArgumentException(\"Ledger balance insufficient\");\n        }\n        balance -= amount;\n        recorder.record(\"ledger.transfer\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "转账扣减账本可用余额"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "ledger-error",
+      "query": "哪段账本转账代码抛出错误 \"Ledger balance insufficient\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-ledger",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/ledger/LedgerService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "symbol": "LedgerService.transfer"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Ledger balance insufficient\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Ledger balance insufficient"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "ledger-chain",
+      "query": "backend/ledger 的账本转账请求如何从 WorkflowController.handle 到 LedgerService.transfer 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-ledger",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/ledger/WorkflowController.java",
+        "backend/ledger/LedgerService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/ledger/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "symbol": "LedgerService.transfer"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/ledger/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.transfer(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void transfer(String reference, int amount) {\n        if (amount > balance) {\n            throw new IllegalArgumentException(\"Ledger balance insufficient\");\n        }\n        balance -= amount;\n        recorder.record(\"ledger.transfer\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.transfer",
+        "转账扣减账本可用余额",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "invoice-symbol",
+      "query": "backend/invoice 中的 InvoiceService.issue 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-invoice",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/invoice/InvoiceService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "symbol": "InvoiceService.issue"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 InvoiceService.issue 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "invoice-behavior",
+      "query": "在 backend/invoice 的开具发票流程中，发票总额包含固定税额 20的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-invoice",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/invoice/InvoiceService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "symbol": "InvoiceService.issue"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "发票总额包含固定税额 20"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "invoice-literal",
+      "query": "哪个开具发票方法写入代码字面量 \"invoice.issue\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-invoice",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/invoice/InvoiceService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "symbol": "InvoiceService.issue"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"invoice.issue\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 invoice.issue"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "invoice-chain",
+      "query": "backend/invoice 的开具发票请求如何从 WorkflowController.handle 到 InvoiceService.issue 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-invoice",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/invoice/WorkflowController.java",
+        "backend/invoice/InvoiceService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/invoice/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "symbol": "InvoiceService.issue"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/invoice/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/invoice/InvoiceService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.issue",
+        "发票总额包含固定税额 20",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "subscription-symbol",
+      "query": "backend/subscription 中的 SubscriptionService.renew 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-subscription",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/subscription/SubscriptionService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "symbol": "SubscriptionService.renew"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void renew(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Renewal months required\");\n        }\n        months += amount;\n        recorder.record(\"subscription.renew\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 SubscriptionService.renew 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "subscription-behavior",
+      "query": "在 backend/subscription 的续订流程中，订阅期限按月份累加的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-subscription",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/subscription/SubscriptionService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "symbol": "SubscriptionService.renew"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void renew(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Renewal months required\");\n        }\n        months += amount;\n        recorder.record(\"subscription.renew\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "订阅期限按月份累加"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "subscription-error",
+      "query": "哪段续订代码抛出错误 \"Renewal months required\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-subscription",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/subscription/SubscriptionService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "symbol": "SubscriptionService.renew"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Renewal months required\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Renewal months required"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "subscription-chain",
+      "query": "backend/subscription 的续订请求如何从 WorkflowController.handle 到 SubscriptionService.renew 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-subscription",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/subscription/WorkflowController.java",
+        "backend/subscription/SubscriptionService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/subscription/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "symbol": "SubscriptionService.renew"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/subscription/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.renew(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/subscription/SubscriptionService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void renew(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Renewal months required\");\n        }\n        months += amount;\n        recorder.record(\"subscription.renew\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.renew",
+        "订阅期限按月份累加",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "fraud-symbol",
+      "query": "backend/fraud 中的 FraudService.check 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-fraud",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/fraud/FraudService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "symbol": "FraudService.check"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void check(String reference, int amount) {\n        if (amount > 80) {\n            throw new IllegalArgumentException(\"Fraud score exceeds threshold\");\n        }\n        state = \"APPROVED\";\n        recorder.record(\"fraud.check\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 FraudService.check 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "fraud-behavior",
+      "query": "在 backend/fraud 的风控审核流程中，风险分数超过 80 被拒绝，否则通过审核的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-fraud",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/fraud/FraudService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "symbol": "FraudService.check"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void check(String reference, int amount) {\n        if (amount > 80) {\n            throw new IllegalArgumentException(\"Fraud score exceeds threshold\");\n        }\n        state = \"APPROVED\";\n        recorder.record(\"fraud.check\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "风险分数超过 80 被拒绝，否则通过审核"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "fraud-literal",
+      "query": "哪个风控审核方法写入代码字面量 \"fraud.check\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-fraud",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/fraud/FraudService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "symbol": "FraudService.check"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/fraud/FraudService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"fraud.check\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 fraud.check"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "fraud-chain",
+      "query": "backend/fraud 的风控审核请求如何从 WorkflowController.handle 到 FraudService.check 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-fraud",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/fraud/WorkflowController.java",
+        "backend/fraud/FraudService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/fraud/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/fraud/FraudService.java",
+          "symbol": "FraudService.check"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/fraud/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.check(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/fraud/FraudService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void check(String reference, int amount) {\n        if (amount > 80) {\n            throw new IllegalArgumentException(\"Fraud score exceeds threshold\");\n        }\n        state = \"APPROVED\";\n        recorder.record(\"fraud.check\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.check",
+        "风险分数超过 80 被拒绝，否则通过审核",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "notification-symbol",
+      "query": "backend/notification 中的 NotificationService.send 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-notification",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/notification/NotificationService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "symbol": "NotificationService.send"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void send(String reference, int amount) {\n        if (!reference.contains(\"@\")) {\n            throw new IllegalArgumentException(\"Notification recipient invalid\");\n        }\n        queued += 1;\n        recorder.record(\"notification.send\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 NotificationService.send 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "notification-behavior",
+      "query": "在 backend/notification 的发送通知流程中，有效邮件收件人使待发送队列计数增加的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-notification",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/notification/NotificationService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "symbol": "NotificationService.send"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void send(String reference, int amount) {\n        if (!reference.contains(\"@\")) {\n            throw new IllegalArgumentException(\"Notification recipient invalid\");\n        }\n        queued += 1;\n        recorder.record(\"notification.send\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "有效邮件收件人使待发送队列计数增加"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "notification-error",
+      "query": "哪段发送通知代码抛出错误 \"Notification recipient invalid\"？",
+      "repository": "stage4-commerce",
+      "category": "error_text",
+      "group_id": "feature-notification",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/notification/NotificationService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "symbol": "NotificationService.send"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/notification/NotificationService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "snippet": "throw new IllegalArgumentException(\"Notification recipient invalid\");"
+        }
+      ],
+      "required_facts": [
+        "对应异常文本为 Notification recipient invalid"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "notification-chain",
+      "query": "backend/notification 的发送通知请求如何从 WorkflowController.handle 到 NotificationService.send 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-notification",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/notification/WorkflowController.java",
+        "backend/notification/NotificationService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/notification/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/notification/NotificationService.java",
+          "symbol": "NotificationService.send"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/notification/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/notification/NotificationService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void send(String reference, int amount) {\n        if (!reference.contains(\"@\")) {\n            throw new IllegalArgumentException(\"Notification recipient invalid\");\n        }\n        queued += 1;\n        recorder.record(\"notification.send\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.send",
+        "有效邮件收件人使待发送队列计数增加",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "coupon-symbol",
+      "query": "backend/coupon 中的 CouponService.apply 实现在哪里？",
+      "repository": "stage4-commerce",
+      "category": "symbol",
+      "group_id": "feature-coupon",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/coupon/CouponService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "symbol": "CouponService.apply"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void apply(String reference, int amount) {\n        if (amount > 100) {\n            throw new IllegalArgumentException(\"Coupon discount exceeds limit\");\n        }\n        discount = amount;\n        recorder.record(\"coupon.apply\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "准确定位 CouponService.apply 的作用域内定义"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "coupon-behavior",
+      "query": "在 backend/coupon 的使用优惠券流程中，优惠折扣不能超过 100的代码在哪里？",
+      "repository": "stage4-commerce",
+      "category": "natural_language",
+      "group_id": "feature-coupon",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/coupon/CouponService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "symbol": "CouponService.apply"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void apply(String reference, int amount) {\n        if (amount > 100) {\n            throw new IllegalArgumentException(\"Coupon discount exceeds limit\");\n        }\n        discount = amount;\n        recorder.record(\"coupon.apply\");\n    }"
+        }
+      ],
+      "required_facts": [
+        "优惠折扣不能超过 100"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "coupon-literal",
+      "query": "哪个使用优惠券方法写入代码字面量 \"coupon.apply\"？",
+      "repository": "stage4-commerce",
+      "category": "literal",
+      "group_id": "feature-coupon",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/coupon/CouponService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "symbol": "CouponService.apply"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/coupon/CouponService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "snippet": "recorder.record(\"coupon.apply\");"
+        }
+      ],
+      "required_facts": [
+        "方法记录事件 coupon.apply"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "coupon-chain",
+      "query": "backend/coupon 的使用优惠券请求如何从 WorkflowController.handle 到 CouponService.apply 再记录审计事件？",
+      "repository": "stage4-commerce",
+      "category": "multi_file",
+      "group_id": "feature-coupon",
+      "split": "holdout",
+      "source_revision": null,
+      "expected_paths": [
+        "backend/coupon/WorkflowController.java",
+        "backend/coupon/CouponService.java",
+        "backend/shared/SharedRecorder.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/coupon/WorkflowController.java",
+          "symbol": "WorkflowController.handle"
+        },
+        {
+          "path": "backend/coupon/CouponService.java",
+          "symbol": "CouponService.apply"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "symbol": "SharedRecorder.record"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/coupon/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "snippet": "public void handle(String reference, int amount) {\n        service.apply(reference, amount);\n    }"
+        },
+        {
+          "path": "backend/coupon/CouponService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "snippet": "public void apply(String reference, int amount) {\n        if (amount > 100) {\n            throw new IllegalArgumentException(\"Coupon discount exceeds limit\");\n        }\n        discount = amount;\n        recorder.record(\"coupon.apply\");\n    }"
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "snippet": "public void record(String event) {\n        events += 1;\n    }"
+        }
+      ],
+      "required_facts": [
+        "Controller 调用 service.apply",
+        "优惠折扣不能超过 100",
+        "SharedRecorder.record 增加审计事件计数"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "config-retries",
+      "query": "配置中最大重试次数和超时时间分别是多少？",
+      "repository": "stage4-commerce",
+      "category": "config",
+      "group_id": "feature-configuration",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "config/application.json"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "config/application.json",
+          "start_line": 2,
+          "end_line": 2,
+          "snippet": "\"maxRetries\": 3,"
+        },
+        {
+          "path": "config/application.json",
+          "start_line": 3,
+          "end_line": 3,
+          "snippet": "\"timeoutMs\": 1000,"
+        }
+      ],
+      "required_facts": [
+        "maxRetries=3",
+        "timeoutMs=1000"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "schema-wallet-default",
+      "query": "钱包表余额默认零和账本状态默认 PENDING 分别在哪些 SQL 行定义？",
+      "repository": "stage4-commerce",
+      "category": "sql",
+      "group_id": "feature-configuration",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 8,
+          "snippet": "balance INTEGER NOT NULL DEFAULT 0"
+        },
+        {
+          "path": "database/schema.sql",
+          "start_line": 4,
+          "end_line": 4,
+          "snippet": "status VARCHAR(20) DEFAULT 'PENDING'"
+        }
+      ],
+      "required_facts": [
+        "wallets.balance DEFAULT 0",
+        "ledger_entries.status DEFAULT PENDING"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "fixture-wallet-documentation",
+      "query": "仓库文档如何区分正式钱包目录和翻倍入账的 legacy 钱包？",
+      "repository": "stage4-commerce",
+      "category": "documentation",
+      "group_id": "feature-configuration",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "README.md"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "README.md",
+          "start_line": 4,
+          "end_line": 4,
+          "snippet": "Official wallet code lives in backend/wallet; backend/legacy doubles credits."
+        }
+      ],
+      "required_facts": [
+        "backend/wallet 是正式实现",
+        "backend/legacy 的入账金额翻倍"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "config-explicit-path",
+      "query": "config/application.json 中配置的币种是什么？",
+      "repository": "stage4-commerce",
+      "category": "path",
+      "group_id": "feature-configuration",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [
+        "config/application.json"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "config/application.json",
+          "start_line": 4,
+          "end_line": 4,
+          "snippet": "\"currency\": \"CNY\","
+        }
+      ],
+      "required_facts": [
+        "currency=CNY"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "missing-symbol-a",
+      "query": "定位 NeverExistsService.commit",
+      "repository": "stage4-commerce",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "missing_symbol",
+      "absent_target": "NeverExistsService.commit",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "missing-symbol-b",
+      "query": "不存在的 PhantomWallet.reverse 在哪里？",
+      "repository": "stage4-commerce",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "missing_symbol",
+      "absent_target": "PhantomWallet.reverse",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "missing-path",
+      "query": "backend/unknown/MissingController.java 在哪里？",
+      "repository": "stage4-commerce",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "missing_path",
+      "absent_target": "backend/unknown/MissingController.java",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "missing-literal",
+      "query": "哪个文件包含错误 \"THIS_ERROR_DOES_NOT_EXIST_2026\"？",
+      "repository": "stage4-commerce",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "missing_literal",
+      "absent_target": "THIS_ERROR_DOES_NOT_EXIST_2026",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "foreign-symbol",
+      "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+      "repository": "stage4-commerce",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "repository_scope_mismatch",
+      "absent_target": "ShadowGateway.rotate",
+      "source_hash": "a62a02c78ce5bb062267536bff17aeb59e6649a61126e6879f6fecbbe69d83a1"
+    },
+    {
+      "id": "scope-shadow-wallet",
+      "query": "只在 shadow 仓库里查找 SharedRecorder.record 的实现。",
+      "repository": "stage4-shadow",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "repository_scope_mismatch",
+      "absent_target": "SharedRecorder.record",
+      "source_hash": "6c7848634720863cf81ca7f50edfd3855d41442c9325870eadfc5bc6404609a2"
+    },
+    {
+      "id": "empty-symbol",
+      "query": "空仓库中的 WalletService.credit 在哪里？",
+      "repository": "stage4-empty",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "empty_repository",
+      "absent_target": null,
+      "source_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "id": "empty-natural",
+      "query": "空仓库哪里检查退款金额？",
+      "repository": "stage4-empty",
+      "category": "negative",
+      "group_id": "negative-controls",
+      "split": "dev",
+      "source_revision": null,
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "required_facts": [
+        "当前仓库没有问题所需的实现证据"
+      ],
+      "annotator": "development_assistant: explicit source inspection; deterministic learning fixture, independent human review pending",
+      "negative_kind": "empty_repository",
+      "absent_target": null,
+      "source_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    }
+  ]
+}

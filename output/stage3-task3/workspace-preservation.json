@@ -1,0 +1,25 @@
+{
+  "existing_files_checked": 149,
+  "changed_existing_files": [
+    "services/api/app/indexing/models.py",
+    "services/api/app/parsing/registry.py",
+    "services/api/app/parsing/tree_sitter_parser.py",
+    "services/api/pyproject.toml",
+    "services/api/tests/test_parsing.py",
+    "services/api/uv.lock"
+  ],
+  "unexpected_existing_changes": [],
+  "new_dependency_names": [
+    "tree-sitter-javascript",
+    "tree-sitter-python",
+    "tree-sitter-typescript"
+  ],
+  "original_dependencies_and_lock_records_unchanged": true,
+  "pyproject_reconstructed_hash_matches_before": true,
+  "stage2_scanner_simple_chunker_indexer_retrieval_frontend_unchanged": true,
+  "demo_dataset_old_reports_env_unchanged": true,
+  "git_metadata_present": false,
+  "external_embedding_calls": 0,
+  "persistent_qdrant_write_operations": 0,
+  "new_real_retrieval_evaluation_run": false
+}

@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "orders-schema",
+    "query": "订单表的状态字段和金额字段在哪里定义？",
+    "expected_paths": [
+      "database/schema.sql"
+    ],
+    "evidence": [
+      {
+        "path": "database/schema.sql",
+        "start_line": 1,
+        "end_line": 6,
+        "snippet": "status VARCHAR(20) NOT NULL"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2749.0295999996306,
+    "retrieval_latency_ms": 628.87,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+        "repository": "demo-repository",
+        "score": 0.4727635,
+        "path": "database/schema.sql",
+        "language": "sql",
+        "start_line": 1,
+        "end_line": 11
+      },
+      {
+        "rank": 2,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.44205523,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 3,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.4419396,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.4409692,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+        "repository": "demo-repository",
+        "score": 0.41886586,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 4
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "database/schema.sql"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "database/schema.sql"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "database/schema.sql"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# Evaluation receipts bind raw SHA-256 bytes, including original line endings.
+# Preserve them on commit/checkout so offline replay works across platforms.
+* -text

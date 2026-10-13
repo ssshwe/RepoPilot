@@ -1,0 +1,236 @@
+{
+  "task": "Stage 3 / Task 3: AST-aware Chunker",
+  "date": "2026-10-06",
+  "timezone": "Asia/Shanghai",
+  "status": "complete",
+  "packages": {
+    "tree-sitter": "0.26.0",
+    "tree-sitter-java": "0.23.5",
+    "tree-sitter-python": "0.25.0",
+    "tree-sitter-javascript": "0.25.0",
+    "tree-sitter-typescript": "0.23.2"
+  },
+  "grammar_abi": {
+    "java": 14,
+    "python": 15,
+    "javascript": 15,
+    "typescript": 14
+  },
+  "tests": {
+    "backend": {
+      "collected": 594,
+      "passed": 589,
+      "skipped": 5,
+      "warnings": 2,
+      "log": "output/stage3-task3/backend-tests.log"
+    },
+    "parser_chunker_cli_cases": 123,
+    "new_task3_cases": 94,
+    "evaluation_unit": {
+      "passed": 32,
+      "exit_code": 0
+    },
+    "frontend_build": {
+      "exit_code": 0,
+      "modules": 1615
+    },
+    "lock_check": {
+      "exit_code": 0,
+      "offline": true
+    },
+    "backend_log_capture_note": "The first log reader used UTF-8 for Windows CP936 bytes and failed after pytest had finished successfully. The log was decoded correctly and preserved in UTF-8."
+  },
+  "runtime_demo": {
+    "repository": "demo-repository",
+    "supported_files": 8,
+    "ast_parsed_files": 4,
+    "fallback_files": 4,
+    "failed_files": 0,
+    "chunks_created": 17,
+    "chunk_lines": 60,
+    "fallback_overlap_lines": 10,
+    "max_chunk_characters": 8192
+  },
+  "runtime_files": [
+    {
+      "path": "README.md",
+      "strategy": "fallback",
+      "fallback_reason": "unsupported_language",
+      "chunks_created": 1,
+      "decoded_source_sha256": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+    },
+    {
+      "path": "backend/controller/OrderController.java",
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 4,
+      "decoded_source_sha256": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f"
+    },
+    {
+      "path": "backend/service/RefundService.java",
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 4,
+      "decoded_source_sha256": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e"
+    },
+    {
+      "path": "backend/service/WalletService.java",
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 4,
+      "decoded_source_sha256": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2"
+    },
+    {
+      "path": "config/repository.json",
+      "strategy": "fallback",
+      "fallback_reason": "unsupported_language",
+      "chunks_created": 1,
+      "decoded_source_sha256": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628"
+    },
+    {
+      "path": "database/schema.sql",
+      "strategy": "fallback",
+      "fallback_reason": "unsupported_language",
+      "chunks_created": 1,
+      "decoded_source_sha256": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e"
+    },
+    {
+      "path": "frontend/src/RefundPanel.vue",
+      "strategy": "fallback",
+      "fallback_reason": "unsupported_language",
+      "chunks_created": 1,
+      "decoded_source_sha256": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7"
+    },
+    {
+      "path": "frontend/src/types.ts",
+      "strategy": "ast",
+      "fallback_reason": null,
+      "chunks_created": 1,
+      "decoded_source_sha256": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5"
+    }
+  ],
+  "real_chunk_examples": [
+    {
+      "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+      "repository": "demo-repository",
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 12,
+      "end_line": 18,
+      "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+      "symbol": "RefundService.refund",
+      "node_type": "method_declaration",
+      "parent_symbol": "RefundService",
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1"
+    },
+    {
+      "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+      "repository": "demo-repository",
+      "path": "backend/service/WalletService.java",
+      "language": "java",
+      "start_line": 10,
+      "end_line": 18,
+      "content": "    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n",
+      "symbol": "WalletService.credit",
+      "node_type": "method_declaration",
+      "parent_symbol": "WalletService",
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1"
+    },
+    {
+      "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+      "repository": "demo-repository",
+      "path": "backend/service/WalletService.java",
+      "language": "java",
+      "start_line": 20,
+      "end_line": 22,
+      "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+      "symbol": "WalletService.balanceOf",
+      "node_type": "method_declaration",
+      "parent_symbol": "WalletService",
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1"
+    },
+    {
+      "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+      "repository": "demo-repository",
+      "path": "frontend/src/types.ts",
+      "language": "typescript",
+      "start_line": 1,
+      "end_line": 5,
+      "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+      "symbol": "RefundRequest",
+      "node_type": "interface_declaration",
+      "parent_symbol": null,
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1"
+    }
+  ],
+  "additional_source_probes": [
+    {
+      "input_kind": "existing_project_source",
+      "path": "services/api/app/repository/language.py",
+      "decoded_source_sha256": "37e4ea1c06be20ab3489e7a9bb611149dcfd25a79921c2865180d127cb52294b",
+      "strategy": "ast",
+      "chunks_created": 2,
+      "symbol_count": 1
+    },
+    {
+      "input_kind": "new_project_source",
+      "path": "services/api/app/indexing/ast_chunker.py",
+      "decoded_source_sha256": "1dadb5b696c540e6334d50576bc26d91a10d56a4c7c1e266f6c5979f3bf50230",
+      "strategy": "ast",
+      "chunks_created": 13,
+      "symbol_count": 11
+    },
+    {
+      "input_kind": "hand_written_test_fixture",
+      "path": "services/api/tests/fixtures/parsing/refund.js",
+      "decoded_source_sha256": "735f5ad409a84c91df8e6e26f0419e95a46e0e9229c36e46b4801015d00757e2",
+      "strategy": "ast",
+      "chunks_created": 3,
+      "symbol_count": 2
+    }
+  ],
+  "preservation": {
+    "existing_files_checked": 149,
+    "changed_existing_files": [
+      "services/api/app/indexing/models.py",
+      "services/api/app/parsing/registry.py",
+      "services/api/app/parsing/tree_sitter_parser.py",
+      "services/api/pyproject.toml",
+      "services/api/tests/test_parsing.py",
+      "services/api/uv.lock"
+    ],
+    "unexpected_existing_changes": [],
+    "new_dependency_names": [
+      "tree-sitter-javascript",
+      "tree-sitter-python",
+      "tree-sitter-typescript"
+    ],
+    "original_dependencies_and_lock_records_unchanged": true,
+    "pyproject_reconstructed_hash_matches_before": true,
+    "stage2_scanner_simple_chunker_indexer_retrieval_frontend_unchanged": true,
+    "demo_dataset_old_reports_env_unchanged": true,
+    "git_metadata_present": false,
+    "external_embedding_calls": 0,
+    "persistent_qdrant_write_operations": 0,
+    "new_real_retrieval_evaluation_run": false
+  },
+  "qdrant_readonly": {
+    "status": "unavailable",
+    "write_operations": 0,
+    "error_type": "URLError",
+    "matches_task2": null
+  },
+  "scope_limits": [
+    "No indexing integration or persistent re-index in Task 3",
+    "Vue and non-core text languages use fallback; .jsx/.tsx/.mjs are outside existing Scanner extensions",
+    "Lexical symbols are not compiler-resolved references or call graphs",
+    "Computed/dynamic or unbound anonymous expressions do not get invented symbols",
+    "Same-line adjacent declarations use whole-file fallback for truthful whole-line citations",
+    "Resource violations are explicit errors, not recoverable parser failures",
+    "Qdrant was unavailable for a fresh read-only baseline comparison"
+  ]
+}

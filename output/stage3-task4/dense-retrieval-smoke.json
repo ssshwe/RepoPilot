@@ -1,0 +1,69 @@
+{
+  "http_status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "query": "退款逻辑在哪里？",
+    "top_k": 5,
+    "collection": "repopilot_code",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "retrieval_latency_ms": 663.9,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.4860013,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21,
+        "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.48496866,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5,
+        "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+        "repository": "demo-repository",
+        "score": 0.47543195,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 5,
+        "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "score": 0.4535172,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 12,
+        "end_line": 18,
+        "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "score": 0.44266585,
+        "path": "frontend/src/RefundPanel.vue",
+        "language": "vue",
+        "start_line": 1,
+        "end_line": 22,
+        "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+### Result
+{"scenario":"sources_collapse_expand","passed":true,"visible_preview":true}
+### Ran Playwright code
+```js
+await (async (page) => { const d = page.locator('.code-chat-sources details').first(); if ((await d.getAttribute('open')) === null) throw new Error('First Source not open'); await d.locator('summary').click(); if ((await d.getAttribute('open')) !== null) throw new Error('Collapse failed'); await d.locator('summary').click(); if ((await d.getAttribute('open')) === null) throw new Error('Expansion failed'); return { scenario: 'sources_collapse_expand', passed: true, visible_preview: await page.locator('.code-chat-code').first().isVisible() }; })(page);
+```

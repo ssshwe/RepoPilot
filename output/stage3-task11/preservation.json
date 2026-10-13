@@ -1,0 +1,10 @@
+{
+  "protected_files": 489,
+  "expected_changed_files": [
+    "README.md",
+    "apps/web/src/App.vue",
+    "apps/web/src/style.css",
+    "services/api/app/main.py"
+  ],
+  "other_existing_files_unchanged": 485
+}

@@ -1,0 +1,17 @@
+[1/12] refund-service: 5 chunks
+[2/12] wallet-credit: 5 chunks
+[3/12] wallet-default-balance: 5 chunks
+[4/12] refund-controller: 5 chunks
+[5/12] refund-form: 5 chunks
+[6/12] refund-request-type: 5 chunks
+[7/12] orders-schema: 5 chunks
+[8/12] wallets-schema: 5 chunks
+[9/12] fixture-documentation: 5 chunks
+[10/12] repository-metadata: 5 chunks
+[11/12] refund-validation-files: 5 chunks
+[12/12] refund-call-chain: 5 chunks
+Queries: 12
+Hit@1: 8/12 (66.67%); Macro Recall@1: 66.67%
+Hit@3: 10/12 (83.33%); Macro Recall@3: 77.78%
+Hit@5: 11/12 (91.67%); Macro Recall@5: 84.72%
+Report: D:\aaaagent�����ļ�\RepoPilot\evaluation\reports\stage3_retrieval_20261013_task13.json

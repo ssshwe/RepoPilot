@@ -1,0 +1,125 @@
+{
+  "verified_at": "2026-10-03T23:59:19.074462+08:00",
+  "task": 3,
+  "api_base_url": "http://127.0.0.1:64694",
+  "ollama_version": "0.34.0",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "model_capabilities": [
+    "tools",
+    "thinking",
+    "embedding"
+  ],
+  "model_blob_sha256": "06507c7b42688469c4e7298b0a1e16deff06caf291cf0a5b278c308249c3e439",
+  "model_download": "Official Ollama registry via Windows system proxy; SHA-256 verified; uploaded via local blob API; official manifest pulled.",
+  "debug": {
+    "input": {
+      "text": "订单退款"
+    },
+    "status_code": 200,
+    "response": {
+      "model": "qwen3-embedding:0.6b",
+      "dimension": 1024,
+      "preview": [
+        -0.034106042,
+        0.020083917,
+        -0.0065465816,
+        -0.10679022,
+        0.012906836,
+        -0.036488317,
+        -0.020054916,
+        -0.04261014
+      ]
+    },
+    "latency_ms": 12523.92
+  },
+  "comparisons": [
+    {
+      "input": {
+        "text_a": "订单退款",
+        "text_b": "退还订单金额"
+      },
+      "status_code": 200,
+      "response": {
+        "model": "qwen3-embedding:0.6b",
+        "dimension": 1024,
+        "similarity": 0.8017290049765894
+      },
+      "latency_ms": 105.69
+    },
+    {
+      "input": {
+        "text_a": "订单退款",
+        "text_b": "今天天气不错"
+      },
+      "status_code": 200,
+      "response": {
+        "model": "qwen3-embedding:0.6b",
+        "dimension": 1024,
+        "similarity": 0.33420674085257857
+      },
+      "latency_ms": 129.32
+    },
+    {
+      "input": {
+        "text_a": "订单退款",
+        "text_b": "订单退款"
+      },
+      "status_code": 200,
+      "response": {
+        "model": "qwen3-embedding:0.6b",
+        "dimension": 1024,
+        "similarity": 1.0
+      },
+      "latency_ms": 129.44
+    }
+  ],
+  "blank_input": {
+    "status_code": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "value_error",
+          "loc": [
+            "body",
+            "text"
+          ],
+          "msg": "Value error, Text must not be blank",
+          "input": " ",
+          "ctx": {
+            "error": {}
+          }
+        }
+      ]
+    },
+    "latency_ms": 1.2
+  },
+  "qdrant_health_read_only": {
+    "status_code": 200,
+    "response": {
+      "status": "ok",
+      "collection": "repopilot_code",
+      "collection_exists": false
+    },
+    "latency_ms": 278.1
+  },
+  "process_health": {
+    "status_code": 200,
+    "response": {
+      "status": "ok"
+    },
+    "latency_ms": 24.81
+  },
+  "validation": {
+    "offline_backend": {
+      "passed": 182,
+      "skipped_opt_in_integrations": 2,
+      "warnings": 2
+    },
+    "frontend_build": "passed (vue-tsc and Vite)",
+    "real_embedding_integration": {
+      "command": "REPOPILOT_EMBEDDING_INTEGRATION=1 python -m uv run --locked pytest tests/test_embedding_integration.py",
+      "passed": 1,
+      "warnings": 2
+    }
+  }
+}

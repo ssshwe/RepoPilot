@@ -1,0 +1,6 @@
+### Result
+{"scenario":"real_code_chat_empty","passed":true,"status":200,"body":{"answer":"根据当前索引到的代码，我没有找到足够证据回答这个问题。","source_ids":[],"citations":[],"sources":[],"question":"退款服务在哪里校验订单编号，然后把退款金额转回钱包？","repository":"stage3-task13-not-indexed","status":"insufficient_evidence","model":null,"retrieval":{"top_k":5,"retrieved_chunks":0,"used_sources":0,"context_characters":0,"context_budget_characters":16000,"budget_limited":false,"empty_reason":"no_results","collection":"repopilot_code","embedding_model":"qwen3-embedding:0.6b","embedding_dimension":1024,"latency_ms":797.77},"generation":{"called":false,"latency_ms":0}}}
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByRole('combobox', { name: 'Repository', exact: true }).fill('stage3-task13-not-indexed'); await page.getByRole('combobox', { name: 'Repository', exact: true }).press('Enter'); const pending = page.waitForResponse(r => r.url().endsWith('/api/code-chat') && r.request().method() === 'POST'); await page.getByRole('button', { name: '提问', exact: true }).click(); const response = await pending; const body = await response.json(); if (body.status !== 'insufficient_evidence' || body.generation.called || body.sources.length) throw new Error('Empty evidence control failed'); return { scenario: 'real_code_chat_empty', passed: true, status: response.status(), body }; })(page);
+```

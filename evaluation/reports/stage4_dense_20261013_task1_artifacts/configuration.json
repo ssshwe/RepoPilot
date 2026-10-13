@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen2.5:0.5b",
+    "llm_timeout_seconds": 120.0,
+    "embedding_provider": "openai_compatible",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_timeout_seconds": 120.0,
+    "embedding_batch_size": 16,
+    "qdrant_collection": "repopilot_code",
+    "qdrant_timeout_seconds": 5.0,
+    "repository_max_file_bytes": 1048576,
+    "repository_max_entries": 10000,
+    "repository_max_total_bytes": 20971520,
+    "chunk_lines": 60,
+    "chunk_overlap_lines": 10,
+    "chunk_max_characters": 8192,
+    "chunk_max_chunks": 10000,
+    "indexing_max_text_characters": 2000000,
+    "indexing_max_vector_values": 2000000,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "llm_base_url_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+    "embedding_base_url_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+    "qdrant_url_sha256": "98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7"
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "fastapi": "0.141.1",
+      "pydantic": "2.13.5",
+      "qdrant-client": "1.19.1",
+      "openai": "2.54.0",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-java": "0.23.5",
+      "tree-sitter-python": "0.25.0",
+      "tree-sitter-javascript": "0.25.0",
+      "tree-sitter-typescript": "0.23.2"
+    },
+    "files": {
+      "services/api/uv.lock": "0b1a8f13d1f19dd0986a46cfdd6bc5a8b599cd080fdafa1e434912aa7a8f2f19",
+      "services/api/pyproject.toml": "5e1e925fe5c590ea20e944146b9670efed9bdefc3cc83afd752c0c248233ee9b",
+      "apps/web/package-lock.json": "aa0f972195150e39e01a9f7cbb0bc565cdd4a97de7017ab9bd901a4333e02940",
+      "services/api/app/retrieval/service.py": "397927b70b71a063043523dc3eec7985d8440cd2ab1f9e43bd334c554b8ebde6",
+      "services/api/app/retrieval/vector_store.py": "3cafc1624b7de396f7b10f79503c528f3b50c170c610c1c8ff4c658a7d9e4d4e",
+      "services/api/app/indexing/ast_chunker.py": "f1514cd02926b292f0be28ccab1e7bc02e895448e91a09d768a1b09acf241ab0",
+      "services/api/app/indexing/chunker.py": "07597c6d77b27ffe2245ca4f748dfa4107bd3a924172228adf9c867441f8616d",
+      "services/api/app/context/builder.py": "776dc9b631eb97486d3aab84aa653d2675ef87d38def8363b3873da0a2d4823e"
+    }
+  }
+}

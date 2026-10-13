@@ -1,0 +1,60 @@
+[
+  {
+    "point_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+    "vector_dimension": 1024,
+    "vector_preview": [
+      -0.07940637,
+      0.0988155,
+      -0.00031564152,
+      -0.08407597
+    ],
+    "payload": {
+      "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+      "repository": "demo-repository",
+      "path": "frontend/src/RefundPanel.vue",
+      "language": "vue",
+      "start_line": 1,
+      "end_line": 22,
+      "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+      "symbol": null,
+      "node_type": null,
+      "parent_symbol": null,
+      "chunking_strategy": "fallback",
+      "chunking_version": "ast-fallback-line-v1",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "schema_version": "code-points-v1",
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "max_chunk_characters": 8192
+    }
+  },
+  {
+    "point_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+    "vector_dimension": 1024,
+    "vector_preview": [
+      -0.042067032,
+      0.09202012,
+      -0.005537196,
+      -0.033054087
+    ],
+    "payload": {
+      "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+      "repository": "demo-repository",
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 12,
+      "end_line": 18,
+      "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+      "symbol": "RefundService.refund",
+      "node_type": "method_declaration",
+      "parent_symbol": "RefundService",
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "schema_version": "code-points-v1",
+      "chunk_lines": 60,
+      "overlap_lines": 0,
+      "max_chunk_characters": 8192
+    }
+  }
+]

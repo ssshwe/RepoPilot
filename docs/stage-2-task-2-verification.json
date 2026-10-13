@@ -1,0 +1,90 @@
+{
+  "verified_at": "2026-10-03T23:34:28.815963+08:00",
+  "collection": "repopilot_infra_smoke",
+  "api_port": 52488,
+  "process_health": {
+    "status": "ok"
+  },
+  "first_create": {
+    "http_status": 200,
+    "body": {
+      "collection": "repopilot_infra_smoke",
+      "dimension": 3,
+      "distance": "Cosine",
+      "points_count": 0,
+      "status": "green",
+      "created": true
+    }
+  },
+  "repeat_create": {
+    "http_status": 200,
+    "body": {
+      "collection": "repopilot_infra_smoke",
+      "dimension": 3,
+      "distance": "Cosine",
+      "points_count": 0,
+      "status": "green",
+      "created": false
+    }
+  },
+  "dimension_mismatch": {
+    "http_status": 409,
+    "body": {
+      "detail": "Collection dimension is 3; requested 4. Use a compatible dimension or a different QDRANT_COLLECTION."
+    }
+  },
+  "qdrant_health": {
+    "status": "ok",
+    "collection": "repopilot_infra_smoke",
+    "collection_exists": true
+  },
+  "collection_info": {
+    "collection": "repopilot_infra_smoke",
+    "dimension": 3,
+    "distance": "Cosine",
+    "points_count": 0,
+    "status": "green"
+  },
+  "server_info": {
+    "title": "qdrant - vector search engine",
+    "version": "1.19.1",
+    "commit": "6ab21cac18ebb6f4ae29102c7f8f5cc11affd5de"
+  },
+  "while_qdrant_stopped": {
+    "process_health_status": 200,
+    "qdrant_health_status": 503,
+    "qdrant_body": {
+      "detail": "Qdrant is unavailable or rejected the configured credentials."
+    }
+  },
+  "after_container_restart": {
+    "health": {
+      "status": "ok",
+      "collection": "repopilot_infra_smoke",
+      "collection_exists": true
+    },
+    "collection_info": {
+      "collection": "repopilot_infra_smoke",
+      "dimension": 3,
+      "distance": "Cosine",
+      "points_count": 0,
+      "status": "green"
+    }
+  },
+  "default_backend_tests": {
+    "passed": 100,
+    "skipped": 1,
+    "warnings": 2
+  },
+  "real_qdrant_integration_tests": {
+    "passed": 1,
+    "warnings": 2
+  },
+  "frontend_build": {
+    "status": "passed",
+    "checks": [
+      "vue-tsc -b",
+      "vite build"
+    ]
+  }
+}

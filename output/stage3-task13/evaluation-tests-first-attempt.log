@@ -1,0 +1,31 @@
+.........................F.............................................. [ 88%]
+.........                                                                [100%]
+================================== FAILURES ===================================
+____________ test_source_change_and_stale_coordinates_are_rejected ____________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-62/test_source_change_and_stale_c0')
+
+    def test_source_change_and_stale_coordinates_are_rejected(tmp_path):
+        (tmp_path / "a.java").write_text("old\n", encoding="utf-8")
+        chunk = result(1, 1, content="old\n")
+        inventory = {chunk["chunk_id"]: chunk}
+>       assert verify_index_sources(inventory, tmp_path)["a.java"] == hashlib.sha256(b"old\n").hexdigest()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evaluation\tests\test_dense_baseline.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\stage4\freeze_baseline.py:80: in verify_index_sources
+    require(value["content"] == "".join(lines[value["start_line"] - 1:value["end_line"]]),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Indexed content/coordinates differ from source'
+
+    def require(condition: bool, message: str) -> None:
+        if not condition:
+>           raise EvaluationError(message)
+E           evaluation.retrieval.evaluate.EvaluationError: Indexed content/coordinates differ from source
+
+evaluation\retrieval\evaluate.py:28: EvaluationError
+=========================== short test summary info ===========================
+FAILED evaluation/tests/test_dense_baseline.py::test_source_change_and_stale_coordinates_are_rejected
+1 failed, 80 passed in 2.18s

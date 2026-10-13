@@ -1,0 +1,7 @@
+{
+  "contexts": 1,
+  "generations": 1,
+  "validations": 2,
+  "generation_http_requests": 1,
+  "stopped": true
+}

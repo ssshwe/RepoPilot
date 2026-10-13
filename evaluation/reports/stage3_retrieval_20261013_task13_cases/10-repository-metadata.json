@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "repository-metadata",
+    "query": "仓库的 name、purpose 和 features 元数据写在哪里？",
+    "expected_paths": [
+      "config/repository.json"
+    ],
+    "evidence": [
+      {
+        "path": "config/repository.json",
+        "start_line": 2,
+        "end_line": 4,
+        "snippet": "\"features\": [\"order-refund\", \"wallet-balance\"]"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2809.5486000001983,
+    "retrieval_latency_ms": 695.72,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.4654923,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 2,
+        "chunk_id": "deef259e-35b5-5852-b30d-f4551e15d7fc",
+        "repository": "demo-repository",
+        "score": 0.39883754,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 6
+      },
+      {
+        "rank": 3,
+        "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+        "repository": "demo-repository",
+        "score": 0.38903284,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.38263857,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 5,
+        "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+        "repository": "demo-repository",
+        "score": 0.34096026,
+        "path": "database/schema.sql",
+        "language": "sql",
+        "start_line": 1,
+        "end_line": 11
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "config/repository.json"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "config/repository.json"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "config/repository.json"
+        ]
+      }
+    }
+  }
+}

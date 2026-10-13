@@ -1,0 +1,15 @@
+{
+  "kind": "real browser requests, no mocked inference",
+  "checks": {
+    "blank_issue_no_request": true,
+    "real_empty_evidence_skips_generation": true,
+    "real_structured_sections_and_sources": true,
+    "desktop_no_outer_overflow": true,
+    "mobile_no_outer_overflow": true
+  },
+  "api_calls": 2,
+  "summary": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+  "analysis": ["[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"],
+  "source_ids": ["S1", "S2", "S3", "S4", "S5"],
+  "response_is_not_proof_of_semantic_quality": true
+}

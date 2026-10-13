@@ -1,0 +1,52 @@
+{
+  "repository": "demo-repository",
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "README.md",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 21
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S2",
+      "path": "backend/controller/OrderController.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 5
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S3",
+      "path": "frontend/src/RefundPanel.vue",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 22
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S4",
+      "path": "backend/service/RefundService.java",
+      "symbol": "RefundService.refund",
+      "start_line": 12,
+      "end_line": 18
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S5",
+      "path": "backend/controller/OrderController.java",
+      "symbol": "OrderController",
+      "start_line": 6,
+      "end_line": 8
+    }
+  ]
+}

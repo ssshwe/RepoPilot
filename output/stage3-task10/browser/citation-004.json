@@ -1,0 +1,53 @@
+{
+  "repository": "demo-repository",
+  "input_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "context_characters": 2774,
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "backend/service/WalletService.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 6
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S2",
+      "path": "frontend/src/types.ts",
+      "symbol": "RefundRequest",
+      "start_line": 1,
+      "end_line": 5
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S3",
+      "path": "backend/service/RefundService.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 4
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S4",
+      "path": "config/repository.json",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 5
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S5",
+      "path": "backend/controller/OrderController.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 5
+    }
+  ]
+}

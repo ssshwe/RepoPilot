@@ -1,0 +1,60 @@
+{
+  "kind": "Executed boundary experiment with synthetic source; not a repository fixture",
+  "lone_cr_line_comment": {
+    "source": "// comment\rclass Wallet {\r  void credit() {}\r}\r",
+    "raw_grammar_has_error": false,
+    "raw_grammar_tree": "(program (line_comment))",
+    "parser_symbols": [
+      {
+        "node_type": "class_declaration",
+        "name": "Wallet",
+        "symbol": "Wallet",
+        "parent_symbol": null,
+        "start_line": 2,
+        "end_line": 4,
+        "start_byte": 11,
+        "end_byte": 46,
+        "start_point": [
+          1,
+          0
+        ],
+        "end_point": [
+          3,
+          1
+        ]
+      },
+      {
+        "node_type": "method_declaration",
+        "name": "credit",
+        "symbol": "Wallet.credit",
+        "parent_symbol": "Wallet",
+        "start_line": 3,
+        "end_line": 3,
+        "start_byte": 28,
+        "end_byte": 44,
+        "start_point": [
+          2,
+          2
+        ],
+        "end_point": [
+          2,
+          18
+        ]
+      }
+    ],
+    "original_byte_slice": "void credit() {}",
+    "original_source_unchanged": true
+  },
+  "unicode_separator": [
+    {
+      "separator": "U+2028",
+      "error_type": "SourceSyntaxError",
+      "safe_error": "Source contains syntax errors; AST symbols are unavailable."
+    },
+    {
+      "separator": "U+2029",
+      "error_type": "SourceSyntaxError",
+      "safe_error": "Source contains syntax errors; AST symbols are unavailable."
+    }
+  ]
+}

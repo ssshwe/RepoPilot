@@ -1,0 +1,56 @@
+async (page) => {
+  const issue = page.url().endsWith('#issue-analysis');
+  const retrieval = page.url().endsWith('#retrieval');
+  const endpoint = retrieval ? '/api/retrieval/search' : issue ? '/api/issue-analysis' : '/api/code-chat';
+  const submit = retrieval ? 'Search' : issue ? '分析 Issue' : '提问';
+  const stop = retrieval ? '取消搜索' : '停止等待';
+  const clear = retrieval ? '清空检索结果' : issue ? '清空分析' : '清空问答';
+  const field = retrieval ? 'Query' : issue ? 'Issue · 问题描述' : 'Question · 你的问题';
+  const region = retrieval ? '检索结果' : issue ? 'Issue 分析结果' : '代码问答记录';
+  if (await page.getByRole('button', { name: clear, exact: true }).isEnabled()) {
+    await page.getByRole('button', { name: clear, exact: true }).click();
+  }
+  await page.getByRole('combobox', { name: 'Repository', exact: true }).fill('stage3-task13-not-indexed');
+  await page.getByRole('combobox', { name: 'Repository', exact: true }).press('Enter');
+  await page.getByRole('textbox', { name: field, exact: true }).fill('退款逻辑在哪里？');
+  await page.evaluate((endpoint) => {
+    window.__task13OriginalFetch = window.fetch;
+    window.__task13Late = {};
+    window.fetch = async (input, options) => {
+      if (String(input).endsWith(endpoint) && options?.method === 'POST') {
+        // Real API response, deliberately delivered after cancel/clear.
+        const response = await window.__task13OriginalFetch(input, { ...options, signal: undefined });
+        window.__task13Late.status = response.status;
+        window.__task13Late.body = await response.clone().json();
+        await new Promise(resolve => { window.__task13Late.release = resolve; });
+        window.__task13Late.delivered = true;
+        return response;
+      }
+      return window.__task13OriginalFetch(input, options);
+    };
+  }, endpoint);
+  try {
+    await page.getByRole('button', { name: submit, exact: true }).click();
+    await page.waitForFunction(() => typeof window.__task13Late.release === 'function');
+    await page.getByRole('button', { name: stop, exact: true }).click();
+    if (await page.getByRole('button', { name: clear, exact: true }).isEnabled()) {
+      await page.getByRole('button', { name: clear, exact: true }).click();
+    }
+    const before = await page.getByRole('region', { name: region, exact: true }).innerText();
+    await page.evaluate(() => window.__task13Late.release());
+    await page.waitForFunction(() => window.__task13Late.delivered === true);
+    await page.waitForTimeout(150);
+    const after = await page.getByRole('region', { name: region, exact: true }).innerText();
+    if (before !== after) throw new Error('Late response changed cleared UI');
+    if (!(await page.getByRole('button', { name: submit, exact: true }).isEnabled())) throw new Error('Busy flag remained set');
+    const receipt = await page.evaluate(() => ({ status: window.__task13Late.status, body: window.__task13Late.body }));
+    if (receipt.status !== 200) throw new Error('Real API control failed');
+    if (retrieval ? receipt.body.results.length !== 0 : receipt.body.status !== 'insufficient_evidence' || receipt.body.generation.called !== false) {
+      throw new Error('Expected real empty-index control without generation');
+    }
+    return { scenario: 'controlled_real_late_response', endpoint, passed: true, before, after,
+      delivered_after_clear: true, real_response: receipt, response_content_mocked: false };
+  } finally {
+    await page.evaluate(() => { window.fetch = window.__task13OriginalFetch; delete window.__task13OriginalFetch; });
+  }
+}

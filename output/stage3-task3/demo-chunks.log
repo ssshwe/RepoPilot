@@ -1,0 +1,10 @@
+Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+chunk_summary ast_parsed_files=4 fallback_files=4 failed_files=0 chunks=17

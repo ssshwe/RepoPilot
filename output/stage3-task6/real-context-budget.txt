@@ -1,0 +1,23 @@
+[SOURCE S1]
+{
+  "repository": "demo-repository",
+  "path": "backend/service/RefundService.java",
+  "language": "java",
+  "symbol": "RefundService.refund",
+  "node_type": "method_declaration",
+  "parent_symbol": "RefundService",
+  "lines": {
+    "start": 12,
+    "end": 15
+  },
+  "original_lines": {
+    "start": 12,
+    "end": 18
+  },
+  "chunking_strategy": "ast",
+  "chunking_version": "ast-v1",
+  "overlap_trimmed": false,
+  "budget_truncated": true,
+  "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n"
+}
+[/SOURCE S1]

@@ -1,0 +1,588 @@
+{
+  "verified_at": "2026-10-04T00:46:46.530390+08:00",
+  "task": 5,
+  "api_base_url": "http://127.0.0.1:58548",
+  "default": {
+    "input": {
+      "repository": "demo-repository"
+    },
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "files_chunked": 8,
+      "files_without_chunks": [],
+      "chunks_created": 8,
+      "chunks_returned": 5,
+      "preview_limit": 5,
+      "truncated": true,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "line_count": 21,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "line_count": 16,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "line_count": 19,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "line_count": 23,
+          "chunks_created": 1
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "line_count": 5,
+          "chunks_created": 1
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "line_count": 11,
+          "chunks_created": 1
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "line_count": 22,
+          "chunks_created": 1
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "line_count": 5,
+          "chunks_created": 1
+        }
+      ],
+      "chunks": [
+        {
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+        },
+        {
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16,
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\npublic final class OrderController {\n    private final RefundService refunds;\n\n    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n\n    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n\n    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 53.46
+  },
+  "custom": {
+    "input": {
+      "repository": "demo-repository",
+      "chunk_lines": 10,
+      "overlap_lines": 2,
+      "preview_limit": 20
+    },
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "chunk_lines": 10,
+      "overlap_lines": 2,
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "files_chunked": 8,
+      "files_without_chunks": [],
+      "chunks_created": 18,
+      "chunks_returned": 18,
+      "preview_limit": 20,
+      "truncated": false,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "line_count": 21,
+          "chunks_created": 3
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "line_count": 16,
+          "chunks_created": 2
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "line_count": 19,
+          "chunks_created": 3
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "line_count": 23,
+          "chunks_created": 3
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "line_count": 5,
+          "chunks_created": 1
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "line_count": 11,
+          "chunks_created": 2
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "line_count": 22,
+          "chunks_created": 3
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "line_count": 5,
+          "chunks_created": 1
+        }
+      ],
+      "chunks": [
+        {
+          "chunk_id": "8db3bf83-e797-5f68-8c7f-4333ad567ae9",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n"
+        },
+        {
+          "chunk_id": "7ad6b614-969f-5675-9a33-77a53378c3d6",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 9,
+          "end_line": 18,
+          "content": "\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n"
+        },
+        {
+          "chunk_id": "9d6ef83f-0565-5516-8207-b60674a52898",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 17,
+          "end_line": 21,
+          "content": "\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+        },
+        {
+          "chunk_id": "22081cf1-f822-5c3e-a7e0-1faa68ca68a9",
+          "repository": "demo-repository",
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\npublic final class OrderController {\n    private final RefundService refunds;\n\n    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n"
+        },
+        {
+          "chunk_id": "fbf3d76b-04a9-57a5-b45b-91242a5af8df",
+          "repository": "demo-repository",
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 9,
+          "end_line": 16,
+          "content": "    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n\n    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "1e89e4ff-473d-57cd-8a77-1db8ca6322e2",
+          "repository": "demo-repository",
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n"
+        },
+        {
+          "chunk_id": "723c3bda-a253-55a0-abe1-26b6f9e2015f",
+          "repository": "demo-repository",
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 9,
+          "end_line": 18,
+          "content": "        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+        },
+        {
+          "chunk_id": "16a717be-c3fe-50b1-ae82-e3faf617578a",
+          "repository": "demo-repository",
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 17,
+          "end_line": 19,
+          "content": "        wallets.credit(userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "fcf9e15e-254a-59de-9067-66a6fca069ba",
+          "repository": "demo-repository",
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n    public void credit(String userId, BigDecimal amount) {\n"
+        },
+        {
+          "chunk_id": "fe0e33b0-c9f4-5489-9a7a-a3aad41f423c",
+          "repository": "demo-repository",
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 9,
+          "end_line": 18,
+          "content": "\n    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n"
+        },
+        {
+          "chunk_id": "ddca28cc-dfe6-5324-942d-69ddb279b01c",
+          "repository": "demo-repository",
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 17,
+          "end_line": 23,
+          "content": "        balances.merge(userId, amount, BigDecimal::add);\n    }\n\n    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "e08d05d9-a4fd-5b43-9605-f7ce21e8bfc1",
+          "repository": "demo-repository",
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+        },
+        {
+          "chunk_id": "717ca56f-1923-542c-a92e-f22c4d9f6a1c",
+          "repository": "demo-repository",
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n"
+        },
+        {
+          "chunk_id": "051779cb-5739-57b1-b36c-08e06e672206",
+          "repository": "demo-repository",
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 9,
+          "end_line": 11,
+          "content": "    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n"
+        },
+        {
+          "chunk_id": "146c0b8a-cb6b-54e4-96cc-08cf8a3e4960",
+          "repository": "demo-repository",
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n"
+        },
+        {
+          "chunk_id": "1ba37585-1083-5fc5-b054-f30a1a278a09",
+          "repository": "demo-repository",
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 9,
+          "end_line": 18,
+          "content": "  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n"
+        },
+        {
+          "chunk_id": "4a9d9537-28a0-5d6c-a3e6-1cb52bd1650c",
+          "repository": "demo-repository",
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 17,
+          "end_line": 22,
+          "content": "    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+        },
+        {
+          "chunk_id": "e59ae8b7-22f8-519c-8137-dca149a96b83",
+          "repository": "demo-repository",
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 30.13
+  },
+  "repeat_response_and_ids_equal": true,
+  "one_chunk_preview": {
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "chunk_lines": 10,
+      "overlap_lines": 2,
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "files_chunked": 8,
+      "files_without_chunks": [],
+      "chunks_created": 18,
+      "chunks_returned": 1,
+      "preview_limit": 1,
+      "truncated": true,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "line_count": 21,
+          "chunks_created": 3
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "line_count": 16,
+          "chunks_created": 2
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "line_count": 19,
+          "chunks_created": 3
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "line_count": 23,
+          "chunks_created": 3
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "line_count": 5,
+          "chunks_created": 1
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "line_count": 11,
+          "chunks_created": 2
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "line_count": 22,
+          "chunks_created": 3
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "line_count": 5,
+          "chunks_created": 1
+        }
+      ],
+      "chunks": [
+        {
+          "chunk_id": "8db3bf83-e797-5f68-8c7f-4333ad567ae9",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 10,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n"
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 12.06
+  },
+  "invalid_overlap": {
+    "status_code": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "value_error",
+          "loc": [
+            "body"
+          ],
+          "msg": "Value error, overlap_lines must be smaller than chunk_lines.",
+          "input": {
+            "repository": "demo-repository",
+            "chunk_lines": 10,
+            "overlap_lines": 10,
+            "preview_limit": 20
+          },
+          "ctx": {
+            "error": {}
+          }
+        }
+      ]
+    },
+    "latency_ms": 12.64
+  },
+  "invalid_repository_path": {
+    "status_code": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "value_error",
+          "loc": [
+            "body",
+            "repository"
+          ],
+          "msg": "Value error, Repository must be a valid single directory name.",
+          "input": "../outside",
+          "ctx": {
+            "error": {}
+          }
+        }
+      ]
+    },
+    "latency_ms": 15.13
+  },
+  "missing_repository": {
+    "status_code": 404,
+    "response": {
+      "detail": "Repository directory was not found."
+    },
+    "latency_ms": 16.76
+  },
+  "health": {
+    "status_code": 200,
+    "response": {
+      "status": "ok"
+    },
+    "latency_ms": 12.79
+  },
+  "all_preview_contents_match_exact_source_line_slices": true,
+  "refund_ranges": [
+    [
+      1,
+      10
+    ],
+    [
+      9,
+      18
+    ],
+    [
+      17,
+      19
+    ]
+  ],
+  "refund_overlap_verified": 2,
+  "source_hashes_before": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "source_hashes_after": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "source_contents_unchanged": true,
+  "validation": {
+    "chunker_offline": {"passed": 69, "warnings": 2},
+    "offline_backend": {
+      "command": "python -m uv run --locked pytest -rs",
+      "passed": 346,
+      "skipped": 3,
+      "warnings": 2,
+      "skip_reasons": [
+        "Embedding integration requires explicit opt-in.",
+        "Qdrant integration requires explicit opt-in.",
+        "File symbolic link creation unavailable: Windows error 1314."
+      ]
+    },
+    "frontend_build": {"command": "npm.cmd run build", "result": "passed (vue-tsc and Vite)"}
+  }
+}

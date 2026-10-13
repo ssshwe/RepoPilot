@@ -1,0 +1,227 @@
+{
+  "task": "Stage 3 / Task 7: RAG Backend",
+  "status": "complete",
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "backend": {
+    "tests": 790,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 6,
+    "passed": 784,
+    "new_code_chat_cases": 60,
+    "warnings": 2
+  },
+  "evaluation_tests": {
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 42
+  },
+  "frontend": {
+    "tests_passed": 9,
+    "typecheck_and_build": "passed",
+    "modules": 1615
+  },
+  "endpoint": "POST /api/code-chat",
+  "output_stage": "answer + Source IDs; final Citations are Task 8",
+  "llm_model": "qwen2.5:0.5b",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimension": 1024,
+  "generation_policy": "One structured Provider call per nonempty context; no application repair/agent loop",
+  "real_http_acceptance": {
+    "rounds": 2,
+    "api_requests": 6,
+    "generation_calls": 4,
+    "actual_generation_http_requests": 4,
+    "sources_verified_against_local_files": true,
+    "final_refund": {
+      "answer": "backend/service/RefundService.java",
+      "source_ids": [
+        "S1"
+      ],
+      "repository": "demo-repository",
+      "status": "answered",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 4110,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 1139.81
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 390.55
+      }
+    },
+    "final_no_index": {
+      "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+      "source_ids": [],
+      "repository": "stage3-task7-not-indexed",
+      "status": "insufficient_evidence",
+      "model": null,
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 0,
+        "used_sources": 0,
+        "context_characters": 0,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": "no_results",
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 561.75
+      },
+      "generation": {
+        "called": false,
+        "latency_ms": 0.0
+      }
+    },
+    "final_unsupported": {
+      "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+      "source_ids": [],
+      "repository": "demo-repository",
+      "status": "insufficient_evidence",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 3952,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 667.23
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 330.25
+      }
+    },
+    "refund_source_metadata": {
+      "source_id": "S1",
+      "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+      "repository": "demo-repository",
+      "path": "backend/service/RefundService.java",
+      "symbol": "RefundService.refund",
+      "node_type": "method_declaration",
+      "parent_symbol": "RefundService",
+      "start_line": 12,
+      "end_line": 18,
+      "chunking_strategy": "ast"
+    }
+  },
+  "guards": [
+    "Strict request validation before factories",
+    "Full context scope validation before LLM resolution",
+    "Dynamic Source ID enum and strict result revalidation",
+    "Empty context skips LLM",
+    "Empty generated IDs replace unsupported text with controlled abstention",
+    "Message envelope reserved within existing ChatMessage limit",
+    "Untrusted context in user role",
+    "Safe 422 for invalid Unicode and safe 502 for invalid generation"
+  ],
+  "bad_case": {
+    "question": "当前仓库是否实现了 PostgreSQL 数据库主从切换？请指出实现位置。",
+    "initial": {
+      "answer": "实现位置：未实现",
+      "source_ids": [
+        "S5"
+      ],
+      "repository": "demo-repository",
+      "status": "answered",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 3952,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 577.2
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 323.67
+      }
+    },
+    "initial_cited_source": {
+      "source_id": "S5",
+      "path": "README.md",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 21
+    },
+    "problem": "A valid ID and a README without PostgreSQL evidence cannot support a repository-wide absence claim.",
+    "change": "Prompt explicitly forbids inferring repository-wide nonexistence from partial context.",
+    "final": {
+      "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+      "source_ids": [],
+      "repository": "demo-repository",
+      "status": "insufficient_evidence",
+      "model": "qwen2.5:0.5b",
+      "retrieval": {
+        "top_k": 5,
+        "retrieved_chunks": 5,
+        "used_sources": 5,
+        "context_characters": 3952,
+        "context_budget_characters": 16000,
+        "budget_limited": false,
+        "empty_reason": null,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "latency_ms": 667.23
+      },
+      "generation": {
+        "called": true,
+        "latency_ms": 330.25
+      }
+    },
+    "full_source_text_verified": true,
+    "remaining_refund_quality_issue": "The final refund response still only names the real file, without explaining the code."
+  },
+  "preservation": {
+    "protected_files": 250,
+    "changed_existing_files": [
+      "README.md",
+      "services/api/app/core/exceptions.py",
+      "services/api/app/main.py"
+    ],
+    "unexpected_changes": [],
+    "env_unchanged": true,
+    "lockfiles_unchanged": true,
+    "fixture_dataset_and_past_reports_unchanged": true,
+    "frontend_unchanged": true,
+    "task6_context_builder_unchanged": true,
+    "qdrant_exact_match": true,
+    "production_points": 17,
+    "production_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+  },
+  "temporary_api_stopped": true,
+  "qdrant_and_ollama_kept_running": true,
+  "not_implemented": [
+    "CitationValidator and mapped Citations",
+    "Code Chat UI",
+    "Issue Analyzer",
+    "Agent loop",
+    "Hybrid/Rerank"
+  ],
+  "next_task": "Task 8: Citation Validator"
+}

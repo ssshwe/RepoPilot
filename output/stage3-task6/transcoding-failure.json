@@ -1,0 +1,6 @@
+{
+  "cause": "Native stdout decoded by a PowerShell pipeline before UTF-8 file writing",
+  "query_roundtrip_failed": true,
+  "replacement_characters_in_saved_query": 30,
+  "resolution": "CLI --output writes UTF-8 directly; both real queries rerun below"
+}

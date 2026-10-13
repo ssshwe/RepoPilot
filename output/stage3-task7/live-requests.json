@@ -1,0 +1,27 @@
+[
+  {
+    "case": "refund",
+    "status": 200,
+    "result_status": "answered",
+    "source_ids": [
+      "S1"
+    ],
+    "generation_called": true
+  },
+  {
+    "case": "no-index",
+    "status": 200,
+    "result_status": "insufficient_evidence",
+    "source_ids": [],
+    "generation_called": false
+  },
+  {
+    "case": "unsupported",
+    "status": 200,
+    "result_status": "answered",
+    "source_ids": [
+      "S5"
+    ],
+    "generation_called": true
+  }
+]

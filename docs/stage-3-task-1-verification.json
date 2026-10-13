@@ -1,0 +1,348 @@
+{
+  "recorded_at": "2026-10-04T22:57:26.824293+08:00",
+  "stage": 3,
+  "task": 1,
+  "scope": "Stage 2 baseline audit only; no Parser, AST chunker or RAG implementation",
+  "git": {
+    "status_exit_code": 128,
+    "diagnostic": "not a git repository (or any of the parent directories): .git"
+  },
+  "checks": {
+    "backend": {
+      "passed": 466,
+      "skipped": 5,
+      "warnings": 2,
+      "seconds": 8.57,
+      "exit_code": 0,
+      "skips": [
+        "four external-service integrations explicitly disabled to avoid Qdrant writes",
+        "Windows file symlink creation privilege: winerror=1314"
+      ]
+    },
+    "frontend_build": {
+      "passed": true,
+      "exit_code": 0,
+      "modules_transformed": 1615
+    },
+    "frontend_contracts": {
+      "passed": 7,
+      "exit_code": 0
+    },
+    "evaluation_unit_tests": {
+      "passed": 32,
+      "exit_code": 0
+    }
+  },
+  "retrieval_report": "evaluation/reports/stage2_retrieval_20261004T145400661913Z.json",
+  "retrieval_report_sha256": "a327af8756b9ec3f5f3a10cf742157f1fa90d9abb3548742976b678b1d7e6ce5",
+  "evaluation_summary": {
+    "queries": 12,
+    "hit_at_k": {
+      "1": {
+        "hits": 6,
+        "total": 12,
+        "rate": 0.5
+      },
+      "3": {
+        "hits": 10,
+        "total": 12,
+        "rate": 0.8333333333333334
+      },
+      "5": {
+        "hits": 12,
+        "total": 12,
+        "rate": 1
+      }
+    },
+    "macro_recall_at_k": {
+      "1": 0.5,
+      "3": 0.7777777777777778,
+      "5": 0.9305555555555556
+    }
+  },
+  "all_metrics_independently_recomputed": true,
+  "same_metrics_as_stage2_task10": true,
+  "same_ranked_paths_as_stage2_task10": true,
+  "preservation": {
+    "protected_existing_files": 138,
+    "changed_existing_files": [],
+    "local_env_unchanged": true,
+    "source_and_dataset_and_old_reports_unchanged": true,
+    "all_collection_points_vectors_payloads_and_config_unchanged": true,
+    "new_dependencies_installed": false,
+    "qdrant_write_operations_executed": false
+  },
+  "collections": [
+    {
+      "name": "repopilot_code",
+      "status": "green",
+      "points_count": 8,
+      "vectors": {
+        "size": 1024,
+        "distance": "Cosine"
+      },
+      "metadata": {
+        "repopilot_index": {
+          "schema_version": "code-points-v1",
+          "embedding_provider": "openai_compatible",
+          "embedding_model": "qwen3-embedding:0.6b",
+          "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+        }
+      },
+      "payload_schema": {},
+      "points_sha256": "1a4ab856204e4e19b946e808965227c9c9f1dddb9ac3a6b1bede590880bf254b",
+      "payload_fields": [
+        "chunk_id",
+        "chunk_lines",
+        "content",
+        "embedding_model",
+        "end_line",
+        "language",
+        "overlap_lines",
+        "path",
+        "repository",
+        "schema_version",
+        "start_line"
+      ]
+    },
+    {
+      "name": "repopilot_infra_smoke",
+      "status": "green",
+      "points_count": 0,
+      "vectors": {
+        "size": 3,
+        "distance": "Cosine"
+      },
+      "metadata": null,
+      "payload_schema": {},
+      "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "payload_fields": []
+    }
+  ],
+  "metadata_checks": [
+    {
+      "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+      "path": "config/repository.json",
+      "language": "json",
+      "start_line": 1,
+      "end_line": 5,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+      "path": "frontend/src/types.ts",
+      "language": "typescript",
+      "start_line": 1,
+      "end_line": 5,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+      "path": "README.md",
+      "language": "markdown",
+      "start_line": 1,
+      "end_line": 21,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 19,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+      "path": "backend/service/WalletService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 23,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+      "path": "backend/controller/OrderController.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 16,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+      "path": "frontend/src/RefundPanel.vue",
+      "language": "vue",
+      "start_line": 1,
+      "end_line": 22,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    },
+    {
+      "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+      "path": "database/schema.sql",
+      "language": "sql",
+      "start_line": 1,
+      "end_line": 11,
+      "id_matches": true,
+      "valid_lines": true,
+      "content_matches_source_slice": true,
+      "language_matches_extension": true,
+      "current_chunk_matches_payload": true,
+      "vector_dimension_matches": true
+    }
+  ],
+  "scan": {
+    "repository": "demo-repository",
+    "files_scanned": 10,
+    "supported_files": 8,
+    "skipped_files": 2,
+    "total_bytes": 4076,
+    "languages": [
+      "java",
+      "json",
+      "markdown",
+      "sql",
+      "typescript",
+      "vue"
+    ]
+  },
+  "chunking": {
+    "class": "SimpleCodeChunker",
+    "chunk_lines": 60,
+    "overlap_lines": 10,
+    "max_chunk_characters": 8192,
+    "id_version": "line-window-v1",
+    "payload_chunking_version_present": false
+  },
+  "point_sample": {
+    "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+    "repository": "demo-repository",
+    "path": "backend/service/RefundService.java",
+    "language": "java",
+    "start_line": 1,
+    "end_line": 19,
+    "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "schema_version": "code-points-v1",
+    "chunk_lines": 60,
+    "overlap_lines": 10
+  },
+  "sensitive_name_probes": {
+    "files": {
+      ".env": true,
+      ".env.production": true,
+      "private.pem": true,
+      "private.key": true,
+      "credentials.json": false,
+      "secrets.yaml": false
+    },
+    "directories": {
+      "credentials": false,
+      "secrets": false,
+      "node_modules": true,
+      ".git": true
+    }
+  },
+  "api_health": {
+    "/health": {
+      "status_code": 200,
+      "response": {
+        "status": "ok"
+      }
+    },
+    "/health/qdrant": {
+      "status_code": 200,
+      "response": {
+        "status": "ok",
+        "collection": "repopilot_code",
+        "collection_exists": true
+      }
+    },
+    "/api/vector-store/collection": {
+      "status_code": 200,
+      "response": {
+        "collection": "repopilot_code",
+        "dimension": 1024,
+        "distance": "Cosine",
+        "points_count": 8,
+        "status": "green"
+      }
+    }
+  },
+  "bad_cases": [
+    {
+      "id": "refund-validation-files",
+      "query": "退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？",
+      "expected_paths": [
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "top5_paths": [
+        "README.md",
+        "config/repository.json",
+        "frontend/src/types.ts",
+        "backend/service/RefundService.java",
+        "frontend/src/RefundPanel.vue"
+      ],
+      "recall_at_5": 0.5
+    },
+    {
+      "id": "refund-call-chain",
+      "query": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "top5_paths": [
+        "README.md",
+        "backend/service/RefundService.java",
+        "frontend/src/types.ts",
+        "frontend/src/RefundPanel.vue",
+        "backend/controller/OrderController.java"
+      ],
+      "recall_at_5": 0.6666666666666666
+    }
+  ],
+  "verification_limits": [
+    "no current browser visual QA",
+    "no enabled integration tests that create/delete Qdrant collections",
+    "handwritten eight-chunk fixture; not a production benchmark",
+    "Repository Not Found / Not Indexed are not distinguished by the current retrieval route",
+    "secret name exclusion gap recorded without modifying Stage 2 code"
+  ]
+}

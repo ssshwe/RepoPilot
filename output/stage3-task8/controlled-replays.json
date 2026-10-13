@@ -1,0 +1,46 @@
+{
+  "kind": "pure controlled mutations of saved real metadata/IDs; no inference or index writes",
+  "failures": [
+    {
+      "case": "unknown_id",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "duplicate_id",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "foreign_source",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "invalid_line_metadata",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "not_in_emitted_context",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "original_end_used_for_truncated_content",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "wrong_source_slice",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "context_map_mismatch",
+      "rejected": true,
+      "partial_citations_returned": false
+    }
+  ],
+  "empty_ids_return_empty_citations": true
+}

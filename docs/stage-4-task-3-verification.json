@@ -1,0 +1,1083 @@
+{
+  "task": "Stage 4 / Task 3",
+  "completed": true,
+  "created_at": "2026-10-13T15:17:52.088069+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_candidates_20261013_task3.json",
+    "sha256": "1a74a2625561e597b56d29716e8e58488a714e3a8acfea7b92f41ac3afabbd64"
+  },
+  "reference_report": {
+    "path": "evaluation/reports/stage4_retrieval_20261013_task2.json",
+    "sha256": "1aa77ac3b4e01da801eaacfde633db2796f5094033ac45c633e4909699fc284d"
+  },
+  "tests": {
+    "backend_passed": 1061,
+    "backend_skipped": 1,
+    "new_candidate_tests": 55,
+    "real_integration_cases": 5,
+    "evaluation_passed": 117,
+    "new_proof_tests": 10
+  },
+  "test_receipts": {
+    "backend": {
+      "path": "output/stage4-task3/backend-tests.log",
+      "sha256": "d0dd2bdce40c2e1b942d73c339023f329af087c1d4af02f64f1df32995f45b77"
+    },
+    "evaluation": {
+      "path": "output/stage4-task3/evaluation-tests.log",
+      "sha256": "f62b3323b77c58da5e4612000696147540b7de4f088d8f21464f8f7fa97336a9"
+    }
+  },
+  "offline_network_attempts": 0,
+  "candidate_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "exact_legacy_comparisons": 156,
+    "generation_calls": 0
+  },
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "task2_replay": "52 reference receipts replayed by candidate verifier",
+  "real_cases": 52,
+  "holdout_queried": false,
+  "calls": {
+    "query_embedding_provider_calls": 52,
+    "proof_embedding_cache_hits": 156,
+    "qdrant_candidate_queries": 52,
+    "qdrant_legacy_queries": 156,
+    "indexing_embedding_calls": 0,
+    "generation_calls": 0
+  },
+  "summary": {
+    "cases": 52,
+    "cases_over_twenty_candidates": 37,
+    "exact_legacy_comparisons": 156,
+    "candidate_limit": 30,
+    "metrics": {
+      "split": {
+        "dev": {
+          "cases": 40,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.53125,
+              "file_recall": 0.40625,
+              "range_recall": 0.3541666666666667,
+              "line_coverage": 0.3605769230769231,
+              "evidence_mrr": 0.375,
+              "all_evidence": 0.34375,
+              "symbol_hit": 0.35714285714285715,
+              "symbol_recall": 0.3333333333333333
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.9375,
+              "file_recall": 0.828125,
+              "range_recall": 0.6770833333333334,
+              "line_coverage": 0.6899038461538461,
+              "evidence_mrr": 0.5208333333333334,
+              "all_evidence": 0.65625,
+              "symbol_hit": 0.6785714285714286,
+              "symbol_recall": 0.6309523809523809
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.796875,
+              "line_coverage": 0.8127403846153847,
+              "evidence_mrr": 0.5661458333333333,
+              "all_evidence": 0.6875,
+              "symbol_hit": 0.8928571428571429,
+              "symbol_recall": 0.7678571428571429
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.796875,
+            "line_coverage": 0.8127403846153847,
+            "all_evidence": 0.6875
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 40,
+            "p50": 725.0450000000001,
+            "p95": 927.3209999999999
+          }
+        },
+        "regression": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.5,
+              "line_coverage": 0.5,
+              "evidence_mrr": 0.5,
+              "all_evidence": 0.5,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.5416666666666666,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.6041666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 777.235,
+            "p95": 2322.2874999999976
+          }
+        }
+      },
+      "category": {
+        "config": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 764.66,
+            "p95": 764.66
+          }
+        },
+        "documentation": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 0,
+              "file_recall": 0.0,
+              "range_recall": 0.0,
+              "line_coverage": 0.0,
+              "evidence_mrr": 0.0,
+              "all_evidence": 0,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.3333333333333333,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.3333333333333333,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 720.25,
+            "p95": 720.25
+          }
+        },
+        "error_text": {
+          "cases": 4,
+          "at_k": {
+            "1": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 0.5,
+              "file_recall": 0.5,
+              "range_recall": 0.5,
+              "line_coverage": 0.5,
+              "evidence_mrr": 0.5,
+              "all_evidence": 0.5,
+              "symbol_hit": 0.5,
+              "symbol_recall": 0.5
+            },
+            "3": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 0.75,
+              "file_recall": 0.75,
+              "range_recall": 0.75,
+              "line_coverage": 0.75,
+              "evidence_mrr": 0.625,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.75,
+              "symbol_recall": 0.75
+            },
+            "5": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.6875,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 4,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 4,
+            "p50": 705.985,
+            "p95": 835.5715
+          }
+        },
+        "literal": {
+          "cases": 3,
+          "at_k": {
+            "1": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.6666666666666666,
+              "line_coverage": 0.6666666666666666,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.6666666666666666,
+              "symbol_recall": 0.6666666666666666
+            },
+            "3": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 3,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 3,
+            "p50": 711.32,
+            "p95": 791.132
+          }
+        },
+        "multi_file": {
+          "cases": 9,
+          "at_k": {
+            "1": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.2222222222222222,
+              "range_recall": 0.037037037037037035,
+              "line_coverage": 0.059829059829059825,
+              "evidence_mrr": 0.1111111111111111,
+              "all_evidence": 0,
+              "symbol_hit": 0.1111111111111111,
+              "symbol_recall": 0.037037037037037035
+            },
+            "3": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.8888888888888888,
+              "file_recall": 0.48148148148148145,
+              "range_recall": 0.07407407407407407,
+              "line_coverage": 0.11965811965811965,
+              "evidence_mrr": 0.14814814814814814,
+              "all_evidence": 0,
+              "symbol_hit": 0.2222222222222222,
+              "symbol_recall": 0.07407407407407407
+            },
+            "5": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.6481481481481481,
+              "range_recall": 0.42592592592592593,
+              "line_coverage": 0.45706815114709853,
+              "evidence_mrr": 0.3148148148148148,
+              "all_evidence": 0,
+              "symbol_hit": 0.8888888888888888,
+              "symbol_recall": 0.42592592592592593
+            }
+          },
+          "context": {
+            "cases": 9,
+            "range_recall": 0.42592592592592593,
+            "line_coverage": 0.45706815114709853,
+            "all_evidence": 0
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 9,
+            "p50": 704.27,
+            "p95": 867.11
+          }
+        },
+        "natural_language": {
+          "cases": 17,
+          "at_k": {
+            "1": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.6470588235294118,
+              "file_recall": 0.6470588235294118,
+              "range_recall": 0.5294117647058824,
+              "line_coverage": 0.5294117647058824,
+              "evidence_mrr": 0.5294117647058824,
+              "all_evidence": 0.5294117647058824,
+              "symbol_hit": 0.5,
+              "symbol_recall": 0.5
+            },
+            "3": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.8823529411764706,
+              "file_recall": 0.8823529411764706,
+              "range_recall": 0.7647058823529411,
+              "line_coverage": 0.7647058823529411,
+              "evidence_mrr": 0.6372549019607843,
+              "all_evidence": 0.7647058823529411,
+              "symbol_hit": 0.75,
+              "symbol_recall": 0.75
+            },
+            "5": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.8235294117647058,
+              "line_coverage": 0.8235294117647058,
+              "evidence_mrr": 0.6519607843137255,
+              "all_evidence": 0.8235294117647058,
+              "symbol_hit": 0.8333333333333334,
+              "symbol_recall": 0.8333333333333334
+            }
+          },
+          "context": {
+            "cases": 17,
+            "range_recall": 0.8235294117647058,
+            "line_coverage": 0.8235294117647058,
+            "all_evidence": 0.8235294117647058
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 17,
+            "p50": 820.33,
+            "p95": 1602.069999999998
+          }
+        },
+        "negative": {
+          "cases": 8,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 8,
+            "p50": 679.12,
+            "p95": 803.606
+          }
+        },
+        "path": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 0,
+              "file_recall": 0.0,
+              "range_recall": 0.0,
+              "line_coverage": 0.0,
+              "evidence_mrr": 0.0,
+              "all_evidence": 0,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 662.43,
+            "p95": 662.43
+          }
+        },
+        "sql": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 660.8,
+            "p95": 660.8
+          }
+        },
+        "symbol": {
+          "cases": 7,
+          "at_k": {
+            "1": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 0.2857142857142857,
+              "file_recall": 0.2857142857142857,
+              "range_recall": 0.2857142857142857,
+              "line_coverage": 0.2857142857142857,
+              "evidence_mrr": 0.2857142857142857,
+              "all_evidence": 0.2857142857142857,
+              "symbol_hit": 0.2857142857142857,
+              "symbol_recall": 0.2857142857142857
+            },
+            "3": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 0.9285714285714286,
+              "range_recall": 0.7142857142857143,
+              "line_coverage": 0.7142857142857143,
+              "evidence_mrr": 0.4523809523809524,
+              "all_evidence": 0.7142857142857143,
+              "symbol_hit": 0.7142857142857143,
+              "symbol_recall": 0.7142857142857143
+            },
+            "5": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 0.7857142857142857,
+              "line_coverage": 0.8142857142857143,
+              "evidence_mrr": 0.48095238095238096,
+              "all_evidence": 0.7142857142857143,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.7857142857142857
+            }
+          },
+          "context": {
+            "cases": 7,
+            "range_recall": 0.7857142857142857,
+            "line_coverage": 0.8142857142857143,
+            "all_evidence": 0.7142857142857143
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 7,
+            "p50": 757.16,
+            "p95": 869.486
+          }
+        }
+      },
+      "repository": {
+        "demo-repository": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.5,
+              "line_coverage": 0.5,
+              "evidence_mrr": 0.5,
+              "all_evidence": 0.5,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.5416666666666666,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.6041666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 777.235,
+            "p95": 2322.2874999999976
+          }
+        },
+        "stage4-commerce": {
+          "cases": 37,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.53125,
+              "file_recall": 0.40625,
+              "range_recall": 0.3541666666666667,
+              "line_coverage": 0.3605769230769231,
+              "evidence_mrr": 0.375,
+              "all_evidence": 0.34375,
+              "symbol_hit": 0.35714285714285715,
+              "symbol_recall": 0.3333333333333333
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.9375,
+              "file_recall": 0.828125,
+              "range_recall": 0.6770833333333334,
+              "line_coverage": 0.6899038461538461,
+              "evidence_mrr": 0.5208333333333334,
+              "all_evidence": 0.65625,
+              "symbol_hit": 0.6785714285714286,
+              "symbol_recall": 0.6309523809523809
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.796875,
+              "line_coverage": 0.8127403846153847,
+              "evidence_mrr": 0.5661458333333333,
+              "all_evidence": 0.6875,
+              "symbol_hit": 0.8928571428571429,
+              "symbol_recall": 0.7678571428571429
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.796875,
+            "line_coverage": 0.8127403846153847,
+            "all_evidence": 0.6875
+          },
+          "negative": {
+            "cases": 5,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 37,
+            "p50": 729.84,
+            "p95": 936.3239999999998
+          }
+        },
+        "stage4-empty": {
+          "cases": 2,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 2,
+            "empty_results": 2,
+            "empty_result_rate": 1,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 2,
+            "p50": 690.7650000000001,
+            "p95": 777.4395000000001
+          }
+        },
+        "stage4-shadow": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 1,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 696.35,
+            "p95": 696.35
+          }
+        }
+      }
+    }
+  },
+  "final_top5_metrics_identical_to_task2": true,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "fastapi": "0.141.1",
+      "pydantic": "2.13.5",
+      "qdrant-client": "1.19.1",
+      "openai": "2.54.0",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-java": "0.23.5",
+      "tree-sitter-python": "0.25.0",
+      "tree-sitter-javascript": "0.25.0",
+      "tree-sitter-typescript": "0.23.2"
+    },
+    "files": {
+      "services/api/uv.lock": "0b1a8f13d1f19dd0986a46cfdd6bc5a8b599cd080fdafa1e434912aa7a8f2f19",
+      "services/api/pyproject.toml": "5e1e925fe5c590ea20e944146b9670efed9bdefc3cc83afd752c0c248233ee9b",
+      "apps/web/package-lock.json": "aa0f972195150e39e01a9f7cbb0bc565cdd4a97de7017ab9bd901a4333e02940",
+      "services/api/app/retrieval/service.py": "397927b70b71a063043523dc3eec7985d8440cd2ab1f9e43bd334c554b8ebde6",
+      "services/api/app/retrieval/vector_store.py": "09c085b69cb448a4e5feca8079def731fb837c4ea03ec1fa9c1991df914560fc",
+      "services/api/app/indexing/ast_chunker.py": "f1514cd02926b292f0be28ccab1e7bc02e895448e91a09d768a1b09acf241ab0",
+      "services/api/app/indexing/chunker.py": "07597c6d77b27ffe2245ca4f748dfa4107bd3a924172228adf9c867441f8616d",
+      "services/api/app/context/builder.py": "776dc9b631eb97486d3aab84aa653d2675ef87d38def8363b3873da0a2d4823e"
+    }
+  },
+  "implementation": {
+    "services/api/app/retrieval/candidates.py": {
+      "path": "services/api/app/retrieval/candidates.py",
+      "sha256": "7ffe11af5caf7fa0f03c46069f3b4ed3378f8ae25ba4d9e4f23baa832540e696"
+    },
+    "services/api/app/retrieval/dense.py": {
+      "path": "services/api/app/retrieval/dense.py",
+      "sha256": "253f24c0d1bc1ccc37c4db159ba5f57e6dcd3a09eccef4e8ae7a8276d95233f1"
+    },
+    "services/api/app/retrieval/vector_store.py": {
+      "path": "services/api/app/retrieval/vector_store.py",
+      "sha256": "09c085b69cb448a4e5feca8079def731fb837c4ea03ec1fa9c1991df914560fc"
+    },
+    "evaluation/stage4/verify_candidates.py": {
+      "path": "evaluation/stage4/verify_candidates.py",
+      "sha256": "6f0ba4bd890b9346ecc73c52c1e18370b9ebc15b9f06cefd439b2148163c6204"
+    },
+    "services/api/tests/test_retrieval_candidates.py": {
+      "path": "services/api/tests/test_retrieval_candidates.py",
+      "sha256": "3138aa804dff7bb167bfa47158a7c35cb526866511e2ab325e6161b9c25b0213"
+    },
+    "evaluation/tests/test_candidate_proof.py": {
+      "path": "evaluation/tests/test_candidate_proof.py",
+      "sha256": "ff4d937dc018f35630b42d5a43d62697e97c651360719790ab6b5df3d902bb03"
+    }
+  },
+  "preservation": {
+    "protected_files": 1890,
+    "expected_changed_files": [
+      "README.md",
+      "evaluation/README.md",
+      "services/api/app/retrieval/vector_store.py"
+    ],
+    "other_existing_files_unchanged": 1887,
+    "environment_and_locks_unchanged": true,
+    "all_prior_reports_and_fixtures_unchanged": true,
+    "qdrant_unchanged": true,
+    "temporary_collection_deleted": true,
+    "public_api_types_and_frontend_unchanged": true,
+    "production_service_unchanged": true
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task3/workspace-before.json",
+      "sha256": "336c72fb126a2875757af27f724188f263048b711b6006868e1de8416cd92233"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task3/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task3/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task3/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    }
+  },
+  "next_task": "Stage 4 / Task 4 code tokenizer; not started"
+}

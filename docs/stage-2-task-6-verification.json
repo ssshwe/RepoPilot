@@ -1,0 +1,216 @@
+{
+  "recorded_at": "2026-10-04T01:12:01.495644+08:00",
+  "api_base_url": "http://127.0.0.1:54914",
+  "qdrant_collection": "repopilot_code",
+  "fixture_kind": "Handwritten local repository, actual files read and embedded",
+  "first_index": {
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "chunks_created": 8,
+      "vectors_indexed": 8,
+      "previous_vectors": 8,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "strategy": "replace_repository",
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 2922.0
+  },
+  "repeat_index": {
+    "status_code": 200,
+    "response": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "chunks_created": 8,
+      "vectors_indexed": 8,
+      "previous_vectors": 8,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "strategy": "replace_repository",
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "latency_ms": 3125.0
+  },
+  "qdrant": {
+    "exact_repository_point_count": 8,
+    "collection_points_count": 8,
+    "dimension": 1024,
+    "distance": "Cosine",
+    "metadata": {
+      "repopilot_index": {
+        "schema_version": "code-points-v1",
+        "embedding_provider": "openai_compatible",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+      }
+    },
+    "points": [
+      {
+        "id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+        "path": "config/repository.json",
+        "start_line": 1,
+        "end_line": 5,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+        "path": "frontend/src/types.ts",
+        "start_line": 1,
+        "end_line": 5,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+        "path": "README.md",
+        "start_line": 1,
+        "end_line": 21,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+        "path": "backend/service/RefundService.java",
+        "start_line": 1,
+        "end_line": 19,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+        "path": "backend/service/WalletService.java",
+        "start_line": 1,
+        "end_line": 23,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+        "path": "backend/controller/OrderController.java",
+        "start_line": 1,
+        "end_line": 16,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+        "path": "frontend/src/RefundPanel.vue",
+        "start_line": 1,
+        "end_line": 22,
+        "vector_dimension": 1024
+      },
+      {
+        "id": "e797730d-35ef-5e28-839d-5d551558bd16",
+        "path": "database/schema.sql",
+        "start_line": 1,
+        "end_line": 11,
+        "vector_dimension": 1024
+      }
+    ],
+    "sample_point": {
+      "id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+      "vector_dimension": 1024,
+      "vector_preview": [
+        -0.030304136,
+        0.071053244,
+        -0.007012965,
+        -0.03631072,
+        0.0369386,
+        -0.10422923,
+        -0.008012391,
+        -0.023612952
+      ],
+      "payload": {
+        "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+        "repository": "demo-repository",
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 19,
+        "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "schema_version": "code-points-v1",
+        "chunk_lines": 60,
+        "overlap_lines": 10
+      }
+    }
+  },
+  "repeat_ids_unchanged": true,
+  "all_payload_source_slices_match": true,
+  "source_hashes_unchanged": true,
+  "source_sha256": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "unsafe_name": {
+    "status_code": 422,
+    "response": {
+      "detail": "Repository must be a valid single directory name."
+    },
+    "latency_ms": 0.0
+  },
+  "missing_repository": {
+    "status_code": 404,
+    "response": {
+      "detail": "Repository directory was not found."
+    },
+    "latency_ms": 0.0
+  },
+  "validation": {
+    "backend_suite": {"passed": 388, "skipped": 4, "existing_deprecation_warnings": 2},
+    "new_offline_indexing_tests": {"passed": 42},
+    "real_indexing_integration": {
+      "passed": 1,
+      "duration_seconds": 35.72,
+      "chunk_lines": 10,
+      "overlap_lines": 2,
+      "embedding_batch_size": 16,
+      "verified_point_counts": [18, 18, 15, 0],
+      "unique_test_collection_cleaned_up": true,
+      "fixture_source_not_modified": true
+    },
+    "frontend_typescript_vite_build": "passed"
+  },
+  "process_health": {
+    "status_code": 200,
+    "response": {
+      "status": "ok"
+    },
+    "latency_ms": 0.0
+  }
+}

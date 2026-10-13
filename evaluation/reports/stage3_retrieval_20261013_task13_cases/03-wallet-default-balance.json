@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "wallet-default-balance",
+    "query": "读取用户钱包余额时，未找到用户如何返回零？",
+    "expected_paths": [
+      "backend/service/WalletService.java"
+    ],
+    "evidence": [
+      {
+        "path": "backend/service/WalletService.java",
+        "start_line": 20,
+        "end_line": 22,
+        "snippet": "balances.getOrDefault(userId, BigDecimal.ZERO)"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 3103.7575999998808,
+    "retrieval_latency_ms": 978.19,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+        "repository": "demo-repository",
+        "score": 0.52640754,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 20,
+        "end_line": 22
+      },
+      {
+        "rank": 2,
+        "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+        "repository": "demo-repository",
+        "score": 0.5118214,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 7,
+        "end_line": 9
+      },
+      {
+        "rank": 3,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.4520517,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 4,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.45026028,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+        "repository": "demo-repository",
+        "score": 0.42968756,
+        "path": "database/schema.sql",
+        "language": "sql",
+        "start_line": 1,
+        "end_line": 11
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      }
+    }
+  }
+}

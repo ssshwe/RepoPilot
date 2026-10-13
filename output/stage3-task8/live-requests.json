@@ -1,0 +1,48 @@
+[
+  {
+    "run": "full",
+    "case": "refund",
+    "http_status": 200,
+    "result_status": "answered",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 18
+      }
+    ]
+  },
+  {
+    "run": "full",
+    "case": "empty",
+    "http_status": 200,
+    "result_status": "insufficient_evidence",
+    "source_ids": [],
+    "citations": []
+  },
+  {
+    "run": "budget",
+    "case": "refund",
+    "http_status": 200,
+    "result_status": "answered",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 15
+      }
+    ]
+  }
+]

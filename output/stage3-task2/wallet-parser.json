@@ -1,0 +1,67 @@
+{
+  "packages": {
+    "tree-sitter": "0.26.0",
+    "tree-sitter-java": "0.23.5"
+  },
+  "decoded_source_sha256": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+  "repository": "demo-repository",
+  "path": "backend/service/WalletService.java",
+  "language": "java",
+  "root_node_type": "program",
+  "symbols": [
+    {
+      "node_type": "class_declaration",
+      "name": "WalletService",
+      "symbol": "WalletService",
+      "parent_symbol": null,
+      "start_line": 7,
+      "end_line": 23,
+      "start_byte": 122,
+      "end_byte": 750,
+      "start_point": [
+        6,
+        0
+      ],
+      "end_point": [
+        22,
+        1
+      ]
+    },
+    {
+      "node_type": "method_declaration",
+      "name": "credit",
+      "symbol": "WalletService.credit",
+      "parent_symbol": "WalletService",
+      "start_line": 10,
+      "end_line": 18,
+      "start_byte": 242,
+      "end_byte": 629,
+      "start_point": [
+        9,
+        4
+      ],
+      "end_point": [
+        17,
+        5
+      ]
+    },
+    {
+      "node_type": "method_declaration",
+      "name": "balanceOf",
+      "symbol": "WalletService.balanceOf",
+      "parent_symbol": "WalletService",
+      "start_line": 20,
+      "end_line": 22,
+      "start_byte": 635,
+      "end_byte": 748,
+      "start_point": [
+        19,
+        4
+      ],
+      "end_point": [
+        21,
+        5
+      ]
+    }
+  ]
+}

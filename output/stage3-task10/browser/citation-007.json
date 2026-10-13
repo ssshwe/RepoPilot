@@ -1,0 +1,17 @@
+{
+  "repository": "demo-repository",
+  "input_ids": [
+    "S1"
+  ],
+  "context_characters": 4110,
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "backend/service/RefundService.java",
+      "symbol": "RefundService.refund",
+      "start_line": 12,
+      "end_line": 18
+    }
+  ]
+}

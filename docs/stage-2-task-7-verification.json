@@ -1,0 +1,522 @@
+{
+  "recorded_at": "2026-10-04T01:29:24.349064+08:00",
+  "api_base_url": "http://127.0.0.1:65368",
+  "collection": "repopilot_code",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimension": 1024,
+  "existing_demo_points": 8,
+  "fixture_kind": "Handwritten local repository with actual indexed code",
+  "searches": [
+    {
+      "request": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 1
+      },
+      "status_code": 200,
+      "response": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 1,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 5226.64,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+            "repository": "demo-repository",
+            "score": 0.4860013,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+          }
+        ]
+      },
+      "http_latency_ms": 5326.0
+    },
+    {
+      "request": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 3
+      },
+      "status_code": 200,
+      "response": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 3,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 644.8,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+            "repository": "demo-repository",
+            "score": 0.4860013,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+            "repository": "demo-repository",
+            "score": 0.48496866,
+            "path": "frontend/src/types.ts",
+            "language": "typescript",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+            "repository": "demo-repository",
+            "score": 0.44413948,
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 19,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+          }
+        ]
+      },
+      "http_latency_ms": 706.14
+    },
+    {
+      "request": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 5
+      },
+      "status_code": 200,
+      "response": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 5,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 800.61,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+            "repository": "demo-repository",
+            "score": 0.48684692,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+            "repository": "demo-repository",
+            "score": 0.4854089,
+            "path": "frontend/src/types.ts",
+            "language": "typescript",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+            "repository": "demo-repository",
+            "score": 0.44492742,
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 19,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+            "repository": "demo-repository",
+            "score": 0.44356453,
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+            "repository": "demo-repository",
+            "score": 0.44177508,
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+          }
+        ]
+      },
+      "http_latency_ms": 854.66
+    },
+    {
+      "request": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 20
+      },
+      "status_code": 200,
+      "response": {
+        "repository": "demo-repository",
+        "query": "退款逻辑在哪里？",
+        "top_k": 20,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 694.94,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+            "repository": "demo-repository",
+            "score": 0.48684692,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+            "repository": "demo-repository",
+            "score": 0.4854089,
+            "path": "frontend/src/types.ts",
+            "language": "typescript",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+            "repository": "demo-repository",
+            "score": 0.44492742,
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 19,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+            "repository": "demo-repository",
+            "score": 0.44356453,
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+            "repository": "demo-repository",
+            "score": 0.44177508,
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+            "repository": "demo-repository",
+            "score": 0.42517757,
+            "path": "backend/controller/OrderController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 16,
+            "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\npublic final class OrderController {\n    private final RefundService refunds;\n\n    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n\n    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n}\n"
+          },
+          {
+            "rank": 7,
+            "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+            "repository": "demo-repository",
+            "score": 0.30323172,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 23,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n\n    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n}\n"
+          },
+          {
+            "rank": 8,
+            "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+            "repository": "demo-repository",
+            "score": 0.19282347,
+            "path": "database/schema.sql",
+            "language": "sql",
+            "start_line": 1,
+            "end_line": 11,
+            "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n"
+          }
+        ]
+      },
+      "http_latency_ms": 753.87
+    },
+    {
+      "request": {
+        "repository": "demo-repository",
+        "query": "钱包余额是如何增加的？",
+        "top_k": 5
+      },
+      "status_code": 200,
+      "response": {
+        "repository": "demo-repository",
+        "query": "钱包余额是如何增加的？",
+        "top_k": 5,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 814.42,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+            "repository": "demo-repository",
+            "score": 0.46036983,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 23,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n\n    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n}\n"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+            "repository": "demo-repository",
+            "score": 0.35266548,
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+            "repository": "demo-repository",
+            "score": 0.3438118,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+            "repository": "demo-repository",
+            "score": 0.31108937,
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 19,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+            "repository": "demo-repository",
+            "score": 0.30757514,
+            "path": "database/schema.sql",
+            "language": "sql",
+            "start_line": 1,
+            "end_line": 11,
+            "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n"
+          }
+        ]
+      },
+      "http_latency_ms": 860.54
+    }
+  ],
+  "unindexed_repository": {
+    "status_code": 200,
+    "response": {
+      "repository": "not-indexed",
+      "query": "退款逻辑在哪里？",
+      "top_k": 5,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "retrieval_latency_ms": 640.3,
+      "results": []
+    },
+    "http_latency_ms": 709.07
+  },
+  "invalid_requests": [
+    {
+      "invalid_fields": {
+        "top_k": 0
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "greater_than_equal",
+            "loc": [
+              "body",
+              "top_k"
+            ],
+            "msg": "Input should be greater than or equal to 1",
+            "input": 0,
+            "ctx": {
+              "ge": 1
+            }
+          }
+        ]
+      },
+      "http_latency_ms": 1.91
+    },
+    {
+      "invalid_fields": {
+        "top_k": 21
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "less_than_equal",
+            "loc": [
+              "body",
+              "top_k"
+            ],
+            "msg": "Input should be less than or equal to 20",
+            "input": 21,
+            "ctx": {
+              "le": 20
+            }
+          }
+        ]
+      },
+      "http_latency_ms": 1.65
+    },
+    {
+      "invalid_fields": {
+        "top_k": true
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "int_type",
+            "loc": [
+              "body",
+              "top_k"
+            ],
+            "msg": "Input should be a valid integer",
+            "input": true
+          }
+        ]
+      },
+      "http_latency_ms": 1.25
+    },
+    {
+      "invalid_fields": {
+        "query": " \n"
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "query"
+            ],
+            "msg": "Value error, Query must not be blank",
+            "input": " \n",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "http_latency_ms": 1.9
+    },
+    {
+      "invalid_fields": {
+        "repository": "CON"
+      },
+      "status_code": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "repository"
+            ],
+            "msg": "Value error, Repository must be a valid single directory name.",
+            "input": "CON",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "http_latency_ms": 1.13
+    }
+  ],
+  "all_returned_source_slices_match": true,
+  "all_results_repository_scoped": true,
+  "search_did_not_change_points_or_collection_metadata": true,
+  "qdrant_data_sha256_before": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "qdrant_data_sha256_after": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "source_hashes_unchanged": true,
+  "source_sha256": {
+    "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+    "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+    "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+    "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+    "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+    "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+    "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+    "notes.txt": "2b0eb5f9191bae1a61a5332f7c827ee026b67a459114d629e136962e9426b405",
+    "package-lock.json": "6b243519ccdf3432aa5ff287cd0428a66af48c73aa603b69038823ad71f7f365",
+    "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+  },
+  "validation": {
+    "backend_suite": {"passed": 466, "skipped": 5, "existing_deprecation_warnings": 2},
+    "new_offline_retrieval_tests": {"passed": 78},
+    "real_retrieval_integration": {
+      "passed": 1,
+      "duration_seconds": 17.4,
+      "repositories": ["demo", "other"],
+      "indexed_points_per_repository": 2,
+      "top_k_checked": [1, 5, 20],
+      "verified_result_counts_per_repository": [1, 2, 2],
+      "repository_isolation_verified": true,
+      "search_did_not_mutate_points_or_metadata": true,
+      "unique_test_collection_cleaned_up": true
+    },
+    "frontend_typescript_vite_build": "passed"
+  },
+  "process_health": {
+    "status_code": 200,
+    "response": {
+      "status": "ok"
+    },
+    "http_latency_ms": 1.94
+  }
+}

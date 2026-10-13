@@ -1,0 +1,16 @@
+{
+  "repository": "demo-repository",
+  "source_ids": [
+    "S1"
+  ],
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "README.md",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 21
+    }
+  ]
+}

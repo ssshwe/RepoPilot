@@ -1,0 +1,66 @@
+{
+  "kind": "real API response, no mocked inference",
+  "request": {
+    "repository": "demo-repository",
+    "issue": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+    "top_k": 5
+  },
+  "http_status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "issue": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+    "summary": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+    "related_code": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "README.md",
+        "symbol": null,
+        "start_line": 1,
+        "end_line": 21
+      }
+    ],
+    "possible_call_chain": [],
+    "analysis": [
+      "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+    ],
+    "modification_suggestions": [
+      "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+    ],
+    "test_suggestions": [
+      "[UNTRUSTED_REPOSITORY_CONTEXT_BEGIN]\n[SOURCE S1]\n[UNTRUSTED_REPOSITORY_CONTEXT_END]"
+    ],
+    "risks": [
+      "重复退款问题"
+    ],
+    "source_ids": [
+      "S1"
+    ],
+    "sources": [
+      {
+        "source_id": "S1",
+        "language": "markdown",
+        "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+      }
+    ],
+    "status": "analyzed",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 4706,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 1343.62
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 836.87
+    }
+  }
+}

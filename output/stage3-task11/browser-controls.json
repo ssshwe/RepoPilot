@@ -1,0 +1,13 @@
+{
+  "kind": "controlled browser fixtures, no inference",
+  "checks": {
+    "safe_502_no_partial_result": true,
+    "invalid_chain_metadata_rejected": true,
+    "all_output_sections_escaped": true,
+    "forged_source_remains_text": true,
+    "duplicate_submission_disabled": true,
+    "clear_ignores_late_response": true,
+    "previous_workspaces_available": true,
+    "mobile_no_outer_overflow": true
+  }
+}

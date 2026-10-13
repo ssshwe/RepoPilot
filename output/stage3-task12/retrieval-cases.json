@@ -1,0 +1,2973 @@
+{
+  "kind": "actual recorded retrieval/context",
+  "cases": [
+    {
+      "id": "refund-service",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/service/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6297276,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.6155841,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.595574,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "start_line": 13,
+          "end_line": 15,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.5548177,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.54283035,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4110,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/controller/OrderController.java",
+            "symbol": "OrderController.refundOrder",
+            "start_line": 13,
+            "end_line": 15,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-credit",
+      "query": "哪里校验钱包入账金额必须为正数，并累加余额？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4933955,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "start_line": 7,
+          "end_line": 9,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.4519235,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.43439594,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.4295513,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "start_line": 10,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.42844403,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "start_line": 5,
+          "end_line": 7,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/WalletService.java",
+                "symbol": "WalletService.credit"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4177,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService",
+            "start_line": 7,
+            "end_line": 9,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService.credit",
+            "start_line": 10,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService",
+            "start_line": 5,
+            "end_line": 7,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-default-balance",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 20,
+          "end_line": 22,
+          "snippet": "balances.getOrDefault(userId, BigDecimal.ZERO)"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.52640754,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf",
+          "node_type": "method_declaration",
+          "start_line": 20,
+          "end_line": 22,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.5118214,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "start_line": 7,
+          "end_line": 9,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.4520517,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.45026028,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.42968756,
+          "path": "database/schema.sql",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 11,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/WalletService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/WalletService.java",
+                "symbol": "WalletService.balanceOf"
+              }
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/WalletService.java",
+                "symbol": "WalletService.balanceOf"
+              }
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/WalletService.java",
+                "symbol": "WalletService.balanceOf"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4075,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService.balanceOf",
+            "start_line": 20,
+            "end_line": 22,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService",
+            "start_line": 7,
+            "end_line": 9,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "database/schema.sql",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 11,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-controller",
+      "query": "哪个后端入口接收退款请求并调用退款服务？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/controller/OrderController.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6575569,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.63925385,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.59468627,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController",
+          "node_type": "class_declaration",
+          "start_line": 6,
+          "end_line": 8,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.5822567,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.5723741,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "start_line": 5,
+          "end_line": 7,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/controller/OrderController.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/controller/OrderController.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/controller/OrderController.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "5": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          }
+        },
+        "context_annotated_lines": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        }
+      },
+      "context": {
+        "characters": 3739,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/controller/OrderController.java",
+            "symbol": "OrderController",
+            "start_line": 6,
+            "end_line": 8,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService",
+            "start_line": 5,
+            "end_line": 7,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-form",
+      "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+      "group": "canonical",
+      "expected_paths": [
+        "frontend/src/RefundPanel.vue"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "start_line": 5,
+          "end_line": 12,
+          "snippet": "emit('refund', { ...form })"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6797179,
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 22,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.66804445,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.6629944,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "start_line": 13,
+          "end_line": 15,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.65665364,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.651402,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/RefundPanel.vue"
+            ]
+          }
+        },
+        "symbols": null,
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/RefundPanel.vue"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4801,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "frontend/src/RefundPanel.vue",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 22,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/controller/OrderController.java",
+            "symbol": "OrderController.refundOrder",
+            "start_line": 13,
+            "end_line": 15,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-request-type",
+      "query": "RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？",
+      "group": "canonical",
+      "expected_paths": [
+        "frontend/src/types.ts"
+      ],
+      "expected_symbols": [
+        {
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "frontend/src/types.ts",
+          "start_line": 1,
+          "end_line": 5,
+          "snippet": "export interface RefundRequest"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.8423034,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.74052894,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "start_line": 13,
+          "end_line": 15,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.72016734,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.68472826,
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 22,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.66188717,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "frontend/src/types.ts"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "frontend/src/types.ts",
+                "symbol": "RefundRequest"
+              }
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "frontend/src/types.ts",
+                "symbol": "RefundRequest"
+              }
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "frontend/src/types.ts",
+                "symbol": "RefundRequest"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/types.ts"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4801,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/controller/OrderController.java",
+            "symbol": "OrderController.refundOrder",
+            "start_line": 13,
+            "end_line": 15,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "frontend/src/RefundPanel.vue",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 22,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "orders-schema",
+      "query": "订单表的状态字段和金额字段在哪里定义？",
+      "group": "canonical",
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 1,
+          "end_line": 6,
+          "snippet": "status VARCHAR(20) NOT NULL"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4727635,
+          "path": "database/schema.sql",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 11,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.44205523,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.4419396,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.4409692,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.41886586,
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 4,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "database/schema.sql"
+            ]
+          }
+        },
+        "symbols": null,
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "database/schema.sql"
+          ]
+        }
+      },
+      "context": {
+        "characters": 3934,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "database/schema.sql",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 11,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/service/RefundService.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 4,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallets-schema",
+      "query": "钱包表余额的默认值在哪里设置为零？",
+      "group": "canonical",
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 11,
+          "snippet": "balance DECIMAL(12, 2) NOT NULL DEFAULT 0"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.47480482,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "start_line": 7,
+          "end_line": 9,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.3898392,
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.balanceOf",
+          "node_type": "method_declaration",
+          "start_line": 20,
+          "end_line": 22,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.3569379,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.3545336,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.35060537,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "start_line": 5,
+          "end_line": 7,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          }
+        },
+        "symbols": null,
+        "context_annotated_lines": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        }
+      },
+      "context": {
+        "characters": 3896,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService",
+            "start_line": 7,
+            "end_line": 9,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/service/WalletService.java",
+            "symbol": "WalletService.balanceOf",
+            "start_line": 20,
+            "end_line": 22,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService",
+            "start_line": 5,
+            "end_line": 7,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-documentation",
+      "query": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+      "group": "canonical",
+      "expected_paths": [
+        "README.md"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "README.md",
+          "start_line": 8,
+          "end_line": 21,
+          "snippet": "`notes.txt` is intentionally outside the scanner's supported extensions."
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4965865,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.406598,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.39599532,
+          "path": "backend/service/WalletService.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 6,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.3599664,
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 4,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.25587666,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "README.md"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "README.md"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "README.md"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "README.md"
+            ]
+          }
+        },
+        "symbols": null,
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "README.md"
+          ]
+        }
+      },
+      "context": {
+        "characters": 3773,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/service/WalletService.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 6,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 4,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "repository-metadata",
+      "query": "仓库的 name、purpose 和 features 元数据写在哪里？",
+      "group": "canonical",
+      "expected_paths": [
+        "config/repository.json"
+      ],
+      "expected_symbols": [],
+      "evidence": [
+        {
+          "path": "config/repository.json",
+          "start_line": 2,
+          "end_line": 4,
+          "snippet": "\"features\": [\"order-refund\", \"wallet-balance\"]"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.4654923,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.39883754,
+          "path": "backend/service/WalletService.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 6,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.38903284,
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 4,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.38263857,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.34096026,
+          "path": "database/schema.sql",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 11,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "config/repository.json"
+            ]
+          }
+        },
+        "symbols": null,
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "config/repository.json"
+          ]
+        }
+      },
+      "context": {
+        "characters": 3952,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/service/WalletService.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 6,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/service/RefundService.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 4,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "database/schema.sql",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 11,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-validation-files",
+      "query": "退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "orderId == null || orderId.isBlank()"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "amount == null || amount.signum() <= 0"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.5094075,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.46204776,
+          "path": "config/repository.json",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.44092244,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.429929,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.4092548,
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 22,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.5,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.5,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.5,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 0.5,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4775,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "config/repository.json",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "frontend/src/RefundPanel.vue",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 22,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-call-chain",
+      "query": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+      "group": "canonical",
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6630558,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.60759944,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.56490386,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.5592162,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.55211735,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "start_line": 5,
+          "end_line": 7,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/controller/OrderController.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.6666666666666666,
+            "matched_paths": [
+              "backend/controller/OrderController.java",
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4015,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "frontend/src/types.ts",
+            "symbol": "RefundRequest",
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService",
+            "start_line": 5,
+            "end_line": 7,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "issue-refund",
+      "query": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+      "group": "supplementary",
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.5801703,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.5685495,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.51875883,
+          "path": "frontend/src/RefundPanel.vue",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 22,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.50563157,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.49519235,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController",
+          "node_type": "class_declaration",
+          "start_line": 6,
+          "end_line": 8,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/controller/OrderController.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.6666666666666666,
+            "matched_paths": [
+              "backend/controller/OrderController.java",
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4706,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "frontend/src/RefundPanel.vue",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 22,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/controller/OrderController.java",
+            "symbol": "OrderController",
+            "start_line": 6,
+            "end_line": 8,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "issue-direct",
+      "query": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+      "group": "supplementary",
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "symbol": "WalletService.credit"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.68734515,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.686517,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.6617148,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "start_line": 5,
+          "end_line": 7,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.6400579,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.RefundService",
+          "node_type": "constructor_declaration",
+          "start_line": 8,
+          "end_line": 10,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.61880887,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.6666666666666666,
+            "matched_paths": [
+              "backend/controller/OrderController.java",
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_paths": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": false,
+            "recall": 0.0,
+            "matched_symbols": []
+          },
+          "3": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 0.3333333333333333,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      },
+      "context": {
+        "characters": 4050,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "README.md",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 21,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 18,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService",
+            "start_line": 5,
+            "end_line": 7,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.RefundService",
+            "start_line": 8,
+            "end_line": 10,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "path": "backend/controller/OrderController.java",
+            "symbol": null,
+            "start_line": 1,
+            "end_line": 5,
+            "budget_truncated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "empty-repository",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "group": "supplementary",
+      "expected_paths": [],
+      "expected_symbols": [],
+      "evidence": [],
+      "results": [],
+      "metrics": {
+        "file": null,
+        "annotated_lines": null,
+        "symbols": null,
+        "context_annotated_lines": null
+      },
+      "context": {
+        "characters": 0,
+        "budget": 16000,
+        "budget_limited": false,
+        "sources": []
+      }
+    },
+    {
+      "id": "refund-budget700",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "group": "supplementary",
+      "expected_paths": [
+        "backend/service/RefundService.java"
+      ],
+      "expected_symbols": [
+        {
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        }
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "score": 0.6294383,
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "start_line": 12,
+          "end_line": 18,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "score": 0.61479956,
+          "path": "README.md",
+          "symbol": null,
+          "node_type": null,
+          "start_line": 1,
+          "end_line": 21,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        {
+          "rank": 3,
+          "score": 0.59556794,
+          "path": "backend/controller/OrderController.java",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "start_line": 13,
+          "end_line": 15,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "score": 0.55443716,
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "node_type": "program",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "score": 0.54227555,
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "start_line": 1,
+          "end_line": 5,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "metrics": {
+        "file": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "annotated_lines": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_paths": [
+              "backend/service/RefundService.java"
+            ]
+          }
+        },
+        "symbols": {
+          "1": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          },
+          "3": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          },
+          "5": {
+            "hit": true,
+            "recall": 1.0,
+            "matched_symbols": [
+              {
+                "path": "backend/service/RefundService.java",
+                "symbol": "RefundService.refund"
+              }
+            ]
+          }
+        },
+        "context_annotated_lines": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        }
+      },
+      "context": {
+        "characters": 698,
+        "budget": 700,
+        "budget_limited": true,
+        "sources": [
+          {
+            "source_id": "S1",
+            "path": "backend/service/RefundService.java",
+            "symbol": "RefundService.refund",
+            "start_line": 12,
+            "end_line": 15,
+            "budget_truncated": true
+          }
+        ]
+      }
+    }
+  ]
+}

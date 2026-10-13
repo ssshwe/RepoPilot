@@ -1,0 +1,49 @@
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=845.16
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=5 retrieval_latency_ms=1368.4 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+1/16 refund-service: HTTP 200, citations=1, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=88.12
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪里校验钱包入账金额必须为正数，并累加余额？" top_k=5 retrieval_latency_ms=619.09 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+2/16 wallet-credit: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=103.66
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="读取用户钱包余额时，未找到用户如何返回零？" top_k=5 retrieval_latency_ms=635.13 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+3/16 wallet-default-balance: HTTP 200, citations=1, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=143.20
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪个后端入口接收退款请求并调用退款服务？" top_k=5 retrieval_latency_ms=666.13 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+4/16 refund-controller: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=84.35
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？" top_k=5 retrieval_latency_ms=619.65 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+5/16 refund-form: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=88.62
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？" top_k=5 retrieval_latency_ms=612.22 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+6/16 refund-request-type: HTTP 200, citations=1, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=93.15
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="订单表的状态字段和金额字段在哪里定义？" top_k=5 retrieval_latency_ms=622.88 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+7/16 orders-schema: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=85.49
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="钱包表余额的默认值在哪里设置为零？" top_k=5 retrieval_latency_ms=620.33 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+8/16 wallets-schema: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=91.26
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="这个演示仓库有哪些主要源文件，哪些文件不会被索引？" top_k=5 retrieval_latency_ms=621.14 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+9/16 fixture-documentation: HTTP 200, citations=1, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=49.04
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="仓库的 name、purpose 和 features 元数据写在哪里？" top_k=5 retrieval_latency_ms=578.97 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+10/16 repository-metadata: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=78.43
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？" top_k=5 retrieval_latency_ms=607.98 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+11/16 refund-validation-files: HTTP 200, citations=2, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=139.22
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="从后端退款入口到钱包余额更新，请求经过哪三个实现文件？" top_k=5 retrieval_latency_ms=665.7 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+12/16 refund-call-chain: HTTP 200, citations=3, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=88.85
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。" top_k=5 retrieval_latency_ms=607.81 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+13/16 issue-refund: HTTP 200, citations=5, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=57.70
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。" top_k=5 retrieval_latency_ms=576.74 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+14/16 issue-direct: HTTP 200, citations=1, native_calls=1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=81.82
+INFO app.retrieval.service Retrieval repository=stage3-task12-not-indexed retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=5 retrieval_latency_ms=611.42 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+15/16 empty-repository: HTTP 200, citations=0, native_calls=0
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=73.49
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=5 retrieval_latency_ms=595.27 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+16/16 refund-budget700: HTTP 200, citations=1, native_calls=1
+{"report": "evaluation\\reports\\stage3_grounding_20261013_task13_raw.json", "queries": 16, "native_generation_http_calls": 15, "qdrant_unchanged": true, "manual_review": "pending"}

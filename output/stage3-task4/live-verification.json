@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "transport": "real HTTP / uvicorn on 127.0.0.1:8014",
+  "first": {
+    "repository": "demo-repository",
+    "files_scanned": 10,
+    "supported_files": 8,
+    "skipped_files": 2,
+    "chunks_created": 17,
+    "vectors_indexed": 17,
+    "previous_vectors": 8,
+    "collection": "repopilot_code",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "chunk_lines": 60,
+    "overlap_lines": 10,
+    "ast_parsed_files": 4,
+    "fallback_files": 4,
+    "failed_files": 0,
+    "chunking_version": "ast-v1",
+    "fallback_chunking_version": "ast-fallback-line-v1",
+    "max_chunk_characters": 8192,
+    "strategy": "replace_repository",
+    "skipped": [
+      {
+        "path": "notes.txt",
+        "reason": "unsupported_extension"
+      },
+      {
+        "path": "package-lock.json",
+        "reason": "ignored_file"
+      }
+    ],
+    "pruned_directories": []
+  },
+  "repeat": {
+    "repository": "demo-repository",
+    "files_scanned": 10,
+    "supported_files": 8,
+    "skipped_files": 2,
+    "chunks_created": 17,
+    "vectors_indexed": 17,
+    "previous_vectors": 17,
+    "collection": "repopilot_code",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "chunk_lines": 60,
+    "overlap_lines": 10,
+    "ast_parsed_files": 4,
+    "fallback_files": 4,
+    "failed_files": 0,
+    "chunking_version": "ast-v1",
+    "fallback_chunking_version": "ast-fallback-line-v1",
+    "max_chunk_characters": 8192,
+    "strategy": "replace_repository",
+    "skipped": [
+      {
+        "path": "notes.txt",
+        "reason": "unsupported_extension"
+      },
+      {
+        "path": "package-lock.json",
+        "reason": "ignored_file"
+      }
+    ],
+    "pruned_directories": []
+  },
+  "source_slices_verified": true,
+  "stable_ids_verified": true,
+  "old_simple_ids_removed": true,
+  "other_collections_unchanged": true,
+  "embedding_identity_preserved": true,
+  "vector_dimension": 1024,
+  "all_vectors_finite": true,
+  "final_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98",
+  "dense_retrieval_http_status": 200,
+  "dense_retrieval_results": 5
+}

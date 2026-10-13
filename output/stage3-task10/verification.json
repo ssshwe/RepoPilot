@@ -1,0 +1,247 @@
+{
+  "task": "Stage 3 / Task 10",
+  "verified": true,
+  "real_responses": [
+    {
+      "case": "refund",
+      "repository": "demo-repository",
+      "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "answer": "RefundService.refund",
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        }
+      ],
+      "preview_line_counts": [
+        7
+      ],
+      "context_characters": 4110,
+      "generation_called": true,
+      "source_previews_equal_validated_context": true,
+      "retrieval_matches_local_files": true
+    },
+    {
+      "case": "controlled-pending-real",
+      "repository": "demo-repository",
+      "question": "controlled pending question",
+      "answer": "序列化仓库数据",
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/WalletService.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 6
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S2",
+          "path": "frontend/src/types.ts",
+          "symbol": "RefundRequest",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S3",
+          "path": "backend/service/RefundService.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 4
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S4",
+          "path": "config/repository.json",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "repository": "demo-repository",
+          "source_id": "S5",
+          "path": "backend/controller/OrderController.java",
+          "symbol": null,
+          "start_line": 1,
+          "end_line": 5
+        }
+      ],
+      "preview_line_counts": [
+        6,
+        5,
+        4,
+        5,
+        5
+      ],
+      "context_characters": 2774,
+      "generation_called": true,
+      "source_previews_equal_validated_context": true,
+      "retrieval_matches_local_files": true
+    },
+    {
+      "case": "empty",
+      "repository": "stage3-task10-not-indexed",
+      "question": "这个仓库的退款函数在哪里？",
+      "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+      "citations": [],
+      "preview_line_counts": [],
+      "context_characters": 0,
+      "generation_called": false,
+      "source_previews_equal_validated_context": true,
+      "retrieval_matches_local_files": true
+    },
+    {
+      "case": "refund-final",
+      "repository": "demo-repository",
+      "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "answer": "RefundService.refund",
+      "citations": [
+        {
+          "repository": "demo-repository",
+          "source_id": "S1",
+          "path": "backend/service/RefundService.java",
+          "symbol": "RefundService.refund",
+          "start_line": 12,
+          "end_line": 18
+        }
+      ],
+      "preview_line_counts": [
+        7
+      ],
+      "context_characters": 4110,
+      "generation_called": true,
+      "source_previews_equal_validated_context": true,
+      "retrieval_matches_local_files": true
+    }
+  ],
+  "real_api_counts": {
+    "contexts_built": 4,
+    "generation_calls": 3,
+    "citation_validation_calls": 7,
+    "actual_generation_http_requests": 3,
+    "stopped": true
+  },
+  "controlled_browser_checks": {
+    "kind": "controlled browser fixtures, no inference",
+    "checks": {
+      "safe_502_no_partial_answer": true,
+      "foreign_response_rejected": true,
+      "untrusted_text_escaped": true,
+      "forged_source_remains_text": true,
+      "clear_cancels_and_ignores_late_reply": true,
+      "duplicate_submit_disabled": true,
+      "existing_workspaces_available": true,
+      "mobile_page_has_no_horizontal_overflow": true
+    }
+  },
+  "real_browser_checks": {
+    "kind": "real browser requests, no mocked inference",
+    "checks": {
+      "blank_question_does_not_call_api": true,
+      "real_empty_evidence_skips_generation": true,
+      "real_refund_answer_and_preview": true,
+      "desktop_no_page_overflow": true,
+      "mobile_no_page_overflow": true
+    },
+    "api_calls": 2,
+    "answer": "RefundService.refund",
+    "citation": {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "backend/service/RefundService.java",
+      "symbol": "RefundService.refund",
+      "start_line": 12,
+      "end_line": 18
+    },
+    "empty_reason": "no_results"
+  },
+  "tests": {
+    "backend": {
+      "collected": 947,
+      "passed": 941,
+      "skipped": 6,
+      "failed": 0
+    },
+    "evaluation": {
+      "collected": 42,
+      "passed": 42,
+      "skipped": 0,
+      "failed": 0
+    },
+    "frontend": {
+      "collected": 28,
+      "passed": 28,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "new_backend_tests": 11,
+  "new_frontend_tests": 19,
+  "build": {
+    "command": "npm.cmd run build",
+    "exit_code": 0,
+    "transformed_modules": 1620
+  },
+  "screenshots": {
+    "desktop": {
+      "path": "output/playwright/task10-desktop.png",
+      "width": 1280,
+      "height": 1000
+    },
+    "mobile": {
+      "path": "output/playwright/task10-mobile.png",
+      "width": 390,
+      "height": 844
+    },
+    "mobile-preview": {
+      "path": "output/playwright/task10-mobile-preview.png",
+      "width": 390,
+      "height": 844
+    },
+    "empty": {
+      "path": "output/playwright/task10-empty.png",
+      "width": 390,
+      "height": 844
+    },
+    "error": {
+      "path": "output/playwright/task10-error.png",
+      "width": 390,
+      "height": 844
+    },
+    "untrusted-text": {
+      "path": "output/playwright/task10-untrusted-text.png",
+      "width": 390,
+      "height": 844
+    }
+  },
+  "preservation": {
+    "protected_files": 443,
+    "expected_changed_files": [
+      "README.md",
+      "apps/web/src/App.vue",
+      "apps/web/src/style.css",
+      "services/api/app/rag/service.py",
+      "services/api/app/schemas/code_chat.py"
+    ],
+    "other_existing_files_unchanged": 438
+  },
+  "qdrant": {
+    "unchanged": true,
+    "production_points": 17,
+    "dimensions": 1024,
+    "distance": "Cosine",
+    "production_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+  },
+  "limitations": [
+    "No semantic answer verification",
+    "Client abort does not guarantee server inference cancellation",
+    "In-memory independent turns; no streaming RAG or Issue Analyzer"
+  ],
+  "browser_fixture_note": "The initial browser harness timed out on a renamed busy button. Its cleanup forwarded one held request containing 'controlled pending question' to the real API. That real response is preserved separately and is not a successful answer-quality case. The corrected eight controlled browser checks passed with routes removed afterward."
+}

@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "kind": "source review summary; no inference rerun",
+  "raw_report": "evaluation/reports/stage3_grounding_20261012_task12_raw.json",
+  "raw_report_sha256": "d2090a06be45ed0f4b5781bb0458d5c3e73792ba9394a0eb34cf8318198fe79c",
+  "review_file": "evaluation/reports/stage3_grounding_20261012_task12_review.json",
+  "dataset_sha256": "12cb261fc2efd16ceaea8b6a609210a2cc103ffac914cbe1eab8f060ae5020c1",
+  "reviewer": {
+    "role": "development_assistant",
+    "method": "case-by-case inspection of actual replies, cited Context and local files; no automated LLM judge",
+    "independent_human_review": "pending"
+  },
+  "support_definition": "回答需包含与 Query 相关的实质性内容，且这些内容均可由选中的引用片段支持；空洞复述、错误位置或错误范围不通过。支持成立与完整回答分开；一条正确局部事实可以 supported 但 incomplete。多余引用另记整批语义支持失败。",
+  "retrieval_summary": {
+    "queries": 12,
+    "file": {
+      "labelled_queries": 12,
+      "at_k": {
+        "1": {
+          "hits": 8,
+          "total": 12,
+          "hit_rate": 0.6666666666666666,
+          "macro_recall": 0.6666666666666666
+        },
+        "3": {
+          "hits": 10,
+          "total": 12,
+          "hit_rate": 0.8333333333333334,
+          "macro_recall": 0.7777777777777778
+        },
+        "5": {
+          "hits": 11,
+          "total": 12,
+          "hit_rate": 0.9166666666666666,
+          "macro_recall": 0.8472222222222222
+        }
+      }
+    },
+    "annotated_lines": {
+      "labelled_queries": 12,
+      "at_k": {
+        "1": {
+          "hits": 6,
+          "total": 12,
+          "hit_rate": 0.5,
+          "macro_recall": 0.5
+        },
+        "3": {
+          "hits": 7,
+          "total": 12,
+          "hit_rate": 0.5833333333333334,
+          "macro_recall": 0.5833333333333334
+        },
+        "5": {
+          "hits": 10,
+          "total": 12,
+          "hit_rate": 0.8333333333333334,
+          "macro_recall": 0.7361111111111112
+        }
+      }
+    },
+    "symbols": {
+      "labelled_queries": 7,
+      "at_k": {
+        "1": {
+          "hits": 3,
+          "total": 7,
+          "hit_rate": 0.42857142857142855,
+          "macro_recall": 0.42857142857142855
+        },
+        "3": {
+          "hits": 3,
+          "total": 7,
+          "hit_rate": 0.42857142857142855,
+          "macro_recall": 0.42857142857142855
+        },
+        "5": {
+          "hits": 6,
+          "total": 7,
+          "hit_rate": 0.8571428571428571,
+          "macro_recall": 0.6904761904761905
+        }
+      }
+    },
+    "context_full_annotated_coverage": {
+      "hits": 8,
+      "total": 12,
+      "macro_recall": 0.7361111111111112
+    }
+  },
+  "review_summary": {
+    "canonical": {
+      "cases": 12,
+      "outcomes": {
+        "supported": 5,
+        "unsupported": 5,
+        "nonresponsive": 2
+      },
+      "supported_answers": 5,
+      "support_applicable": 12,
+      "support_rate": 0.4166666666666667,
+      "complete_responses": 3,
+      "complete_substantive_answers": 3,
+      "support_unjudged_or_abstained": 0,
+      "citation_metadata": {
+        "valid_batches": 12,
+        "cited_batches": 12,
+        "citations": 39,
+        "non_applicable_batches": 0
+      },
+      "all_selected_citations_support_answer": 2
+    },
+    "all": {
+      "cases": 16,
+      "outcomes": {
+        "supported": 5,
+        "unsupported": 7,
+        "nonresponsive": 3,
+        "abstention": 1
+      },
+      "supported_answers": 5,
+      "support_applicable": 15,
+      "support_rate": 0.3333333333333333,
+      "complete_responses": 4,
+      "complete_substantive_answers": 3,
+      "support_unjudged_or_abstained": 0,
+      "citation_metadata": {
+        "valid_batches": 15,
+        "cited_batches": 15,
+        "citations": 46,
+        "non_applicable_batches": 1
+      },
+      "all_selected_citations_support_answer": 2
+    }
+  },
+  "reviews": [
+    {
+      "id": "refund-service",
+      "response_sha256": "b08e58cc13c86ef7ceb646f89281f1a7549365a0c9a39d7a857ced3b6fbe643d",
+      "outcome": "supported",
+      "answer_supported": true,
+      "answer_complete": true,
+      "supporting_source_ids": [
+        "S1"
+      ],
+      "citation_batch_supports_answer": true,
+      "candidate_chain_supported": null,
+      "reason": "回答 RefundService.refund；S1 是真实 12–18 行，确实在该方法校验订单编号并调用 wallets.credit。作为位置问题，方法名加精确引用足以定位。"
+    },
+    {
+      "id": "wallet-credit",
+      "response_sha256": "2918265b9873c09f3fca87152940d6545709eb109b9a0d9da5e9c01e2d9d62d8",
+      "outcome": "supported",
+      "answer_supported": true,
+      "answer_complete": true,
+      "supporting_source_ids": [
+        "S4"
+      ],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "返回的 credit 方法体与 S4 10–18 行一致，包含 userId、正金额检查和 merge 累加。其余 S1/S2/S3/S5 没有直接支持这些完整实现事实，属于多余引用。"
+    },
+    {
+      "id": "wallet-default-balance",
+      "response_sha256": "73e34f8d47f8838d484fa2b44db925e118d8dabbab1ace4973b9f139d2238786",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "回答未找到用户如何返回零，但 S1 20–22 行明确是 getOrDefault(userId, BigDecimal.ZERO)。目标方法在 Rank 1，失败发生在生成。"
+    },
+    {
+      "id": "refund-controller",
+      "response_sha256": "9d61aeee669ca5b689d72e6cefbabb6e397b81290b073a56596693f2ba6510d4",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "回答 RefundService.java，实际入口是 OrderController.refundOrder 13–15 行；Top5 只召回 controller imports 与 class 字段，没有入口方法。引用真实但不能支持入口定位。"
+    },
+    {
+      "id": "refund-form",
+      "response_sha256": "5bafac8269c305cc812c3865babfb4a577f0e3231d4411d27750e35e265f1c7a",
+      "outcome": "nonresponsive",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "回答逐字复制问题，没有说明 reactive、ID/金额检查或 emit。S1 已包含完整 Vue 表单，不能把复述算作受支持答案。"
+    },
+    {
+      "id": "refund-request-type",
+      "response_sha256": "447ef407c6ee35f0ed068ebfeeeddd2233e052a04356a8600e61fa2c4b6ccb45",
+      "outcome": "supported",
+      "answer_supported": true,
+      "answer_complete": false,
+      "supporting_source_ids": [
+        "S1"
+      ],
+      "citation_batch_supports_answer": true,
+      "candidate_chain_supported": null,
+      "reason": "orderId: string 与 S1 types.ts 1–5 行一致；遗漏 userId: string 与 amount: number，所以支持成立但问题未完整回答。"
+    },
+    {
+      "id": "orders-schema",
+      "response_sha256": "b61982e5cf09a80a26860be43516c3675f4443ff1fa72e1225c870fae9c00091",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "将 orders.status/amount 定义位置说成 RefundService.java，真实定义在 S1 schema.sql 1–6 行。正确 DDL 已召回，仍给出错误文件。"
+    },
+    {
+      "id": "wallets-schema",
+      "response_sha256": "323711781e5d840546ab51164de095d96090cbc46936b3cb658feb483646afe8",
+      "outcome": "nonresponsive",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "只写 WalletService.balanceOf(String userId)，没有回答 wallets 表 DEFAULT 0 的定义。Top5 未召回 schema.sql；业务读取默认零不能替代 DDL 默认值证据。"
+    },
+    {
+      "id": "fixture-documentation",
+      "response_sha256": "e942320e19e530156757cc26b96f1b19f59b04228be380f2b969365af6d6a33e",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "只列 RefundService.java，既未覆盖源文件与忽略规则，唯一引用 S1 config/repository.json 也不含这个文件名；相关说明实际上在未引用的 S2 README。"
+    },
+    {
+      "id": "repository-metadata",
+      "response_sha256": "db37a4ebed541813229234118a8314d3177c01cbbc563db47d570bda47363f17",
+      "outcome": "supported",
+      "answer_supported": true,
+      "answer_complete": true,
+      "supporting_source_ids": [
+        "S1"
+      ],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "回答 config/repository.json；S1 明确包含 name/purpose/features，满足元数据位置问题。其他四条引用多余。"
+    },
+    {
+      "id": "refund-validation-files",
+      "response_sha256": "609aa9f05beb3ecd959b2f74aaf51b85fbcb457741993c4f17765827116f0903",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "把订单校验和钱包入账校验分别指向 types.ts 与 RefundPanel.vue。类型定义不是校验实现；钱包 credit 方法没有进入 Context。S4 RefundService.refund 已有订单校验，却未被正确解释。"
+    },
+    {
+      "id": "refund-call-chain",
+      "response_sha256": "351d8256800fda1a78a9a2f3e32534f6a0647440aac3e1234eb0b7e1308860a1",
+      "outcome": "supported",
+      "answer_supported": true,
+      "answer_complete": false,
+      "supporting_source_ids": [
+        "S4"
+      ],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "RefundService.java 是三个实现文件之一，S4 支持这一有限位置事实。回答没有三个文件或调用顺序；controller 方法和 wallet 方法都未召回，S2 imports/S3 types 引用不能证明链路。"
+    },
+    {
+      "id": "issue-refund",
+      "response_sha256": "6ca67a214b2ea1c58c9967e70ce57e181e5b1ab232a0ba46b2922290b8084777",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "analysis 说代码被截断，实际 Context budget_limited=false、全部 budget_truncated=false，S4 退款方法完整。建议泛化，没有对具体片段做代码分析；不能用截断解释缺失钱包方法的检索问题。"
+    },
+    {
+      "id": "issue-direct",
+      "response_sha256": "d9c4d1f2c4a907acad87b830e7d425bff61b5199978ef1f460fd605dd5d74ecc",
+      "outcome": "unsupported",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": false,
+      "reason": "只引用 README S1，并把 README 当调用节点；analysis 复述 Issue，test_suggestions 实际是加检查的代码修改建议。退款方法在 S2 已可见却未引用，没有具体重复调用测试，候选链无法成立。"
+    },
+    {
+      "id": "empty-repository",
+      "response_sha256": "8ef3e159b5ae607ac8300096544a1080784c7f7cf4ff62c44c4e26eb544e2b7d",
+      "outcome": "abstention",
+      "answer_supported": null,
+      "answer_complete": true,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": null,
+      "candidate_chain_supported": null,
+      "reason": "零检索、零 Context，固定证据不足答案，model=null、generation.called=false、无实际生成 HTTP，引用数组为空；这是正确负对照，语义支持和 Citation Valid 为 N/A。"
+    },
+    {
+      "id": "refund-budget700",
+      "response_sha256": "1a075416f0126042af95a7cce83ccc31fe7cdfe1a9b404cf5d533ef2e88611a4",
+      "outcome": "nonresponsive",
+      "answer_supported": false,
+      "answer_complete": false,
+      "supporting_source_ids": [],
+      "citation_batch_supports_answer": false,
+      "candidate_chain_supported": null,
+      "reason": "实际只输出 S1 RefundService.refund 12–15 行、四行预览，未包含第17行 wallets.credit。模型复述问题，未解释证据限制；引用正确截断，但不能据此判定回答有用。"
+    }
+  ],
+  "qdrant_unchanged": true
+}

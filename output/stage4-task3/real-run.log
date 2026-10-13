@@ -1,0 +1,369 @@
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/AuthService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/CouponService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/FraudService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/InventoryService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/InvoiceService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/LedgerService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/legacy/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/NotificationService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/OrderService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shared/SharedRecorder.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/ShippingService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/SubscriptionService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=config/application.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.service Index prepared repository=stage4-commerce files_scanned=29 ast_parsed_files=26 fallback_files=3 failed_files=0 chunks_created=106
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/ShadowGateway.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.service Index prepared repository=stage4-shadow files_scanned=2 ast_parsed_files=2 fallback_files=0 failed_files=0 chunks_created=6
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.indexing.service Index prepared repository=stage4-empty files_scanned=1 ast_parsed_files=0 fallback_files=0 failed_files=0 chunks_created=0
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/AuthService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/CouponService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/FraudService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/InventoryService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/InvoiceService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/LedgerService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/legacy/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/NotificationService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/OrderService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shared/SharedRecorder.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/ShippingService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/SubscriptionService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=config/application.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.service Index prepared repository=stage4-commerce files_scanned=29 ast_parsed_files=26 fallback_files=3 failed_files=0 chunks_created=106
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/ShadowGateway.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.service Index prepared repository=stage4-shadow files_scanned=2 ast_parsed_files=2 fallback_files=0 failed_files=0 chunks_created=6
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.indexing.service Index prepared repository=stage4-empty files_scanned=1 ast_parsed_files=0 fallback_files=0 failed_files=0 chunks_created=0
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=3472.84
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=1 retrieval_latency_ms=524.62 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=5 retrieval_latency_ms=532.97 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款服务在哪里校验订单编号，然后把退款金额转回钱包？" top_k=20 retrieval_latency_ms=531.74 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+1/52 refund-service: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=71.63
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪里校验钱包入账金额必须为正数，并累加余额？" top_k=1 retrieval_latency_ms=527.74 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪里校验钱包入账金额必须为正数，并累加余额？" top_k=5 retrieval_latency_ms=536.5 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪里校验钱包入账金额必须为正数，并累加余额？" top_k=20 retrieval_latency_ms=533.44 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+2/52 wallet-credit: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=101.69
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="读取用户钱包余额时，未找到用户如何返回零？" top_k=1 retrieval_latency_ms=529.04 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="读取用户钱包余额时，未找到用户如何返回零？" top_k=5 retrieval_latency_ms=530.49 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="读取用户钱包余额时，未找到用户如何返回零？" top_k=20 retrieval_latency_ms=531.86 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+3/52 wallet-default-balance: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=280.72
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪个后端入口接收退款请求并调用退款服务？" top_k=1 retrieval_latency_ms=537.44 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪个后端入口接收退款请求并调用退款服务？" top_k=5 retrieval_latency_ms=532.65 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪个后端入口接收退款请求并调用退款服务？" top_k=20 retrieval_latency_ms=528.07 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+4/52 refund-controller: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=88.46
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？" top_k=1 retrieval_latency_ms=531.87 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？" top_k=5 retrieval_latency_ms=537.03 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？" top_k=20 retrieval_latency_ms=534.54 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+5/52 refund-form: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=228.60
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？" top_k=1 retrieval_latency_ms=540.46 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？" top_k=5 retrieval_latency_ms=544.11 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？" top_k=20 retrieval_latency_ms=540.63 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+6/52 refund-request-type: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=393.30
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="订单表的状态字段和金额字段在哪里定义？" top_k=1 retrieval_latency_ms=525.68 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="订单表的状态字段和金额字段在哪里定义？" top_k=5 retrieval_latency_ms=537.5 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="订单表的状态字段和金额字段在哪里定义？" top_k=20 retrieval_latency_ms=532.36 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+7/52 orders-schema: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=122.63
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="钱包表余额的默认值在哪里设置为零？" top_k=1 retrieval_latency_ms=537.53 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="钱包表余额的默认值在哪里设置为零？" top_k=5 retrieval_latency_ms=533.91 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="钱包表余额的默认值在哪里设置为零？" top_k=20 retrieval_latency_ms=533.16 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+8/52 wallets-schema: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=333.07
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="这个演示仓库有哪些主要源文件，哪些文件不会被索引？" top_k=1 retrieval_latency_ms=539.76 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="这个演示仓库有哪些主要源文件，哪些文件不会被索引？" top_k=5 retrieval_latency_ms=529.89 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="这个演示仓库有哪些主要源文件，哪些文件不会被索引？" top_k=20 retrieval_latency_ms=534.39 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+9/52 fixture-documentation: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=248.89
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="仓库的 name、purpose 和 features 元数据写在哪里？" top_k=1 retrieval_latency_ms=531.51 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="仓库的 name、purpose 和 features 元数据写在哪里？" top_k=5 retrieval_latency_ms=546.94 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="仓库的 name、purpose 和 features 元数据写在哪里？" top_k=20 retrieval_latency_ms=533.76 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+10/52 repository-metadata: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=281.96
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？" top_k=1 retrieval_latency_ms=526.97 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？" top_k=5 retrieval_latency_ms=529.96 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？" top_k=20 retrieval_latency_ms=529.53 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+11/52 refund-validation-files: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=103.35
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="从后端退款入口到钱包余额更新，请求经过哪三个实现文件？" top_k=1 retrieval_latency_ms=524.76 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="从后端退款入口到钱包余额更新，请求经过哪三个实现文件？" top_k=5 retrieval_latency_ms=524.04 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="从后端退款入口到钱包余额更新，请求经过哪三个实现文件？" top_k=20 retrieval_latency_ms=539.42 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+12/52 refund-call-chain: 17 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=227.34
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。" top_k=1 retrieval_latency_ms=530.82 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。" top_k=5 retrieval_latency_ms=528.64 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。" top_k=20 retrieval_latency_ms=532.32 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+13/52 wallet-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=451.54
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/wallet 的钱包入账流程中，钱包余额增加入账金额的代码在哪里？" top_k=1 retrieval_latency_ms=536.91 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/wallet 的钱包入账流程中，钱包余额增加入账金额的代码在哪里？" top_k=5 retrieval_latency_ms=518.11 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/wallet 的钱包入账流程中，钱包余额增加入账金额的代码在哪里？" top_k=20 retrieval_latency_ms=534.67 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+14/52 wallet-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=126.05
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段钱包入账代码抛出错误 \"Amount must be positive\"？" top_k=1 retrieval_latency_ms=537.6 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段钱包入账代码抛出错误 \"Amount must be positive\"？" top_k=5 retrieval_latency_ms=529.39 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段钱包入账代码抛出错误 \"Amount must be positive\"？" top_k=20 retrieval_latency_ms=535.34 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+15/52 wallet-error: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=253.46
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/wallet 的钱包入账请求如何从 WorkflowController.handle 到 WalletService.credit 再记录审计事件？" top_k=1 retrieval_latency_ms=548.82 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/wallet 的钱包入账请求如何从 WorkflowController.handle 到 WalletService.credit 再记录审计事件？" top_k=5 retrieval_latency_ms=532.51 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/wallet 的钱包入账请求如何从 WorkflowController.handle 到 WalletService.credit 再记录审计事件？" top_k=20 retrieval_latency_ms=522.66 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+16/52 wallet-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=217.52
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 中的 RefundService.refund 实现在哪里？" top_k=1 retrieval_latency_ms=530.26 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 中的 RefundService.refund 实现在哪里？" top_k=5 retrieval_latency_ms=533.7 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 中的 RefundService.refund 实现在哪里？" top_k=20 retrieval_latency_ms=535.34 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+17/52 refund-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=450.93
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/refund 的订单退款流程中，累计退款金额增加的代码在哪里？" top_k=1 retrieval_latency_ms=536.49 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/refund 的订单退款流程中，累计退款金额增加的代码在哪里？" top_k=5 retrieval_latency_ms=531.34 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/refund 的订单退款流程中，累计退款金额增加的代码在哪里？" top_k=20 retrieval_latency_ms=530.41 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+18/52 refund-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=109.80
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个订单退款方法写入代码字面量 \"refund.refund\"？" top_k=1 retrieval_latency_ms=511.73 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个订单退款方法写入代码字面量 \"refund.refund\"？" top_k=5 retrieval_latency_ms=532.24 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个订单退款方法写入代码字面量 \"refund.refund\"？" top_k=20 retrieval_latency_ms=528.41 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+19/52 refund-literal: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=299.82
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？" top_k=1 retrieval_latency_ms=534.46 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？" top_k=5 retrieval_latency_ms=538.33 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？" top_k=20 retrieval_latency_ms=530.83 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+20/52 refund-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=337.27
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 中的 OrderService.submit 实现在哪里？" top_k=1 retrieval_latency_ms=519.47 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 中的 OrderService.submit 实现在哪里？" top_k=5 retrieval_latency_ms=526.05 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 中的 OrderService.submit 实现在哪里？" top_k=20 retrieval_latency_ms=537.16 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+21/52 orders-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=388.80
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/orders 的提交订单流程中，订单状态设为 PAID的代码在哪里？" top_k=1 retrieval_latency_ms=536.24 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/orders 的提交订单流程中，订单状态设为 PAID的代码在哪里？" top_k=5 retrieval_latency_ms=537.29 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/orders 的提交订单流程中，订单状态设为 PAID的代码在哪里？" top_k=20 retrieval_latency_ms=544.69 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+22/52 orders-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=85.52
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段提交订单代码抛出错误 \"Cart must contain an item\"？" top_k=1 retrieval_latency_ms=532.79 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段提交订单代码抛出错误 \"Cart must contain an item\"？" top_k=5 retrieval_latency_ms=534.23 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段提交订单代码抛出错误 \"Cart must contain an item\"？" top_k=20 retrieval_latency_ms=538.41 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+23/52 orders-error: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=63.58
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 的提交订单请求如何从 WorkflowController.handle 到 OrderService.submit 再记录审计事件？" top_k=1 retrieval_latency_ms=528.83 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 的提交订单请求如何从 WorkflowController.handle 到 OrderService.submit 再记录审计事件？" top_k=5 retrieval_latency_ms=539.98 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/orders 的提交订单请求如何从 WorkflowController.handle 到 OrderService.submit 再记录审计事件？" top_k=20 retrieval_latency_ms=527.32 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+24/52 orders-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=213.66
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 中的 InventoryService.reserve 实现在哪里？" top_k=1 retrieval_latency_ms=534.11 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 中的 InventoryService.reserve 实现在哪里？" top_k=5 retrieval_latency_ms=531.32 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 中的 InventoryService.reserve 实现在哪里？" top_k=20 retrieval_latency_ms=529.64 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+25/52 inventory-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=344.86
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/inventory 的库存预留流程中，可用库存扣减预留数量的代码在哪里？" top_k=1 retrieval_latency_ms=517.97 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/inventory 的库存预留流程中，可用库存扣减预留数量的代码在哪里？" top_k=5 retrieval_latency_ms=532.21 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/inventory 的库存预留流程中，可用库存扣减预留数量的代码在哪里？" top_k=20 retrieval_latency_ms=534.5 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+26/52 inventory-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=158.35
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个库存预留方法写入代码字面量 \"inventory.reserve\"？" top_k=1 retrieval_latency_ms=531.4 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个库存预留方法写入代码字面量 \"inventory.reserve\"？" top_k=5 retrieval_latency_ms=532.08 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个库存预留方法写入代码字面量 \"inventory.reserve\"？" top_k=20 retrieval_latency_ms=552.76 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+27/52 inventory-literal: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=67.02
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 的库存预留请求如何从 WorkflowController.handle 到 InventoryService.reserve 再记录审计事件？" top_k=1 retrieval_latency_ms=529.35 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 的库存预留请求如何从 WorkflowController.handle 到 InventoryService.reserve 再记录审计事件？" top_k=5 retrieval_latency_ms=526.11 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/inventory 的库存预留请求如何从 WorkflowController.handle 到 InventoryService.reserve 再记录审计事件？" top_k=20 retrieval_latency_ms=531.43 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+28/52 inventory-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=68.23
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 中的 ShippingService.dispatch 实现在哪里？" top_k=1 retrieval_latency_ms=527.19 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 中的 ShippingService.dispatch 实现在哪里？" top_k=5 retrieval_latency_ms=532.0 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 中的 ShippingService.dispatch 实现在哪里？" top_k=20 retrieval_latency_ms=534.84 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+29/52 shipping-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=63.83
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？" top_k=1 retrieval_latency_ms=534.26 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？" top_k=5 retrieval_latency_ms=526.11 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？" top_k=20 retrieval_latency_ms=533.21 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+30/52 shipping-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=204.36
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段发货代码抛出错误 \"Shipping postcode invalid\"？" top_k=1 retrieval_latency_ms=532.71 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段发货代码抛出错误 \"Shipping postcode invalid\"？" top_k=5 retrieval_latency_ms=532.77 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段发货代码抛出错误 \"Shipping postcode invalid\"？" top_k=20 retrieval_latency_ms=528.33 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+31/52 shipping-error: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=168.54
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 的发货请求如何从 WorkflowController.handle 到 ShippingService.dispatch 再记录审计事件？" top_k=1 retrieval_latency_ms=524.89 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 的发货请求如何从 WorkflowController.handle 到 ShippingService.dispatch 再记录审计事件？" top_k=5 retrieval_latency_ms=548.13 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/shipping 的发货请求如何从 WorkflowController.handle 到 ShippingService.dispatch 再记录审计事件？" top_k=20 retrieval_latency_ms=543.92 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+32/52 shipping-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=306.61
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 中的 AuthService.login 实现在哪里？" top_k=1 retrieval_latency_ms=528.5 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 中的 AuthService.login 实现在哪里？" top_k=5 retrieval_latency_ms=528.95 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 中的 AuthService.login 实现在哪里？" top_k=20 retrieval_latency_ms=547.24 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+33/52 auth-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=126.88
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/auth 的登录流程中，成功登录计数增加的代码在哪里？" top_k=1 retrieval_latency_ms=537.28 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/auth 的登录流程中，成功登录计数增加的代码在哪里？" top_k=5 retrieval_latency_ms=517.77 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/auth 的登录流程中，成功登录计数增加的代码在哪里？" top_k=20 retrieval_latency_ms=528.57 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+34/52 auth-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=257.52
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个登录方法写入代码字面量 \"auth.login\"？" top_k=1 retrieval_latency_ms=528.72 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个登录方法写入代码字面量 \"auth.login\"？" top_k=5 retrieval_latency_ms=534.08 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个登录方法写入代码字面量 \"auth.login\"？" top_k=20 retrieval_latency_ms=536.06 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+35/52 auth-literal: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=336.26
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 的登录请求如何从 WorkflowController.handle 到 AuthService.login 再记录审计事件？" top_k=1 retrieval_latency_ms=527.52 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 的登录请求如何从 WorkflowController.handle 到 AuthService.login 再记录审计事件？" top_k=5 retrieval_latency_ms=530.63 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/auth 的登录请求如何从 WorkflowController.handle 到 AuthService.login 再记录审计事件？" top_k=20 retrieval_latency_ms=517.52 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+36/52 auth-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=125.49
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 中的 LedgerService.transfer 实现在哪里？" top_k=1 retrieval_latency_ms=524.77 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 中的 LedgerService.transfer 实现在哪里？" top_k=5 retrieval_latency_ms=557.67 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 中的 LedgerService.transfer 实现在哪里？" top_k=20 retrieval_latency_ms=542.84 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+37/52 ledger-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=304.76
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/ledger 的账本转账流程中，转账扣减账本可用余额的代码在哪里？" top_k=1 retrieval_latency_ms=526.81 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/ledger 的账本转账流程中，转账扣减账本可用余额的代码在哪里？" top_k=5 retrieval_latency_ms=544.55 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="在 backend/ledger 的账本转账流程中，转账扣减账本可用余额的代码在哪里？" top_k=20 retrieval_latency_ms=527.4 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+38/52 ledger-behavior: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=325.26
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段账本转账代码抛出错误 \"Ledger balance insufficient\"？" top_k=1 retrieval_latency_ms=528.82 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段账本转账代码抛出错误 \"Ledger balance insufficient\"？" top_k=5 retrieval_latency_ms=535.22 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪段账本转账代码抛出错误 \"Ledger balance insufficient\"？" top_k=20 retrieval_latency_ms=534.46 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+39/52 ledger-error: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=124.53
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 的账本转账请求如何从 WorkflowController.handle 到 LedgerService.transfer 再记录审计事件？" top_k=1 retrieval_latency_ms=525.75 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 的账本转账请求如何从 WorkflowController.handle 到 LedgerService.transfer 再记录审计事件？" top_k=5 retrieval_latency_ms=538.85 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/ledger 的账本转账请求如何从 WorkflowController.handle 到 LedgerService.transfer 再记录审计事件？" top_k=20 retrieval_latency_ms=528.3 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+40/52 ledger-chain: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=233.08
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="配置中最大重试次数和超时时间分别是多少？" top_k=1 retrieval_latency_ms=530.59 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="配置中最大重试次数和超时时间分别是多少？" top_k=5 retrieval_latency_ms=533.16 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="配置中最大重试次数和超时时间分别是多少？" top_k=20 retrieval_latency_ms=531.92 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+41/52 config-retries: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=112.69
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="钱包表余额默认零和账本状态默认 PENDING 分别在哪些 SQL 行定义？" top_k=1 retrieval_latency_ms=529.73 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="钱包表余额默认零和账本状态默认 PENDING 分别在哪些 SQL 行定义？" top_k=5 retrieval_latency_ms=526.57 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="钱包表余额默认零和账本状态默认 PENDING 分别在哪些 SQL 行定义？" top_k=20 retrieval_latency_ms=534.71 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+42/52 schema-wallet-default: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=182.78
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="仓库文档如何区分正式钱包目录和翻倍入账的 legacy 钱包？" top_k=1 retrieval_latency_ms=527.91 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="仓库文档如何区分正式钱包目录和翻倍入账的 legacy 钱包？" top_k=5 retrieval_latency_ms=536.76 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="仓库文档如何区分正式钱包目录和翻倍入账的 legacy 钱包？" top_k=20 retrieval_latency_ms=525.42 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+43/52 fixture-wallet-documentation: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=125.38
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="config/application.json 中配置的币种是什么？" top_k=1 retrieval_latency_ms=541.05 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="config/application.json 中配置的币种是什么？" top_k=5 retrieval_latency_ms=526.7 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="config/application.json 中配置的币种是什么？" top_k=20 retrieval_latency_ms=531.18 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+44/52 config-explicit-path: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=227.44
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="定位 NeverExistsService.commit" top_k=1 retrieval_latency_ms=527.86 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="定位 NeverExistsService.commit" top_k=5 retrieval_latency_ms=530.23 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="定位 NeverExistsService.commit" top_k=20 retrieval_latency_ms=529.57 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+45/52 missing-symbol-a: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=62.33
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="不存在的 PhantomWallet.reverse 在哪里？" top_k=1 retrieval_latency_ms=529.72 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="不存在的 PhantomWallet.reverse 在哪里？" top_k=5 retrieval_latency_ms=534.02 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="不存在的 PhantomWallet.reverse 在哪里？" top_k=20 retrieval_latency_ms=534.13 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+46/52 missing-symbol-b: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=127.77
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/unknown/MissingController.java 在哪里？" top_k=1 retrieval_latency_ms=526.84 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/unknown/MissingController.java 在哪里？" top_k=5 retrieval_latency_ms=538.47 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="backend/unknown/MissingController.java 在哪里？" top_k=20 retrieval_latency_ms=526.25 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+47/52 missing-path: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=279.09
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个文件包含错误 \"THIS_ERROR_DOES_NOT_EXIST_2026\"？" top_k=1 retrieval_latency_ms=526.19 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个文件包含错误 \"THIS_ERROR_DOES_NOT_EXIST_2026\"？" top_k=5 retrieval_latency_ms=531.84 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="哪个文件包含错误 \"THIS_ERROR_DOES_NOT_EXIST_2026\"？" top_k=20 retrieval_latency_ms=530.02 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+48/52 missing-literal: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=67.04
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。" top_k=1 retrieval_latency_ms=539.84 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。" top_k=5 retrieval_latency_ms=532.87 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-commerce retrieval_query="只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。" top_k=20 retrieval_latency_ms=530.9 results=20 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+49/52 foreign-symbol: 30 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=169.29
+INFO app.retrieval.service Retrieval repository=stage4-shadow retrieval_query="只在 shadow 仓库里查找 SharedRecorder.record 的实现。" top_k=1 retrieval_latency_ms=531.43 results=1 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-shadow retrieval_query="只在 shadow 仓库里查找 SharedRecorder.record 的实现。" top_k=5 retrieval_latency_ms=529.57 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-shadow retrieval_query="只在 shadow 仓库里查找 SharedRecorder.record 的实现。" top_k=20 retrieval_latency_ms=527.28 results=6 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+50/52 scope-shadow-wallet: 6 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=64.73
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库中的 WalletService.credit 在哪里？" top_k=1 retrieval_latency_ms=531.26 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库中的 WalletService.credit 在哪里？" top_k=5 retrieval_latency_ms=529.04 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库中的 WalletService.credit 在哪里？" top_k=20 retrieval_latency_ms=530.19 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+51/52 empty-symbol: 0 candidates; legacy K=1/5/20 identical
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=261.12
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库哪里检查退款金额？" top_k=1 retrieval_latency_ms=539.31 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库哪里检查退款金额？" top_k=5 retrieval_latency_ms=524.43 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+INFO app.retrieval.service Retrieval repository=stage4-empty retrieval_query="空仓库哪里检查退款金额？" top_k=20 retrieval_latency_ms=529.2 results=0 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9
+52/52 empty-natural: 0 candidates; legacy K=1/5/20 identical
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+Complete: 52 cases; 156 exact comparisons; D:\aaaagent开发文件\RepoPilot\evaluation\reports\stage4_candidates_20261013_task3.json

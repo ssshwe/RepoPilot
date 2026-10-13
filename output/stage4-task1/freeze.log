@@ -1,0 +1,19 @@
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=952.81
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="哪个后端入口接收退款请求并调用退款服务？" top_k=20 retrieval_latency_ms=1499.12 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic refund-controller: 17 chunks, prefix_match=True
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=84.66
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="钱包表余额的默认值在哪里设置为零？" top_k=20 retrieval_latency_ms=621.09 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic wallets-schema: 17 chunks, prefix_match=True
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=95.19
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？" top_k=20 retrieval_latency_ms=621.82 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic refund-validation-files: 17 chunks, prefix_match=True
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=109.67
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="从后端退款入口到钱包余额更新，请求经过哪三个实现文件？" top_k=20 retrieval_latency_ms=639.57 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic refund-call-chain: 17 chunks, prefix_match=True
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=105.54
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。" top_k=20 retrieval_latency_ms=659.44 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic issue-refund: 17 chunks, prefix_match=True
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=178.22
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。" top_k=20 retrieval_latency_ms=706.06 results=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code
+Top20 diagnostic issue-direct: 17 chunks, prefix_match=True
+Frozen 17 chunks, 6 diagnostic queries: D:\aaaagent开发文件\RepoPilot\evaluation\reports\stage4_dense_20261013_task1.json

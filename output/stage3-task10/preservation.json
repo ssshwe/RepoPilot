@@ -1,0 +1,11 @@
+{
+  "protected_files": 443,
+  "expected_changed_files": [
+    "README.md",
+    "apps/web/src/App.vue",
+    "apps/web/src/style.css",
+    "services/api/app/rag/service.py",
+    "services/api/app/schemas/code_chat.py"
+  ],
+  "other_existing_files_unchanged": 438
+}

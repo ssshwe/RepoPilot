@@ -1,0 +1,67 @@
+{
+  "kind": "real API response, no mocked inference",
+  "request": {
+    "repository": "demo-repository",
+    "issue": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+    "top_k": 5
+  },
+  "http_status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "issue": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+    "summary": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+    "related_code": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "README.md",
+        "symbol": null,
+        "start_line": 1,
+        "end_line": 21
+      }
+    ],
+    "possible_call_chain": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "README.md",
+        "symbol": null,
+        "start_line": 1,
+        "end_line": 21
+      }
+    ],
+    "analysis": [],
+    "modification_suggestions": [],
+    "test_suggestions": [],
+    "risks": [],
+    "source_ids": [
+      "S1"
+    ],
+    "sources": [
+      {
+        "source_id": "S1",
+        "language": "markdown",
+        "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+      }
+    ],
+    "status": "analyzed",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 4050,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 1547.94
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 426.05
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "protected_files": 250,
+  "changed_existing_files": [
+    "README.md",
+    "services/api/app/core/exceptions.py",
+    "services/api/app/main.py"
+  ],
+  "unexpected_changes": [],
+  "env_unchanged": true,
+  "lockfiles_unchanged": true,
+  "fixture_dataset_and_past_reports_unchanged": true,
+  "frontend_unchanged": true,
+  "task6_context_builder_unchanged": true,
+  "qdrant_exact_match": true,
+  "production_points": 17,
+  "production_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+}

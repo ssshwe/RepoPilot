@@ -1,0 +1,54 @@
+{
+  "kind": "real AST/fallback indexing + configured local embedding",
+  "repository": "stage3-task9-readme",
+  "http_status": 200,
+  "response": {
+    "repository": "stage3-task9-readme",
+    "files_scanned": 7,
+    "supported_files": 2,
+    "skipped_files": 5,
+    "chunks_created": 2,
+    "vectors_indexed": 2,
+    "previous_vectors": 0,
+    "collection": "repopilot_stage3_task9_injection_20261007",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "chunk_lines": 60,
+    "overlap_lines": 10,
+    "ast_parsed_files": 1,
+    "fallback_files": 1,
+    "failed_files": 0,
+    "chunking_version": "ast-v1",
+    "fallback_chunking_version": "ast-fallback-line-v1",
+    "max_chunk_characters": 8192,
+    "strategy": "replace_repository",
+    "skipped": [
+      {
+        "path": ".env",
+        "reason": "ignored_file"
+      },
+      {
+        "path": ".env.production.json",
+        "reason": "ignored_file"
+      },
+      {
+        "path": "credentials.json",
+        "reason": "ignored_file"
+      },
+      {
+        "path": "signing.key",
+        "reason": "ignored_file"
+      },
+      {
+        "path": "signing.pem",
+        "reason": "ignored_file"
+      }
+    ],
+    "pruned_directories": [
+      {
+        "path": "secrets",
+        "reason": "ignored_directory"
+      }
+    ]
+  }
+}

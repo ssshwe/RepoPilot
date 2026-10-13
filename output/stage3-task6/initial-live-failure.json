@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "error": "QdrantUnavailableError",
+  "qdrant_http_connect_error": true,
+  "ollama_available": true,
+  "context_emitted": false,
+  "recovered_with_existing_helper": "infra/Qdrant.ps1 -Action up",
+  "index_after_recovery_matches_before": true
+}

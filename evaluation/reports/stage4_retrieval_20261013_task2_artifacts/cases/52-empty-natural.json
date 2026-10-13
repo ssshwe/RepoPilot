@@ -1,0 +1,43 @@
+{
+  "id": "empty-natural",
+  "request": {
+    "repository": "stage4-empty",
+    "query": "空仓库哪里检查退款金额？",
+    "top_k": 5
+  },
+  "retrieval": {
+    "repository": "stage4-empty",
+    "query": "空仓库哪里检查退款金额？",
+    "top_k": 5,
+    "collection": "repopilot_stage4_task2_48af6bc9fb134dc6be14222b3e6ef2a1",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "retrieval_latency_ms": 643.87,
+    "results": []
+  },
+  "context": {
+    "repository": "stage4-empty",
+    "text": "",
+    "sources": [],
+    "retrieved_chunks": 0,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 0,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 0,
+    "budget_limited": false,
+    "empty_reason": "no_results"
+  },
+  "metrics": {
+    "at_k": null,
+    "context": null,
+    "negative": {
+      "kind": "empty_repository",
+      "returned_chunks": 0,
+      "empty_result": true,
+      "foreign_repository_chunks": 0
+    }
+  }
+}

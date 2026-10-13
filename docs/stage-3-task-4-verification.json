@@ -1,0 +1,252 @@
+{
+  "task": "Stage 3 / Task 4: AST Indexing and Re-index",
+  "status": "complete",
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "tests": {
+    "backend": {
+      "collected": 625,
+      "passed": 620,
+      "skipped": 5,
+      "warnings": 2,
+      "exit_code": 0
+    },
+    "evaluation_unit": {
+      "passed": 32,
+      "exit_code": 0
+    },
+    "frontend_build": {
+      "modules": 1615,
+      "exit_code": 0
+    },
+    "real_indexing_integration": {
+      "passed": 1,
+      "exit_code": 0,
+      "first_points": 22,
+      "repeat_points": 22,
+      "after_file_deletion_points": 19,
+      "empty_repository_points": 0,
+      "temporary_collection_cleaned_up": true
+    }
+  },
+  "real_http_verification": {
+    "date": "2026-10-07",
+    "timezone": "Asia/Shanghai",
+    "transport": "real HTTP / uvicorn on 127.0.0.1:8014",
+    "first": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "chunks_created": 17,
+      "vectors_indexed": 17,
+      "previous_vectors": 8,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "ast_parsed_files": 4,
+      "fallback_files": 4,
+      "failed_files": 0,
+      "chunking_version": "ast-v1",
+      "fallback_chunking_version": "ast-fallback-line-v1",
+      "max_chunk_characters": 8192,
+      "strategy": "replace_repository",
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "repeat": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "chunks_created": 17,
+      "vectors_indexed": 17,
+      "previous_vectors": 17,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "ast_parsed_files": 4,
+      "fallback_files": 4,
+      "failed_files": 0,
+      "chunking_version": "ast-v1",
+      "fallback_chunking_version": "ast-fallback-line-v1",
+      "max_chunk_characters": 8192,
+      "strategy": "replace_repository",
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "source_slices_verified": true,
+    "stable_ids_verified": true,
+    "old_simple_ids_removed": true,
+    "other_collections_unchanged": true,
+    "embedding_identity_preserved": true,
+    "vector_dimension": 1024,
+    "all_vectors_finite": true,
+    "final_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98",
+    "dense_retrieval_http_status": 200,
+    "dense_retrieval_results": 5
+  },
+  "collection_metadata": {
+    "repopilot_index": {
+      "schema_version": "code-points-v1",
+      "embedding_provider": "openai_compatible",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+    },
+    "repopilot_chunking": {
+      "demo-repository": {
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "chunk_lines": 60,
+        "overlap_lines": 10,
+        "max_chunk_characters": 8192
+      }
+    }
+  },
+  "point_counts_by_strategy": {
+    "ast": 13,
+    "fallback": 4
+  },
+  "real_payload_examples": [
+    {
+      "point_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+      "vector_dimension": 1024,
+      "vector_preview": [
+        -0.07940637,
+        0.0988155,
+        -0.00031564152,
+        -0.08407597
+      ],
+      "payload": {
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "path": "frontend/src/RefundPanel.vue",
+        "language": "vue",
+        "start_line": 1,
+        "end_line": 22,
+        "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+        "symbol": null,
+        "node_type": null,
+        "parent_symbol": null,
+        "chunking_strategy": "fallback",
+        "chunking_version": "ast-fallback-line-v1",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "schema_version": "code-points-v1",
+        "chunk_lines": 60,
+        "overlap_lines": 10,
+        "max_chunk_characters": 8192
+      }
+    },
+    {
+      "point_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+      "vector_dimension": 1024,
+      "vector_preview": [
+        -0.042067032,
+        0.09202012,
+        -0.005537196,
+        -0.033054087
+      ],
+      "payload": {
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 12,
+        "end_line": 18,
+        "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+        "symbol": "RefundService.refund",
+        "node_type": "method_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "schema_version": "code-points-v1",
+        "chunk_lines": 60,
+        "overlap_lines": 0,
+        "max_chunk_characters": 8192
+      }
+    }
+  ],
+  "points_fingerprints": {
+    "before": "1a4ab856204e4e19b946e808965227c9c9f1dddb9ac3a6b1bede590880bf254b",
+    "after": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+  },
+  "sensitive_filter_changes": {
+    "directory_basenames": [
+      "credentials",
+      "secrets",
+      ".credentials",
+      ".secrets"
+    ],
+    "file_basenames": [
+      "credentials",
+      "credentials.*",
+      "secrets",
+      "secrets.*",
+      ".credentials",
+      ".credentials.*",
+      ".secrets",
+      ".secrets.*"
+    ],
+    "case_insensitive": true,
+    "checked_before_source_open": true
+  },
+  "preservation": {
+    "existing_files_checked": 157,
+    "changed_existing_files": [
+      "services/api/app/api/indexing.py",
+      "services/api/app/indexing/ast_chunker.py",
+      "services/api/app/indexing/service.py",
+      "services/api/app/repository/ignore.py",
+      "services/api/app/retrieval/vector_store.py",
+      "services/api/app/schemas/indexing.py",
+      "services/api/tests/test_indexing.py",
+      "services/api/tests/test_indexing_integration.py"
+    ],
+    "unexpected_existing_changes": [],
+    "dependencies_env_frontend_demo_dataset_old_reports_unchanged": true,
+    "git_metadata_present": false,
+    "before_matches_stage2_task1_and_task2_points_fingerprint": true,
+    "old_simple_points": 8,
+    "new_repository_points": 17,
+    "old_ids_removed": true,
+    "unchanged_non_target_collections": true,
+    "integration_test_collection_deleted": true,
+    "integration_did_not_change_demo_index": true,
+    "new_stage2_retrieval_evaluation_run": false
+  },
+  "limitations": [
+    "Replacement uses delete then upsert, with no cross-operation transaction",
+    "The indexing lock is process-local",
+    "Retrieval metadata UI and comparative evaluation belong to Task 5",
+    "Chunking profile commits only after final count and verified metadata update; write failures report partial/unconfirmed state",
+    "No Context Builder, RAG generation, citations, or issue analyzer in this task"
+  ],
+  "runtime_services": {
+    "qdrant": "running via existing WSL/Docker helper",
+    "local_embedding_model": "qwen3-embedding:0.6b",
+    "temporary_verification_api_on_port_8014": "stopped"
+  }
+}

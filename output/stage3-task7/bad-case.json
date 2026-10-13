@@ -1,0 +1,64 @@
+{
+  "question": "当前仓库是否实现了 PostgreSQL 数据库主从切换？请指出实现位置。",
+  "initial": {
+    "answer": "实现位置：未实现",
+    "source_ids": [
+      "S5"
+    ],
+    "repository": "demo-repository",
+    "status": "answered",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 3952,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 577.2
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 323.67
+    }
+  },
+  "initial_cited_source": {
+    "source_id": "S5",
+    "path": "README.md",
+    "symbol": null,
+    "start_line": 1,
+    "end_line": 21
+  },
+  "problem": "A valid ID and a README without PostgreSQL evidence cannot support a repository-wide absence claim.",
+  "change": "Prompt explicitly forbids inferring repository-wide nonexistence from partial context.",
+  "final": {
+    "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+    "source_ids": [],
+    "repository": "demo-repository",
+    "status": "insufficient_evidence",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 3952,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 667.23
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 330.25
+    }
+  },
+  "full_source_text_verified": true,
+  "remaining_refund_quality_issue": "The final refund response still only names the real file, without explaining the code."
+}

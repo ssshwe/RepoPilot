@@ -1,0 +1,519 @@
+{
+  "task": "Stage 3 / Task 5: Retrieval Debug and chunking comparison",
+  "status": "complete",
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "tests": {
+    "backend": {
+      "collected": 649,
+      "passed": 643,
+      "skipped": 6,
+      "warnings": 2,
+      "exit_code": 0
+    },
+    "real_retrieval_integration": {
+      "passed": 2,
+      "strategies": [
+        "simple",
+        "ast"
+      ],
+      "duration_seconds": 32.46,
+      "top_ks": [
+        1,
+        5,
+        20
+      ],
+      "repository_filter_before_topk": true,
+      "collections_deleted": true,
+      "index_unchanged_by_search": true,
+      "exit_code": 0
+    },
+    "evaluation": {
+      "passed": 42,
+      "legacy_cases": 32,
+      "new_comparison_cases": 10,
+      "exit_code": 0
+    },
+    "frontend_contract": {
+      "passed": 9,
+      "exit_code": 0
+    },
+    "frontend_build": {
+      "modules": 1615,
+      "exit_code": 0
+    }
+  },
+  "real_comparison": {
+    "report": "evaluation/reports/stage3_chunking_20261007_task5.json",
+    "report_sha256": "c92c3257a0e03e77fe38e332ddfb544427699d2878b376c8f854b2eb255f29fc",
+    "transport": "Real RepositoryIndexer and RetrievalService with local Ollama and Qdrant; service-level comparison",
+    "queries": 12,
+    "dense_searches": 24,
+    "real_query_embeddings": 12,
+    "same_query_vector_for_both_strategies": true,
+    "temporary_collections": {
+      "simple": "repopilot_chunk_compare_simple_c57ff51b19c0433ba871e978853243e5",
+      "ast": "repopilot_chunk_compare_ast_c57ff51b19c0433ba871e978853243e5"
+    },
+    "index_counts": {
+      "simple": 8,
+      "ast": 17
+    },
+    "model": "qwen3-embedding:0.6b",
+    "dimension": 1024,
+    "top_k": 5,
+    "chunk_lines": 60,
+    "fallback_overlap_lines": 10,
+    "max_chunk_characters": 8192,
+    "summary": {
+      "simple": {
+        "queries": 12,
+        "hit_at_k": {
+          "1": {
+            "hits": 6,
+            "total": 12,
+            "rate": 0.5
+          },
+          "3": {
+            "hits": 10,
+            "total": 12,
+            "rate": 0.8333333333333334
+          },
+          "5": {
+            "hits": 12,
+            "total": 12,
+            "rate": 1
+          }
+        },
+        "macro_recall_at_k": {
+          "1": 0.5,
+          "3": 0.7777777777777778,
+          "5": 0.9305555555555556
+        }
+      },
+      "ast": {
+        "queries": 12,
+        "hit_at_k": {
+          "1": {
+            "hits": 8,
+            "total": 12,
+            "rate": 0.6666666666666666
+          },
+          "3": {
+            "hits": 10,
+            "total": 12,
+            "rate": 0.8333333333333334
+          },
+          "5": {
+            "hits": 11,
+            "total": 12,
+            "rate": 0.9166666666666666
+          }
+        },
+        "macro_recall_at_k": {
+          "1": 0.6666666666666666,
+          "3": 0.7777777777777778,
+          "5": 0.8472222222222222
+        }
+      }
+    },
+    "evidence_summary": {
+      "simple": {
+        "queries": 12,
+        "hit_at_k": {
+          "1": {
+            "hits": 6,
+            "total": 12,
+            "rate": 0.5
+          },
+          "3": {
+            "hits": 10,
+            "total": 12,
+            "rate": 0.8333333333333334
+          },
+          "5": {
+            "hits": 12,
+            "total": 12,
+            "rate": 1
+          }
+        },
+        "macro_recall_at_k": {
+          "1": 0.5,
+          "3": 0.7777777777777778,
+          "5": 0.9305555555555556
+        }
+      },
+      "ast": {
+        "queries": 12,
+        "hit_at_k": {
+          "1": {
+            "hits": 6,
+            "total": 12,
+            "rate": 0.5
+          },
+          "3": {
+            "hits": 7,
+            "total": 12,
+            "rate": 0.5833333333333334
+          },
+          "5": {
+            "hits": 10,
+            "total": 12,
+            "rate": 0.8333333333333334
+          }
+        },
+        "macro_recall_at_k": {
+          "1": 0.5,
+          "3": 0.5833333333333334,
+          "5": 0.7361111111111112
+        }
+      }
+    },
+    "preservation": {
+      "existing_collections_unchanged": true,
+      "temporary_collections_deleted": true,
+      "query_indexes_unchanged": true,
+      "before": {
+        "repopilot_code": {
+          "metadata": {
+            "repopilot_index": {
+              "schema_version": "code-points-v1",
+              "embedding_provider": "openai_compatible",
+              "embedding_model": "qwen3-embedding:0.6b",
+              "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+            },
+            "repopilot_chunking": {
+              "demo-repository": {
+                "chunking_version": "ast-v1",
+                "fallback_chunking_version": "ast-fallback-line-v1",
+                "chunk_lines": 60,
+                "overlap_lines": 10,
+                "max_chunk_characters": 8192
+              }
+            }
+          },
+          "vectors": {
+            "size": 1024,
+            "distance": "Cosine",
+            "hnsw_config": null,
+            "quantization_config": null,
+            "on_disk": null,
+            "memory": null,
+            "datatype": null,
+            "multivector_config": null
+          },
+          "points_count": 17,
+          "points_sha256": "c7c1656ea6bdb6311ad4c6e78ca70b73dd284494d563e86292e7e5b9f9054f89"
+        },
+        "repopilot_infra_smoke": {
+          "metadata": null,
+          "vectors": {
+            "size": 3,
+            "distance": "Cosine",
+            "hnsw_config": null,
+            "quantization_config": null,
+            "on_disk": null,
+            "memory": null,
+            "datatype": null,
+            "multivector_config": null
+          },
+          "points_count": 0,
+          "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "after": {
+        "repopilot_code": {
+          "metadata": {
+            "repopilot_index": {
+              "schema_version": "code-points-v1",
+              "embedding_provider": "openai_compatible",
+              "embedding_model": "qwen3-embedding:0.6b",
+              "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c"
+            },
+            "repopilot_chunking": {
+              "demo-repository": {
+                "chunking_version": "ast-v1",
+                "fallback_chunking_version": "ast-fallback-line-v1",
+                "chunk_lines": 60,
+                "overlap_lines": 10,
+                "max_chunk_characters": 8192
+              }
+            }
+          },
+          "vectors": {
+            "size": 1024,
+            "distance": "Cosine",
+            "hnsw_config": null,
+            "quantization_config": null,
+            "on_disk": null,
+            "memory": null,
+            "datatype": null,
+            "multivector_config": null
+          },
+          "points_count": 17,
+          "points_sha256": "c7c1656ea6bdb6311ad4c6e78ca70b73dd284494d563e86292e7e5b9f9054f89"
+        },
+        "repopilot_infra_smoke": {
+          "metadata": null,
+          "vectors": {
+            "size": 3,
+            "distance": "Cosine",
+            "hnsw_config": null,
+            "quantization_config": null,
+            "on_disk": null,
+            "memory": null,
+            "datatype": null,
+            "multivector_config": null
+          },
+          "points_count": 0,
+          "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      }
+    }
+  },
+  "real_http": {
+    "base_url": "http://localhost:8015",
+    "responses": {
+      "ast": {
+        "repository": "demo-repository",
+        "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+        "top_k": 1,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 623.12,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+            "repository": "demo-repository",
+            "score": 0.62815964,
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 12,
+            "end_line": 18,
+            "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ]
+      },
+      "fallback": {
+        "repository": "demo-repository",
+        "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+        "top_k": 1,
+        "collection": "repopilot_code",
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_dimension": 1024,
+        "retrieval_latency_ms": 593.64,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "repository": "demo-repository",
+            "score": 0.6801285,
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          }
+        ]
+      }
+    },
+    "statuses": [
+      200,
+      200
+    ],
+    "content_matches_source": true,
+    "no_vectors_returned": true
+  },
+  "ui": {
+    "ast": {
+      "cards": [
+        {
+          "heading": "Path backend/service/RefundService.java",
+          "horizontal_overflow": false,
+          "metadata": [
+            {
+              "label": "Symbol",
+              "value": "RefundService.refund"
+            },
+            {
+              "label": "Node Type",
+              "value": "method_declaration"
+            },
+            {
+              "label": "Parent Symbol",
+              "value": "RefundService"
+            },
+            {
+              "label": "Chunking Strategy",
+              "value": "ast\nast-v1"
+            }
+          ],
+          "score": "Score 0.628160"
+        },
+        {
+          "heading": "Path README.md",
+          "horizontal_overflow": false,
+          "metadata": [
+            {
+              "label": "Symbol",
+              "value": "—（无 Symbol）"
+            },
+            {
+              "label": "Node Type",
+              "value": "—（文本切块）"
+            },
+            {
+              "label": "Parent Symbol",
+              "value": "—"
+            },
+            {
+              "label": "Chunking Strategy",
+              "value": "fallback\nast-fallback-line-v1"
+            }
+          ],
+          "score": "Score 0.615731"
+        },
+        {
+          "heading": "Path backend/controller/OrderController.java",
+          "horizontal_overflow": false,
+          "metadata": [
+            {
+              "label": "Symbol",
+              "value": "OrderController.refundOrder"
+            },
+            {
+              "label": "Node Type",
+              "value": "method_declaration"
+            },
+            {
+              "label": "Parent Symbol",
+              "value": "OrderController"
+            },
+            {
+              "label": "Chunking Strategy",
+              "value": "ast\nast-v1"
+            }
+          ],
+          "score": "Score 0.594493"
+        },
+        {
+          "heading": "Path backend/controller/OrderController.java",
+          "horizontal_overflow": false,
+          "metadata": [
+            {
+              "label": "Symbol",
+              "value": "—（无 Symbol）"
+            },
+            {
+              "label": "Node Type",
+              "value": "program"
+            },
+            {
+              "label": "Parent Symbol",
+              "value": "—"
+            },
+            {
+              "label": "Chunking Strategy",
+              "value": "ast\nast-v1"
+            }
+          ],
+          "score": "Score 0.553995"
+        },
+        {
+          "heading": "Path frontend/src/types.ts",
+          "horizontal_overflow": false,
+          "metadata": [
+            {
+              "label": "Symbol",
+              "value": "RefundRequest"
+            },
+            {
+              "label": "Node Type",
+              "value": "interface_declaration"
+            },
+            {
+              "label": "Parent Symbol",
+              "value": "—"
+            },
+            {
+              "label": "Chunking Strategy",
+              "value": "ast\nast-v1"
+            }
+          ],
+          "score": "Score 0.541852"
+        }
+      ],
+      "page_overflow": false,
+      "viewport": {
+        "height": 668,
+        "width": 488
+      }
+    },
+    "fallback_verified": true,
+    "console": []
+  },
+  "preservation": {
+    "existing_files_checked": 160,
+    "changed_existing_files": [
+      "apps/web/src/App.vue",
+      "apps/web/src/api/retrieval-contract.ts",
+      "apps/web/src/components/RetrievalDebug.vue",
+      "apps/web/src/style.css",
+      "apps/web/src/types/retrieval.ts",
+      "apps/web/tests/retrieval-contract.test.mjs",
+      "evaluation/README.md",
+      "services/api/app/retrieval/service.py",
+      "services/api/app/retrieval/vector_store.py",
+      "services/api/app/schemas/retrieval.py",
+      "services/api/tests/test_retrieval.py",
+      "services/api/tests/test_retrieval_integration.py"
+    ],
+    "unexpected_changes": [],
+    "env_dependencies_fixture_dataset_history_unchanged": true,
+    "existing_collections_unchanged": true,
+    "remaining_collections": [
+      {
+        "name": "repopilot_code",
+        "points_count": 17,
+        "points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+      },
+      {
+        "name": "repopilot_infra_smoke",
+        "points_count": 0,
+        "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    ],
+    "metrics_independently_recomputed": true,
+    "baseline_simple_result_ids_match_original_stage2_index": true,
+    "ast_result_ids_match_preserved_stage4_index": true,
+    "temporary_comparison_and_integration_collections_deleted": true
+  },
+  "runtime": {
+    "temporary_api_port": 8015,
+    "temporary_ui_port": 5175,
+    "temporary_servers_stopped": true,
+    "qdrant_and_ollama_left_running": true
+  },
+  "unimplemented": [
+    "Context Builder",
+    "Code Chat",
+    "RAG generation",
+    "Citation Validator",
+    "Hybrid Retrieval",
+    "Rerank",
+    "Agent Loop"
+  ],
+  "next_task": "Task 6: Context Builder"
+}

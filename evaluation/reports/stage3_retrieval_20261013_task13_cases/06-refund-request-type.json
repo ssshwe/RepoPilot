@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "refund-request-type",
+    "query": "RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？",
+    "expected_paths": [
+      "frontend/src/types.ts"
+    ],
+    "evidence": [
+      {
+        "path": "frontend/src/types.ts",
+        "start_line": 1,
+        "end_line": 5,
+        "snippet": "export interface RefundRequest"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2973.7535000003845,
+    "retrieval_latency_ms": 838.16,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "score": 0.8423034,
+        "path": "frontend/src/types.ts",
+        "language": "typescript",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 2,
+        "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+        "repository": "demo-repository",
+        "score": 0.74052894,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 13,
+        "end_line": 15
+      },
+      {
+        "rank": 3,
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "score": 0.72016734,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 12,
+        "end_line": 18
+      },
+      {
+        "rank": 4,
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "score": 0.68472826,
+        "path": "frontend/src/RefundPanel.vue",
+        "language": "vue",
+        "start_line": 1,
+        "end_line": 22
+      },
+      {
+        "rank": 5,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.66188717,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/types.ts"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/types.ts"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "frontend/src/types.ts"
+        ]
+      }
+    }
+  }
+}

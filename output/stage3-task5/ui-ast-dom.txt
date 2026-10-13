@@ -1,0 +1,133 @@
+- main:
+  - region "RepoPilot 工作区":
+    - heading "RepoPilot" [level=1]
+    - paragraph: Stage 1 · LLM / Stage 3 · AST Retrieval
+    - generic: "Embedding: qwen3-embedding:0.6b"
+    - navigation "工作区切换":
+      - radiogroup "radio-group":
+        - radio "LLM 工作区"
+        - generic: LLM 工作区
+        - radio "Retrieval Debug" [checked]
+        - generic: Retrieval Debug
+    - strong: Retrieval Debug · 代码检索
+    - generic: 按仓库寻找相关代码，查看相似度、Symbol 与切块方式。
+    - button "清空检索结果":
+      - generic: 清空检索结果
+    - form "代码检索参数":
+      - generic: Repository
+      - combobox "Repository"
+      - generic: demo-repository
+      - generic: 可输入其他已索引仓库名，按 Enter 确认。
+      - generic: TopK
+      - spinbutton "TopK": "5"
+      - generic: 1–20 个代码块
+      - generic: Query
+      - textbox "Query":
+        - /placeholder: 例如：退款逻辑在哪里？
+        - text: 退款服务在哪里校验订单编号，然后把退款金额转回钱包？
+      - generic: 26 / 8192 字符 · Ctrl / ⌘ + Enter 搜索
+      - button "Search":
+        - generic: Search
+      - generic: 分数反映向量相似度，不是正确率。
+    - region "检索结果":
+      - strong: 找到 5 个代码块 · 请求 TopK 5
+      - paragraph: demo-repository · 退款服务在哪里校验订单编号，然后把退款金额转回钱包？
+      - generic: qwen3-embedding:0.6b
+      - generic: Dimension 1024
+      - generic: 647.8 ms
+      - article:
+        - strong: "#1"
+        - heading "Path backend/service/RefundService.java" [level=2]
+        - generic "0.62815964":
+          - generic: Score 0.628160
+        - generic: java
+        - generic: Lines 12–18
+        - generic: demo-repository
+        - term: Symbol
+        - definition: RefundService.refund
+        - term: Node Type
+        - definition: method_declaration
+        - term: Parent Symbol
+        - definition: RefundService
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · backend/service/RefundService.java"
+        - code: "public void refund(String orderId, String userId, BigDecimal amount) { if (orderId == null || orderId.isBlank()) { throw new IllegalArgumentException(\"Order ID is required\"); } // Fixture workflow: credit the refunded amount to the user's wallet. wallets.credit(userId, amount); }"
+      - article:
+        - strong: "#2"
+        - heading "Path README.md" [level=2]
+        - generic "0.6157311":
+          - generic: Score 0.615731
+        - generic: markdown
+        - generic: Lines 1–21
+        - generic: demo-repository
+        - term: Symbol
+        - definition: —（无 Symbol）
+        - term: Node Type
+        - definition: —（文本切块）
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: fallback
+          - text: ast-fallback-line-v1
+        - generic "Code Preview · README.md"
+      - article:
+        - strong: "#3"
+        - heading "Path backend/controller/OrderController.java" [level=2]
+        - generic "0.5944926":
+          - generic: Score 0.594493
+        - generic: java
+        - generic: Lines 13–15
+        - generic: demo-repository
+        - term: Symbol
+        - definition: OrderController.refundOrder
+        - term: Node Type
+        - definition: method_declaration
+        - term: Parent Symbol
+        - definition: OrderController
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · backend/controller/OrderController.java"
+      - article:
+        - strong: "#4"
+        - heading "Path backend/controller/OrderController.java" [level=2]
+        - generic "0.5539951":
+          - generic: Score 0.553995
+        - generic: java
+        - generic: Lines 1–5
+        - generic: demo-repository
+        - term: Symbol
+        - definition: —（无 Symbol）
+        - term: Node Type
+        - definition: program
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · backend/controller/OrderController.java"
+      - article:
+        - strong: "#5"
+        - heading "Path frontend/src/types.ts" [level=2]
+        - generic "0.5418521":
+          - generic: Score 0.541852
+        - generic: typescript
+        - generic: Lines 1–5
+        - generic: demo-repository
+        - term: Symbol
+        - definition: RefundRequest
+        - term: Node Type
+        - definition: interface_declaration
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · frontend/src/types.ts"

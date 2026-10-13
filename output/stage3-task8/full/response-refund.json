@@ -1,0 +1,45 @@
+{
+  "kind": "real HTTP; real configured Ollama and existing Qdrant; no mocked inference",
+  "request": {
+    "repository": "demo-repository",
+    "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+    "top_k": 5
+  },
+  "http_status": 200,
+  "response": {
+    "answer": "backend/service/RefundService.java",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 18
+      }
+    ],
+    "repository": "demo-repository",
+    "status": "answered",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 4110,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 4201.97
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 2808.73
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "wallet-credit",
+    "query": "哪里校验钱包入账金额必须为正数，并累加余额？",
+    "expected_paths": [
+      "backend/service/WalletService.java"
+    ],
+    "evidence": [
+      {
+        "path": "backend/service/WalletService.java",
+        "start_line": 10,
+        "end_line": 18,
+        "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 2765.223900001729,
+    "retrieval_latency_ms": 650.77,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+        "repository": "demo-repository",
+        "score": 0.4933955,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 7,
+        "end_line": 9
+      },
+      {
+        "rank": 2,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.4519235,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.43439594,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 4,
+        "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+        "repository": "demo-repository",
+        "score": 0.4295513,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 10,
+        "end_line": 18
+      },
+      {
+        "rank": 5,
+        "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+        "repository": "demo-repository",
+        "score": 0.42844403,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 5,
+        "end_line": 7
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "backend/service/WalletService.java"
+        ]
+      }
+    }
+  }
+}

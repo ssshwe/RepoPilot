@@ -1,0 +1,98 @@
+{
+  "kind": "projected query row exported from real HTTP retrieval report; not a native full HTTP body",
+  "report": {
+    "path": "evaluation/reports/stage3_retrieval_20261013_task13.json",
+    "sha256": "1d6ab42a33563ec54fef0881705e707ca725588b93bc5aab6aec5f59b93230d1"
+  },
+  "case": {
+    "id": "fixture-documentation",
+    "query": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+    "expected_paths": [
+      "README.md"
+    ],
+    "evidence": [
+      {
+        "path": "README.md",
+        "start_line": 8,
+        "end_line": 21,
+        "snippet": "`notes.txt` is intentionally outside the scanner's supported extensions."
+      }
+    ],
+    "request_top_k": 5,
+    "http_latency_ms": 3148.001800000202,
+    "retrieval_latency_ms": 1018.39,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.4965865,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5
+      },
+      {
+        "rank": 2,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.406598,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21
+      },
+      {
+        "rank": 3,
+        "chunk_id": "deef259e-35b5-5852-b30d-f4551e15d7fc",
+        "repository": "demo-repository",
+        "score": 0.39599532,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 6
+      },
+      {
+        "rank": 4,
+        "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+        "repository": "demo-repository",
+        "score": 0.3599664,
+        "path": "backend/service/RefundService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 4
+      },
+      {
+        "rank": 5,
+        "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+        "repository": "demo-repository",
+        "score": 0.25587666,
+        "path": "backend/controller/OrderController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 5
+      }
+    ],
+    "metrics": {
+      "1": {
+        "hit": false,
+        "recall": 0.0,
+        "matched_paths": []
+      },
+      "3": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "README.md"
+        ]
+      },
+      "5": {
+        "hit": true,
+        "recall": 1.0,
+        "matched_paths": [
+          "README.md"
+        ]
+      }
+    }
+  }
+}

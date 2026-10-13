@@ -1,0 +1,133 @@
+- main:
+  - region "RepoPilot 工作区":
+    - heading "RepoPilot" [level=1]
+    - paragraph: Stage 1 · LLM / Stage 3 · AST Retrieval
+    - generic: "Embedding: qwen3-embedding:0.6b"
+    - navigation "工作区切换":
+      - radiogroup "radio-group":
+        - radio "LLM 工作区"
+        - generic: LLM 工作区
+        - radio "Retrieval Debug" [checked]
+        - generic: Retrieval Debug
+    - strong: Retrieval Debug · 代码检索
+    - generic: 按仓库寻找相关代码，查看相似度、Symbol 与切块方式。
+    - button "清空检索结果":
+      - generic: 清空检索结果
+    - form "代码检索参数":
+      - generic: Repository
+      - combobox "Repository"
+      - generic: demo-repository
+      - generic: 可输入其他已索引仓库名，按 Enter 确认。
+      - generic: TopK
+      - spinbutton "TopK": "5"
+      - generic: 1–20 个代码块
+      - generic: Query
+      - textbox "Query":
+        - /placeholder: 例如：退款逻辑在哪里？
+        - text: 退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？
+      - generic: 35 / 8192 字符 · Ctrl / ⌘ + Enter 搜索
+      - button "Search":
+        - generic: Search
+      - generic: 分数反映向量相似度，不是正确率。
+    - region "检索结果":
+      - strong: 找到 5 个代码块 · 请求 TopK 5
+      - paragraph: demo-repository · 退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？
+      - generic: qwen3-embedding:0.6b
+      - generic: Dimension 1024
+      - generic: 621.0 ms
+      - article:
+        - strong: "#1"
+        - heading "Path frontend/src/RefundPanel.vue" [level=2]
+        - generic "0.6801285":
+          - generic: Score 0.680129
+        - generic: vue
+        - generic: Lines 1–22
+        - generic: demo-repository
+        - term: Symbol
+        - definition: —（无 Symbol）
+        - term: Node Type
+        - definition: —（文本切块）
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: fallback
+          - text: ast-fallback-line-v1
+        - generic "Code Preview · frontend/src/RefundPanel.vue"
+        - code: "<script setup lang=\"ts\"> import { reactive } from 'vue' import type { RefundRequest } from './types' const emit = defineEmits<{ refund: [request: RefundRequest] }>() const form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 }) function submitRefund() { if (form.orderId.trim() && form.userId.trim() && form.amount > 0) { emit('refund', { ...form }) } } </script> <template> <form @submit.prevent=\"submitRefund\"> <label>订单编号 <input v-model=\"form.orderId\" required /></label> <label>用户编号 <input v-model=\"form.userId\" required /></label> <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label> <button type=\"submit\">申请退款</button> </form> </template>"
+      - article:
+        - strong: "#2"
+        - heading "Path README.md" [level=2]
+        - generic "0.668457":
+          - generic: Score 0.668457
+        - generic: markdown
+        - generic: Lines 1–21
+        - generic: demo-repository
+        - term: Symbol
+        - definition: —（无 Symbol）
+        - term: Node Type
+        - definition: —（文本切块）
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: fallback
+          - text: ast-fallback-line-v1
+        - generic "Code Preview · README.md"
+      - article:
+        - strong: "#3"
+        - heading "Path backend/controller/OrderController.java" [level=2]
+        - generic "0.66319084":
+          - generic: Score 0.663191
+        - generic: java
+        - generic: Lines 13–15
+        - generic: demo-repository
+        - term: Symbol
+        - definition: OrderController.refundOrder
+        - term: Node Type
+        - definition: method_declaration
+        - term: Parent Symbol
+        - definition: OrderController
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · backend/controller/OrderController.java"
+      - article:
+        - strong: "#4"
+        - heading "Path backend/service/RefundService.java" [level=2]
+        - generic "0.65691626":
+          - generic: Score 0.656916
+        - generic: java
+        - generic: Lines 12–18
+        - generic: demo-repository
+        - term: Symbol
+        - definition: RefundService.refund
+        - term: Node Type
+        - definition: method_declaration
+        - term: Parent Symbol
+        - definition: RefundService
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · backend/service/RefundService.java"
+      - article:
+        - strong: "#5"
+        - heading "Path frontend/src/types.ts" [level=2]
+        - generic "0.6532525":
+          - generic: Score 0.653253
+        - generic: typescript
+        - generic: Lines 1–5
+        - generic: demo-repository
+        - term: Symbol
+        - definition: RefundRequest
+        - term: Node Type
+        - definition: interface_declaration
+        - term: Parent Symbol
+        - definition: —
+        - term: Chunking Strategy
+        - definition:
+          - generic: ast
+          - text: ast-v1
+        - generic "Code Preview · frontend/src/types.ts"

@@ -1,0 +1,5 @@
+{
+  "name": "demo-repository",
+  "purpose": "RepoPilot local scanner and code retrieval fixture",
+  "features": ["order-refund", "wallet-balance"]
+}

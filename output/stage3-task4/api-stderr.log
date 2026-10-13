@@ -1,0 +1,34 @@
+INFO:     Started server process [37944]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8014 (Press CTRL+C to quit)
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=16 batch_size=16 latency_ms=5086.27
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=77.11
+INFO app.retrieval.vector_store Qdrant collection=repopilot_code dimension=1024 distance=Cosine created=False
+INFO app.indexing.service Index complete repository=demo-repository files_scanned=10 chunks_created=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 vectors_indexed=17 collection=repopilot_code ast_parsed_files=4 fallback_files=4 failed_files=0 chunking_version=ast-v1
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=16 batch_size=16 latency_ms=667.57
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=76.88
+INFO app.retrieval.vector_store Qdrant collection=repopilot_code dimension=1024 distance=Cosine created=False
+INFO app.indexing.service Index complete repository=demo-repository files_scanned=10 chunks_created=17 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 vectors_indexed=17 collection=repopilot_code ast_parsed_files=4 fallback_files=4 failed_files=0 chunking_version=ast-v1
+INFO app.embedding.provider Embedding model=qwen3-embedding:0.6b dimension=1024 texts=1 batch_size=16 latency_ms=102.15
+INFO app.retrieval.service Retrieval repository=demo-repository retrieval_query="退款逻辑在哪里？" top_k=5 retrieval_latency_ms=663.9 results=5 embedding_model=qwen3-embedding:0.6b embedding_dimension=1024 collection=repopilot_code

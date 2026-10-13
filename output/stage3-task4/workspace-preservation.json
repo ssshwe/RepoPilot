@@ -1,0 +1,24 @@
+{
+  "existing_files_checked": 157,
+  "changed_existing_files": [
+    "services/api/app/api/indexing.py",
+    "services/api/app/indexing/ast_chunker.py",
+    "services/api/app/indexing/service.py",
+    "services/api/app/repository/ignore.py",
+    "services/api/app/retrieval/vector_store.py",
+    "services/api/app/schemas/indexing.py",
+    "services/api/tests/test_indexing.py",
+    "services/api/tests/test_indexing_integration.py"
+  ],
+  "unexpected_existing_changes": [],
+  "dependencies_env_frontend_demo_dataset_old_reports_unchanged": true,
+  "git_metadata_present": false,
+  "before_matches_stage2_task1_and_task2_points_fingerprint": true,
+  "old_simple_points": 8,
+  "new_repository_points": 17,
+  "old_ids_removed": true,
+  "unchanged_non_target_collections": true,
+  "integration_test_collection_deleted": true,
+  "integration_did_not_change_demo_index": true,
+  "new_stage2_retrieval_evaluation_run": false
+}

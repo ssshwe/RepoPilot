@@ -1,0 +1,41 @@
+{
+  "kind": "real API response, no mocked inference",
+  "request": {
+    "repository": "demo-repository",
+    "issue": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+    "top_k": 5
+  },
+  "http_status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "issue": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+    "summary": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+    "related_code": [],
+    "possible_call_chain": [],
+    "analysis": [],
+    "modification_suggestions": [],
+    "test_suggestions": [],
+    "risks": [],
+    "source_ids": [],
+    "sources": [],
+    "status": "insufficient_evidence",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 4050,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 891.21
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 355.52
+    }
+  }
+}

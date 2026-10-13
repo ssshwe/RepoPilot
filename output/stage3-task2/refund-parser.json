@@ -1,0 +1,67 @@
+{
+  "packages": {
+    "tree-sitter": "0.26.0",
+    "tree-sitter-java": "0.23.5"
+  },
+  "decoded_source_sha256": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+  "repository": "demo-repository",
+  "path": "backend/service/RefundService.java",
+  "language": "java",
+  "root_node_type": "program",
+  "symbols": [
+    {
+      "node_type": "class_declaration",
+      "name": "RefundService",
+      "symbol": "RefundService",
+      "parent_symbol": null,
+      "start_line": 5,
+      "end_line": 19,
+      "start_byte": 53,
+      "end_byte": 553,
+      "start_point": [
+        4,
+        0
+      ],
+      "end_point": [
+        18,
+        1
+      ]
+    },
+    {
+      "node_type": "constructor_declaration",
+      "name": "RefundService",
+      "symbol": "RefundService.RefundService",
+      "parent_symbol": "RefundService",
+      "start_line": 8,
+      "end_line": 10,
+      "start_byte": 134,
+      "end_byte": 217,
+      "start_point": [
+        7,
+        4
+      ],
+      "end_point": [
+        9,
+        5
+      ]
+    },
+    {
+      "node_type": "method_declaration",
+      "name": "refund",
+      "symbol": "RefundService.refund",
+      "parent_symbol": "RefundService",
+      "start_line": 12,
+      "end_line": 18,
+      "start_byte": 223,
+      "end_byte": 551,
+      "start_point": [
+        11,
+        4
+      ],
+      "end_point": [
+        17,
+        5
+      ]
+    }
+  ]
+}

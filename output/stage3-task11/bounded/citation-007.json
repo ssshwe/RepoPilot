@@ -1,0 +1,52 @@
+{
+  "repository": "demo-repository",
+  "source_ids": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+  ],
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "config/repository.json",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 5
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S2",
+      "path": "README.md",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 21
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S3",
+      "path": "backend/service/RefundService.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 4
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S4",
+      "path": "backend/service/WalletService.java",
+      "symbol": null,
+      "start_line": 1,
+      "end_line": 6
+    },
+    {
+      "repository": "demo-repository",
+      "source_id": "S5",
+      "path": "backend/service/WalletService.java",
+      "symbol": "WalletService",
+      "start_line": 7,
+      "end_line": 9
+    }
+  ]
+}

@@ -1,0 +1,872 @@
+{
+  "kind": "real failures, source-reviewed by development assistant",
+  "cases": [
+    {
+      "id": "refund-controller",
+      "category": "Dense Symbol miss / small AST fragments",
+      "observation": "File Hit@1=true, but imports 1–5 and class fields 6–8 displace refundOrder 13–15. The indexed method appears in refund-service Rank 3, proving it exists. This run does not prove a larger chunk would fix ranking.",
+      "review": {
+        "id": "refund-controller",
+        "response_sha256": "9d61aeee669ca5b689d72e6cefbabb6e397b81290b073a56596693f2ba6510d4",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "回答 RefundService.java，实际入口是 OrderController.refundOrder 13–15 行；Top5 只召回 controller imports 与 class 字段，没有入口方法。引用真实但不能支持入口定位。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "backend/service/RefundService.java",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "backend/controller/OrderController.java",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S2",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S3",
+              "path": "backend/controller/OrderController.java",
+              "symbol": "OrderController",
+              "start_line": 6,
+              "end_line": 8
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S4",
+              "path": "frontend/src/types.ts",
+              "symbol": "RefundRequest",
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S5",
+              "path": "backend/service/RefundService.java",
+              "symbol": "RefundService",
+              "start_line": 5,
+              "end_line": 7
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "java",
+              "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n"
+            },
+            {
+              "source_id": "S2",
+              "language": "markdown",
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+            },
+            {
+              "source_id": "S3",
+              "language": "java",
+              "content": "public final class OrderController {\n    private final RefundService refunds;\n\n"
+            },
+            {
+              "source_id": "S4",
+              "language": "typescript",
+              "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+            },
+            {
+              "source_id": "S5",
+              "language": "java",
+              "content": "public final class RefundService {\n    private final WalletService wallets;\n\n"
+            }
+          ],
+          "question": "哪个后端入口接收退款请求并调用退款服务？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 3739,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 660.7
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 312.08
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "wallets-schema",
+      "category": "Dense file miss / wrong answer scope",
+      "observation": "schema.sql is absent from Top5; model answers with a Java balance-reading method instead of the table default.",
+      "review": {
+        "id": "wallets-schema",
+        "response_sha256": "323711781e5d840546ab51164de095d96090cbc46936b3cb658feb483646afe8",
+        "outcome": "nonresponsive",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "只写 WalletService.balanceOf(String userId)，没有回答 wallets 表 DEFAULT 0 的定义。Top5 未召回 schema.sql；业务读取默认零不能替代 DDL 默认值证据。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "WalletService.balanceOf(String userId)",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "backend/service/WalletService.java",
+              "symbol": "WalletService",
+              "start_line": 7,
+              "end_line": 9
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S2",
+              "path": "backend/service/WalletService.java",
+              "symbol": "WalletService.balanceOf",
+              "start_line": 20,
+              "end_line": 22
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S3",
+              "path": "config/repository.json",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S4",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S5",
+              "path": "backend/service/RefundService.java",
+              "symbol": "RefundService",
+              "start_line": 5,
+              "end_line": 7
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "java",
+              "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n"
+            },
+            {
+              "source_id": "S2",
+              "language": "java",
+              "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n"
+            },
+            {
+              "source_id": "S3",
+              "language": "json",
+              "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+            },
+            {
+              "source_id": "S4",
+              "language": "markdown",
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+            },
+            {
+              "source_id": "S5",
+              "language": "java",
+              "content": "public final class RefundService {\n    private final WalletService wallets;\n\n"
+            }
+          ],
+          "question": "钱包表余额的默认值在哪里设置为零？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 3896,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 618.66
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 235.64
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "refund-call-chain",
+      "category": "Incomplete call evidence",
+      "observation": "Top5 covers only 1/3 annotated methods; controller imports and unrelated types have valid coordinates but do not establish a full chain.",
+      "review": {
+        "id": "refund-call-chain",
+        "response_sha256": "351d8256800fda1a78a9a2f3e32534f6a0647440aac3e1234eb0b7e1308860a1",
+        "outcome": "supported",
+        "answer_supported": true,
+        "answer_complete": false,
+        "supporting_source_ids": [
+          "S4"
+        ],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "RefundService.java 是三个实现文件之一，S4 支持这一有限位置事实。回答没有三个文件或调用顺序；controller 方法和 wallet 方法都未召回，S2 imports/S3 types 引用不能证明链路。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "backend/service/RefundService.java",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S2",
+              "path": "backend/controller/OrderController.java",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S3",
+              "path": "frontend/src/types.ts",
+              "symbol": "RefundRequest",
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S4",
+              "path": "backend/service/RefundService.java",
+              "symbol": "RefundService.refund",
+              "start_line": 12,
+              "end_line": 18
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S2",
+              "language": "java",
+              "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n"
+            },
+            {
+              "source_id": "S3",
+              "language": "typescript",
+              "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+            },
+            {
+              "source_id": "S4",
+              "language": "java",
+              "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+            }
+          ],
+          "question": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 4015,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 610.21
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 212.21
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "wallet-default-balance",
+      "category": "False absence despite exact method hit",
+      "observation": "Rank 1 contains getOrDefault(userId, BigDecimal.ZERO); actual answer says no zero return found.",
+      "review": {
+        "id": "wallet-default-balance",
+        "response_sha256": "73e34f8d47f8838d484fa2b44db925e118d8dabbab1ace4973b9f139d2238786",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "回答未找到用户如何返回零，但 S1 20–22 行明确是 getOrDefault(userId, BigDecimal.ZERO)。目标方法在 Rank 1，失败发生在生成。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "未找到用户如何返回零",
+          "source_ids": [
+            "S1"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "backend/service/WalletService.java",
+              "symbol": "WalletService.balanceOf",
+              "start_line": 20,
+              "end_line": 22
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "java",
+              "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n"
+            }
+          ],
+          "question": "读取用户钱包余额时，未找到用户如何返回零？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 4075,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 609.27
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 197.03
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "orders-schema",
+      "category": "Wrong answer despite correct Citation",
+      "observation": "S1 is actual schema.sql including orders.status and amount, but answer claims both are defined in RefundService.java.",
+      "review": {
+        "id": "orders-schema",
+        "response_sha256": "b61982e5cf09a80a26860be43516c3675f4443ff1fa72e1225c870fae9c00091",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "将 orders.status/amount 定义位置说成 RefundService.java，真实定义在 S1 schema.sql 1–6 行。正确 DDL 已召回，仍给出错误文件。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "订单表的状态字段和金额字段都在 `backend/service/RefundService.java` 文件中定义。",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "database/schema.sql",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 11
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S2",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S3",
+              "path": "frontend/src/types.ts",
+              "symbol": "RefundRequest",
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S4",
+              "path": "config/repository.json",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S5",
+              "path": "backend/service/RefundService.java",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 4
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "sql",
+              "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n"
+            },
+            {
+              "source_id": "S2",
+              "language": "markdown",
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+            },
+            {
+              "source_id": "S3",
+              "language": "typescript",
+              "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+            },
+            {
+              "source_id": "S4",
+              "language": "json",
+              "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+            },
+            {
+              "source_id": "S5",
+              "language": "java",
+              "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\n"
+            }
+          ],
+          "question": "订单表的状态字段和金额字段在哪里定义？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 3934,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 554.57
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 319.33
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "fixture-documentation",
+      "category": "Wrong selected evidence",
+      "observation": "The answer names a file but cites config/repository.json; README S2 contains relevant documentation and was not selected.",
+      "review": {
+        "id": "fixture-documentation",
+        "response_sha256": "e942320e19e530156757cc26b96f1b19f59b04228be380f2b969365af6d6a33e",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "只列 RefundService.java，既未覆盖源文件与忽略规则，唯一引用 S1 config/repository.json 也不含这个文件名；相关说明实际上在未引用的 S2 README。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "1. `backend/service/RefundService.java`",
+          "source_ids": [
+            "S1"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "config/repository.json",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "json",
+              "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+            }
+          ],
+          "question": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 3773,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 626.96
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 286.16
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "issue-direct",
+      "category": "Non-callable candidate node / test advice misclassified",
+      "observation": "The only candidate node is README; test_suggestions describes a code change rather than a concrete repeat-call scenario.",
+      "review": {
+        "id": "issue-direct",
+        "response_sha256": "d9c4d1f2c4a907acad87b830e7d425bff61b5199978ef1f460fd605dd5d74ecc",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": false,
+        "reason": "只引用 README S1，并把 README 当调用节点；analysis 复述 Issue，test_suggestions 实际是加检查的代码修改建议。退款方法在 S2 已可见却未引用，没有具体重复调用测试，候选链无法成立。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "repository": "demo-repository",
+          "issue": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+          "summary": "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit，给出测试建议。",
+          "related_code": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            }
+          ],
+          "possible_call_chain": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            }
+          ],
+          "analysis": [
+            "检查 RefundService.refund 是否会在重复订单调用时再次执行 wallets.credit。"
+          ],
+          "modification_suggestions": [
+            "在 RefundService.refund 函数中添加一个检查，以避免在重复订单调用时再次执行 wallets.credit。"
+          ],
+          "test_suggestions": [
+            "在 RefundService.refund 函数中添加一个检查，以避免在重复订单调用时再次执行 wallets.credit。"
+          ],
+          "risks": [
+            "如果在重复订单调用时再次执行 wallets.credit，可能会导致重复退款问题。"
+          ],
+          "source_ids": [
+            "S1"
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "markdown",
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+            }
+          ],
+          "status": "analyzed",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 4050,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 656.09
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 817.17
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "refund-budget700",
+      "category": "Context insufficient after real truncation",
+      "observation": "S1 is 12–15 rather than original 12–18; wallets.credit at line17 is absent. Citation truncation is correct; answer only repeats the question.",
+      "review": {
+        "id": "refund-budget700",
+        "response_sha256": "1a075416f0126042af95a7cce83ccc31fe7cdfe1a9b404cf5d533ef2e88611a4",
+        "outcome": "nonresponsive",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "实际只输出 S1 RefundService.refund 12–15 行、四行预览，未包含第17行 wallets.credit。模型复述问题，未解释证据限制；引用正确截断，但不能据此判定回答有用。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "answer": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+          "source_ids": [
+            "S1"
+          ],
+          "citations": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "backend/service/RefundService.java",
+              "symbol": "RefundService.refund",
+              "start_line": 12,
+              "end_line": 15
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "java",
+              "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n"
+            }
+          ],
+          "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+          "repository": "demo-repository",
+          "status": "answered",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 1,
+            "context_characters": 698,
+            "context_budget_characters": 700,
+            "budget_limited": true,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 583.94
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 217.83
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    },
+    {
+      "id": "issue-refund",
+      "category": "Unsupported truncation explanation",
+      "observation": "Model says code was truncated although all emitted budget_truncated flags and budget_limited are false, and the refund method is complete.",
+      "review": {
+        "id": "issue-refund",
+        "response_sha256": "6ca67a214b2ea1c58c9967e70ce57e181e5b1ab232a0ba46b2922290b8084777",
+        "outcome": "unsupported",
+        "answer_supported": false,
+        "answer_complete": false,
+        "supporting_source_ids": [],
+        "citation_batch_supports_answer": false,
+        "candidate_chain_supported": null,
+        "reason": "analysis 说代码被截断，实际 Context budget_limited=false、全部 budget_truncated=false，S4 退款方法完整。建议泛化，没有对具体片段做代码分析；不能用截断解释缺失钱包方法的检索问题。"
+      },
+      "actual_response": {
+        "http_status": 200,
+        "body": {
+          "repository": "demo-repository",
+          "issue": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+          "summary": "商城退款接口可能存在重复退款问题，请分析应该重点检查哪些代码。",
+          "related_code": [
+            {
+              "repository": "demo-repository",
+              "source_id": "S1",
+              "path": "README.md",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 21
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S2",
+              "path": "backend/controller/OrderController.java",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 5
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S3",
+              "path": "frontend/src/RefundPanel.vue",
+              "symbol": null,
+              "start_line": 1,
+              "end_line": 22
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S4",
+              "path": "backend/service/RefundService.java",
+              "symbol": "RefundService.refund",
+              "start_line": 12,
+              "end_line": 18
+            },
+            {
+              "repository": "demo-repository",
+              "source_id": "S5",
+              "path": "backend/controller/OrderController.java",
+              "symbol": "OrderController",
+              "start_line": 6,
+              "end_line": 8
+            }
+          ],
+          "possible_call_chain": [],
+          "analysis": [
+            "代码被截断，无法提供详细分析。"
+          ],
+          "modification_suggestions": [
+            "检查代码中是否存在重复退款问题"
+          ],
+          "test_suggestions": [
+            "增加单元测试以验证退款接口的重复退款行为"
+          ],
+          "risks": [
+            "重复退款可能导致安全问题和用户体验问题"
+          ],
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "sources": [
+            {
+              "source_id": "S1",
+              "language": "markdown",
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+            },
+            {
+              "source_id": "S2",
+              "language": "java",
+              "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n"
+            },
+            {
+              "source_id": "S3",
+              "language": "vue",
+              "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+            },
+            {
+              "source_id": "S4",
+              "language": "java",
+              "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+            },
+            {
+              "source_id": "S5",
+              "language": "java",
+              "content": "public final class OrderController {\n    private final RefundService refunds;\n\n"
+            }
+          ],
+          "status": "analyzed",
+          "model": "qwen2.5:0.5b",
+          "retrieval": {
+            "top_k": 5,
+            "retrieved_chunks": 5,
+            "used_sources": 5,
+            "context_characters": 4706,
+            "context_budget_characters": 16000,
+            "budget_limited": false,
+            "empty_reason": null,
+            "collection": "repopilot_code",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "embedding_dimension": 1024,
+            "latency_ms": 589.72
+          },
+          "generation": {
+            "called": true,
+            "latency_ms": 632.02
+          }
+        }
+      },
+      "scope": "recorded only; no retrieval, chunker, prompt or provider repair in Task 12"
+    }
+  ],
+  "large_ast_chunk_case": "Not observed in this small fixture; no synthetic case claimed as a real result",
+  "stage4_note": "Search/chunk-size investigations are recorded, not implemented here"
+}

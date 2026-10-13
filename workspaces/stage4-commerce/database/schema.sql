@@ -1,0 +1,9 @@
+CREATE TABLE ledger_entries (
+    id INTEGER PRIMARY KEY,
+    amount INTEGER NOT NULL,
+    status VARCHAR(20) DEFAULT 'PENDING'
+);
+CREATE TABLE wallets (
+    user_id VARCHAR(64) PRIMARY KEY,
+    balance INTEGER NOT NULL DEFAULT 0
+);

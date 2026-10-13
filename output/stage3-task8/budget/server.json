@@ -1,0 +1,6 @@
+{
+  "pid": 8776,
+  "url": "http://127.0.0.1:8019",
+  "process_budget_override": 700,
+  "local_acceptance_only": true
+}

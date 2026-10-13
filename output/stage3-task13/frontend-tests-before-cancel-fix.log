@@ -1,0 +1,53 @@
+
+> @repopilot/web@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ code chat preserves authoritative Citation and exact preview content (1.9362ms)
+✔ question validation counts code points and rejects invalid Unicode (1.7952ms)
+✔ invalid questions repositories and TopK fail before requests (0.1648ms)
+✔ empty retrieval and abstention have no Citation or preview (0.2023ms)
+✔ stale question repository and TopK cannot be attributed to current request (0.3148ms)
+✔ invalid or duplicate IDs and unmatched Citation preview batches are rejected (0.3761ms)
+✔ unsafe paths Symbols and coordinate types cannot become source labels (0.261ms)
+✔ truncated preview has its actual inclusive line range (0.1568ms)
+✔ source line splitting agrees with Python newline semantics and preserves indentation (0.211ms)
+✔ content remains untrusted text and unknown fields are not projected (0.2281ms)
+✔ invalid telemetry status model and preview content fail atomically (0.3239ms)
+✔ HTTP errors are fixed safe messages without upstream body reflection (0.1858ms)
+✔ invalid input creates no request or history turn (3.0036ms)
+✔ one request per question and history keeps original parameters (1.5752ms)
+✔ cancelled late response cannot replace a newer question or clear its busy state (0.8246ms)
+✔ clearing a pending turn prevents it from reappearing later (0.4949ms)
+✔ controlled privacy error retains question and never displays partial answer (0.5623ms)
+✔ retry uses failed turn repository and question after form edits (1.1697ms)
+✔ malformed successful response and network failure do not become answers (0.6338ms)
+✔ Issue input limits and JSON framing budget match backend (4.4539ms)
+✔ Issue response preserves validated metadata and preview text (1.4936ms)
+✔ Issue contract rejects foreign/stale responses and corrupted previews (0.8172ms)
+✔ Candidate call chain must reference complete matching Citation metadata (0.5884ms)
+✔ Empty evidence has no generated claims or sources (0.2804ms)
+✔ Generated text arrays are bounded, UTF8 and nonblank, without active markup (0.415ms)
+✔ Issue errors never reflect raw upstream details (0.2607ms)
+✔ Issue response projects known fields without exposing raw debug data (0.1981ms)
+✔ Invalid Issue creates no fetch or submitted state (2.299ms)
+✔ Single Issue submission snapshots params and disables duplicate generation (1.1592ms)
+✔ Clear/cancel ignores late Issue response and preserves newer busy state (0.669ms)
+✔ Sensitive 502 has no result; retry uses originally submitted Issue (0.8883ms)
+✔ Malformed and network Issue failures leave controlled errors without analysis (0.9065ms)
+✔ accepts valid inputs and counts Unicode code points like the backend (1.2502ms)
+✔ rejects empty queries, unsafe repository names and invalid TopK (0.2439ms)
+✔ preserves source whitespace and raw score, projects only known fields (0.4443ms)
+✔ accepts fewer than TopK results and an empty matching repository (0.6616ms)
+✔ rejects stale request echoes and foreign repository payloads (0.4566ms)
+✔ rejects invalid ranking, duplicate chunk IDs and excess results (0.2246ms)
+✔ rejects malformed numeric metadata and source bounds (0.381ms)
+✔ preserves complete AST metadata and handles unnamed module and fallback chunks (0.349ms)
+✔ rejects incomplete or contradictory AST metadata without displaying partial results (0.5901ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 509.8109

@@ -1,0 +1,27 @@
+{
+  "repository": "demo-repository",
+  "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+  "top_k": 1,
+  "collection": "repopilot_code",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimension": 1024,
+  "retrieval_latency_ms": 623.12,
+  "results": [
+    {
+      "rank": 1,
+      "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+      "repository": "demo-repository",
+      "score": 0.62815964,
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 12,
+      "end_line": 18,
+      "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+      "symbol": "RefundService.refund",
+      "node_type": "method_declaration",
+      "parent_symbol": "RefundService",
+      "chunking_strategy": "ast",
+      "chunking_version": "ast-v1"
+    }
+  ]
+}

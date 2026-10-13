@@ -1,0 +1,230 @@
+{
+  "task": "Stage 3 / Task 8: Citation Validator",
+  "status": "complete",
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "tests": {
+    "backend_collected": 901,
+    "backend_passed": 895,
+    "backend_skipped": 6,
+    "backend_warnings": 2,
+    "citation_cases": 103,
+    "code_chat_cases": 68,
+    "new_cases": 111,
+    "evaluation_passed": 42,
+    "frontend_passed": 9,
+    "frontend_typecheck_and_build": "passed",
+    "frontend_modules": 1615
+  },
+  "policy": "All-or-nothing rejection; no partial Citations or answer on invalid metadata/IDs",
+  "citation_fields": [
+    "source_id",
+    "repository",
+    "path",
+    "symbol",
+    "start_line",
+    "end_line"
+  ],
+  "citation_coordinates": "Path/Symbol from validated original backend metadata; Lines from exact emitted slice",
+  "real_api_requests": 3,
+  "real_generation_http_requests": 2,
+  "llm_model": "qwen2.5:0.5b",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimension": 1024,
+  "real_source_slices_verified": true,
+  "model_schema_still_only_answer_and_ids": true,
+  "full_response": {
+    "answer": "backend/service/RefundService.java",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 18
+      }
+    ],
+    "repository": "demo-repository",
+    "status": "answered",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 5,
+      "context_characters": 4110,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 4201.97
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 2808.73
+    }
+  },
+  "budget_response": {
+    "answer": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 15
+      }
+    ],
+    "repository": "demo-repository",
+    "status": "answered",
+    "model": "qwen2.5:0.5b",
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 5,
+      "used_sources": 1,
+      "context_characters": 698,
+      "context_budget_characters": 700,
+      "budget_limited": true,
+      "empty_reason": null,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 980.34
+    },
+    "generation": {
+      "called": true,
+      "latency_ms": 501.09
+    }
+  },
+  "empty_response": {
+    "answer": "根据当前索引到的代码，我没有找到足够证据回答这个问题。",
+    "source_ids": [],
+    "citations": [],
+    "repository": "stage3-task8-not-indexed",
+    "status": "insufficient_evidence",
+    "model": null,
+    "retrieval": {
+      "top_k": 5,
+      "retrieved_chunks": 0,
+      "used_sources": 0,
+      "context_characters": 0,
+      "context_budget_characters": 16000,
+      "budget_limited": false,
+      "empty_reason": "no_results",
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "latency_ms": 564.89
+    },
+    "generation": {
+      "called": false,
+      "latency_ms": 0.0
+    }
+  },
+  "controlled_real_metadata_replays": [
+    {
+      "case": "unknown_id",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "duplicate_id",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "foreign_source",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "invalid_line_metadata",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "not_in_emitted_context",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "original_end_used_for_truncated_content",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "wrong_source_slice",
+      "rejected": true,
+      "partial_citations_returned": false
+    },
+    {
+      "case": "context_map_mismatch",
+      "rejected": true,
+      "partial_citations_returned": false
+    }
+  ],
+  "preservation": {
+    "protected_files": 293,
+    "changed_existing_files": [
+      "README.md",
+      "services/api/app/rag/service.py",
+      "services/api/app/schemas/code_chat.py",
+      "services/api/tests/test_code_chat.py"
+    ],
+    "unexpected_changes": [],
+    "env_and_lockfiles_unchanged": true,
+    "context_builder_and_prompt_unchanged": true,
+    "frontend_fixture_dataset_and_past_evidence_unchanged": true,
+    "qdrant_exact_match": true,
+    "production_points": 17,
+    "production_points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+  },
+  "bad_case": {
+    "kind": "real HTTP budget result",
+    "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+    "actual_answer": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+    "source_ids": [
+      "S1"
+    ],
+    "citations": [
+      {
+        "repository": "demo-repository",
+        "source_id": "S1",
+        "path": "backend/service/RefundService.java",
+        "symbol": "RefundService.refund",
+        "start_line": 12,
+        "end_line": 15
+      }
+    ],
+    "problem": "The answer echoes the question; valid mapped Citations do not imply semantic answer correctness.",
+    "context_characters": 698,
+    "original_lines": [
+      12,
+      18
+    ],
+    "emitted_and_cited_lines": [
+      12,
+      15
+    ],
+    "wallet_call_not_in_context": true,
+    "answer_was_not_rewritten": true
+  },
+  "temporary_acceptance_apis_stopped": true,
+  "budget_override_only_in_acceptance_process": true,
+  "not_implemented": [
+    "Task 9 dedicated injection review",
+    "Code Chat UI",
+    "Issue Analyzer",
+    "Semantic answer validation"
+  ],
+  "next_task": "Task 9: Prompt Injection boundary review"
+}

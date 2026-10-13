@@ -1,0 +1,30 @@
+{
+  "kind": "real HTTP budget result",
+  "question": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+  "actual_answer": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+  "source_ids": [
+    "S1"
+  ],
+  "citations": [
+    {
+      "repository": "demo-repository",
+      "source_id": "S1",
+      "path": "backend/service/RefundService.java",
+      "symbol": "RefundService.refund",
+      "start_line": 12,
+      "end_line": 15
+    }
+  ],
+  "problem": "The answer echoes the question; valid mapped Citations do not imply semantic answer correctness.",
+  "context_characters": 698,
+  "original_lines": [
+    12,
+    18
+  ],
+  "emitted_and_cited_lines": [
+    12,
+    15
+  ],
+  "wallet_call_not_in_context": true,
+  "answer_was_not_rewritten": true
+}

@@ -1,0 +1,34 @@
+{
+  "existing_files_checked": 165,
+  "changed_existing_files": [
+    ".env.example",
+    "README.md",
+    "services/api/app/core/config.py"
+  ],
+  "unexpected_changes": [],
+  "local_env_unchanged": true,
+  "dependency_lockfiles_unchanged": true,
+  "frontend_unchanged": true,
+  "fixture_and_evaluation_data_unchanged": true,
+  "qdrant_exact_snapshot_match": true,
+  "collections": [
+    {
+      "name": "repopilot_code",
+      "points_count": 17,
+      "vectors": {
+        "size": 1024,
+        "distance": "Cosine"
+      },
+      "points_sha256": "af643856c5172b9ff6225e64d156c4a646e936adbed81fcf80cfb00d11f43e98"
+    },
+    {
+      "name": "repopilot_infra_smoke",
+      "points_count": 0,
+      "vectors": {
+        "size": 3,
+        "distance": "Cosine"
+      },
+      "points_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ]
+}

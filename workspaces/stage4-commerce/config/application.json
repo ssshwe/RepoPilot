@@ -1,0 +1,6 @@
+{
+  "maxRetries": 3,
+  "timeoutMs": 1000,
+  "currency": "CNY",
+  "auditEnabled": true
+}

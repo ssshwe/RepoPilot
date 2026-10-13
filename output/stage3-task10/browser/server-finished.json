@@ -1,0 +1,7 @@
+{
+  "contexts_built": 4,
+  "generation_calls": 3,
+  "citation_validation_calls": 7,
+  "actual_generation_http_requests": 3,
+  "stopped": true
+}

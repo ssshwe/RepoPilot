@@ -1,0 +1,1188 @@
+{
+  "status": "complete",
+  "generated_at": "2026-10-03T18:55:23.252659+00:00",
+  "dataset": {
+    "name": "stage2-demo-repository-v1",
+    "sha256": "ce03abcda9f247f32122a5bb556baf81cbd4f61ff181ef6d576af5b726d6b5fc",
+    "source_sha256": {
+      "backend/controller/OrderController.java": "46a8b09ff66756773d414a64baa3fdacebdd6b5f67f6ee221809fc2f5dc6950f",
+      "backend/service/RefundService.java": "5cb8dc69d4bc659df2325d91b047dcc04b597ff07699149dabdf901709654e6e",
+      "backend/service/WalletService.java": "059d80e8dd2fd5a50f5cc9c14c7eb3d451f531df85fd4b18faf5d52c0cc9b3c2",
+      "config/repository.json": "d35709909fb7abf5d5ec0ce719f2f1c430d7988d491e46bbebd577dd41218628",
+      "database/schema.sql": "0a93f7e9c3281d3285ddcbc91b90446d72fb968328ffdc34de2abb711dedbc6e",
+      "frontend/src/RefundPanel.vue": "87bbc51a95940935d2c3ab8c76ed2756933f5f5844e587a381f7ae038929dca7",
+      "frontend/src/types.ts": "cc3cb748a8167a657eed5c93c1114a6eb643b63a84173676a60b75cc23d455a5",
+      "README.md": "2992bfbbfd79cfcc136fc78519327c3a7f02389e553da6fec739678d14a5803c"
+    },
+    "relevance_policy": "Implementation questions count their implementation files, not README descriptions. Documentation, type, schema and metadata questions count the file defining that information. Multi-file questions require all listed files for full recall.",
+    "path": "D:\\aaaagent开发文件\\RepoPilot\\evaluation\\datasets\\stage2_retrieval.json"
+  },
+  "retrieval": {
+    "repository": "demo-repository",
+    "collection": "repopilot_code",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "requested_top_k": 5,
+    "ks": [
+      1,
+      3,
+      5
+    ],
+    "ranking_unit": "code_chunk",
+    "relevance_unit": "unique_source_path",
+    "api_base_url": "http://localhost:8000"
+  },
+  "metric_definitions": {
+    "hit_at_k": "Fraction of queries with at least one expected file in the first K chunks",
+    "macro_recall_at_k": "Mean across queries of distinct expected files retrieved in first K chunks / expected file count"
+  },
+  "summary": {
+    "queries": 12,
+    "hit_at_k": {
+      "1": {
+        "hits": 6,
+        "total": 12,
+        "rate": 0.5
+      },
+      "3": {
+        "hits": 10,
+        "total": 12,
+        "rate": 0.8333333333333334
+      },
+      "5": {
+        "hits": 12,
+        "total": 12,
+        "rate": 1
+      }
+    },
+    "macro_recall_at_k": {
+      "1": 0.5,
+      "3": 0.7777777777777778,
+      "5": 0.9305555555555556
+    }
+  },
+  "queries": [
+    {
+      "id": "refund-service",
+      "query": "退款服务在哪里校验订单编号，然后把退款金额转回钱包？",
+      "expected_paths": [
+        "backend/service/RefundService.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 3008.989100009785,
+      "retrieval_latency_ms": 910.93,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.6155841,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 2,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.6145509,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 3,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.54283035,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.5383034,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "rank": 5,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.533811,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wallet-credit",
+      "query": "哪里校验钱包入账金额必须为正数，并累加余额？",
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 3119.244700006675,
+      "retrieval_latency_ms": 964.1,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "score": 0.5094929,
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23
+        },
+        {
+          "rank": 2,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.4519235,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 3,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.43439594,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 4,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.39859897,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 5,
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "score": 0.3741182,
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wallet-default-balance",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "expected_paths": [
+        "backend/service/WalletService.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 20,
+          "end_line": 22,
+          "snippet": "balances.getOrDefault(userId, BigDecimal.ZERO)"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2881.0622000019066,
+      "retrieval_latency_ms": 806.77,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "score": 0.54089415,
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23
+        },
+        {
+          "rank": 2,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.4520517,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 3,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.45026028,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "score": 0.42968756,
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11
+        },
+        {
+          "rank": 5,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.42691445,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/service/WalletService.java"
+          ]
+        }
+      }
+    },
+    {
+      "id": "refund-controller",
+      "query": "哪个后端入口接收退款请求并调用退款服务？",
+      "expected_paths": [
+        "backend/controller/OrderController.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2739.24700000498,
+      "retrieval_latency_ms": 620.99,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.63925385,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 2,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.61403865,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 3,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.5894245,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        },
+        {
+          "rank": 4,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.5822567,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 5,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.5585128,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/controller/OrderController.java"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "backend/controller/OrderController.java"
+          ]
+        }
+      }
+    },
+    {
+      "id": "refund-form",
+      "query": "退款表单如何收集订单编号、用户编号和金额，并触发 refund 事件？",
+      "expected_paths": [
+        "frontend/src/RefundPanel.vue"
+      ],
+      "evidence": [
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "start_line": 5,
+          "end_line": 12,
+          "snippet": "emit('refund', { ...form })"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2917.07409999799,
+      "retrieval_latency_ms": 835.33,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.6797179,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "rank": 2,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.66804445,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 3,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.651402,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.628083,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        },
+        {
+          "rank": 5,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.6134044,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/RefundPanel.vue"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/RefundPanel.vue"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/RefundPanel.vue"
+          ]
+        }
+      }
+    },
+    {
+      "id": "refund-request-type",
+      "query": "RefundRequest 的 orderId、userId、amount 字段类型定义在哪里？",
+      "expected_paths": [
+        "frontend/src/types.ts"
+      ],
+      "evidence": [
+        {
+          "path": "frontend/src/types.ts",
+          "start_line": 1,
+          "end_line": 5,
+          "snippet": "export interface RefundRequest"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2949.1139999881852,
+      "retrieval_latency_ms": 886.16,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.8423034,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 2,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.68472826,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "rank": 3,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.66305786,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        },
+        {
+          "rank": 4,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.66188717,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 5,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.654994,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/types.ts"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/types.ts"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "frontend/src/types.ts"
+          ]
+        }
+      }
+    },
+    {
+      "id": "orders-schema",
+      "query": "订单表的状态字段和金额字段在哪里定义？",
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 1,
+          "end_line": 6,
+          "snippet": "status VARCHAR(20) NOT NULL"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2727.5105000007898,
+      "retrieval_latency_ms": 648.59,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "score": 0.4727635,
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11
+        },
+        {
+          "rank": 2,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.44205523,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 3,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.4419396,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.4409692,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 5,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.41403297,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "database/schema.sql"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "database/schema.sql"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "database/schema.sql"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wallets-schema",
+      "query": "钱包表余额的默认值在哪里设置为零？",
+      "expected_paths": [
+        "database/schema.sql"
+      ],
+      "evidence": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 11,
+          "snippet": "balance DECIMAL(12, 2) NOT NULL DEFAULT 0"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 3116.7796999943675,
+      "retrieval_latency_ms": 977.56,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "score": 0.43671155,
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23
+        },
+        {
+          "rank": 2,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.3569379,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 3,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.3545336,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 4,
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "score": 0.34237885,
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11
+        },
+        {
+          "rank": 5,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.3225301,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "database/schema.sql"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fixture-documentation",
+      "query": "这个演示仓库有哪些主要源文件，哪些文件不会被索引？",
+      "expected_paths": [
+        "README.md"
+      ],
+      "evidence": [
+        {
+          "path": "README.md",
+          "start_line": 8,
+          "end_line": 21,
+          "snippet": "`notes.txt` is intentionally outside the scanner's supported extensions."
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2801.880400002119,
+      "retrieval_latency_ms": 696.38,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.4965865,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 2,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.406598,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 3,
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "score": 0.24665421,
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23
+        },
+        {
+          "rank": 4,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.21901384,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 5,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.2126019,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "README.md"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "README.md"
+          ]
+        }
+      }
+    },
+    {
+      "id": "repository-metadata",
+      "query": "仓库的 name、purpose 和 features 元数据写在哪里？",
+      "expected_paths": [
+        "config/repository.json"
+      ],
+      "evidence": [
+        {
+          "path": "config/repository.json",
+          "start_line": 2,
+          "end_line": 4,
+          "snippet": "\"features\": [\"order-refund\", \"wallet-balance\"]"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 3059.053999997559,
+      "retrieval_latency_ms": 951.92,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.4654923,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 2,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.38263857,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 3,
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "score": 0.34096026,
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11
+        },
+        {
+          "rank": 4,
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "score": 0.3143431,
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23
+        },
+        {
+          "rank": 5,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.29306126,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "config/repository.json"
+          ]
+        },
+        "3": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "config/repository.json"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 1.0,
+          "matched_paths": [
+            "config/repository.json"
+          ]
+        }
+      }
+    },
+    {
+      "id": "refund-validation-files",
+      "query": "退款链路中，订单编号校验和钱包入账金额校验分别在哪些文件？",
+      "expected_paths": [
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "orderId == null || orderId.isBlank()"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "amount == null || amount.signum() <= 0"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 2743.2836000079988,
+      "retrieval_latency_ms": 640.7,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.5094075,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 2,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.46204776,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 3,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.44092244,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.4254123,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 5,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.4092548,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "5": {
+          "hit": true,
+          "recall": 0.5,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        }
+      }
+    },
+    {
+      "id": "refund-call-chain",
+      "query": "从后端退款入口到钱包余额更新，请求经过哪三个实现文件？",
+      "expected_paths": [
+        "backend/controller/OrderController.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "evidence": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "snippet": "refunds.refund(orderId, userId, amount);"
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "snippet": "wallets.credit(userId, amount);"
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+        }
+      ],
+      "request_top_k": 5,
+      "http_latency_ms": 3018.0493000079878,
+      "retrieval_latency_ms": 898.04,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.6630558,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21
+        },
+        {
+          "rank": 2,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.592922,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19
+        },
+        {
+          "rank": 3,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.56490386,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5
+        },
+        {
+          "rank": 4,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.54087687,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22
+        },
+        {
+          "rank": 5,
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "score": 0.5346488,
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16
+        }
+      ],
+      "metrics": {
+        "1": {
+          "hit": false,
+          "recall": 0.0,
+          "matched_paths": []
+        },
+        "3": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "matched_paths": [
+            "backend/service/RefundService.java"
+          ]
+        },
+        "5": {
+          "hit": true,
+          "recall": 0.6666666666666666,
+          "matched_paths": [
+            "backend/controller/OrderController.java",
+            "backend/service/RefundService.java"
+          ]
+        }
+      }
+    }
+  ]
+}

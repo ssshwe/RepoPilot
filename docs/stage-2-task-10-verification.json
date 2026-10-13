@@ -1,0 +1,774 @@
+{
+  "recorded_at": "2026-10-03T18:56:05.341773+00:00",
+  "stage": 2,
+  "task": 10,
+  "report": "evaluation/reports/stage2_retrieval_20261004_task10.json",
+  "report_sha256": "2ecca8bf3eadf691fbb8a6613d33b08e4dd26197052869a23257813bd128a136",
+  "evaluation_summary": {
+    "queries": 12,
+    "hit_at_k": {
+      "1": {
+        "hits": 6,
+        "total": 12,
+        "rate": 0.5
+      },
+      "3": {
+        "hits": 10,
+        "total": 12,
+        "rate": 0.8333333333333334
+      },
+      "5": {
+        "hits": 12,
+        "total": 12,
+        "rate": 1
+      }
+    },
+    "macro_recall_at_k": {
+      "1": 0.5,
+      "3": 0.7777777777777778,
+      "5": 0.9305555555555556
+    }
+  },
+  "dataset_sha256": "ce03abcda9f247f32122a5bb556baf81cbd4f61ff181ef6d576af5b726d6b5fc",
+  "source_files_unchanged": true,
+  "dataset_unchanged": true,
+  "local_env_unchanged": true,
+  "backend_frontend_implementation_unchanged": true,
+  "index_unchanged": true,
+  "temporary_integration_collections_cleaned_up": true,
+  "persistent_points": 8,
+  "qdrant_data_sha256_before": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "qdrant_data_sha256_after": "0049fcf6256198fd70a3b9ace450f156e5277528e2002ebc7bdd16810bfa0f4c",
+  "collections": [
+    "repopilot_code",
+    "repopilot_infra_smoke"
+  ],
+  "all_evaluation_metrics_independently_recomputed": true,
+  "fixture_kind": "Handwritten local code fixture, not a production application",
+  "point_sample": {
+    "id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+    "dimension": 1024,
+    "vector_preview": [
+      -0.030304136,
+      0.071053244,
+      -0.007012965,
+      -0.03631072,
+      0.0369386,
+      -0.10422923,
+      -0.008012391,
+      -0.023612952
+    ],
+    "payload": {
+      "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+      "repository": "demo-repository",
+      "path": "backend/service/RefundService.java",
+      "language": "java",
+      "start_line": 1,
+      "end_line": 19,
+      "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "schema_version": "code-points-v1",
+      "chunk_lines": 60,
+      "overlap_lines": 10
+    }
+  },
+  "collection_vector_config": {
+    "size": 1024,
+    "distance": "Cosine"
+  },
+  "api_samples": {
+    "process_health": {
+      "status": "ok"
+    },
+    "qdrant_health": {
+      "status": "ok",
+      "collection": "repopilot_code",
+      "collection_exists": true
+    },
+    "collection_info": {
+      "collection": "repopilot_code",
+      "dimension": 1024,
+      "distance": "Cosine",
+      "points_count": 8,
+      "status": "green"
+    },
+    "scan": {
+      "repository": "demo-repository",
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "total_bytes": 4076,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "size_bytes": 1093,
+          "line_count": 21
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "size_bytes": 398,
+          "line_count": 16
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "size_bytes": 554,
+          "line_count": 19
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "size_bytes": 751,
+          "line_count": 23
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "size_bytes": 149,
+          "line_count": 5
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "size_bytes": 269,
+          "line_count": 11
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "size_bytes": 775,
+          "line_count": 22
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "size_bytes": 87,
+          "line_count": 5
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "chunks": {
+      "repository": "demo-repository",
+      "chunk_lines": 60,
+      "overlap_lines": 10,
+      "files_scanned": 10,
+      "supported_files": 8,
+      "skipped_files": 2,
+      "files_chunked": 8,
+      "files_without_chunks": [],
+      "chunks_created": 8,
+      "chunks_returned": 8,
+      "preview_limit": 8,
+      "truncated": false,
+      "files": [
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "line_count": 21,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "line_count": 16,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "line_count": 19,
+          "chunks_created": 1
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "line_count": 23,
+          "chunks_created": 1
+        },
+        {
+          "path": "config/repository.json",
+          "language": "json",
+          "line_count": 5,
+          "chunks_created": 1
+        },
+        {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "line_count": 11,
+          "chunks_created": 1
+        },
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "line_count": 22,
+          "chunks_created": 1
+        },
+        {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "line_count": 5,
+          "chunks_created": 1
+        }
+      ],
+      "chunks": [
+        {
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+        },
+        {
+          "chunk_id": "cf548276-35a6-55e1-ab7d-92c6942ca9e8",
+          "repository": "demo-repository",
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 16,
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\npublic final class OrderController {\n    private final RefundService refunds;\n\n    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n\n    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "a930da9c-dea2-5d9f-b618-04cf810fe6fd",
+          "repository": "demo-repository",
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 23,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n\n    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n}\n"
+        },
+        {
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+        },
+        {
+          "chunk_id": "e797730d-35ef-5e28-839d-5d551558bd16",
+          "repository": "demo-repository",
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11,
+          "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n"
+        },
+        {
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22,
+          "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+        },
+        {
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+        }
+      ],
+      "skipped": [
+        {
+          "path": "notes.txt",
+          "reason": "unsupported_extension"
+        },
+        {
+          "path": "package-lock.json",
+          "reason": "ignored_file"
+        }
+      ],
+      "pruned_directories": []
+    },
+    "embedding": {
+      "model": "qwen3-embedding:0.6b",
+      "dimension": 1024,
+      "preview": [
+        -0.034106042,
+        0.020083917,
+        -0.0065465816,
+        -0.10679022,
+        0.012906836,
+        -0.036488317,
+        -0.020054916,
+        -0.04261014
+      ]
+    },
+    "similar_refund": {
+      "model": "qwen3-embedding:0.6b",
+      "dimension": 1024,
+      "similarity": 0.8017290049765894
+    },
+    "unrelated_weather": {
+      "model": "qwen3-embedding:0.6b",
+      "dimension": 1024,
+      "similarity": 0.33420674085257857
+    },
+    "retrieval": {
+      "repository": "demo-repository",
+      "query": "退款逻辑在哪里？",
+      "top_k": 5,
+      "collection": "repopilot_code",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "embedding_dimension": 1024,
+      "retrieval_latency_ms": 667.46,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "31ee8791-5afa-5bd7-a1dd-dcd51bb38209",
+          "repository": "demo-repository",
+          "score": 0.4860013,
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "125d326c-0a82-5ae1-a047-48c7c10d97fc",
+          "repository": "demo-repository",
+          "score": 0.48496866,
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "67881397-a785-5ed6-ad27-40ce2d67e8e6",
+          "repository": "demo-repository",
+          "score": 0.44413948,
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 19,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\npublic final class RefundService {\n    private final WalletService wallets;\n\n    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n\n    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n}\n"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "d588866d-6a85-52e3-b1f6-237623f50b71",
+          "repository": "demo-repository",
+          "score": 0.44266585,
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22,
+          "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "0b192f17-71a4-58b4-bf0c-282273435cd8",
+          "repository": "demo-repository",
+          "score": 0.44116864,
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n"
+        }
+      ]
+    },
+    "stage1_routes_present": [
+      "/api/chat",
+      "/api/chat/stream",
+      "/api/analyze",
+      "/api/agent"
+    ]
+  },
+  "completed_at": "2026-10-03T19:13:31.121671+00:00",
+  "acceptance_status": "complete_with_documented_environment_skip_and_warnings",
+  "stage_2_complete": true,
+  "stage_3_started": false,
+  "test_results": {
+    "backend_default": {
+      "command": "python -m uv run --locked pytest -rs",
+      "cwd": "services/api",
+      "collected": 471,
+      "passed": 466,
+      "skipped": 5,
+      "failed": 0,
+      "elapsed_seconds": 5.0,
+      "warnings": 2,
+      "skip_categories": {
+        "explicit_opt_in_integration": 4,
+        "windows_file_symlink_privilege_1314": 1
+      },
+      "warning_categories": [
+        "Starlette TestClient/httpx deprecation",
+        "anyio BlockingPortal alias deprecation"
+      ]
+    },
+    "integration_initial": {
+      "command": "python -m uv run --locked pytest -m integration -rs",
+      "enabled_flags": [
+        "REPOPILOT_QDRANT_INTEGRATION",
+        "REPOPILOT_EMBEDDING_INTEGRATION",
+        "REPOPILOT_INDEXING_INTEGRATION",
+        "REPOPILOT_RETRIEVAL_INTEGRATION"
+      ],
+      "passed": 3,
+      "failed": 1,
+      "deselected": 467,
+      "warnings": 2,
+      "elapsed_seconds": 50.26,
+      "failure": "Embedding test incorrectly assumed identical input texts yield bit-identical vectors and cosine 1.0.",
+      "passed_files": [
+        "test_qdrant_integration.py",
+        "test_indexing_integration.py",
+        "test_retrieval_integration.py"
+      ]
+    },
+    "embedding_corrected_targeted_rerun": {
+      "command": "python -m uv run --locked pytest tests/test_embedding_integration.py -rs",
+      "enabled_flag": "REPOPILOT_EMBEDDING_INTEGRATION=1",
+      "passed": 1,
+      "failed": 0,
+      "warnings": 2,
+      "elapsed_seconds": 2.14,
+      "assertion": "Independently compute cosine from the exact real provider vectors used by each API response.",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 1e-12,
+      "vectors_and_network_stubbed": false
+    },
+    "distinct_real_integration_tests_passed": 4,
+    "combined_four_test_rerun_performed": false,
+    "evaluation_unit": {
+      "command": "services/api/.venv/Scripts/python.exe -m pytest evaluation/tests -q",
+      "passed": 32,
+      "failed": 0,
+      "elapsed_seconds": 0.25
+    },
+    "frontend_contract": {
+      "command": "npm.cmd test",
+      "cwd": "apps/web",
+      "passed": 7,
+      "failed": 0
+    },
+    "frontend_build": {
+      "command": "npm.cmd run build",
+      "cwd": "apps/web",
+      "passed": true,
+      "typescript_check_passed": true,
+      "vite_modules": 1615
+    }
+  },
+  "embedding_diagnostic": {
+    "path": "docs/stage-2-task-10-embedding-diagnostic.json",
+    "sha256": "f5033be226d004106b2d3c6fec0a2972d4dec38dd8f947a51cf8e85f89f972fd",
+    "same_text_vectors_equal": false,
+    "independent_calculation_difference": 1.1102230246251565e-16,
+    "same_vector_cosine": 1.0
+  },
+  "configuration_example": {
+    "path": ".env.example",
+    "settings_fields_validated": 25,
+    "active_keys": 27,
+    "all_settings_fields_present": true,
+    "private_env_loaded": false,
+    "process_environment_overrides_removed_for_check": true,
+    "embedding_factory_constructed_and_closed_without_request": true,
+    "frontend_only_keys": [
+      "VITE_API_BASE_URL"
+    ],
+    "compose_only_keys": [
+      "QDRANT_HTTP_PORT"
+    ],
+    "template_values_changed": false
+  },
+  "browser_acceptance": {
+    "url": "http://localhost:5173/#retrieval",
+    "repository": "demo-repository",
+    "query": "退款逻辑在哪里？",
+    "top_k": 5,
+    "results_count": 5,
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "retrieval_latency_ms": 612.2,
+    "summary_text": "找到 5 个代码块 · 请求 TopK 5\n\ndemo-repository · 退款逻辑在哪里？\n\nqwen3-embedding:0.6b\nDimension 1024\n612.2 ms",
+    "loading_disables_fields_and_search_observed": true,
+    "all_code_previews_match_source_slices": true,
+    "refund_preview_expanded": true,
+    "console_warning_error_logs": [],
+    "results": [
+      {
+        "rank": 1,
+        "path": "README.md",
+        "score": 0.48684692,
+        "raw_score_text": "0.48684692",
+        "start_line": 1,
+        "end_line": 21,
+        "source_slice_matches": true
+      },
+      {
+        "rank": 2,
+        "path": "frontend/src/types.ts",
+        "score": 0.4854089,
+        "raw_score_text": "0.4854089",
+        "start_line": 1,
+        "end_line": 5,
+        "source_slice_matches": true
+      },
+      {
+        "rank": 3,
+        "path": "backend/service/RefundService.java",
+        "score": 0.44492742,
+        "raw_score_text": "0.44492742",
+        "start_line": 1,
+        "end_line": 19,
+        "source_slice_matches": true
+      },
+      {
+        "rank": 4,
+        "path": "frontend/src/RefundPanel.vue",
+        "score": 0.44356453,
+        "raw_score_text": "0.44356453",
+        "start_line": 1,
+        "end_line": 22,
+        "source_slice_matches": true
+      },
+      {
+        "rank": 5,
+        "path": "config/repository.json",
+        "score": 0.44177508,
+        "raw_score_text": "0.44177508",
+        "start_line": 1,
+        "end_line": 5,
+        "source_slice_matches": true
+      }
+    ],
+    "screenshot": "docs/assets/stage-2-task-10-retrieval.jpg",
+    "screenshot_sha256": "fccd0a8d14e45ebbc110dc65d85f7aa6bd1bcb64c20421692e3c2a312ed65a08",
+    "historical_stage1_streaming_proof": "docs/stage-2-task-8-verification.json"
+  },
+  "documentation_checks": {
+    "local_links_and_anchors_resolved": 105,
+    "concepts_mapped_to_real_files": [
+      "Embedding",
+      "Vector",
+      "Qdrant",
+      "Collection",
+      "Point",
+      "Payload",
+      "Metadata",
+      "Similarity",
+      "TopK",
+      "Indexing",
+      "Retrieval"
+    ],
+    "chinese_learning_questions_answered": 25,
+    "acceptance_checklist_items": 28
+  },
+  "acceptance_checklist": [
+    {
+      "id": 1,
+      "item": "Stage 1 preserved",
+      "evidence": "Default regression suite; four routes present; business source unchanged; Task 8 real streaming check",
+      "satisfied": true
+    },
+    {
+      "id": 2,
+      "item": "Qdrant starts",
+      "evidence": "`Qdrant.ps1 status`: pinned 1.19.1 container healthy",
+      "satisfied": true
+    },
+    {
+      "id": 3,
+      "item": "FastAPI connects to Qdrant",
+      "evidence": "`/health/qdrant` 200, collection exists",
+      "satisfied": true
+    },
+    {
+      "id": 4,
+      "item": "Independent Embedding Provider",
+      "evidence": "`embedding/base.py`, `factory.py`, separate `EMBEDDING_*` settings",
+      "satisfied": true
+    },
+    {
+      "id": 5,
+      "item": "Actual embeddings",
+      "evidence": "Real provider integration and `/api/embeddings/debug`",
+      "satisfied": true
+    },
+    {
+      "id": 6,
+      "item": "Dimension visible",
+      "evidence": "Debug, collection and page show 1024",
+      "satisfied": true
+    },
+    {
+      "id": 7,
+      "item": "Text similarity",
+      "evidence": "Real related/refund vs weather requests and independently checked cosine",
+      "satisfied": true
+    },
+    {
+      "id": 8,
+      "item": "Controlled repository scan",
+      "evidence": "`demo-repository`: 10 candidates, 8 accepted",
+      "satisfied": true
+    },
+    {
+      "id": 9,
+      "item": "Ignore rules",
+      "evidence": "`repository/ignore.py`, skip tests and two actual fixture skips",
+      "satisfied": true
+    },
+    {
+      "id": 10,
+      "item": "Safe paths",
+      "evidence": "`repository/paths.py`, scanner/retrieval tests; Windows skip disclosed",
+      "satisfied": true
+    },
+    {
+      "id": 11,
+      "item": "Simple chunking",
+      "evidence": "60/10 defaults produce eight actual chunks",
+      "satisfied": true
+    },
+    {
+      "id": 12,
+      "item": "Chunk path/language/lines",
+      "evidence": "Real chunk debug response and exact source slices",
+      "satisfied": true
+    },
+    {
+      "id": 13,
+      "item": "Batch embeddings",
+      "evidence": "Provider batch tests and actual indexing integration",
+      "satisfied": true
+    },
+    {
+      "id": 14,
+      "item": "Qdrant writes",
+      "evidence": "Eight persistent points; unique integration collection writes",
+      "satisfied": true
+    },
+    {
+      "id": 15,
+      "item": "Payload/metadata correct",
+      "evidence": "Actual refund payload, model/identity and source verification",
+      "satisfied": true
+    },
+    {
+      "id": 16,
+      "item": "Reindex does not grow duplicates",
+      "evidence": "Real integration repeat: 18 → 18, same IDs",
+      "satisfied": true
+    },
+    {
+      "id": 17,
+      "item": "Query embedding",
+      "evidence": "Real API evaluation and browser search",
+      "satisfied": true
+    },
+    {
+      "id": 18,
+      "item": "Vector search",
+      "evidence": "Qdrant query route returns ranked source chunks",
+      "satisfied": true
+    },
+    {
+      "id": 19,
+      "item": "Repository filter",
+      "evidence": "Mandatory filter, real two-repository isolation test",
+      "satisfied": true
+    },
+    {
+      "id": 20,
+      "item": "TopK",
+      "evidence": "Request guard 1..20, actual integrations at 1/5/20",
+      "satisfied": true
+    },
+    {
+      "id": 21,
+      "item": "Score/path/lines/content returned",
+      "evidence": "Real API samples and current browser/source check",
+      "satisfied": true
+    },
+    {
+      "id": 22,
+      "item": "Retrieval Debug works",
+      "evidence": "Current screenshot/DOM check and seven contract tests",
+      "satisfied": true
+    },
+    {
+      "id": 23,
+      "item": "Real small evaluation exists",
+      "evidence": "Frozen source-grounded 12-query dataset and two measured reports",
+      "satisfied": true
+    },
+    {
+      "id": 24,
+      "item": "Actual Hit/Recall metrics",
+      "evidence": "Saved final report and independent recomputation",
+      "satisfied": true
+    },
+    {
+      "id": 25,
+      "item": "pytest passes",
+      "evidence": "466 default backend + all four distinct real integrations + 32 evaluation tests",
+      "satisfied": true
+    },
+    {
+      "id": 26,
+      "item": "Frontend build passes",
+      "evidence": "TypeScript and Vite build",
+      "satisfied": true
+    },
+    {
+      "id": 27,
+      "item": "README updated",
+      "evidence": "Current final acceptance, startup/API/test commands and limits",
+      "satisfied": true
+    },
+    {
+      "id": 28,
+      "item": "Stage 2 docs complete",
+      "evidence": "This concept/file map, checklist, real examples and 25-question study guide",
+      "satisfied": true
+    }
+  ],
+  "changed_deliverables": [
+    "README.md",
+    ".env.example",
+    "docs/stage-2.md",
+    "docs/stage-2-acceptance.md",
+    "evaluation/README.md",
+    "services/api/tests/test_embedding_integration.py",
+    "evaluation/reports/stage2_retrieval_20261004_task10.json",
+    "docs/stage-2-task-10-verification.json",
+    "docs/stage-2-task-10-embedding-diagnostic.json",
+    "docs/assets/stage-2-task-10-retrieval.jpg"
+  ]
+}
