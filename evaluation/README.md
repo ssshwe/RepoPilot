@@ -1,5 +1,26 @@
 # Repository evaluation
 
+## Stage 4 Task 4 tokenizer receipts
+
+[`stage4/verify_tokenizer.py`](stage4/verify_tokenizer.py) checks the shared
+`code-lexical-v1` rules on the saved Task 3 index and the unchanged regression/dev
+questions. It saves complete ordered tokens, term frequencies, source/index and
+implementation fingerprints, Unicode identity, and 21 explicit examples.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_tokenizer.py
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_tokenizer.py `
+  --verify-only evaluation/reports/stage4_tokenizer_20261015_task4_final.json
+```
+
+The final run covers 129 chunks / 52 queries: 3870 source tokens and 975 query
+tokens. Reserved queries were not processed, and no model or Qdrant calls occur.
+This validates lexical behavior and reproducibility, not retrieval improvement.
+Version drift, changed associations, dropped queries and token/frequency changes
+fail replay; existing outputs cannot be overwritten. Thirteen new receipt tests
+bring the evaluation suite to 130 passing cases. See
+[Task 4 rules, examples and reproduction](../docs/stage-4-task-4-tokenizer.md).
+
 ## Stage 4 Task 3 candidate compatibility
 
 [`stage4/verify_candidates.py`](stage4/verify_candidates.py) reuses Task 2's

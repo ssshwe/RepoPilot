@@ -1,0 +1,17 @@
+...............................................................F.        [100%]
+================================== FAILURES ===================================
+_ test_punctuation_runs_and_long_identifiers_are_processed_without_path_backtracking _
+
+    def test_punctuation_runs_and_long_identifiers_are_processed_without_path_backtracking():
+        tokenizer = CodeTokenizer(max_tokens=10)
+        assert tokenizer.tokenize("." * 50000 + "-" * 50000) == []
+>       assert tokenizer.tokenize("aA" * 50000) == [("aA" * 50000).casefold(), "a"]
+E       AssertionError: assert ['aaaaaaaaaaa...a', 'a', 'aa'] == ['aaaaaaaaaaa...aaaaaaa', 'a']
+E         
+E         Left contains one more item: 'aa'
+E         Use -v to get more diff
+
+tests\test_code_tokenizer.py:119: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_code_tokenizer.py::test_punctuation_runs_and_long_identifiers_are_processed_without_path_backtracking
+1 failed, 64 passed in 0.26s

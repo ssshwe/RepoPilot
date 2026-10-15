@@ -1,0 +1,1 @@
+{'chunks': 129, 'queries': 52, 'query_splits': {'dev': 40, 'regression': 12}, 'chunks_per_repository': {'demo-repository': 17, 'stage4-commerce': 106, 'stage4-shadow': 6}, 'source_tokens': 3873, 'query_tokens': 995, 'source_vocabulary': 486, 'query_vocabulary': 446, 'empty_token_sources': 0, 'empty_token_queries': 0}

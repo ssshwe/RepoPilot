@@ -1,0 +1,153 @@
+"""Versioned code lexical rules shared by documents and queries; no model or I/O."""
+from dataclasses import dataclass
+from itertools import chain
+import re
+from typing import ClassVar
+import unicodedata
+
+from app.retrieval.candidates import SourceMetadata
+from app.schemas.retrieval import RetrievalSearchRequest
+
+
+# Prefer paths/dotted names before ordinary words. ASCII suffixes stop before
+# adjacent Chinese prose, so `src/A.java在哪里` keeps the actual file token.
+_FILE = r"(?:\w[\w-]*\.[A-Za-z0-9_][A-Za-z0-9_.-]*|\.[A-Za-z0-9_][A-Za-z0-9_.-]*)"
+_SEGMENT = r"(?:\w[\w.-]*|\.\w[\w.-]*|\.{1,2})"
+_PATH = rf"(?<![\w/\\])(?:[A-Za-z]:)?[/\\]{{0,2}}(?:{_SEGMENT}[/\\])+(?:{_FILE}|[\w-]+)?|(?<!\w){_FILE}"
+# Consume an entire word/dot/dash run even when it is not a valid path.
+# Retrying a failed path prefix after each separator rescans the same suffix.
+_LEXEME = re.compile(rf"(?P<path>{_PATH})|(?P<word>\w[\w.-]*)")
+_WORD = re.compile(r"\w+")
+_HAN_RANGES = (
+    (0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF),
+    (0x20000, 0x2A6DF), (0x2A700, 0x2B73F), (0x2B740, 0x2B81F),
+    (0x2B820, 0x2CEAF), (0x2CEB0, 0x2EBEF), (0x30000, 0x3134F),
+    (0x31350, 0x323AF),
+)
+
+
+class TokenizationLimitError(ValueError):
+    """A bounded lexical input/output was exceeded; messages never contain code."""
+
+
+def _is_han(character: str) -> bool:
+    value = ord(character)
+    return any(start <= value <= end for start, end in _HAN_RANGES)
+
+
+def _identifier_parts(word: str):
+    """Acronym runs stay intact; digits and underscores create boundaries."""
+    for component in word.split("_"):
+        if not component:
+            continue
+        start = 0
+        for index in range(1, len(component)):
+            previous, current = component[index - 1], component[index]
+            following = component[index + 1] if index + 1 < len(component) else ""
+            if ((previous.islower() and current.isupper())
+                    or (previous.isupper() and current.isupper() and following.islower())
+                    or previous.isdigit() != current.isdigit()):
+                yield component[start:index].casefold()
+                start = index
+        yield component[start:].casefold()
+
+
+def _identifier_tokens(word: str):
+    # A derived form occurs once per identifier occurrence. Repeated identifiers
+    # in text still contribute repeated tokens for future BM25 term frequency.
+    seen = set()
+    for token in chain((word.casefold(),), _identifier_parts(word)):
+        if token and token.strip("_") and token not in seen:
+            seen.add(token)
+            yield token
+
+
+def _word_tokens(word: str):
+    if not any(_is_han(character) for character in word):
+        yield from _identifier_tokens(word)
+        return
+    # Pure Chinese prose emits overlapping bigrams, not an entire sentence.
+    # Mixed identifiers keep the full identifier and also split script runs.
+    if not all(_is_han(character) for character in word):
+        yield word.casefold()
+    start, han = 0, _is_han(word[0])
+    for index in range(1, len(word) + 1):
+        if index == len(word) or _is_han(word[index]) != han:
+            run = word[start:index]
+            if han:
+                if len(run) == 1:
+                    yield run
+                else:
+                    for offset in range(len(run) - 1):
+                        yield run[offset:offset + 2]
+            else:
+                yield from _identifier_tokens(run)
+            if index < len(word):
+                start, han = index, _is_han(word[index])
+
+
+def _path_tokens(path: str):
+    normalized = path.replace("\\", "/").rstrip(".")
+    if not normalized:
+        return
+    yield normalized.casefold()
+    filename = normalized.rsplit("/", 1)[-1]
+    if filename and not _WORD.fullmatch(filename) and filename.casefold() != normalized.casefold():
+        yield filename.casefold()
+    for match in _WORD.finditer(normalized):
+        yield from _word_tokens(match.group())
+
+
+@dataclass(frozen=True)
+class CodeTokenizer:
+    """Stable v1 rules, with explicit budgets and Unicode runtime identity."""
+    version: ClassVar[str] = "code-lexical-v1"
+    max_characters: int = 2_000_000
+    max_tokens: int = 200_000
+
+    def __post_init__(self) -> None:
+        if (type(self.max_characters) is not int or self.max_characters < 1
+                or type(self.max_tokens) is not int or self.max_tokens < 1):
+            raise ValueError("Tokenizer budgets must be positive integers.")
+
+    def specification(self) -> dict:
+        return {"version": self.version, "unicode_version": unicodedata.unidata_version,
+                "normalization": "NFKC then casefold after case-aware identifier splitting",
+                "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+                "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+                "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+                "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+                "source_fields": ["content", "path", "symbol"], "field_separator": "newline",
+                "stopwords": False, "stemming": False, "translation": False,
+                "max_characters": self.max_characters, "max_tokens": self.max_tokens}
+
+    def tokenize(self, text: str) -> list[str]:
+        if not isinstance(text, str):
+            raise TypeError("Tokenizer input must be a string.")
+        if len(text) > self.max_characters:
+            raise TokenizationLimitError("Tokenizer character budget exceeded.")
+        text = unicodedata.normalize("NFKC", text)
+        if len(text) > self.max_characters:
+            raise TokenizationLimitError("Normalized tokenizer character budget exceeded.")
+        tokens = []
+        for match in _LEXEME.finditer(text):
+            if match.lastgroup == "path":
+                generated = _path_tokens(match.group())
+            else:
+                generated = (token for word in _WORD.finditer(match.group()) for token in _word_tokens(word.group()))
+            for token in generated:
+                if len(tokens) >= self.max_tokens:
+                    raise TokenizationLimitError("Tokenizer token budget exceeded.")
+                tokens.append(token)
+        return tokens
+
+    def tokenize_query(self, query: str) -> list[str]:
+        # Reuse current query validation; punctuation-only input may yield no
+        # lexical terms. Dense remains available for such inputs in later tasks.
+        RetrievalSearchRequest(repository="validation", query=query)
+        return self.tokenize(query)
+
+    def tokenize_source(self, source: SourceMetadata) -> list[str]:
+        if not isinstance(source, SourceMetadata):
+            raise TypeError("Tokenizer source must be validated SourceMetadata.")
+        return self.tokenize("\n".join((source.content, source.path, source.symbol or "")))

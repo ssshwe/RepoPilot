@@ -1,0 +1,150 @@
+{
+  "task": "Stage 4 / Task 4",
+  "completed": true,
+  "run_date": "2026-10-15",
+  "created_at": "2026-10-15T03:11:58.901191+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_tokenizer_20261015_task4_final.json",
+    "sha256": "40e69c5cfc12fc2b3496b1b5f9c9caba0a86b41c836c2ebe701fb802f752acda"
+  },
+  "tokenizer": {
+    "version": "code-lexical-v1",
+    "unicode_version": "15.0.0",
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "field_separator": "newline",
+    "stopwords": false,
+    "stemming": false,
+    "translation": false,
+    "max_characters": 2000000,
+    "max_tokens": 200000
+  },
+  "summary": {
+    "chunks": 129,
+    "queries": 52,
+    "query_splits": {
+      "dev": 40,
+      "regression": 12
+    },
+    "chunks_per_repository": {
+      "demo-repository": 17,
+      "stage4-commerce": 106,
+      "stage4-shadow": 6
+    },
+    "source_tokens": 3870,
+    "query_tokens": 975,
+    "source_vocabulary": 486,
+    "query_vocabulary": 446,
+    "empty_token_sources": 0,
+    "empty_token_queries": 0
+  },
+  "calls": {
+    "embedding_provider_calls": 0,
+    "generation_calls": 0,
+    "qdrant_calls": 0
+  },
+  "offline_network_attempts": 0,
+  "tokenizer_replay": {
+    "offline_replay_passed": true,
+    "chunks": 129,
+    "queries": 52,
+    "examples": 21,
+    "holdout_queried": false,
+    "generation_calls": 0
+  },
+  "task3_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "exact_legacy_comparisons": 156,
+    "generation_calls": 0
+  },
+  "task2_replay": "52 reference cases replayed by Task 3 verifier",
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "tests": {
+    "default_backend_passed": 1128,
+    "default_backend_skipped": 6,
+    "new_tokenizer_tests": 72,
+    "evaluation_passed": 130,
+    "new_receipt_tests": 13,
+    "real_service_integrations_rerun": false,
+    "reason": "Pure tokenizer; production paths and stores unchanged"
+  },
+  "test_receipts": {
+    "backend": {
+      "path": "output/stage4-task4/backend-tests-final.log",
+      "sha256": "0fd399e5cc578043f627e8ee969f183dd6f15cde5ce09835527d009709d1051b"
+    },
+    "evaluation": {
+      "path": "output/stage4-task4/evaluation-tests-final-v2.log",
+      "sha256": "c2ee0ebaf2127eb86a3108d9c048a142d844e09b3b1ff8a5aacf295e4735bb72"
+    }
+  },
+  "implementation": {
+    "services/api/app/retrieval/tokenizer.py": {
+      "path": "services/api/app/retrieval/tokenizer.py",
+      "sha256": "10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773"
+    },
+    "services/api/tests/test_code_tokenizer.py": {
+      "path": "services/api/tests/test_code_tokenizer.py",
+      "sha256": "daf6e4bf40b7208ea4b5eed6d7c04ae3d7f4676cbce69df1a9f209f617410fde"
+    },
+    "evaluation/stage4/verify_tokenizer.py": {
+      "path": "evaluation/stage4/verify_tokenizer.py",
+      "sha256": "3af3f73dde2b4f026b788212e83347ab73dd3b1d36bab442d5b5c62cac96a369"
+    },
+    "evaluation/tests/test_tokenizer_receipts.py": {
+      "path": "evaluation/tests/test_tokenizer_receipts.py",
+      "sha256": "0f03efffa3f73c4176fa3510658f2031a1e2beab1065c1f052b8de0673a16923"
+    }
+  },
+  "preservation": {
+    "protected_files": 838,
+    "expected_changed_files": [
+      "README.md",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 836,
+    "qdrant_unchanged": true,
+    "environment_and_locks_unchanged": true,
+    "public_api_and_frontend_unchanged": true,
+    "production_dense_and_candidates_unchanged": true,
+    "prior_reports_and_datasets_unchanged": true
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task4/workspace-before.json",
+      "sha256": "a4757b7f42b5a44f5569cdf25993295e5620beceb05768e51de9432701710e6e"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task4/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task4/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task4/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "git-before.json": {
+      "path": "output/stage4-task4/git-before.json",
+      "sha256": "ba25c4f5931b226c7f2a74e69533a2cad4544c98fedb6b38056203934d763172"
+    }
+  },
+  "next_task": "Stage 4 / Task 5 shared lexical index snapshots; not started"
+}

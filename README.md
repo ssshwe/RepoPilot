@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–3**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–4**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -36,6 +36,14 @@ Dense Top1/5/20 results in all 156 comparisons. Production still uses its origin
 Dense path; final API results stay within 20 and Context keeps its own budget.
 The proof reused saved vectors in a temporary index and is replayable offline.
 The evaluation suite now has 117 passing cases.
+
+[Stage 4 Task 4](docs/stage-4-task-4-tokenizer.md) adds versioned code tokenization
+shared by indexed code and queries: complete identifiers, camel/snake/acronym
+parts, paths, error text and Chinese character bigrams. Its offline receipts cover
+129 frozen chunks and 52 development/regression queries without model calls or
+index writes. All 72 tokenizer tests pass; the current default backend suite has
+1128 passing tests and the evaluation suite has 130. Production retrieval remains
+Dense, with BM25 and shared lexical snapshots still scheduled for later tasks.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
@@ -1211,5 +1219,5 @@ The Stage 1 tool returns fixed simulated project data; Code Chat and Issue
 Analyzer provide no tools. Persistent sessions, streaming RAG, BM25/hybrid
 search, reranking and repository-agent orchestration remain outside the current
 scope. Stage 3 final functional acceptance and Stage 4 Task 1 Dense baseline
-and Tasks 2–3 evaluation/candidate contracts are complete; Stage 4 Task 4 and later modules have not started. The current local model's
+and Tasks 2–4 evaluation/candidate/tokenizer contracts are complete; Stage 4 Task 5 and later modules have not started. The current local model's
 answer quality has not passed acceptance.
