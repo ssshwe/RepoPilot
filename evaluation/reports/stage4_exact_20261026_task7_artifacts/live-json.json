@@ -1,0 +1,141 @@
+{
+  "id": "json",
+  "filters": {
+    "language": "json",
+    "path_prefix": null
+  },
+  "eligible_ids": [
+    "f49b26fc-875f-5674-996d-8a239987f02d"
+  ],
+  "dense": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "dense",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7956.719,
+    "candidates": [
+      {
+        "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "config/application.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 6,
+          "content": "{\n  \"maxRetries\": 3,\n  \"timeoutMs\": 1000,\n  \"currency\": \"CNY\",\n  \"auditEnabled\": true\n}\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.47922534
+        },
+        "channel_ranks": {
+          "dense": 1
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "json",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:2d53c8c8eb2a62533019fa076862fdd421b051544c28353ab7ef54adb457fc24"
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "bm25",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7438.543,
+    "candidates": [],
+    "filters": {
+      "language": "json",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:2d53c8c8eb2a62533019fa076862fdd421b051544c28353ab7ef54adb457fc24"
+  },
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "exact",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7539.591,
+    "candidates": [],
+    "filters": {
+      "language": "json",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:2d53c8c8eb2a62533019fa076862fdd421b051544c28353ab7ef54adb457fc24",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "native_dense_query": [
+    {
+      "filter": {
+        "should": null,
+        "min_should": null,
+        "must": [
+          {
+            "key": "repository",
+            "match": {
+              "value": "stage4-commerce"
+            },
+            "range": null,
+            "geo_bounding_box": null,
+            "geo_radius": null,
+            "geo_polygon": null,
+            "values_count": null,
+            "is_empty": null,
+            "is_null": null
+          },
+          {
+            "has_id": [
+              "f49b26fc-875f-5674-996d-8a239987f02d"
+            ]
+          }
+        ],
+        "must_not": null
+      },
+      "limit": 30,
+      "returned_points": [
+        {
+          "id": "f49b26fc-875f-5674-996d-8a239987f02d",
+          "version": 1,
+          "score": 0.47922534,
+          "payload": {
+            "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+            "repository": "stage4-commerce",
+            "path": "config/application.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 6,
+            "content": "{\n  \"maxRetries\": 3,\n  \"timeoutMs\": 1000,\n  \"currency\": \"CNY\",\n  \"auditEnabled\": true\n}\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "schema_version": "code-points-v1"
+          },
+          "vector": null,
+          "shard_key": null,
+          "order_value": null
+        }
+      ]
+    }
+  ]
+}

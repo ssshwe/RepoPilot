@@ -1,0 +1,59 @@
+{
+  "repository": "stage4-commerce",
+  "query": "WalletService.credit",
+  "channel": "exact",
+  "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+  "candidate_limit": 10,
+  "retrieval_latency_ms": 48.518,
+  "candidates": [
+    {
+      "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+      "repository": "stage4-commerce",
+      "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+      "source_metadata": {
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      "channel_scores": {
+        "exact": 100.0
+      },
+      "channel_ranks": {
+        "exact": 1
+      },
+      "matched_queries": [
+        "WalletService.credit"
+      ]
+    }
+  ],
+  "filters": {
+    "language": "java",
+    "path_prefix": "backend/wallet/"
+  },
+  "scope_fingerprint": "sha256:96d2537d065c1b8163162bf4c9298959ef76828c86686f325386e722957e55ec",
+  "match": {
+    "kind": "symbol",
+    "value": "WalletService.credit",
+    "mode": "full"
+  },
+  "reasons": {
+    "c332ddab-5cbd-5051-ad0c-2d59b441d44e": {
+      "kind": "symbol",
+      "strength": "full",
+      "location": "metadata",
+      "matched_value": "WalletService.credit",
+      "start_line": 11,
+      "end_line": 17,
+      "char_start": null,
+      "char_end_exclusive": null,
+      "occurrences": 1
+    }
+  }
+}

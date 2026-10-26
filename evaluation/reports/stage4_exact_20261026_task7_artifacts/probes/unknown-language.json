@@ -1,0 +1,38 @@
+{
+  "id": "unknown-language",
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "WalletService.credit",
+    "channel": "exact",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 86.478,
+    "candidates": [],
+    "filters": {
+      "language": "python",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:7c172e39ed986bdf31791bea361a2e1adf8849a003c319e2e67b4dc641f52aaf",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "WalletService.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 92.033,
+    "candidates": [],
+    "filters": {
+      "language": "python",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:7c172e39ed986bdf31791bea361a2e1adf8849a003c319e2e67b4dc641f52aaf"
+  },
+  "eligible_ids": []
+}

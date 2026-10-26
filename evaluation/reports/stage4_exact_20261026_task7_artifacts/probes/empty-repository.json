@@ -1,0 +1,38 @@
+{
+  "id": "empty-repository",
+  "exact": {
+    "repository": "stage4-empty",
+    "query": "WalletService.credit",
+    "channel": "exact",
+    "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 4.184,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "bm25": {
+    "repository": "stage4-empty",
+    "query": "WalletService.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 4.519,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+  },
+  "eligible_ids": []
+}

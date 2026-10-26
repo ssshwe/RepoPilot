@@ -1,0 +1,106 @@
+{
+  "id": "numeric-full",
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "1000",
+    "channel": "exact",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 105.409,
+    "candidates": [
+      {
+        "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "config/application.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 6,
+          "content": "{\n  \"maxRetries\": 3,\n  \"timeoutMs\": 1000,\n  \"currency\": \"CNY\",\n  \"auditEnabled\": true\n}\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "exact": 60.0
+        },
+        "channel_ranks": {
+          "exact": 1
+        },
+        "matched_queries": [
+          "1000"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "json",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:2d53c8c8eb2a62533019fa076862fdd421b051544c28353ab7ef54adb457fc24",
+    "match": {
+      "kind": "literal",
+      "value": "1000",
+      "mode": "full"
+    },
+    "reasons": {
+      "f49b26fc-875f-5674-996d-8a239987f02d": {
+        "kind": "literal",
+        "strength": "full",
+        "location": "lexical_literal",
+        "matched_value": "1000",
+        "start_line": 3,
+        "end_line": 3,
+        "char_start": 36,
+        "char_end_exclusive": 40,
+        "occurrences": 1
+      }
+    }
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "1000",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 99.841,
+    "candidates": [
+      {
+        "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "config/application.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 6,
+          "content": "{\n  \"maxRetries\": 3,\n  \"timeoutMs\": 1000,\n  \"currency\": \"CNY\",\n  \"auditEnabled\": true\n}\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.3207291753351487
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "1000"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "json",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:2d53c8c8eb2a62533019fa076862fdd421b051544c28353ab7ef54adb457fc24"
+  },
+  "eligible_ids": [
+    "f49b26fc-875f-5674-996d-8a239987f02d"
+  ]
+}

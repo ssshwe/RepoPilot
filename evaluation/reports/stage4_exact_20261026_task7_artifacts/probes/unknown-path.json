@@ -1,0 +1,38 @@
+{
+  "id": "unknown-path",
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "WalletService.credit",
+    "channel": "exact",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 88.552,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": "backend/absent/"
+    },
+    "scope_fingerprint": "sha256:5b8bcaa6afbb692b38470bf6c9dfdf96df4eb0c13013c39d34da4b4449bc6bbf",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "WalletService.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 102.357,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": "backend/absent/"
+    },
+    "scope_fingerprint": "sha256:5b8bcaa6afbb692b38470bf6c9dfdf96df4eb0c13013c39d34da4b4449bc6bbf"
+  },
+  "eligible_ids": []
+}

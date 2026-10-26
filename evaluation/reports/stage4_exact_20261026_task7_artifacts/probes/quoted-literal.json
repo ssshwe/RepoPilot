@@ -1,0 +1,113 @@
+{
+  "id": "quoted-literal",
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "\"PAID\"",
+    "channel": "exact",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 93.179,
+    "candidates": [
+      {
+        "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+          "symbol": "OrderService.submit",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "exact": 60.0
+        },
+        "channel_ranks": {
+          "exact": 1
+        },
+        "matched_queries": [
+          "\"PAID\""
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": "backend/orders/"
+    },
+    "scope_fingerprint": "sha256:34240f6cea4a0ca1504a7a1af7cb1794dc9015670339c470c3d4838690841890",
+    "match": {
+      "kind": "literal",
+      "value": "\"PAID\"",
+      "mode": "full"
+    },
+    "reasons": {
+      "e1091402-ec1e-5b33-82fe-3b689423c2fc": {
+        "kind": "literal",
+        "strength": "full",
+        "location": "lexical_literal",
+        "matched_value": "\"PAID\"",
+        "start_line": 15,
+        "end_line": 15,
+        "char_start": 184,
+        "char_end_exclusive": 190,
+        "occurrences": 1
+      }
+    }
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "\"PAID\"",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 107.229,
+    "candidates": [
+      {
+        "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+          "symbol": "OrderService.submit",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.4470355537148674
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "\"PAID\""
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": "backend/orders/"
+    },
+    "scope_fingerprint": "sha256:34240f6cea4a0ca1504a7a1af7cb1794dc9015670339c470c3d4838690841890"
+  },
+  "eligible_ids": [
+    "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+    "566e0be1-edeb-546a-8123-571a702a4096",
+    "870ec1d3-43d1-5741-9f71-cdb32388a809",
+    "c58a7a9a-6919-565d-a2e4-b287256078dc",
+    "d4136b34-1d14-522f-ad94-da0b05538072",
+    "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+    "f9c42a9e-656b-5aca-9e33-d665c6831b58",
+    "faab447e-bc41-5035-8628-05a8ccd1298b"
+  ]
+}

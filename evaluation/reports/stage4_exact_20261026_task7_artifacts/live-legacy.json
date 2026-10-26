@@ -1,0 +1,363 @@
+{
+  "id": "legacy",
+  "filters": {
+    "language": "java",
+    "path_prefix": "backend/legacy/"
+  },
+  "eligible_ids": [
+    "73670994-8f40-5b53-8266-4ac86dc803f8",
+    "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+    "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1"
+  ],
+  "dense": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "dense",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7921.675,
+    "candidates": [
+      {
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WalletService {\n    private int balance = 0;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.65420574
+        },
+        "channel_ranks": {
+          "dense": 1
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5588189
+        },
+        "channel_ranks": {
+          "dense": 2
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.47817758
+        },
+        "channel_ranks": {
+          "dense": 3
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "java",
+      "path_prefix": "backend/legacy/"
+    },
+    "scope_fingerprint": "sha256:1f3da9d4ad88859bbe38c6b04a3f2cd8d42bbf078d965f3694fe909572029000"
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "bm25",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7322.405,
+    "candidates": [
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 19.801305048322867
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WalletService {\n    private int balance = 0;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.971581658178602
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.90117969940457
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "java",
+      "path_prefix": "backend/legacy/"
+    },
+    "scope_fingerprint": "sha256:1f3da9d4ad88859bbe38c6b04a3f2cd8d42bbf078d965f3694fe909572029000"
+  },
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "exact",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7220.573,
+    "candidates": [
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "exact": 100.0
+        },
+        "channel_ranks": {
+          "exact": 1
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      }
+    ],
+    "filters": {
+      "language": "java",
+      "path_prefix": "backend/legacy/"
+    },
+    "scope_fingerprint": "sha256:1f3da9d4ad88859bbe38c6b04a3f2cd8d42bbf078d965f3694fe909572029000",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {
+      "73670994-8f40-5b53-8266-4ac86dc803f8": {
+        "kind": "symbol",
+        "strength": "full",
+        "location": "metadata",
+        "matched_value": "WalletService.credit",
+        "start_line": 4,
+        "end_line": 6,
+        "char_start": null,
+        "char_end_exclusive": null,
+        "occurrences": 1
+      }
+    }
+  },
+  "native_dense_query": [
+    {
+      "filter": {
+        "should": null,
+        "min_should": null,
+        "must": [
+          {
+            "key": "repository",
+            "match": {
+              "value": "stage4-commerce"
+            },
+            "range": null,
+            "geo_bounding_box": null,
+            "geo_radius": null,
+            "geo_polygon": null,
+            "values_count": null,
+            "is_empty": null,
+            "is_null": null
+          },
+          {
+            "has_id": [
+              "73670994-8f40-5b53-8266-4ac86dc803f8",
+              "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+              "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1"
+            ]
+          }
+        ],
+        "must_not": null
+      },
+      "limit": 30,
+      "returned_points": [
+        {
+          "id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+          "version": 1,
+          "score": 0.65420574,
+          "payload": {
+            "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+            "repository": "stage4-commerce",
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WalletService {\n    private int balance = 0;\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "schema_version": "code-points-v1"
+          },
+          "vector": null,
+          "shard_key": null,
+          "order_value": null
+        },
+        {
+          "id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+          "version": 1,
+          "score": 0.5588189,
+          "payload": {
+            "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+            "repository": "stage4-commerce",
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+            "symbol": "WalletService.credit",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "schema_version": "code-points-v1"
+          },
+          "vector": null,
+          "shard_key": null,
+          "order_value": null
+        },
+        {
+          "id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+          "version": 1,
+          "score": 0.47817758,
+          "payload": {
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "embedding_model": "qwen3-embedding:0.6b",
+            "schema_version": "code-points-v1"
+          },
+          "vector": null,
+          "shard_key": null,
+          "order_value": null
+        }
+      ]
+    }
+  ]
+}

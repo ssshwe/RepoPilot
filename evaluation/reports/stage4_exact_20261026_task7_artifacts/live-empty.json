@@ -1,0 +1,57 @@
+{
+  "id": "empty",
+  "filters": {
+    "language": "python",
+    "path_prefix": null
+  },
+  "eligible_ids": [],
+  "dense": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "dense",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7421.217,
+    "candidates": [],
+    "filters": {
+      "language": "python",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:7c172e39ed986bdf31791bea361a2e1adf8849a003c319e2e67b4dc641f52aaf"
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "bm25",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7508.703,
+    "candidates": [],
+    "filters": {
+      "language": "python",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:7c172e39ed986bdf31791bea361a2e1adf8849a003c319e2e67b4dc641f52aaf"
+  },
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "exact",
+    "index_revision": "sha256:0ef74ddd6d7a0a2b52610b90f84f53f1c2ba0c11b7085d759ad6e9589389555c",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 7631.337,
+    "candidates": [],
+    "filters": {
+      "language": "python",
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:7c172e39ed986bdf31791bea361a2e1adf8849a003c319e2e67b4dc641f52aaf",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "native_dense_query": []
+}

@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–6**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–7**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -62,6 +62,15 @@ the saved Dense results without model calls. Development range recall rises
 from 79.69% to 86.46%, while complete evidence on historical questions drops
 from 8/12 to 3/12. Production remains Dense. The current default backend suite
 passes 1177 tests (6 skipped), and evaluation passes 155 tests.
+
+[Stage 4 Task 7](docs/stage-4-task-7-exact.md) adds independent Exact locators
+for Symbols, paths, filenames, error text and raw code literals, with full/partial
+match reasons and source coordinates. Shared repository/language/path-prefix
+filters apply before the candidate limit in all three internal channels.
+Twenty-four frozen probes, 52 unchanged BM25 results and five real Qdrant
+filter scenarios are saved and replayable offline. The current default backend
+suite passes 1221 tests (6 skipped), and evaluation passes 172 tests.
+Production still uses Dense; Hybrid/RRF is the next task.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.

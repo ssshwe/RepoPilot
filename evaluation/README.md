@@ -1,5 +1,32 @@
 # Repository evaluation
 
+## Stage 4 Task 7 Exact locators and shared filters
+
+[`stage4/verify_exact.py`](stage4/verify_exact.py) provides an independent Exact
+spike and saves 24 functional locator probes. Full/short Symbols, full paths,
+filenames, error text and raw lexical literals have explicit full/partial
+reasons. All three internal channels share repository, language and literal
+path-prefix scope, applied before candidate truncation.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_exact.py `
+  --repository stage4-commerce --query 'WalletService.credit' `
+  --language java --path-prefix 'backend/wallet/'
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_exact.py `
+  --verify-only evaluation/reports/stage4_exact_20261026_task7.json
+# A new report; --live additionally clones the saved 129-point index into
+# a disposable collection and runs five real Qdrant filter scenarios.
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_exact.py --live
+```
+
+The saved proof also verifies identical unfiltered BM25 candidates/scores on
+all 52 Task 6 questions and identical unfiltered Dense candidates on the real
+archived query. Five uses of its saved vector make zero new embedding or
+generation calls. The temporary index is deleted; old collections, datasets
+and reports remain unchanged. Functional probes are separate from benchmark
+metrics, and reserved questions stay unqueried. The evaluation suite passes
+172 tests. See [Task 7 contracts and reproduction](../docs/stage-4-task-7-exact.md).
+
 ## Stage 4 Task 6 BM25 comparison and independent spike
 
 [`stage4/evaluate_bm25.py`](stage4/evaluate_bm25.py) compares BM25 against saved

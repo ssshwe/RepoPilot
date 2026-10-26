@@ -1,0 +1,163 @@
+{
+  "id": "other-repository",
+  "exact": {
+    "repository": "stage4-shadow",
+    "query": "WalletService.credit",
+    "channel": "exact",
+    "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 8.139,
+    "candidates": [
+      {
+        "chunk_id": "19ee5211-b69e-5d97-b617-08a2e06f8852",
+        "repository": "stage4-shadow",
+        "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 5,
+          "content": "    public void credit(String reference, int amount) {\n        throw new IllegalArgumentException(\"Shadow wallet is disabled\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "exact": 100.0
+        },
+        "channel_ranks": {
+          "exact": 1
+        },
+        "matched_queries": [
+          "WalletService.credit"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:f9c510747efdda04aa4668563e9aad0f870669e8884e46e7ec588f902b8d369b",
+    "match": {
+      "kind": "symbol",
+      "value": "WalletService.credit",
+      "mode": "full"
+    },
+    "reasons": {
+      "19ee5211-b69e-5d97-b617-08a2e06f8852": {
+        "kind": "symbol",
+        "strength": "full",
+        "location": "metadata",
+        "matched_value": "WalletService.credit",
+        "start_line": 3,
+        "end_line": 5,
+        "char_start": null,
+        "char_end_exclusive": null,
+        "occurrences": 1
+      }
+    }
+  },
+  "bm25": {
+    "repository": "stage4-shadow",
+    "query": "WalletService.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 8.219,
+    "candidates": [
+      {
+        "chunk_id": "19ee5211-b69e-5d97-b617-08a2e06f8852",
+        "repository": "stage4-shadow",
+        "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 5,
+          "content": "    public void credit(String reference, int amount) {\n        throw new IllegalArgumentException(\"Shadow wallet is disabled\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 5.665713582293533
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "WalletService.credit"
+        ]
+      },
+      {
+        "chunk_id": "cbd56165-d458-5f78-8237-aafdab73e571",
+        "repository": "stage4-shadow",
+        "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 2,
+          "content": "public final class WalletService {\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.594788934105198
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "WalletService.credit"
+        ]
+      },
+      {
+        "chunk_id": "315926d9-838c-5db6-960a-3d5c2179f08a",
+        "repository": "stage4-shadow",
+        "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package shadow;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.8659423667075083
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "WalletService.credit"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:f9c510747efdda04aa4668563e9aad0f870669e8884e46e7ec588f902b8d369b"
+  },
+  "eligible_ids": [
+    "19ee5211-b69e-5d97-b617-08a2e06f8852",
+    "315926d9-838c-5db6-960a-3d5c2179f08a",
+    "c5f5e56b-b650-5c94-8d89-97f7a0d96436",
+    "cbd56165-d458-5f78-8237-aafdab73e571",
+    "cf386ff5-0436-57f2-8e48-f1e7d56439b1",
+    "d3c518f9-a8e1-5909-a073-54391cb8c0c5"
+  ]
+}

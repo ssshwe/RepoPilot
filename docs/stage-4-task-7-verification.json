@@ -1,0 +1,145 @@
+{
+  "task": "Stage 4 / Task 7",
+  "completed": true,
+  "run_date": "2026-10-27",
+  "created_at": "2026-10-26T16:09:13.311782+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_exact_20261026_task7.json",
+    "sha256": "2a9f7ed2afc26ebe29428163b2b912fdc789790e1ac784562ee9e5c222e0ed5d"
+  },
+  "scope_version": "retrieval-scope-v1",
+  "exact_version": "exact-locators-v1",
+  "tests": {
+    "default_backend_passed": 1221,
+    "default_backend_skipped": 6,
+    "new_exact_and_filter_tests": 44,
+    "evaluation_passed": 172,
+    "new_receipt_tests": 17,
+    "exact_probes": 24,
+    "unfiltered_bm25_compatibility_cases": 52,
+    "real_qdrant_filter_scenarios": 5,
+    "independent_cli_spike_passed": true,
+    "frontend_and_prior_real_model_integrations_rerun": false
+  },
+  "calls": {
+    "archived_vector_reuses": 5,
+    "real_embedding_calls": 0,
+    "generation_calls": 0
+  },
+  "offline_network_attempts": 0,
+  "exact_filter_replay": {
+    "offline_replay_passed": true,
+    "exact_probes": 24,
+    "bm25_compatibility_cases": 52,
+    "live_filter_scenarios": 5,
+    "generation_calls": 0
+  },
+  "task6_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "holdout_queried": false,
+    "embedding_calls": 0,
+    "generation_calls": 0
+  },
+  "task5_task4_replay": "Snapshot lifecycle and Tokenizer receipts replayed by BM25 input validator",
+  "task3_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "exact_legacy_comparisons": 156,
+    "generation_calls": 0
+  },
+  "task2_replay": "52 cases replayed by candidate verifier",
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "live_summary": {
+    "path": "evaluation/reports/stage4_exact_20261026_task7_artifacts/live-summary.json",
+    "sha256": "1afe0b24a8fb81427a0aac7852d5093040ed540e93894e78034a68a6cea51982"
+  },
+  "spike_receipt": {
+    "path": "output/stage4-task7/spike-example.json",
+    "sha256": "277797d9977c16f985eecff0e448c9e59b460ccb6260805dee68601d9b678590"
+  },
+  "original_retrieval_receipts_preserved_after_projection_validator_fix": true,
+  "implementation": {
+    "services/api/app/retrieval/scope.py": {
+      "path": "services/api/app/retrieval/scope.py",
+      "sha256": "c1354f1b23eded97ec7f3245d0ca3917d81d9b3e16de2a9b4b792418590bc96a"
+    },
+    "services/api/app/retrieval/filtered.py": {
+      "path": "services/api/app/retrieval/filtered.py",
+      "sha256": "b3aace9316e1fb30daa5652d18d2462a4fc3ba9a95ca8e27608be568f8d79af6"
+    },
+    "services/api/app/retrieval/exact.py": {
+      "path": "services/api/app/retrieval/exact.py",
+      "sha256": "fe87ce32246b7b1c6537a246f4801c02078cc17ff3d55ce4fad6b0efb06dac37"
+    },
+    "services/api/tests/test_exact_and_filters.py": {
+      "path": "services/api/tests/test_exact_and_filters.py",
+      "sha256": "22e2de394e08c54b252d4068d3211c60bac41d2c8e9c4358a0c64ebc45505483"
+    },
+    "evaluation/stage4/verify_exact.py": {
+      "path": "evaluation/stage4/verify_exact.py",
+      "sha256": "265c36cb5812a7d0d227128517381f4b8ab5862b34350743a9592108ada93a09"
+    },
+    "evaluation/tests/test_exact_receipts.py": {
+      "path": "evaluation/tests/test_exact_receipts.py",
+      "sha256": "7cef27dd6e4af3387b7d67e5eceed6a201455b717df3b8326b9a22ca69822917"
+    }
+  },
+  "test_receipts": {
+    "backend": {
+      "path": "output/stage4-task7/backend-tests.log",
+      "sha256": "53b73abed880e3366bcab6f94916a695d9e60fbabab949f2ab7220bb755ffa60"
+    },
+    "evaluation": {
+      "path": "output/stage4-task7/evaluation-tests-final.log",
+      "sha256": "811f340b83ae4edf40c4915967767dfd2684066009cc6a758b7c6296576c1e15"
+    },
+    "earlier_projection_validator_failure": {
+      "path": "output/stage4-task7/evaluation-tests.log",
+      "sha256": "0dc5f986c0aa63919b4cc7a95553c096d161fa844c5502d6ce839564a7aa10c2"
+    }
+  },
+  "preservation": {
+    "protected_files": 1089,
+    "expected_changed_files": [
+      "README.md",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 1087,
+    "environment_and_locks_unchanged": true,
+    "public_api_and_frontend_unchanged": true,
+    "production_dense_unchanged": true,
+    "qdrant_unchanged": true,
+    "prior_reports_datasets_tokenizer_snapshots_unchanged": true,
+    "holdout_queried": false
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task7/workspace-before.json",
+      "sha256": "28eac0bfb8765c758e1d3a047c9850a9fd9ded2e1e74ccc3a242574d1cf733a7"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task7/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task7/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task7/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "git-before.json": {
+      "path": "output/stage4-task7/git-before.json",
+      "sha256": "0b0822ed8069c3d3bf588da1dae31bdc2be2dea42e7cfd9133806ddcd78971dc"
+    }
+  },
+  "next_task": "Stage 4 / Task 8 Hybrid Search and RRF; not started"
+}

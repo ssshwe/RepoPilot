@@ -1,0 +1,406 @@
+{
+  "id": "wrong-case",
+  "exact": {
+    "repository": "stage4-commerce",
+    "query": "walletservice.credit",
+    "channel": "exact",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 69.226,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19",
+    "match": {
+      "kind": "symbol",
+      "value": "walletservice.credit",
+      "mode": "full"
+    },
+    "reasons": {}
+  },
+  "bm25": {
+    "repository": "stage4-commerce",
+    "query": "walletservice.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 10,
+    "retrieval_latency_ms": 75.489,
+    "candidates": [
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 12.859321854131373
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.136982670196993
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "WalletService.WalletService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.418312221940166
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WalletService {\n    private int balance = 0;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.2884606509827625
+        },
+        "channel_ranks": {
+          "bm25": 4
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.564379156685358
+        },
+        "channel_ranks": {
+          "bm25": 5
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.4268920874816335
+        },
+        "channel_ranks": {
+          "bm25": 6
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.2435675475671375
+        },
+        "channel_ranks": {
+          "bm25": 7
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.811721300056205
+        },
+        "channel_ranks": {
+          "bm25": 8
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "513934f0-9352-5fe9-8789-1734778ddbbf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final WalletService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.612930614151613
+        },
+        "channel_ranks": {
+          "bm25": 9
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      },
+      {
+        "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.440393095141359
+        },
+        "channel_ranks": {
+          "bm25": 10
+        },
+        "matched_queries": [
+          "walletservice.credit"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+  },
+  "eligible_ids": [
+    "0523e35d-65a4-5282-a5c4-856b3cac1149",
+    "078c27a0-0f4a-584b-a6fe-215e0ce2da74",
+    "0eaf17eb-868d-5f30-ac58-380db44ae0af",
+    "12a5b28b-2523-519d-9111-996d8b6c8948",
+    "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+    "198ce245-d91d-58ce-9dc5-c704140d5ec8",
+    "1ae5cd99-7a62-56ad-9397-609194e966db",
+    "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+    "1d06b62b-172e-56dc-9518-9b44d42b2ffa",
+    "1f1595d5-5cc7-5811-bc9d-05c277b8cb5d",
+    "213d906b-3cf0-5f3e-8416-732e78ea9b31",
+    "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+    "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+    "254991d8-9d3c-5498-9a01-933d9d1854ef",
+    "2557dab9-4b72-5437-b976-ff518e51e9b1",
+    "26586670-8b66-5afe-b09a-e6c2b1847fc4",
+    "2826862c-74f5-5249-9118-22708f263387",
+    "2d6946d0-d82a-58b8-bd29-c4e36596ddad",
+    "2f71243a-7584-5044-aa7f-a8e326797a11",
+    "2fe2ec26-c386-5cbd-8205-d587ea20a378",
+    "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+    "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+    "37087d69-fcd6-558d-b781-0800ecb89b9e",
+    "38233493-8adc-5db6-bedd-2901a2a02451",
+    "39bc7a17-5ae2-5a19-a58b-648e9dad3562",
+    "3a620534-10cf-51d4-9332-df4a680bf102",
+    "3da5aa82-3ca5-51da-8cfd-6f79c31ce222",
+    "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+    "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+    "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+    "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+    "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+    "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+    "513934f0-9352-5fe9-8789-1734778ddbbf",
+    "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+    "566e0be1-edeb-546a-8123-571a702a4096",
+    "569f5cc6-8deb-50a9-8e0e-5caf06975d2b",
+    "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+    "5927ebb2-a953-5ff9-a3b2-51556259af60",
+    "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+    "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+    "60474be8-61d7-505f-ab87-ac2052e7832c",
+    "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+    "62df83b5-c501-5775-b04f-99ef456cf026",
+    "6e8f23e2-ead8-5708-a22a-71d53886c3ac",
+    "6f42e53b-774d-5686-bd64-a9e23e60b9e6",
+    "70614747-e93c-5b62-b3e3-ca760606e298",
+    "73670994-8f40-5b53-8266-4ac86dc803f8",
+    "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+    "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+    "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+    "7beec65f-17f9-543c-93d3-8c2a36fc8a1c",
+    "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1",
+    "818dc717-4dd3-5ff7-b39d-17fbc5db5fc4",
+    "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+    "870ec1d3-43d1-5741-9f71-cdb32388a809",
+    "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+    "8c351298-076e-561b-ab76-f3cb25da1e7c",
+    "8ceb02e3-ba4c-56ef-8f55-461b860956ec",
+    "8d47594c-f4c7-57f7-9fbf-d5c8e0aeb922",
+    "8e0fdb2c-7d4e-5799-9b7c-53d4d9e4e4e7",
+    "8e9b9606-317b-5d21-af34-5b1a5d38ec75",
+    "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+    "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+    "95abbb3e-4ed3-5588-8f7e-189345ca0b13",
+    "96dd6820-cedb-5aee-b03e-88a3555fdb22",
+    "9978793c-708e-58c9-b47c-ee205b83c79c",
+    "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25",
+    "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+    "9f359c6c-50bf-585e-8e63-487cb39960b6",
+    "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+    "a8834553-409e-5f19-a66e-ce13ca5022a0",
+    "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+    "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+    "af550fd3-3903-50fe-acea-ec34ef27eebc",
+    "b71028a8-6751-5e57-9738-c197479a5d32",
+    "b7b83eb5-d10c-53b7-b638-583131392d3b",
+    "bb0e8129-c340-53d5-9266-25d6da568147",
+    "be33ca99-9342-5a1a-8c29-06f9365a442e",
+    "bf4694bb-3e90-5e6a-a018-74f72c618970",
+    "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+    "c4e632ac-6c8a-56f2-835a-c55d7bb4f25e",
+    "c5299adc-3197-5615-8aa1-2865618bfb07",
+    "c58a7a9a-6919-565d-a2e4-b287256078dc",
+    "c8c6d498-56d9-5788-ba01-0598dc05ddb9",
+    "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+    "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+    "cfd78407-2757-54de-b90f-5114ab7b5a3d",
+    "d1064187-513e-5004-bb33-74410dbccbd8",
+    "d4136b34-1d14-522f-ad94-da0b05538072",
+    "d96d727e-8ff6-585b-be57-300869a00792",
+    "dc090a5f-c2dd-55ae-93d7-5b7f355d0d24",
+    "ddf9a64f-6927-50a6-8d4d-fe1b686b9e02",
+    "de49d3ac-a124-5115-a46e-db1dcd96cfdc",
+    "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+    "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+    "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+    "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+    "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+    "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+    "eac24f76-9ed0-575a-812f-c929133d7320",
+    "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+    "f49b26fc-875f-5674-996d-8a239987f02d",
+    "f9c42a9e-656b-5aca-9e33-d665c6831b58",
+    "faab2ffc-ff35-53a8-8f0d-562ee6941bf7",
+    "faab447e-bc41-5035-8628-05a8ccd1298b"
+  ]
+}
