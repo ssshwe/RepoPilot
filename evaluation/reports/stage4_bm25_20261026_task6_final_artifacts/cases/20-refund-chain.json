@@ -1,0 +1,2979 @@
+{
+  "id": "refund-chain",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "batch": {
+    "repository": "stage4-commerce",
+    "query": "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 147.198,
+    "candidates": [
+      {
+        "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 12.553423460832422
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.934537943893089
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.169847174138852
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.050820394579592
+        },
+        "channel_ranks": {
+          "bm25": 4
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "RefundService.RefundService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 10.366121442999155
+        },
+        "channel_ranks": {
+          "bm25": 5
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 6
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "254991d8-9d3c-5498-9a01-933d9d1854ef",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 7
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "2d6946d0-d82a-58b8-bd29-c4e36596ddad",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.apply(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 8
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "3da5aa82-3ca5-51da-8cfd-6f79c31ce222",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.check(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 9
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 10
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "62df83b5-c501-5775-b04f-99ef456cf026",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 11
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "8e0fdb2c-7d4e-5799-9b7c-53d4d9e4e4e7",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.transfer(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 12
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 13
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "bf4694bb-3e90-5e6a-a018-74f72c618970",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.dispatch(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 14
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "d4136b34-1d14-522f-ad94-da0b05538072",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.submit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 15
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "de49d3ac-a124-5115-a46e-db1dcd96cfdc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.renew(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.827436495841171
+        },
+        "channel_ranks": {
+          "bm25": 16
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.27092867005279
+        },
+        "channel_ranks": {
+          "bm25": 17
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.074117236611166
+        },
+        "channel_ranks": {
+          "bm25": 18
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.refund;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 7.547272616349325
+        },
+        "channel_ranks": {
+          "bm25": 19
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "2f71243a-7584-5044-aa7f-a8e326797a11",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(FraudService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 20
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "3a620534-10cf-51d4-9332-df4a680bf102",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(SubscriptionService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 21
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 22
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 23
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "6f42e53b-774d-5686-bd64-a9e23e60b9e6",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(LedgerService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 24
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "7beec65f-17f9-543c-93d3-8c2a36fc8a1c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(CouponService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 25
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(NotificationService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 26
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(AuthService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 27
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "af550fd3-3903-50fe-acea-ec34ef27eebc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InvoiceService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 28
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "bb0e8129-c340-53d5-9266-25d6da568147",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InventoryService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 29
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      },
+      {
+        "chunk_id": "f9c42a9e-656b-5aca-9e33-d665c6831b58",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(OrderService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.589670303852616
+        },
+        "channel_ranks": {
+          "bm25": 30
+        },
+        "matched_queries": [
+          "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+        ]
+      }
+    ]
+  },
+  "query_tokens": [
+    "backend/refund",
+    "backend",
+    "refund",
+    "的订",
+    "订单",
+    "单退",
+    "退款",
+    "款请",
+    "请求",
+    "求如",
+    "如何",
+    "何从",
+    "workflowcontroller.handle",
+    "workflowcontroller",
+    "workflow",
+    "controller",
+    "handle",
+    "到",
+    "refundservice.refund",
+    "refundservice",
+    "refund",
+    "service",
+    "refund",
+    "再记",
+    "记录",
+    "录审",
+    "审计",
+    "计事",
+    "事件"
+  ],
+  "retrieval": {
+    "repository": "stage4-commerce",
+    "query": "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？",
+    "strategy": "bm25",
+    "top_k": 5,
+    "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+    "retrieval_latency_ms": 147.198,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+        "repository": "stage4-commerce",
+        "score": 12.553423460832422,
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "start_line": 7,
+        "end_line": 9,
+        "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+        "symbol": "WorkflowController.handle",
+        "node_type": "method_declaration",
+        "parent_symbol": "WorkflowController",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+        "repository": "stage4-commerce",
+        "score": 11.934537943893089,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+        "symbol": "RefundService.refund",
+        "node_type": "method_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+        "repository": "stage4-commerce",
+        "score": 11.169847174138852,
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "start_line": 2,
+        "end_line": 3,
+        "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+        "symbol": "WorkflowController",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "score": 11.050820394579592,
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "start_line": 4,
+        "end_line": 6,
+        "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+        "symbol": "WorkflowController.WorkflowController",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WorkflowController",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "repository": "stage4-commerce",
+        "score": 10.366121442999155,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 8,
+        "end_line": 10,
+        "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "symbol": "RefundService.RefundService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "explanations": {
+    "8c14a38a-66c0-56b7-8bda-153daa25ef48": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "refund",
+        "tf": 2,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.7259869649912503
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "8c351298-076e-561b-ab76-f3cb25da1e7c": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 44,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.4512362637362637,
+        "contribution": 0.018604695174062772
+      },
+      {
+        "term": "refund",
+        "tf": 8,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 44,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.4512362637362637,
+        "contribution": 4.977496134875606
+      },
+      {
+        "term": "refundservice",
+        "tf": 2,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 44,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.4512362637362637,
+        "contribution": 3.353033637595838
+      },
+      {
+        "term": "refundservice.refund",
+        "tf": 1,
+        "df": 1,
+        "idf": 4.267363726353742,
+        "document_length": 44,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.4512362637362637,
+        "contribution": 3.358167541655523
+      },
+      {
+        "term": "service",
+        "tf": 2,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 44,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.4512362637362637,
+        "contribution": 0.2272359345920583
+      }
+    ],
+    "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 0.02551036203435057
+      },
+      {
+        "term": "controller",
+        "tf": 3,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 1.3392596814937685
+      },
+      {
+        "term": "refund",
+        "tf": 2,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.8179914056435513
+      },
+      {
+        "term": "refundservice",
+        "tf": 1,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.0224143575853692
+      },
+      {
+        "term": "service",
+        "tf": 2,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 0.2861520043942752
+      },
+      {
+        "term": "workflow",
+        "tf": 3,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 1.3392596814937685
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 3,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 1.3392596814937685
+      }
+    ],
+    "9c52342f-6b70-502c-ba73-daf5431cdd6c": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "refund",
+        "tf": 2,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 3.6383123586571937
+      },
+      {
+        "term": "refundservice",
+        "tf": 1,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 2.822837732069782
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "refund",
+        "tf": 5,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 4.885215267431432
+      },
+      {
+        "term": "refundservice",
+        "tf": 4,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 5.110725184802791
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "13e0bb0e-0ea3-56f4-8605-68f20d5d573f": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "254991d8-9d3c-5498-9a01-933d9d1854ef": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "2d6946d0-d82a-58b8-bd29-c4e36596ddad": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "3da5aa82-3ca5-51da-8cfd-6f79c31ce222": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "4ed09d97-104b-51e9-a1b8-5b766f7c0613": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "62df83b5-c501-5775-b04f-99ef456cf026": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "8e0fdb2c-7d4e-5799-9b7c-53d4d9e4e4e7": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "948223e9-4ada-5eb8-a7e2-7c6b781e2e23": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "bf4694bb-3e90-5e6a-a018-74f72c618970": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "d4136b34-1d14-522f-ad94-da0b05538072": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "de49d3ac-a124-5115-a46e-db1dcd96cfdc": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.024639352214345184
+      },
+      {
+        "term": "controller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "handle",
+        "tf": 2,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.045414232205424
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "workflow",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 2,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 1.1340186173693225
+      },
+      {
+        "term": "workflowcontroller.handle",
+        "tf": 1,
+        "df": 13,
+        "idf": 2.0701391490175225,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.157490856425692
+      }
+    ],
+    "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 0.017912010933290458
+      },
+      {
+        "term": "refund",
+        "tf": 4,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 4.02044448567134
+      },
+      {
+        "term": "refundservice",
+        "tf": 3,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 3.9639352805635593
+      },
+      {
+        "term": "service",
+        "tf": 3,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 0.2686368928845998
+      }
+    ],
+    "55e4994d-025d-5033-8798-8ee3a9dcebaf": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 0.027451179880418626
+      },
+      {
+        "term": "refund",
+        "tf": 3,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 4.573894510295771
+      },
+      {
+        "term": "refundservice",
+        "tf": 1,
+        "df": 6,
+        "idf": 2.8010266575603144,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 3.25235839818798
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 0.2204131482469959
+      }
+    ],
+    "12a5b28b-2523-519d-9111-996d8b6c8948": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 0.03166734775625661
+      },
+      {
+        "term": "controller",
+        "tf": 1,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 1.0325359485518424
+      },
+      {
+        "term": "refund",
+        "tf": 2,
+        "df": 8,
+        "idf": 2.5327626709656355,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 4.417997422937541
+      },
+      {
+        "term": "workflow",
+        "tf": 1,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 1.0325359485518424
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 1,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 1.0325359485518424
+      }
+    ],
+    "2f71243a-7584-5044-aa7f-a8e326797a11": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "3a620534-10cf-51d4-9332-df4a680bf102": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "4362f1da-3301-5772-ab2e-bf3ee22b06cf": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "60474be8-61d7-505f-ab87-ac2052e7832c": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "6f42e53b-774d-5686-bd64-a9e23e60b9e6": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "7beec65f-17f9-543c-93d3-8c2a36fc8a1c": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "af550fd3-3903-50fe-acea-ec34ef27eebc": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "bb0e8129-c340-53d5-9266-25d6da568147": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ],
+    "f9c42a9e-656b-5aca-9e33-d665c6831b58": [
+      {
+        "term": "backend",
+        "tf": 1,
+        "df": 104,
+        "idf": 0.02364176305704048,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.02382585707634604
+      },
+      {
+        "term": "controller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "workflow",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      },
+      {
+        "term": "workflowcontroller",
+        "tf": 4,
+        "df": 49,
+        "idf": 0.7708561648872615,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 1.4064964376958946
+      }
+    ]
+  },
+  "context": {
+    "repository": "stage4-commerce",
+    "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WorkflowController.handle\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WorkflowController\",\n  \"lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"original_lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void handle(String reference, int amount) {\\n        service.refund(reference, amount);\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.refund\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void refund(String reference, int amount) {\\n        if (reference.isBlank()) {\\n            throw new IllegalArgumentException(\\\"Refund order ID required\\\");\\n        }\\n        refunded += amount;\\n        recorder.record(\\\"refund.refund\\\");\\n    }\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WorkflowController\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"original_lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class WorkflowController {\\n    private final RefundService service;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WorkflowController.WorkflowController\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"WorkflowController\",\n  \"lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"original_lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public WorkflowController(RefundService service) {\\n        this.service = service;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.RefundService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public RefundService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S5]",
+    "sources": [
+      {
+        "source_id": "S1",
+        "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+        "retrieval_rank": 1,
+        "score": 12.553423460832422,
+        "repository": "stage4-commerce",
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "symbol": "WorkflowController.handle",
+        "node_type": "method_declaration",
+        "parent_symbol": "WorkflowController",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 7,
+        "end_line": 9,
+        "original_start_line": 7,
+        "original_end_line": 9,
+        "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S2",
+        "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+        "retrieval_rank": 2,
+        "score": 11.934537943893089,
+        "repository": "stage4-commerce",
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "symbol": "RefundService.refund",
+        "node_type": "method_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 11,
+        "end_line": 17,
+        "original_start_line": 11,
+        "original_end_line": 17,
+        "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S3",
+        "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+        "retrieval_rank": 3,
+        "score": 11.169847174138852,
+        "repository": "stage4-commerce",
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "symbol": "WorkflowController",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 2,
+        "end_line": 3,
+        "original_start_line": 2,
+        "original_end_line": 3,
+        "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S4",
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "retrieval_rank": 4,
+        "score": 11.050820394579592,
+        "repository": "stage4-commerce",
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "symbol": "WorkflowController.WorkflowController",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WorkflowController",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 4,
+        "end_line": 6,
+        "original_start_line": 4,
+        "original_end_line": 6,
+        "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S5",
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "retrieval_rank": 5,
+        "score": 10.366121442999155,
+        "repository": "stage4-commerce",
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "symbol": "RefundService.RefundService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 8,
+        "end_line": 10,
+        "original_start_line": 8,
+        "original_end_line": 10,
+        "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      }
+    ],
+    "retrieved_chunks": 5,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 5,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 3103,
+    "budget_limited": false,
+    "empty_reason": null
+  },
+  "metrics": {
+    "at_k": {
+      "1": {
+        "file_hit": true,
+        "file_recall": 0.3333333333333333,
+        "symbol_hit": true,
+        "symbol_recall": 0.3333333333333333,
+        "evidence_mrr": 1.0,
+        "range_recall": 0.3333333333333333,
+        "covered_ranges": 1,
+        "required_ranges": 3,
+        "line_coverage": 0.23076923076923078,
+        "covered_lines": 3,
+        "required_lines": 13,
+        "all_evidence": false
+      },
+      "3": {
+        "file_hit": true,
+        "file_recall": 0.6666666666666666,
+        "symbol_hit": true,
+        "symbol_recall": 0.6666666666666666,
+        "evidence_mrr": 1.0,
+        "range_recall": 0.6666666666666666,
+        "covered_ranges": 2,
+        "required_ranges": 3,
+        "line_coverage": 0.7692307692307693,
+        "covered_lines": 10,
+        "required_lines": 13,
+        "all_evidence": false
+      },
+      "5": {
+        "file_hit": true,
+        "file_recall": 0.6666666666666666,
+        "symbol_hit": true,
+        "symbol_recall": 0.6666666666666666,
+        "evidence_mrr": 1.0,
+        "range_recall": 0.6666666666666666,
+        "covered_ranges": 2,
+        "required_ranges": 3,
+        "line_coverage": 0.7692307692307693,
+        "covered_lines": 10,
+        "required_lines": 13,
+        "all_evidence": false
+      }
+    },
+    "context": {
+      "range_recall": 0.6666666666666666,
+      "covered_ranges": 2,
+      "required_ranges": 3,
+      "line_coverage": 0.7692307692307693,
+      "covered_lines": 10,
+      "required_lines": 13,
+      "all_evidence": false
+    },
+    "negative": null
+  },
+  "dense_metrics": {
+    "at_k": {
+      "1": {
+        "file_hit": true,
+        "file_recall": 0.3333333333333333,
+        "symbol_hit": false,
+        "symbol_recall": 0.0,
+        "evidence_mrr": 0.0,
+        "range_recall": 0.0,
+        "covered_ranges": 0,
+        "required_ranges": 3,
+        "line_coverage": 0.0,
+        "covered_lines": 0,
+        "required_lines": 13,
+        "all_evidence": false
+      },
+      "3": {
+        "file_hit": true,
+        "file_recall": 0.6666666666666666,
+        "symbol_hit": false,
+        "symbol_recall": 0.0,
+        "evidence_mrr": 0.0,
+        "range_recall": 0.0,
+        "covered_ranges": 0,
+        "required_ranges": 3,
+        "line_coverage": 0.0,
+        "covered_lines": 0,
+        "required_lines": 13,
+        "all_evidence": false
+      },
+      "5": {
+        "file_hit": true,
+        "file_recall": 0.6666666666666666,
+        "symbol_hit": true,
+        "symbol_recall": 0.3333333333333333,
+        "evidence_mrr": 0.25,
+        "range_recall": 0.3333333333333333,
+        "covered_ranges": 1,
+        "required_ranges": 3,
+        "line_coverage": 0.23076923076923078,
+        "covered_lines": 3,
+        "required_lines": 13,
+        "all_evidence": false
+      }
+    },
+    "context": {
+      "range_recall": 0.3333333333333333,
+      "covered_ranges": 1,
+      "required_ranges": 3,
+      "line_coverage": 0.23076923076923078,
+      "covered_lines": 3,
+      "required_lines": 13,
+      "all_evidence": false
+    },
+    "negative": null
+  },
+  "delta_at_5": {
+    "file_hit": 0,
+    "file_recall": 0.0,
+    "symbol_recall": 0.3333333333333333,
+    "range_recall": 0.3333333333333333,
+    "line_coverage": 0.5384615384615385,
+    "evidence_mrr": 0.75,
+    "all_evidence": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "no_terms",
+  "batch": {
+    "repository": "demo-repository",
+    "query": "?!💳",
+    "channel": "bm25",
+    "index_revision": "sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 5360.363,
+    "candidates": []
+  }
+}

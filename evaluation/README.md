@@ -1,5 +1,29 @@
 # Repository evaluation
 
+## Stage 4 Task 6 BM25 comparison and independent spike
+
+[`stage4/evaluate_bm25.py`](stage4/evaluate_bm25.py) compares BM25 against saved
+Dense results on identical frozen code, with 30 internal candidates / final
+TopK 5 and actual Builder Context. It saves all 52 case receipts, TF/DF/IDF and
+length-normalization contributions, separate positive/negative metrics and
+case deltas. No reserved queries or model calls occur.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/evaluate_bm25.py `
+  --repository stage4-commerce --query 'WalletService.credit' --candidate-limit 10
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/evaluate_bm25.py `
+  --verify-only evaluation/reports/stage4_bm25_20261026_task6_final.json
+```
+
+Development complete-range recall is BM25 86.46% / Dense 79.69%, while historical
+complete evidence is BM25 3/12 / Dense 8/12. Both retain six irrelevant-result
+negative controls. Production remains Dense. Snapshot-only BM25 latency has a
+different I/O boundary from real Dense service latency and is labelled separately.
+The optional `--live-smoke` uses read-only Qdrant guards for four edge cases.
+All original 52 receipts were retained after correcting a separate smoke Symbol
+typo; `--reuse-cases` verifies and fingerprints the originals. The evaluation
+suite now passes 155 tests. See [Task 6 scoring and reproduction](../docs/stage-4-task-6-bm25.md).
+
 ## Stage 4 Task 5 shared snapshot lifecycle
 
 [`stage4/verify_snapshots.py`](stage4/verify_snapshots.py) builds persistent

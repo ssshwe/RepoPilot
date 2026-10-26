@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–5**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–6**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -54,6 +54,14 @@ deletion, failure and recovery using private fixtures; production data stays
 unchanged. The production API still uses the original Dense path.
 The current default backend suite passes 1160 tests (6 skipped), and the
 evaluation suite passes 141 tests.
+
+[Stage 4 Task 6](docs/stage-4-task-6-bm25.md) adds an independent BM25 candidate
+channel over shared snapshots, repository-local TF/IDF statistics and per-term
+score explanations. Its 52-case comparison reuses the same indexed code and
+the saved Dense results without model calls. Development range recall rises
+from 79.69% to 86.46%, while complete evidence on historical questions drops
+from 8/12 to 3/12. Production remains Dense. The current default backend suite
+passes 1177 tests (6 skipped), and evaluation passes 155 tests.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
@@ -1229,5 +1237,5 @@ The Stage 1 tool returns fixed simulated project data; Code Chat and Issue
 Analyzer provide no tools. Persistent sessions, streaming RAG, BM25/hybrid
 search, reranking and repository-agent orchestration remain outside the current
 scope. Stage 3 final functional acceptance and Stage 4 Task 1 Dense baseline
-and Tasks 2–5 evaluation/candidate/tokenizer/snapshot contracts are complete; Stage 4 Task 6 and later modules have not started. The current local model's
+and Tasks 2–6 evaluation/candidate/tokenizer/snapshot/BM25 contracts are complete; Stage 4 Task 7 and later modules have not started. The current local model's
 answer quality has not passed acceptance.

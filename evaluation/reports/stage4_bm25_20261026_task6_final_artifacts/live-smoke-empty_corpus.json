@@ -1,0 +1,12 @@
+{
+  "kind": "empty_corpus",
+  "batch": {
+    "repository": "task6-empty-b00a05686ef9",
+    "query": "WalletService.credit",
+    "channel": "bm25",
+    "index_revision": "sha256:64a043b030ee84c3bf46b8f1a1040e9c95593e43566661348ae569d301866491",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 5239.943,
+    "candidates": []
+  }
+}

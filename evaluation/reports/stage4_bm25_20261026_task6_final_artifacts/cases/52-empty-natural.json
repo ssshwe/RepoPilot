@@ -1,0 +1,73 @@
+{
+  "id": "empty-natural",
+  "snapshot_revision": "sha256:f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8",
+  "batch": {
+    "repository": "stage4-empty",
+    "query": "空仓库哪里检查退款金额？",
+    "channel": "bm25",
+    "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 6.107,
+    "candidates": []
+  },
+  "query_tokens": [
+    "空仓",
+    "仓库",
+    "库哪",
+    "哪里",
+    "里检",
+    "检查",
+    "查退",
+    "退款",
+    "款金",
+    "金额"
+  ],
+  "retrieval": {
+    "repository": "stage4-empty",
+    "query": "空仓库哪里检查退款金额？",
+    "strategy": "bm25",
+    "top_k": 5,
+    "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+    "retrieval_latency_ms": 6.107,
+    "results": []
+  },
+  "explanations": {},
+  "context": {
+    "repository": "stage4-empty",
+    "text": "",
+    "sources": [],
+    "retrieved_chunks": 0,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 0,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 0,
+    "budget_limited": false,
+    "empty_reason": "no_results"
+  },
+  "metrics": {
+    "at_k": null,
+    "context": null,
+    "negative": {
+      "kind": "empty_repository",
+      "returned_chunks": 0,
+      "empty_result": true,
+      "foreign_repository_chunks": 0
+    }
+  },
+  "dense_metrics": {
+    "at_k": null,
+    "context": null,
+    "negative": {
+      "kind": "empty_repository",
+      "returned_chunks": 0,
+      "empty_result": true,
+      "foreign_repository_chunks": 0
+    }
+  },
+  "delta_at_5": {
+    "negative_empty_result_changed": false
+  }
+}

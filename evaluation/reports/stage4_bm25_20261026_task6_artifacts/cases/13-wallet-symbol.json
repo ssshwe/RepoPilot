@@ -1,0 +1,1804 @@
+{
+  "id": "wallet-symbol",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "batch": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 89.194,
+    "candidates": [
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 19.801305048322867
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 14.91768551863479
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WalletService {\n    private int balance = 0;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.971581658178602
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 11.90117969940457
+        },
+        "channel_ranks": {
+          "bm25": 4
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "WalletService.WalletService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 8.906013384565808
+        },
+        "channel_ranks": {
+          "bm25": 5
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 7.10378243365801
+        },
+        "channel_ranks": {
+          "bm25": 6
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 6.909564373095406
+        },
+        "channel_ranks": {
+          "bm25": 7
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "513934f0-9352-5fe9-8789-1734778ddbbf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final WalletService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 6.135710419103638
+        },
+        "channel_ranks": {
+          "bm25": 8
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 5.999914709534602
+        },
+        "channel_ranks": {
+          "bm25": 9
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 5.871056619293123
+        },
+        "channel_ranks": {
+          "bm25": 10
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.5595460469693245
+        },
+        "channel_ranks": {
+          "bm25": 11
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.wallet;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.7452712074562307
+        },
+        "channel_ranks": {
+          "bm25": 12
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "RefundService.RefundService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 13
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "2f71243a-7584-5044-aa7f-a8e326797a11",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(FraudService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 14
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "37087d69-fcd6-558d-b781-0800ecb89b9e",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public InventoryService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "InventoryService.InventoryService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "InventoryService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 15
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "3a620534-10cf-51d4-9332-df4a680bf102",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(SubscriptionService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 16
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 17
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "ShippingService.ShippingService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "ShippingService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 18
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "569f5cc6-8deb-50a9-8e0e-5caf06975d2b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public InvoiceService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "InvoiceService.InvoiceService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "InvoiceService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 19
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "6f42e53b-774d-5686-bd64-a9e23e60b9e6",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(LedgerService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 20
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "7beec65f-17f9-543c-93d3-8c2a36fc8a1c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(CouponService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 21
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(NotificationService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 22
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "8d47594c-f4c7-57f7-9fbf-d5c8e0aeb922",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/CouponService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public CouponService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "CouponService.CouponService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "CouponService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 23
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "8e9b9606-317b-5d21-af34-5b1a5d38ec75",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/NotificationService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public NotificationService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "NotificationService.NotificationService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "NotificationService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 24
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "96dd6820-cedb-5aee-b03e-88a3555fdb22",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/FraudService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public FraudService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "FraudService.FraudService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "FraudService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 25
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(AuthService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 26
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 27
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "af550fd3-3903-50fe-acea-ec34ef27eebc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InvoiceService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 28
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "b71028a8-6751-5e57-9738-c197479a5d32",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public LedgerService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "LedgerService.LedgerService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "LedgerService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 29
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      },
+      {
+        "chunk_id": "bb0e8129-c340-53d5-9266-25d6da568147",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InventoryService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.34635513368858595
+        },
+        "channel_ranks": {
+          "bm25": 30
+        },
+        "matched_queries": [
+          "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+        ]
+      }
+    ]
+  },
+  "query_tokens": [
+    "当前",
+    "前仓",
+    "仓库",
+    "库中",
+    "walletservice.credit",
+    "walletservice",
+    "wallet",
+    "service",
+    "credit",
+    "有哪",
+    "哪些",
+    "些实",
+    "实现",
+    "请同",
+    "同时",
+    "时列",
+    "列出",
+    "出正",
+    "正式",
+    "式钱",
+    "钱包",
+    "包和",
+    "legacy",
+    "钱包"
+  ],
+  "retrieval": {
+    "repository": "stage4-commerce",
+    "query": "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。",
+    "strategy": "bm25",
+    "top_k": 5,
+    "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+    "retrieval_latency_ms": 89.194,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "score": 19.801305048322867,
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "start_line": 4,
+        "end_line": 6,
+        "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "repository": "stage4-commerce",
+        "score": 14.91768551863479,
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "score": 11.971581658178602,
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "start_line": 2,
+        "end_line": 3,
+        "content": "public final class WalletService {\n    private int balance = 0;\n",
+        "symbol": "WalletService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "score": 11.90117969940457,
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.legacy;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "repository": "stage4-commerce",
+        "score": 8.906013384565808,
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 8,
+        "end_line": 10,
+        "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "symbol": "WalletService.WalletService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "explanations": {
+    "73670994-8f40-5b53-8266-4ac86dc803f8": [
+      {
+        "term": "credit",
+        "tf": 2,
+        "df": 3,
+        "idf": 3.420065865966538,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 5.155549010842272
+      },
+      {
+        "term": "legacy",
+        "tf": 1,
+        "df": 4,
+        "idf": 3.168751437685632,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.4192033892394713
+      },
+      {
+        "term": "service",
+        "tf": 2,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 0.2861520043942752
+      },
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.236627800557749
+      },
+      {
+        "term": "walletservice",
+        "tf": 2,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.650325274187114
+      },
+      {
+        "term": "walletservice.credit",
+        "tf": 1,
+        "df": 2,
+        "idf": 3.756538102587751,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 4.053447569101987
+      }
+    ],
+    "c332ddab-5cbd-5051-ad0c-2d59b441d44e": [
+      {
+        "term": "credit",
+        "tf": 3,
+        "df": 3,
+        "idf": 3.420065865966538,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 5.075285023541028
+      },
+      {
+        "term": "service",
+        "tf": 2,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 0.23412216365118957
+      },
+      {
+        "term": "wallet",
+        "tf": 4,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 3.5465806847866084
+      },
+      {
+        "term": "walletservice",
+        "tf": 2,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 2.9866016596052427
+      },
+      {
+        "term": "walletservice.credit",
+        "tf": 1,
+        "df": 2,
+        "idf": 3.756538102587751,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 3.0750959870507217
+      }
+    ],
+    "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1": [
+      {
+        "term": "legacy",
+        "tf": 1,
+        "df": 4,
+        "idf": 3.168751437685632,
+        "document_length": 21,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.8233173076923077,
+        "contribution": 3.544502818169462
+      },
+      {
+        "term": "service",
+        "tf": 3,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 21,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.8233173076923077,
+        "contribution": 0.3361759621046287
+      },
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 21,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.8233173076923077,
+        "contribution": 3.802442226921748
+      },
+      {
+        "term": "walletservice",
+        "tf": 3,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 21,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.8233173076923077,
+        "contribution": 4.2884606509827625
+      }
+    ],
+    "ccab0bc3-4fa8-5f8e-961b-f42780968572": [
+      {
+        "term": "legacy",
+        "tf": 2,
+        "df": 4,
+        "idf": 3.168751437685632,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 5.527377612639608
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 0.2542659312275258
+      },
+      {
+        "term": "wallet",
+        "tf": 1,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 2.8759686079702993
+      },
+      {
+        "term": "walletservice",
+        "tf": 1,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 3.2435675475671375
+      }
+    ],
+    "c5299adc-3197-5615-8aa1-2865618bfb07": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "wallet",
+        "tf": 5,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 4.141346028937056
+      },
+      {
+        "term": "walletservice",
+        "tf": 4,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 4.418312221940166
+      }
+    ],
+    "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44": [
+      {
+        "term": "service",
+        "tf": 3,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 0.2686368928845998
+      },
+      {
+        "term": "wallet",
+        "tf": 4,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 3.4082534532917763
+      },
+      {
+        "term": "walletservice",
+        "tf": 3,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 3.4268920874816335
+      }
+    ],
+    "7518cb78-99cf-5df2-98f1-8a38577f00a9": [
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 0.2204131482469959
+      },
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 3.877429924792205
+      },
+      {
+        "term": "walletservice",
+        "tf": 1,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 2.811721300056205
+      }
+    ],
+    "513934f0-9352-5fe9-8789-1734778ddbbf": [
+      {
+        "term": "service",
+        "tf": 2,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 0.2861520043942752
+      },
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.236627800557749
+      },
+      {
+        "term": "walletservice",
+        "tf": 1,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 2.612930614151613
+      }
+    ],
+    "4ed09d97-104b-51e9-a1b8-5b766f7c0613": [
+      {
+        "term": "credit",
+        "tf": 1,
+        "df": 3,
+        "idf": 3.420065865966538,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 3.564379156685358
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 0.1978362028877424
+      },
+      {
+        "term": "wallet",
+        "tf": 1,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.237699349961501
+      }
+    ],
+    "60474be8-61d7-505f-ab87-ac2052e7832c": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      },
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 3.084308390463178
+      },
+      {
+        "term": "walletservice",
+        "tf": 1,
+        "df": 9,
+        "idf": 2.421537035855411,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 2.440393095141359
+      }
+    ],
+    "b7b83eb5-d10c-53b7-b638-583131392d3b": [
+      {
+        "term": "legacy",
+        "tf": 1,
+        "df": 4,
+        "idf": 3.168751437685632,
+        "document_length": 70,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 2.1610576923076925,
+        "contribution": 1.867668741962628
+      },
+      {
+        "term": "service",
+        "tf": 1,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 70,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 2.1610576923076925,
+        "contribution": 0.11188400892374227
+      },
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 70,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 2.1610576923076925,
+        "contribution": 2.579993296082954
+      }
+    ],
+    "38233493-8adc-5db6-bedd-2901a2a02451": [
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 3.7452712074562307
+      }
+    ],
+    "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "2f71243a-7584-5044-aa7f-a8e326797a11": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "37087d69-fcd6-558d-b781-0800ecb89b9e": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "3a620534-10cf-51d4-9332-df4a680bf102": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "4362f1da-3301-5772-ab2e-bf3ee22b06cf": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "569f5cc6-8deb-50a9-8e0e-5caf06975d2b": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "6f42e53b-774d-5686-bd64-a9e23e60b9e6": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "7beec65f-17f9-543c-93d3-8c2a36fc8a1c": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "8d47594c-f4c7-57f7-9fbf-d5c8e0aeb922": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "8e9b9606-317b-5d21-af34-5b1a5d38ec75": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "96dd6820-cedb-5aee-b03e-88a3555fdb22": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "9c52342f-6b70-502c-ba73-daf5431cdd6c": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "af550fd3-3903-50fe-acea-ec34ef27eebc": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "b71028a8-6751-5e57-9738-c197479a5d32": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ],
+    "bb0e8129-c340-53d5-9266-25d6da568147": [
+      {
+        "term": "service",
+        "tf": 4,
+        "df": 88,
+        "idf": 0.18982628244802233,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 0.34635513368858595
+      }
+    ]
+  },
+  "context": {
+    "repository": "stage4-commerce",
+    "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.credit\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"original_lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void credit(String reference, int amount) {\\n        balance += amount * 2;\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.credit\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void credit(String reference, int amount) {\\n        if (amount <= 0) {\\n            throw new IllegalArgumentException(\\\"Amount must be positive\\\");\\n        }\\n        balance += amount;\\n        recorder.record(\\\"wallet.credit\\\");\\n    }\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"original_lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class WalletService {\\n    private int balance = 0;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.legacy;\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.WalletService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public WalletService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S5]",
+    "sources": [
+      {
+        "source_id": "S1",
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "retrieval_rank": 1,
+        "score": 19.801305048322867,
+        "repository": "stage4-commerce",
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 4,
+        "end_line": 6,
+        "original_start_line": 4,
+        "original_end_line": 6,
+        "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S2",
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "retrieval_rank": 2,
+        "score": 14.91768551863479,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 11,
+        "end_line": 17,
+        "original_start_line": 11,
+        "original_end_line": 17,
+        "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S3",
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "retrieval_rank": 3,
+        "score": 11.971581658178602,
+        "repository": "stage4-commerce",
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 2,
+        "end_line": 3,
+        "original_start_line": 2,
+        "original_end_line": 3,
+        "content": "public final class WalletService {\n    private int balance = 0;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S4",
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "retrieval_rank": 4,
+        "score": 11.90117969940457,
+        "repository": "stage4-commerce",
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 1,
+        "end_line": 1,
+        "original_start_line": 1,
+        "original_end_line": 1,
+        "content": "package learning.legacy;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S5",
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "retrieval_rank": 5,
+        "score": 8.906013384565808,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService.WalletService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 8,
+        "end_line": 10,
+        "original_start_line": 8,
+        "original_end_line": 10,
+        "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      }
+    ],
+    "retrieved_chunks": 5,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 5,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 2897,
+    "budget_limited": false,
+    "empty_reason": null
+  },
+  "metrics": {
+    "at_k": {
+      "1": {
+        "file_hit": true,
+        "file_recall": 0.5,
+        "symbol_hit": true,
+        "symbol_recall": 0.5,
+        "evidence_mrr": 1.0,
+        "range_recall": 0.5,
+        "covered_ranges": 1,
+        "required_ranges": 2,
+        "line_coverage": 0.3,
+        "covered_lines": 3,
+        "required_lines": 10,
+        "all_evidence": false
+      },
+      "3": {
+        "file_hit": true,
+        "file_recall": 1.0,
+        "symbol_hit": true,
+        "symbol_recall": 1.0,
+        "evidence_mrr": 1.0,
+        "range_recall": 1.0,
+        "covered_ranges": 2,
+        "required_ranges": 2,
+        "line_coverage": 1.0,
+        "covered_lines": 10,
+        "required_lines": 10,
+        "all_evidence": true
+      },
+      "5": {
+        "file_hit": true,
+        "file_recall": 1.0,
+        "symbol_hit": true,
+        "symbol_recall": 1.0,
+        "evidence_mrr": 1.0,
+        "range_recall": 1.0,
+        "covered_ranges": 2,
+        "required_ranges": 2,
+        "line_coverage": 1.0,
+        "covered_lines": 10,
+        "required_lines": 10,
+        "all_evidence": true
+      }
+    },
+    "context": {
+      "range_recall": 1.0,
+      "covered_ranges": 2,
+      "required_ranges": 2,
+      "line_coverage": 1.0,
+      "covered_lines": 10,
+      "required_lines": 10,
+      "all_evidence": true
+    },
+    "negative": null
+  },
+  "dense_metrics": {
+    "at_k": {
+      "1": {
+        "file_hit": false,
+        "file_recall": 0.0,
+        "symbol_hit": false,
+        "symbol_recall": 0.0,
+        "evidence_mrr": 0.0,
+        "range_recall": 0.0,
+        "covered_ranges": 0,
+        "required_ranges": 2,
+        "line_coverage": 0.0,
+        "covered_lines": 0,
+        "required_lines": 10,
+        "all_evidence": false
+      },
+      "3": {
+        "file_hit": true,
+        "file_recall": 0.5,
+        "symbol_hit": false,
+        "symbol_recall": 0.0,
+        "evidence_mrr": 0.0,
+        "range_recall": 0.0,
+        "covered_ranges": 0,
+        "required_ranges": 2,
+        "line_coverage": 0.0,
+        "covered_lines": 0,
+        "required_lines": 10,
+        "all_evidence": false
+      },
+      "5": {
+        "file_hit": true,
+        "file_recall": 1.0,
+        "symbol_hit": true,
+        "symbol_recall": 0.5,
+        "evidence_mrr": 0.2,
+        "range_recall": 0.5,
+        "covered_ranges": 1,
+        "required_ranges": 2,
+        "line_coverage": 0.7,
+        "covered_lines": 7,
+        "required_lines": 10,
+        "all_evidence": false
+      }
+    },
+    "context": {
+      "range_recall": 0.5,
+      "covered_ranges": 1,
+      "required_ranges": 2,
+      "line_coverage": 0.7,
+      "covered_lines": 7,
+      "required_lines": 10,
+      "all_evidence": false
+    },
+    "negative": null
+  },
+  "delta_at_5": {
+    "file_hit": 0,
+    "file_recall": 0.0,
+    "symbol_recall": 0.5,
+    "range_recall": 0.5,
+    "line_coverage": 0.30000000000000004,
+    "evidence_mrr": 0.8,
+    "all_evidence": 1
+  }
+}

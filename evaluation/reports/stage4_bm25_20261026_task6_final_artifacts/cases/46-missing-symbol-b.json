@@ -1,0 +1,718 @@
+{
+  "id": "missing-symbol-b",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "batch": {
+    "repository": "stage4-commerce",
+    "query": "不存在的 PhantomWallet.reverse 在哪里？",
+    "channel": "bm25",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 30,
+    "retrieval_latency_ms": 130.933,
+    "candidates": [
+      {
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "WalletService.WalletService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 4.141346028937056
+        },
+        "channel_ranks": {
+          "bm25": 1
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.877429924792205
+        },
+        "channel_ranks": {
+          "bm25": 2
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WalletService {\n    private int balance = 0;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.802442226921748
+        },
+        "channel_ranks": {
+          "bm25": 3
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.wallet;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.7452712074562307
+        },
+        "channel_ranks": {
+          "bm25": 4
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.5465806847866084
+        },
+        "channel_ranks": {
+          "bm25": 5
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.4082534532917763
+        },
+        "channel_ranks": {
+          "bm25": 6
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "513934f0-9352-5fe9-8789-1734778ddbbf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final WalletService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.236627800557749
+        },
+        "channel_ranks": {
+          "bm25": 7
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public void credit(String reference, int amount) {\n        balance += amount * 2;\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.236627800557749
+        },
+        "channel_ranks": {
+          "bm25": 8
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 3.084308390463178
+        },
+        "channel_ranks": {
+          "bm25": 9
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.8759686079702993
+        },
+        "channel_ranks": {
+          "bm25": 10
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.579993296082954
+        },
+        "channel_ranks": {
+          "bm25": 11
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.237699349961501
+        },
+        "channel_ranks": {
+          "bm25": 12
+        },
+        "matched_queries": [
+          "不存在的 PhantomWallet.reverse 在哪里？"
+        ]
+      }
+    ]
+  },
+  "query_tokens": [
+    "不存",
+    "存在",
+    "在的",
+    "phantomwallet.reverse",
+    "phantomwallet",
+    "phantom",
+    "wallet",
+    "reverse",
+    "在哪",
+    "哪里"
+  ],
+  "retrieval": {
+    "repository": "stage4-commerce",
+    "query": "不存在的 PhantomWallet.reverse 在哪里？",
+    "strategy": "bm25",
+    "top_k": 5,
+    "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+    "retrieval_latency_ms": 130.933,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "repository": "stage4-commerce",
+        "score": 4.141346028937056,
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 8,
+        "end_line": 10,
+        "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "symbol": "WalletService.WalletService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "score": 3.877429924792205,
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 2,
+        "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "repository": "stage4-commerce",
+        "score": 3.802442226921748,
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "start_line": 2,
+        "end_line": 3,
+        "content": "public final class WalletService {\n    private int balance = 0;\n",
+        "symbol": "WalletService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "score": 3.7452712074562307,
+        "path": "backend/wallet/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.wallet;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "repository": "stage4-commerce",
+        "score": 3.5465806847866084,
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "explanations": {
+    "c5299adc-3197-5615-8aa1-2865618bfb07": [
+      {
+        "term": "wallet",
+        "tf": 5,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 4.141346028937056
+      }
+    ],
+    "7518cb78-99cf-5df2-98f1-8a38577f00a9": [
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 19,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.7687156593406593,
+        "contribution": 3.877429924792205
+      }
+    ],
+    "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1": [
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 21,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.8233173076923077,
+        "contribution": 3.802442226921748
+      }
+    ],
+    "38233493-8adc-5db6-bedd-2901a2a02451": [
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 3.7452712074562307
+      }
+    ],
+    "c332ddab-5cbd-5051-ad0c-2d59b441d44e": [
+      {
+        "term": "wallet",
+        "tf": 4,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 41,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.369333791208791,
+        "contribution": 3.5465806847866084
+      }
+    ],
+    "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44": [
+      {
+        "term": "wallet",
+        "tf": 4,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 47,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 1.5331387362637363,
+        "contribution": 3.4082534532917763
+      }
+    ],
+    "513934f0-9352-5fe9-8789-1734778ddbbf": [
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.236627800557749
+      }
+    ],
+    "73670994-8f40-5b53-8266-4ac86dc803f8": [
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 23,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.877918956043956,
+        "contribution": 3.236627800557749
+      }
+    ],
+    "60474be8-61d7-505f-ab87-ac2052e7832c": [
+      {
+        "term": "wallet",
+        "tf": 2,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 27,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9871222527472527,
+        "contribution": 3.084308390463178
+      }
+    ],
+    "ccab0bc3-4fa8-5f8e-961b-f42780968572": [
+      {
+        "term": "wallet",
+        "tf": 1,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 12,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.5776098901098901,
+        "contribution": 2.8759686079702993
+      }
+    ],
+    "b7b83eb5-d10c-53b7-b638-583131392d3b": [
+      {
+        "term": "wallet",
+        "tf": 3,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 70,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 2.1610576923076925,
+        "contribution": 2.579993296082954
+      }
+    ],
+    "4ed09d97-104b-51e9-a1b8-5b766f7c0613": [
+      {
+        "term": "wallet",
+        "tf": 1,
+        "df": 12,
+        "idf": 2.1471001901536506,
+        "document_length": 25,
+        "average_document_length": 27.471698113207548,
+        "length_normalization": 0.9325206043956044,
+        "contribution": 2.237699349961501
+      }
+    ]
+  },
+  "context": {
+    "repository": "stage4-commerce",
+    "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.WalletService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public WalletService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.wallet;\\nimport learning.shared.SharedRecorder;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"original_lines\": {\n    \"start\": 2,\n    \"end\": 3\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class WalletService {\\n    private int balance = 0;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.wallet;\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.credit\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void credit(String reference, int amount) {\\n        if (amount <= 0) {\\n            throw new IllegalArgumentException(\\\"Amount must be positive\\\");\\n        }\\n        balance += amount;\\n        recorder.record(\\\"wallet.credit\\\");\\n    }\\n\"\n}\n[/SOURCE S5]",
+    "sources": [
+      {
+        "source_id": "S1",
+        "chunk_id": "c5299adc-3197-5615-8aa1-2865618bfb07",
+        "retrieval_rank": 1,
+        "score": 4.141346028937056,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService.WalletService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 8,
+        "end_line": 10,
+        "original_start_line": 8,
+        "original_end_line": 10,
+        "content": "    public WalletService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S2",
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "retrieval_rank": 2,
+        "score": 3.877429924792205,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 1,
+        "end_line": 2,
+        "original_start_line": 1,
+        "original_end_line": 2,
+        "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S3",
+        "chunk_id": "e7575b1c-ac18-58a0-b2e8-9b1f37d274a1",
+        "retrieval_rank": 3,
+        "score": 3.802442226921748,
+        "repository": "stage4-commerce",
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 2,
+        "end_line": 3,
+        "original_start_line": 2,
+        "original_end_line": 3,
+        "content": "public final class WalletService {\n    private int balance = 0;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S4",
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "retrieval_rank": 4,
+        "score": 3.7452712074562307,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WorkflowController.java",
+        "language": "java",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 1,
+        "end_line": 1,
+        "original_start_line": 1,
+        "original_end_line": 1,
+        "content": "package learning.wallet;\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      },
+      {
+        "source_id": "S5",
+        "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+        "retrieval_rank": 5,
+        "score": 3.5465806847866084,
+        "repository": "stage4-commerce",
+        "path": "backend/wallet/WalletService.java",
+        "language": "java",
+        "symbol": "WalletService.credit",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1",
+        "start_line": 11,
+        "end_line": 17,
+        "original_start_line": 11,
+        "original_end_line": 17,
+        "content": "    public void credit(String reference, int amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n        recorder.record(\"wallet.credit\");\n    }\n",
+        "overlap_trimmed": false,
+        "budget_truncated": false
+      }
+    ],
+    "retrieved_chunks": 5,
+    "duplicate_chunks": 0,
+    "overlap_trimmed_chunks": 0,
+    "candidate_sources": 5,
+    "omitted_sources": 0,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "characters_used": 2833,
+    "budget_limited": false,
+    "empty_reason": null
+  },
+  "metrics": {
+    "at_k": null,
+    "context": null,
+    "negative": {
+      "kind": "missing_symbol",
+      "returned_chunks": 5,
+      "empty_result": false,
+      "foreign_repository_chunks": 0
+    }
+  },
+  "dense_metrics": {
+    "at_k": null,
+    "context": null,
+    "negative": {
+      "kind": "missing_symbol",
+      "returned_chunks": 5,
+      "empty_result": false,
+      "foreign_repository_chunks": 0
+    }
+  },
+  "delta_at_5": {
+    "negative_empty_result_changed": false
+  }
+}
