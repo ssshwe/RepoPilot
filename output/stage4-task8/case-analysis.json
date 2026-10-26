@@ -1,0 +1,2066 @@
+{
+  "report": {
+    "path": "evaluation/reports/stage4_hybrid_20261027_task8.json",
+    "sha256": "c2e46f071f5b3aa74fea819ebd9b532536453b9932775aff520cab3dd88c696f"
+  },
+  "counts_unit": "annotated complete ranges, not questions",
+  "uncovered_by_first_failing_stage": {
+    "rank_after_top5": 6,
+    "candidate_missing": 7
+  },
+  "cases": [
+    {
+      "id": "refund-service",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+              "path": "backend/service/RefundService.java",
+              "start_line": 12,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 1,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-credit",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+              "path": "backend/service/WalletService.java",
+              "start_line": 10,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 4,
+                "rrf": 5
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-default-balance",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 20,
+          "end_line": 22,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+              "path": "backend/service/WalletService.java",
+              "start_line": 20,
+              "end_line": 22,
+              "channel_ranks": {
+                "dense": 1,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-controller",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+              "path": "backend/controller/OrderController.java",
+              "start_line": 13,
+              "end_line": 15,
+              "channel_ranks": {
+                "dense": 9,
+                "rrf": 9
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-form",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "frontend/src/RefundPanel.vue",
+          "start_line": 5,
+          "end_line": 12,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+              "path": "frontend/src/RefundPanel.vue",
+              "start_line": 1,
+              "end_line": 22,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-request-type",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "frontend/src/types.ts",
+          "start_line": 1,
+          "end_line": 5,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+              "path": "frontend/src/types.ts",
+              "start_line": 1,
+              "end_line": 5,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "orders-schema",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 1,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+              "path": "database/schema.sql",
+              "start_line": 1,
+              "end_line": 11,
+              "channel_ranks": {
+                "dense": 1,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallets-schema",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 11,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+              "path": "database/schema.sql",
+              "start_line": 1,
+              "end_line": 11,
+              "channel_ranks": {
+                "dense": 6,
+                "rrf": 6
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "fixture-documentation",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "README.md",
+          "start_line": 8,
+          "end_line": 21,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+              "path": "README.md",
+              "start_line": 1,
+              "end_line": 21,
+              "channel_ranks": {
+                "dense": 2,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "repository-metadata",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "config/repository.json",
+          "start_line": 2,
+          "end_line": 4,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+              "path": "config/repository.json",
+              "start_line": 1,
+              "end_line": 5,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-validation-files",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+              "path": "backend/service/RefundService.java",
+              "start_line": 12,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 4,
+                "rrf": 5
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+              "path": "backend/service/WalletService.java",
+              "start_line": 10,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 17,
+                "rrf": 17
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-call-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+              "path": "backend/controller/OrderController.java",
+              "start_line": 13,
+              "end_line": 15,
+              "channel_ranks": {
+                "dense": 7,
+                "rrf": 7
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/service/RefundService.java",
+          "start_line": 12,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+              "path": "backend/service/RefundService.java",
+              "start_line": 12,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 4,
+                "rrf": 5
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+              "path": "backend/service/WalletService.java",
+              "start_line": 10,
+              "end_line": 18,
+              "channel_ranks": {
+                "dense": 15,
+                "rrf": 15
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": true,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+              "path": "backend/wallet/WalletService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 5,
+                "bm25": 2,
+                "exact": 2,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/legacy/WalletService.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "73670994-8f40-5b53-8266-4ac86dc803f8",
+              "path": "backend/legacy/WalletService.java",
+              "start_line": 4,
+              "end_line": 6,
+              "channel_ranks": {
+                "dense": 10,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.5,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": false,
+            "context": false
+          },
+          "cause": "rank_after_top5",
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+              "path": "backend/wallet/WalletService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 8,
+                "bm25": 6,
+                "rrf": 6
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-error",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+              "path": "backend/wallet/WalletService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "wallet-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/wallet/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+              "path": "backend/wallet/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 3,
+                "rrf": 3
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/wallet/WalletService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "c332ddab-5cbd-5051-ad0c-2d59b441d44e",
+              "path": "backend/wallet/WalletService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 18,
+                "bm25": 2,
+                "rrf": 5
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.3333333333333333,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+              "path": "backend/refund/RefundService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 7,
+                "bm25": 1,
+                "rrf": 4
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 1.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+              "path": "backend/refund/RefundService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 3,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-literal",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+              "path": "backend/refund/RefundService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "refund-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/refund/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+              "path": "backend/refund/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/refund/RefundService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+              "path": "backend/refund/RefundService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 6,
+                "bm25": 2,
+                "rrf": 3
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.3333333333333333,
+      "generation_evaluated": false
+    },
+    {
+      "id": "orders-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+              "path": "backend/orders/OrderService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "orders-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+              "path": "backend/orders/OrderService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "orders-error",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+              "path": "backend/orders/OrderService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "orders-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/orders/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "d4136b34-1d14-522f-ad94-da0b05538072",
+              "path": "backend/orders/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 2,
+                "rrf": 3
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/orders/OrderService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+              "path": "backend/orders/OrderService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 3,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "inventory-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+              "path": "backend/inventory/InventoryService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "inventory-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+              "path": "backend/inventory/InventoryService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 4,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "inventory-literal",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+              "path": "backend/inventory/InventoryService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "inventory-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/inventory/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+              "path": "backend/inventory/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 5,
+                "bm25": 2,
+                "rrf": 2
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/inventory/InventoryService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+              "path": "backend/inventory/InventoryService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "shipping-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+              "path": "backend/shipping/ShippingService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "shipping-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+              "path": "backend/shipping/ShippingService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "shipping-error",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+              "path": "backend/shipping/ShippingService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "shipping-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/shipping/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "bf4694bb-3e90-5e6a-a018-74f72c618970",
+              "path": "backend/shipping/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 10,
+                "bm25": 2,
+                "rrf": 4
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shipping/ShippingService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+              "path": "backend/shipping/ShippingService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.3333333333333333,
+      "generation_evaluated": false
+    },
+    {
+      "id": "auth-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "198ce245-d91d-58ce-9dc5-c704140d5ec8",
+              "path": "backend/auth/AuthService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 3,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "auth-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "198ce245-d91d-58ce-9dc5-c704140d5ec8",
+              "path": "backend/auth/AuthService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 4,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "auth-literal",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 16,
+          "end_line": 16,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "198ce245-d91d-58ce-9dc5-c704140d5ec8",
+              "path": "backend/auth/AuthService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "auth-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/auth/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+              "path": "backend/auth/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 4,
+                "bm25": 2,
+                "rrf": 2
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/auth/AuthService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "198ce245-d91d-58ce-9dc5-c704140d5ec8",
+              "path": "backend/auth/AuthService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 5,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "ledger-symbol",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "1d06b62b-172e-56dc-9518-9b44d42b2ffa",
+              "path": "backend/ledger/LedgerService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 3,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "ledger-behavior",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "1d06b62b-172e-56dc-9518-9b44d42b2ffa",
+              "path": "backend/ledger/LedgerService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 3,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "ledger-error",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 13,
+          "end_line": 13,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "1d06b62b-172e-56dc-9518-9b44d42b2ffa",
+              "path": "backend/ledger/LedgerService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "ledger-chain",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "backend/ledger/WorkflowController.java",
+          "start_line": 7,
+          "end_line": 9,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "8e0fdb2c-7d4e-5799-9b7c-53d4d9e4e4e7",
+              "path": "backend/ledger/WorkflowController.java",
+              "start_line": 7,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 8,
+                "bm25": 2,
+                "rrf": 4
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/ledger/LedgerService.java",
+          "start_line": 11,
+          "end_line": 17,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "1d06b62b-172e-56dc-9518-9b44d42b2ffa",
+              "path": "backend/ledger/LedgerService.java",
+              "start_line": 11,
+              "end_line": 17,
+              "channel_ranks": {
+                "dense": 7,
+                "bm25": 1,
+                "rrf": 2
+              }
+            }
+          ]
+        },
+        {
+          "path": "backend/shared/SharedRecorder.java",
+          "start_line": 4,
+          "end_line": 6,
+          "coverage": {
+            "index": true,
+            "channel_union": false,
+            "fused_pool": false,
+            "top5": false,
+            "context": false
+          },
+          "cause": "candidate_missing",
+          "overlapping_fused_chunks": []
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.6666666666666666,
+      "generation_evaluated": false
+    },
+    {
+      "id": "config-retries",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "config/application.json",
+          "start_line": 2,
+          "end_line": 2,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+              "path": "config/application.json",
+              "start_line": 1,
+              "end_line": 6,
+              "channel_ranks": {
+                "dense": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "config/application.json",
+          "start_line": 3,
+          "end_line": 3,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+              "path": "config/application.json",
+              "start_line": 1,
+              "end_line": 6,
+              "channel_ranks": {
+                "dense": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "schema-wallet-default",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "database/schema.sql",
+          "start_line": 8,
+          "end_line": 8,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "6e8f23e2-ead8-5708-a22a-71d53886c3ac",
+              "path": "database/schema.sql",
+              "start_line": 1,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        },
+        {
+          "path": "database/schema.sql",
+          "start_line": 4,
+          "end_line": 4,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "6e8f23e2-ead8-5708-a22a-71d53886c3ac",
+              "path": "database/schema.sql",
+              "start_line": 1,
+              "end_line": 9,
+              "channel_ranks": {
+                "dense": 1,
+                "bm25": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "fixture-wallet-documentation",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "README.md",
+          "start_line": 4,
+          "end_line": 4,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+              "path": "README.md",
+              "start_line": 1,
+              "end_line": 7,
+              "channel_ranks": {
+                "dense": 3,
+                "bm25": 4,
+                "rrf": 2
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "config-explicit-path",
+      "kind": "positive",
+      "ranges": [
+        {
+          "path": "config/application.json",
+          "start_line": 4,
+          "end_line": 4,
+          "coverage": {
+            "index": true,
+            "channel_union": true,
+            "fused_pool": true,
+            "top5": true,
+            "context": true
+          },
+          "cause": null,
+          "overlapping_fused_chunks": [
+            {
+              "chunk_id": "f49b26fc-875f-5674-996d-8a239987f02d",
+              "path": "config/application.json",
+              "start_line": 1,
+              "end_line": 6,
+              "channel_ranks": {
+                "dense": 2,
+                "bm25": 1,
+                "exact": 1,
+                "rrf": 1
+              }
+            }
+          ]
+        }
+      ],
+      "mrr_declined_vs_dense": false,
+      "range_recall_delta_vs_dense": 0.0,
+      "generation_evaluated": false
+    },
+    {
+      "id": "missing-symbol-a",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "missing_symbol",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "missing-symbol-b",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "missing_symbol",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "missing-path",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "missing_path",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "missing-literal",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "missing_literal",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "foreign-symbol",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "repository_scope_mismatch",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "scope-shadow-wallet",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "repository_scope_mismatch",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "empty-symbol",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "empty_repository",
+        "returned_chunks": 0,
+        "empty_result": true,
+        "foreign_repository_chunks": 0
+      }
+    },
+    {
+      "id": "empty-natural",
+      "kind": "negative_control",
+      "negative": {
+        "kind": "empty_repository",
+        "returned_chunks": 0,
+        "empty_result": true,
+        "foreign_repository_chunks": 0
+      }
+    }
+  ],
+  "generation_evaluated": false
+}

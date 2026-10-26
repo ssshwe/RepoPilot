@@ -1,0 +1,3875 @@
+{
+  "id": "refund-literal",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "hybrid": {
+    "request": {
+      "repository": "stage4-commerce",
+      "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "parameters": {
+      "version": "rrf-v1",
+      "k": 60,
+      "rank_start": 1,
+      "formula": "sum(1 / (k + original_channel_rank))",
+      "tie_break": "descending RRF score, then ascending Chunk UUID"
+    },
+    "channels": {
+      "dense": {
+        "repository": "stage4-commerce",
+        "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+        "channel": "dense",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 86.374,
+        "candidates": [
+          {
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.refund;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.7022485
+            },
+            "channel_ranks": {
+              "dense": 1
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+              "symbol": "RefundService.refund",
+              "node_type": "method_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.63585186
+            },
+            "channel_ranks": {
+              "dense": 2
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.6035286
+            },
+            "channel_ranks": {
+              "dense": 3
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "RefundService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.5869638
+            },
+            "channel_ranks": {
+              "dense": 4
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.5672327
+            },
+            "channel_ranks": {
+              "dense": 5
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "OrderService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.53663605
+            },
+            "channel_ranks": {
+              "dense": 6
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 8,
+              "end_line": 10,
+              "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+              "symbol": "RefundService.RefundService",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.52813166
+            },
+            "channel_ranks": {
+              "dense": 7
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "ShippingService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.5018056
+            },
+            "channel_ranks": {
+              "dense": 8
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 2,
+              "end_line": 3,
+              "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+              "symbol": "WorkflowController",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.48500994
+            },
+            "channel_ranks": {
+              "dense": 9
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+              "symbol": "OrderService.submit",
+              "node_type": "method_declaration",
+              "parent_symbol": "OrderService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4849627
+            },
+            "channel_ranks": {
+              "dense": 10
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "InvoiceService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4791361
+            },
+            "channel_ranks": {
+              "dense": 11
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.orders;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.47113156
+            },
+            "channel_ranks": {
+              "dense": 12
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 4,
+              "end_line": 6,
+              "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+              "symbol": "WorkflowController.WorkflowController",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4656555
+            },
+            "channel_ranks": {
+              "dense": 13
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "d1064187-513e-5004-bb33-74410dbccbd8",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/FraudService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class FraudService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "FraudService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45979235
+            },
+            "channel_ranks": {
+              "dense": 14
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45772365
+            },
+            "channel_ranks": {
+              "dense": 15
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/LedgerService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "LedgerService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45062357
+            },
+            "channel_ranks": {
+              "dense": 16
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "254991d8-9d3c-5498-9a01-933d9d1854ef",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/notification/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44906363
+            },
+            "channel_ranks": {
+              "dense": 17
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+              "symbol": "ShippingService.dispatch",
+              "node_type": "method_declaration",
+              "parent_symbol": "ShippingService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44780296
+            },
+            "channel_ranks": {
+              "dense": 18
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "818dc717-4dd3-5ff7-b39d-17fbc5db5fc4",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }\n",
+              "symbol": "InvoiceService.issue",
+              "node_type": "method_declaration",
+              "parent_symbol": "InvoiceService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44746315
+            },
+            "channel_ranks": {
+              "dense": 19
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44684988
+            },
+            "channel_ranks": {
+              "dense": 20
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44320235
+            },
+            "channel_ranks": {
+              "dense": 21
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WalletService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "WalletService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44145757
+            },
+            "channel_ranks": {
+              "dense": 22
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shipping;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44143254
+            },
+            "channel_ranks": {
+              "dense": 23
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "InventoryService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44078487
+            },
+            "channel_ranks": {
+              "dense": 24
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "README.md",
+              "language": "markdown",
+              "start_line": 1,
+              "end_line": 7,
+              "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43987152
+            },
+            "channel_ranks": {
+              "dense": 25
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.invoice;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4392631
+            },
+            "channel_ranks": {
+              "dense": 26
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4391678
+            },
+            "channel_ranks": {
+              "dense": 27
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "62df83b5-c501-5775-b04f-99ef456cf026",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43406582
+            },
+            "channel_ranks": {
+              "dense": 28
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }\n",
+              "symbol": "InventoryService.reserve",
+              "node_type": "method_declaration",
+              "parent_symbol": "InventoryService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43351126
+            },
+            "channel_ranks": {
+              "dense": 29
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "be33ca99-9342-5a1a-8c29-06f9365a442e",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/coupon/CouponService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class CouponService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "CouponService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43007922
+            },
+            "channel_ranks": {
+              "dense": 30
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "bm25": {
+        "repository": "stage4-commerce",
+        "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+        "channel": "bm25",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 61.386,
+        "candidates": [
+          {
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+              "symbol": "RefundService.refund",
+              "node_type": "method_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 8.33566367653113
+            },
+            "channel_ranks": {
+              "bm25": 1
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 8,
+              "end_line": 10,
+              "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+              "symbol": "RefundService.RefundService",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.885215267431432
+            },
+            "channel_ranks": {
+              "bm25": 2
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.573894510295771
+            },
+            "channel_ranks": {
+              "bm25": 3
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.refund;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.417997422937541
+            },
+            "channel_ranks": {
+              "bm25": 4
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "RefundService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.02044448567134
+            },
+            "channel_ranks": {
+              "bm25": 5
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 2,
+              "end_line": 3,
+              "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+              "symbol": "WorkflowController",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 3.8179914056435513
+            },
+            "channel_ranks": {
+              "bm25": 6
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 3.7259869649912503
+            },
+            "channel_ranks": {
+              "bm25": 7
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          },
+          {
+            "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 4,
+              "end_line": 6,
+              "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+              "symbol": "WorkflowController.WorkflowController",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 3.6383123586571937
+            },
+            "channel_ranks": {
+              "bm25": 8
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "exact": {
+        "repository": "stage4-commerce",
+        "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+        "channel": "exact",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 47.941,
+        "candidates": [
+          {
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+              "symbol": "RefundService.refund",
+              "node_type": "method_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "exact": 60.0
+            },
+            "channel_ranks": {
+              "exact": 1
+            },
+            "matched_queries": [
+              "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19",
+        "match": {
+          "kind": "text",
+          "value": "refund.refund",
+          "mode": "full"
+        },
+        "reasons": {
+          "8c351298-076e-561b-ab76-f3cb25da1e7c": {
+            "kind": "text",
+            "strength": "full",
+            "location": "quoted_text",
+            "matched_value": "refund.refund",
+            "start_line": 16,
+            "end_line": 16,
+            "char_start": 229,
+            "char_end_exclusive": 242,
+            "occurrences": 1
+          }
+        }
+      }
+    },
+    "fused": {
+      "repository": "stage4-commerce",
+      "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+      "channel": "rrf",
+      "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.341,
+      "candidates": [
+        {
+          "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.63585186,
+            "bm25": 8.33566367653113,
+            "exact": 60.0,
+            "rrf": 0.04891591750396616
+          },
+          "channel_ranks": {
+            "dense": 2,
+            "bm25": 1,
+            "exact": 1,
+            "rrf": 1
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.refund;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.7022485,
+            "bm25": 4.417997422937541,
+            "rrf": 0.032018442622950824
+          },
+          "channel_ranks": {
+            "dense": 1,
+            "bm25": 4,
+            "rrf": 2
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.6035286,
+            "bm25": 4.573894510295771,
+            "rrf": 0.031746031746031744
+          },
+          "channel_ranks": {
+            "dense": 3,
+            "bm25": 3,
+            "rrf": 3
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.52813166,
+            "bm25": 4.885215267431432,
+            "rrf": 0.031054405392392875
+          },
+          "channel_ranks": {
+            "dense": 7,
+            "bm25": 2,
+            "rrf": 4
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.5869638,
+            "bm25": 4.02044448567134,
+            "rrf": 0.031009615384615385
+          },
+          "channel_ranks": {
+            "dense": 4,
+            "bm25": 5,
+            "rrf": 5
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.5672327,
+            "bm25": 3.7259869649912503,
+            "rrf": 0.030309988518943745
+          },
+          "channel_ranks": {
+            "dense": 5,
+            "bm25": 7,
+            "rrf": 6
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.48500994,
+            "bm25": 3.8179914056435513,
+            "rrf": 0.02964426877470356
+          },
+          "channel_ranks": {
+            "dense": 9,
+            "bm25": 6,
+            "rrf": 7
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4656555,
+            "bm25": 3.6383123586571937,
+            "rrf": 0.028404512489927477
+          },
+          "channel_ranks": {
+            "dense": 13,
+            "bm25": 8,
+            "rrf": 8
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "OrderService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.53663605,
+            "rrf": 0.015151515151515152
+          },
+          "channel_ranks": {
+            "dense": 6,
+            "rrf": 9
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.5018056,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "dense": 8,
+            "rrf": 10
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+            "symbol": "OrderService.submit",
+            "node_type": "method_declaration",
+            "parent_symbol": "OrderService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4849627,
+            "rrf": 0.014285714285714285
+          },
+          "channel_ranks": {
+            "dense": 10,
+            "rrf": 11
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "InvoiceService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4791361,
+            "rrf": 0.014084507042253521
+          },
+          "channel_ranks": {
+            "dense": 11,
+            "rrf": 12
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.orders;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.47113156,
+            "rrf": 0.013888888888888888
+          },
+          "channel_ranks": {
+            "dense": 12,
+            "rrf": 13
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "d1064187-513e-5004-bb33-74410dbccbd8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/FraudService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class FraudService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "FraudService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45979235,
+            "rrf": 0.013513513513513514
+          },
+          "channel_ranks": {
+            "dense": 14,
+            "rrf": 14
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45772365,
+            "rrf": 0.013333333333333334
+          },
+          "channel_ranks": {
+            "dense": 15,
+            "rrf": 15
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/LedgerService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "LedgerService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45062357,
+            "rrf": 0.013157894736842105
+          },
+          "channel_ranks": {
+            "dense": 16,
+            "rrf": 16
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "254991d8-9d3c-5498-9a01-933d9d1854ef",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44906363,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "dense": 17,
+            "rrf": 17
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44780296,
+            "rrf": 0.01282051282051282
+          },
+          "channel_ranks": {
+            "dense": 18,
+            "rrf": 18
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "818dc717-4dd3-5ff7-b39d-17fbc5db5fc4",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }\n",
+            "symbol": "InvoiceService.issue",
+            "node_type": "method_declaration",
+            "parent_symbol": "InvoiceService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44746315,
+            "rrf": 0.012658227848101266
+          },
+          "channel_ranks": {
+            "dense": 19,
+            "rrf": 19
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44684988,
+            "rrf": 0.0125
+          },
+          "channel_ranks": {
+            "dense": 20,
+            "rrf": 20
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44320235,
+            "rrf": 0.012345679012345678
+          },
+          "channel_ranks": {
+            "dense": 21,
+            "rrf": 21
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WalletService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44145757,
+            "rrf": 0.012195121951219513
+          },
+          "channel_ranks": {
+            "dense": 22,
+            "rrf": 22
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44143254,
+            "rrf": 0.012048192771084338
+          },
+          "channel_ranks": {
+            "dense": 23,
+            "rrf": 23
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "InventoryService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44078487,
+            "rrf": 0.011904761904761904
+          },
+          "channel_ranks": {
+            "dense": 24,
+            "rrf": 24
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43987152,
+            "rrf": 0.011764705882352941
+          },
+          "channel_ranks": {
+            "dense": 25,
+            "rrf": 25
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.invoice;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4392631,
+            "rrf": 0.011627906976744186
+          },
+          "channel_ranks": {
+            "dense": 26,
+            "rrf": 26
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4391678,
+            "rrf": 0.011494252873563218
+          },
+          "channel_ranks": {
+            "dense": 27,
+            "rrf": 27
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "62df83b5-c501-5775-b04f-99ef456cf026",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43406582,
+            "rrf": 0.011363636363636364
+          },
+          "channel_ranks": {
+            "dense": 28,
+            "rrf": 28
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }\n",
+            "symbol": "InventoryService.reserve",
+            "node_type": "method_declaration",
+            "parent_symbol": "InventoryService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43351126,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "dense": 29,
+            "rrf": 29
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        },
+        {
+          "chunk_id": "be33ca99-9342-5a1a-8c29-06f9365a442e",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/CouponService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class CouponService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "CouponService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43007922,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "dense": 30,
+            "rrf": 30
+          },
+          "matched_queries": [
+            "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+          ]
+        }
+      ],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+    },
+    "untruncated_union_count": 30,
+    "retrieval_latency_ms": 246.739,
+    "rrf_contributions": {
+      "8c351298-076e-561b-ab76-f3cb25da1e7c": {
+        "dense": {
+          "rank": 2,
+          "raw_score": 0.63585186,
+          "contribution": 0.016129032258064516
+        },
+        "bm25": {
+          "rank": 1,
+          "raw_score": 8.33566367653113,
+          "contribution": 0.01639344262295082
+        },
+        "exact": {
+          "rank": 1,
+          "raw_score": 60.0,
+          "contribution": 0.01639344262295082
+        }
+      },
+      "12a5b28b-2523-519d-9111-996d8b6c8948": {
+        "dense": {
+          "rank": 1,
+          "raw_score": 0.7022485,
+          "contribution": 0.01639344262295082
+        },
+        "bm25": {
+          "rank": 4,
+          "raw_score": 4.417997422937541,
+          "contribution": 0.015625
+        }
+      },
+      "55e4994d-025d-5033-8798-8ee3a9dcebaf": {
+        "dense": {
+          "rank": 3,
+          "raw_score": 0.6035286,
+          "contribution": 0.015873015873015872
+        },
+        "bm25": {
+          "rank": 3,
+          "raw_score": 4.573894510295771,
+          "contribution": 0.015873015873015872
+        }
+      },
+      "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd": {
+        "dense": {
+          "rank": 7,
+          "raw_score": 0.52813166,
+          "contribution": 0.014925373134328358
+        },
+        "bm25": {
+          "rank": 2,
+          "raw_score": 4.885215267431432,
+          "contribution": 0.016129032258064516
+        }
+      },
+      "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b": {
+        "dense": {
+          "rank": 4,
+          "raw_score": 0.5869638,
+          "contribution": 0.015625
+        },
+        "bm25": {
+          "rank": 5,
+          "raw_score": 4.02044448567134,
+          "contribution": 0.015384615384615385
+        }
+      },
+      "8c14a38a-66c0-56b7-8bda-153daa25ef48": {
+        "dense": {
+          "rank": 5,
+          "raw_score": 0.5672327,
+          "contribution": 0.015384615384615385
+        },
+        "bm25": {
+          "rank": 7,
+          "raw_score": 3.7259869649912503,
+          "contribution": 0.014925373134328358
+        }
+      },
+      "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93": {
+        "dense": {
+          "rank": 9,
+          "raw_score": 0.48500994,
+          "contribution": 0.014492753623188406
+        },
+        "bm25": {
+          "rank": 6,
+          "raw_score": 3.8179914056435513,
+          "contribution": 0.015151515151515152
+        }
+      },
+      "9c52342f-6b70-502c-ba73-daf5431cdd6c": {
+        "dense": {
+          "rank": 13,
+          "raw_score": 0.4656555,
+          "contribution": 0.0136986301369863
+        },
+        "bm25": {
+          "rank": 8,
+          "raw_score": 3.6383123586571937,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "c58a7a9a-6919-565d-a2e4-b287256078dc": {
+        "dense": {
+          "rank": 6,
+          "raw_score": 0.53663605,
+          "contribution": 0.015151515151515152
+        }
+      },
+      "e83132f7-7dba-5add-96b0-94cfaf75fbbe": {
+        "dense": {
+          "rank": 8,
+          "raw_score": 0.5018056,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "e1091402-ec1e-5b33-82fe-3b689423c2fc": {
+        "dense": {
+          "rank": 10,
+          "raw_score": 0.4849627,
+          "contribution": 0.014285714285714285
+        }
+      },
+      "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5": {
+        "dense": {
+          "rank": 11,
+          "raw_score": 0.4791361,
+          "contribution": 0.014084507042253521
+        }
+      },
+      "23e46499-2114-5be0-806f-8cbc93b9ff7c": {
+        "dense": {
+          "rank": 12,
+          "raw_score": 0.47113156,
+          "contribution": 0.013888888888888888
+        }
+      },
+      "d1064187-513e-5004-bb33-74410dbccbd8": {
+        "dense": {
+          "rank": 14,
+          "raw_score": 0.45979235,
+          "contribution": 0.013513513513513514
+        }
+      },
+      "566e0be1-edeb-546a-8123-571a702a4096": {
+        "dense": {
+          "rank": 15,
+          "raw_score": 0.45772365,
+          "contribution": 0.013333333333333334
+        }
+      },
+      "34057fa2-cc5a-595c-84c1-7ab96cf91951": {
+        "dense": {
+          "rank": 16,
+          "raw_score": 0.45062357,
+          "contribution": 0.013157894736842105
+        }
+      },
+      "254991d8-9d3c-5498-9a01-933d9d1854ef": {
+        "dense": {
+          "rank": 17,
+          "raw_score": 0.44906363,
+          "contribution": 0.012987012987012988
+        }
+      },
+      "0523e35d-65a4-5282-a5c4-856b3cac1149": {
+        "dense": {
+          "rank": 18,
+          "raw_score": 0.44780296,
+          "contribution": 0.01282051282051282
+        }
+      },
+      "818dc717-4dd3-5ff7-b39d-17fbc5db5fc4": {
+        "dense": {
+          "rank": 19,
+          "raw_score": 0.44746315,
+          "contribution": 0.012658227848101266
+        }
+      },
+      "4ed09d97-104b-51e9-a1b8-5b766f7c0613": {
+        "dense": {
+          "rank": 20,
+          "raw_score": 0.44684988,
+          "contribution": 0.0125
+        }
+      },
+      "948223e9-4ada-5eb8-a7e2-7c6b781e2e23": {
+        "dense": {
+          "rank": 21,
+          "raw_score": 0.44320235,
+          "contribution": 0.012345679012345678
+        }
+      },
+      "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44": {
+        "dense": {
+          "rank": 22,
+          "raw_score": 0.44145757,
+          "contribution": 0.012195121951219513
+        }
+      },
+      "759e11e5-fee1-57d6-becf-0f7fbc1456a0": {
+        "dense": {
+          "rank": 23,
+          "raw_score": 0.44143254,
+          "contribution": 0.012048192771084338
+        }
+      },
+      "eac24f76-9ed0-575a-812f-c929133d7320": {
+        "dense": {
+          "rank": 24,
+          "raw_score": 0.44078487,
+          "contribution": 0.011904761904761904
+        }
+      },
+      "b7b83eb5-d10c-53b7-b638-583131392d3b": {
+        "dense": {
+          "rank": 25,
+          "raw_score": 0.43987152,
+          "contribution": 0.011764705882352941
+        }
+      },
+      "cd9a1c18-230d-5243-b75d-0168f8b7a521": {
+        "dense": {
+          "rank": 26,
+          "raw_score": 0.4392631,
+          "contribution": 0.011627906976744186
+        }
+      },
+      "13e0bb0e-0ea3-56f4-8605-68f20d5d573f": {
+        "dense": {
+          "rank": 27,
+          "raw_score": 0.4391678,
+          "contribution": 0.011494252873563218
+        }
+      },
+      "62df83b5-c501-5775-b04f-99ef456cf026": {
+        "dense": {
+          "rank": 28,
+          "raw_score": 0.43406582,
+          "contribution": 0.011363636363636364
+        }
+      },
+      "61b57117-4a01-5e23-8e0f-8eb1986c97a3": {
+        "dense": {
+          "rank": 29,
+          "raw_score": 0.43351126,
+          "contribution": 0.011235955056179775
+        }
+      },
+      "be33ca99-9342-5a1a-8c29-06f9365a442e": {
+        "dense": {
+          "rank": 30,
+          "raw_score": 0.43007922,
+          "contribution": 0.011111111111111112
+        }
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+        "repository": "stage4-commerce",
+        "score": 0.04891591750396616,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+        "symbol": "RefundService.refund",
+        "node_type": "method_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+        "repository": "stage4-commerce",
+        "score": 0.032018442622950824,
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.refund;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+        "repository": "stage4-commerce",
+        "score": 0.031746031746031744,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 2,
+        "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "repository": "stage4-commerce",
+        "score": 0.031054405392392875,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 8,
+        "end_line": 10,
+        "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "symbol": "RefundService.RefundService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "RefundService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+        "repository": "stage4-commerce",
+        "score": 0.031009615384615385,
+        "path": "backend/refund/RefundService.java",
+        "language": "java",
+        "start_line": 3,
+        "end_line": 7,
+        "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+        "symbol": "RefundService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "without_exact": {
+    "repository": "stage4-commerce",
+    "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+    "channel": "rrf",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 60,
+    "retrieval_latency_ms": 0.299,
+    "candidates": [
+      {
+        "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.63585186,
+          "bm25": 8.33566367653113,
+          "rrf": 0.03252247488101534
+        },
+        "channel_ranks": {
+          "dense": 2,
+          "bm25": 1,
+          "rrf": 1
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.refund;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.7022485,
+          "bm25": 4.417997422937541,
+          "rrf": 0.032018442622950824
+        },
+        "channel_ranks": {
+          "dense": 1,
+          "bm25": 4,
+          "rrf": 2
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.6035286,
+          "bm25": 4.573894510295771,
+          "rrf": 0.031746031746031744
+        },
+        "channel_ranks": {
+          "dense": 3,
+          "bm25": 3,
+          "rrf": 3
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "RefundService.RefundService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.52813166,
+          "bm25": 4.885215267431432,
+          "rrf": 0.031054405392392875
+        },
+        "channel_ranks": {
+          "dense": 7,
+          "bm25": 2,
+          "rrf": 4
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5869638,
+          "bm25": 4.02044448567134,
+          "rrf": 0.031009615384615385
+        },
+        "channel_ranks": {
+          "dense": 4,
+          "bm25": 5,
+          "rrf": 5
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "8c14a38a-66c0-56b7-8bda-153daa25ef48",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.refund(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5672327,
+          "bm25": 3.7259869649912503,
+          "rrf": 0.030309988518943745
+        },
+        "channel_ranks": {
+          "dense": 5,
+          "bm25": 7,
+          "rrf": 6
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.48500994,
+          "bm25": 3.8179914056435513,
+          "rrf": 0.02964426877470356
+        },
+        "channel_ranks": {
+          "dense": 9,
+          "bm25": 6,
+          "rrf": 7
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4656555,
+          "bm25": 3.6383123586571937,
+          "rrf": 0.028404512489927477
+        },
+        "channel_ranks": {
+          "dense": 13,
+          "bm25": 8,
+          "rrf": 8
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "OrderService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.53663605,
+          "rrf": 0.015151515151515152
+        },
+        "channel_ranks": {
+          "dense": 6,
+          "rrf": 9
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "ShippingService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5018056,
+          "rrf": 0.014705882352941176
+        },
+        "channel_ranks": {
+          "dense": 8,
+          "rrf": 10
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+          "symbol": "OrderService.submit",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4849627,
+          "rrf": 0.014285714285714285
+        },
+        "channel_ranks": {
+          "dense": 10,
+          "rrf": 11
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "InvoiceService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4791361,
+          "rrf": 0.014084507042253521
+        },
+        "channel_ranks": {
+          "dense": 11,
+          "rrf": 12
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.orders;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.47113156,
+          "rrf": 0.013888888888888888
+        },
+        "channel_ranks": {
+          "dense": 12,
+          "rrf": 13
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "d1064187-513e-5004-bb33-74410dbccbd8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/FraudService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class FraudService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "FraudService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45979235,
+          "rrf": 0.013513513513513514
+        },
+        "channel_ranks": {
+          "dense": 14,
+          "rrf": 14
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45772365,
+          "rrf": 0.013333333333333334
+        },
+        "channel_ranks": {
+          "dense": 15,
+          "rrf": 15
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "LedgerService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45062357,
+          "rrf": 0.013157894736842105
+        },
+        "channel_ranks": {
+          "dense": 16,
+          "rrf": 16
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "254991d8-9d3c-5498-9a01-933d9d1854ef",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44906363,
+          "rrf": 0.012987012987012988
+        },
+        "channel_ranks": {
+          "dense": 17,
+          "rrf": 17
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+          "symbol": "ShippingService.dispatch",
+          "node_type": "method_declaration",
+          "parent_symbol": "ShippingService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44780296,
+          "rrf": 0.01282051282051282
+        },
+        "channel_ranks": {
+          "dense": 18,
+          "rrf": 18
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "818dc717-4dd3-5ff7-b39d-17fbc5db5fc4",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void issue(String reference, int amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Invoice amount cannot be negative\");\n        }\n        total = amount + 20;\n        recorder.record(\"invoice.issue\");\n    }\n",
+          "symbol": "InvoiceService.issue",
+          "node_type": "method_declaration",
+          "parent_symbol": "InvoiceService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44746315,
+          "rrf": 0.012658227848101266
+        },
+        "channel_ranks": {
+          "dense": 19,
+          "rrf": 19
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44684988,
+          "rrf": 0.0125
+        },
+        "channel_ranks": {
+          "dense": 20,
+          "rrf": 20
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44320235,
+          "rrf": 0.012345679012345678
+        },
+        "channel_ranks": {
+          "dense": 21,
+          "rrf": 21
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44145757,
+          "rrf": 0.012195121951219513
+        },
+        "channel_ranks": {
+          "dense": 22,
+          "rrf": 22
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shipping;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44143254,
+          "rrf": 0.012048192771084338
+        },
+        "channel_ranks": {
+          "dense": 23,
+          "rrf": 23
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "InventoryService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44078487,
+          "rrf": 0.011904761904761904
+        },
+        "channel_ranks": {
+          "dense": 24,
+          "rrf": 24
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43987152,
+          "rrf": 0.011764705882352941
+        },
+        "channel_ranks": {
+          "dense": 25,
+          "rrf": 25
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.invoice;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4392631,
+          "rrf": 0.011627906976744186
+        },
+        "channel_ranks": {
+          "dense": 26,
+          "rrf": 26
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4391678,
+          "rrf": 0.011494252873563218
+        },
+        "channel_ranks": {
+          "dense": 27,
+          "rrf": 27
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "62df83b5-c501-5775-b04f-99ef456cf026",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43406582,
+          "rrf": 0.011363636363636364
+        },
+        "channel_ranks": {
+          "dense": 28,
+          "rrf": 28
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "61b57117-4a01-5e23-8e0f-8eb1986c97a3",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void reserve(String reference, int amount) {\n        if (amount > stock) {\n            throw new IllegalArgumentException(\"Insufficient stock\");\n        }\n        stock -= amount;\n        recorder.record(\"inventory.reserve\");\n    }\n",
+          "symbol": "InventoryService.reserve",
+          "node_type": "method_declaration",
+          "parent_symbol": "InventoryService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43351126,
+          "rrf": 0.011235955056179775
+        },
+        "channel_ranks": {
+          "dense": 29,
+          "rrf": 29
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      },
+      {
+        "chunk_id": "be33ca99-9342-5a1a-8c29-06f9365a442e",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/CouponService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class CouponService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "CouponService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43007922,
+          "rrf": 0.011111111111111112
+        },
+        "channel_ranks": {
+          "dense": 30,
+          "rrf": 30
+        },
+        "matched_queries": [
+          "哪个订单退款方法写入代码字面量 \"refund.refund\"？"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+  },
+  "strategies": {
+    "hybrid": {
+      "id": "refund-literal",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "repository": "stage4-commerce",
+            "score": 0.04891591750396616,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "score": 0.032018442622950824,
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.refund;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "score": 0.031746031746031744,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "repository": "stage4-commerce",
+            "score": 0.031054405392392875,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "repository": "stage4-commerce",
+            "score": 0.031009615384615385,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 246.739
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.refund\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void refund(String reference, int amount) {\\n        if (reference.isBlank()) {\\n            throw new IllegalArgumentException(\\\"Refund order ID required\\\");\\n        }\\n        refunded += amount;\\n        recorder.record(\\\"refund.refund\\\");\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.refund;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.refund;\\nimport learning.shared.SharedRecorder;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.RefundService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public RefundService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class RefundService {\\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\\n    private int total = 0, months = 0, queued = 0, discount = 0;\\n    private String state = \\\"NEW\\\";\\n    private final SharedRecorder recorder;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "retrieval_rank": 1,
+            "score": 0.04891591750396616,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 11,
+            "end_line": 17,
+            "original_start_line": 11,
+            "original_end_line": 17,
+            "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "retrieval_rank": 2,
+            "score": 0.032018442622950824,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.refund;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "retrieval_rank": 3,
+            "score": 0.031746031746031744,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 2,
+            "original_start_line": 1,
+            "original_end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "retrieval_rank": 4,
+            "score": 0.031054405392392875,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 8,
+            "end_line": 10,
+            "original_start_line": 8,
+            "original_end_line": 10,
+            "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "retrieval_rank": 5,
+            "score": 0.031009615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 3,
+            "end_line": 7,
+            "original_start_line": 3,
+            "original_end_line": 7,
+            "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 3034,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    },
+    "dense_bm25_rrf": {
+      "id": "refund-literal",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "哪个订单退款方法写入代码字面量 \"refund.refund\"？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "repository": "stage4-commerce",
+            "score": 0.03252247488101534,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "score": 0.032018442622950824,
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.refund;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "score": 0.031746031746031744,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "repository": "stage4-commerce",
+            "score": 0.031054405392392875,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "repository": "stage4-commerce",
+            "score": 0.031009615384615385,
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 0.299
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.refund\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void refund(String reference, int amount) {\\n        if (reference.isBlank()) {\\n            throw new IllegalArgumentException(\\\"Refund order ID required\\\");\\n        }\\n        refunded += amount;\\n        recorder.record(\\\"refund.refund\\\");\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.refund;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.refund;\\nimport learning.shared.SharedRecorder;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService.RefundService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"RefundService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public RefundService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/RefundService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"RefundService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class RefundService {\\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\\n    private int total = 0, months = 0, queued = 0, discount = 0;\\n    private String state = \\\"NEW\\\";\\n    private final SharedRecorder recorder;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "8c351298-076e-561b-ab76-f3cb25da1e7c",
+            "retrieval_rank": 1,
+            "score": 0.03252247488101534,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 11,
+            "end_line": 17,
+            "original_start_line": 11,
+            "original_end_line": 17,
+            "content": "    public void refund(String reference, int amount) {\n        if (reference.isBlank()) {\n            throw new IllegalArgumentException(\"Refund order ID required\");\n        }\n        refunded += amount;\n        recorder.record(\"refund.refund\");\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "retrieval_rank": 2,
+            "score": 0.032018442622950824,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.refund;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "retrieval_rank": 3,
+            "score": 0.031746031746031744,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 2,
+            "original_start_line": 1,
+            "original_end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "1b5f9362-04f9-5aee-b6ac-57b88f5f56fd",
+            "retrieval_rank": 4,
+            "score": 0.031054405392392875,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 8,
+            "end_line": 10,
+            "original_start_line": 8,
+            "original_end_line": 10,
+            "content": "    public RefundService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "5fa7ff45-67fd-57ba-8f2d-d15c78e8f81b",
+            "retrieval_rank": 5,
+            "score": 0.031009615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 3,
+            "end_line": 7,
+            "original_start_line": 3,
+            "original_end_line": 7,
+            "content": "public final class RefundService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 3034,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 1,
+            "required_lines": 1,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    }
+  },
+  "reference_metrics": {
+    "dense": {
+      "at_k": {
+        "1": {
+          "file_hit": false,
+          "file_recall": 0.0,
+          "symbol_hit": false,
+          "symbol_recall": 0.0,
+          "evidence_mrr": 0.0,
+          "range_recall": 0.0,
+          "covered_ranges": 0,
+          "required_ranges": 1,
+          "line_coverage": 0.0,
+          "covered_lines": 0,
+          "required_lines": 1,
+          "all_evidence": false
+        },
+        "3": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 0.5,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        },
+        "5": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 0.5,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        }
+      },
+      "context": {
+        "range_recall": 1.0,
+        "covered_ranges": 1,
+        "required_ranges": 1,
+        "line_coverage": 1.0,
+        "covered_lines": 1,
+        "required_lines": 1,
+        "all_evidence": true
+      },
+      "negative": null
+    },
+    "bm25": {
+      "at_k": {
+        "1": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        },
+        "3": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        },
+        "5": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 1,
+          "required_lines": 1,
+          "all_evidence": true
+        }
+      },
+      "context": {
+        "range_recall": 1.0,
+        "covered_ranges": 1,
+        "required_ranges": 1,
+        "line_coverage": 1.0,
+        "covered_lines": 1,
+        "required_lines": 1,
+        "all_evidence": true
+      },
+      "negative": null
+    }
+  },
+  "deltas_at_5": {
+    "dense": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.5,
+      "all_evidence": 0
+    },
+    "bm25": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.0,
+      "all_evidence": 0
+    },
+    "without_exact": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.0,
+      "all_evidence": 0
+    }
+  }
+}

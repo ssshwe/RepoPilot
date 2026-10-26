@@ -1,5 +1,33 @@
 # Repository evaluation
 
+## Stage 4 Task 8 frozen Hybrid/RRF comparison
+
+[`stage4/evaluate_hybrid.py`](stage4/evaluate_hybrid.py) compares Dense, BM25,
+Dense+BM25 RRF and Dense+BM25+Exact RRF on the same 52 frozen queries. It reuses
+the verified original Dense Top30 ranks, runs lexical channels on identical
+Points, and saves all provenance, contributions, bounded pools, final results
+and actual Context. k=60, 1-based ranks, limits 30/30/10/60 and TopK 5 were fixed
+before the run. No new model calls or reserved queries occur.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/evaluate_hybrid.py `
+  --case-id wallet-symbol
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/evaluate_hybrid.py `
+  --verify-only evaluation/reports/stage4_hybrid_20261027_task8.json
+# New unique report; optional real Qdrant proof with the original saved vector
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/evaluate_hybrid.py --live
+```
+
+Development complete-range Recall@5 is Dense 79.69%, BM25 86.46%, two-channel
+RRF 89.58% and three-channel Hybrid 89.58%. Hybrid complete evidence is 24/32;
+Exact improves evidence MRR from 0.8620 to 0.8776 without changing Top5 coverage.
+Historical complete evidence stays 8/12 while MRR falls from 0.6042 to 0.4667.
+Negative controls and denominators remain intact. Three live scoped Hybrid
+requests use two archived-vector reuses and zero new embedding/generation calls;
+all private data is cleaned up. Offline/snapshot latency is labelled separately
+from real service latency. The evaluation suite passes 190 tests.
+See [Task 8 contracts, cases and reproduction](../docs/stage-4-task-8-hybrid.md).
+
 ## Stage 4 Task 7 Exact locators and shared filters
 
 [`stage4/verify_exact.py`](stage4/verify_exact.py) provides an independent Exact

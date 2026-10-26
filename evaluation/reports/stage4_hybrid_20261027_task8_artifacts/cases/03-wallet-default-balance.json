@@ -1,0 +1,2427 @@
+{
+  "id": "wallet-default-balance",
+  "snapshot_revision": "sha256:6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3",
+  "hybrid": {
+    "request": {
+      "repository": "demo-repository",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "parameters": {
+      "version": "rrf-v1",
+      "k": 60,
+      "rank_start": 1,
+      "formula": "sum(1 / (k + original_channel_rank))",
+      "tie_break": "descending RRF score, then ascending Chunk UUID"
+    },
+    "channels": {
+      "dense": {
+        "repository": "demo-repository",
+        "query": "读取用户钱包余额时，未找到用户如何返回零？",
+        "channel": "dense",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 17.385,
+        "candidates": [
+          {
+            "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/WalletService.java",
+              "language": "java",
+              "start_line": 20,
+              "end_line": 22,
+              "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+              "symbol": "WalletService.balanceOf",
+              "node_type": "method_declaration",
+              "parent_symbol": "WalletService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.52640754
+            },
+            "channel_ranks": {
+              "dense": 1
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/WalletService.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+              "symbol": "WalletService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.5118214
+            },
+            "channel_ranks": {
+              "dense": 2
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "README.md",
+              "language": "markdown",
+              "start_line": 1,
+              "end_line": 21,
+              "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4520517
+            },
+            "channel_ranks": {
+              "dense": 3
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "config/repository.json",
+              "language": "json",
+              "start_line": 1,
+              "end_line": 5,
+              "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45026028
+            },
+            "channel_ranks": {
+              "dense": 4
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "database/schema.sql",
+              "language": "sql",
+              "start_line": 1,
+              "end_line": 11,
+              "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42968756
+            },
+            "channel_ranks": {
+              "dense": 5
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/RefundService.java",
+              "language": "java",
+              "start_line": 5,
+              "end_line": 7,
+              "content": "public final class RefundService {\n    private final WalletService wallets;\n\n",
+              "symbol": "RefundService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42081895
+            },
+            "channel_ranks": {
+              "dense": 6
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/RefundService.java",
+              "language": "java",
+              "start_line": 12,
+              "end_line": 18,
+              "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+              "symbol": "RefundService.refund",
+              "node_type": "method_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.40024105
+            },
+            "channel_ranks": {
+              "dense": 7
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/WalletService.java",
+              "language": "java",
+              "start_line": 10,
+              "end_line": 18,
+              "content": "    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n",
+              "symbol": "WalletService.credit",
+              "node_type": "method_declaration",
+              "parent_symbol": "WalletService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.38660306
+            },
+            "channel_ranks": {
+              "dense": 8
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "a271029f-69fc-556c-b2eb-6a5aa50fef3b",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/RefundService.java",
+              "language": "java",
+              "start_line": 8,
+              "end_line": 10,
+              "content": "    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n",
+              "symbol": "RefundService.RefundService",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "RefundService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.36311322
+            },
+            "channel_ranks": {
+              "dense": 9
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 4,
+              "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35835013
+            },
+            "channel_ranks": {
+              "dense": 10
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/controller/OrderController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 5,
+              "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3458407
+            },
+            "channel_ranks": {
+              "dense": 11
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "frontend/src/types.ts",
+              "language": "typescript",
+              "start_line": 1,
+              "end_line": 5,
+              "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+              "symbol": "RefundRequest",
+              "node_type": "interface_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.34512696
+            },
+            "channel_ranks": {
+              "dense": 12
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "deef259e-35b5-5852-b30d-f4551e15d7fc",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/service/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 6,
+              "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.34474432
+            },
+            "channel_ranks": {
+              "dense": 13
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "frontend/src/RefundPanel.vue",
+              "language": "vue",
+              "start_line": 1,
+              "end_line": 22,
+              "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.33311254
+            },
+            "channel_ranks": {
+              "dense": 14
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/controller/OrderController.java",
+              "language": "java",
+              "start_line": 13,
+              "end_line": 15,
+              "content": "    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n",
+              "symbol": "OrderController.refundOrder",
+              "node_type": "method_declaration",
+              "parent_symbol": "OrderController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3179984
+            },
+            "channel_ranks": {
+              "dense": 15
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "efd3b6e3-0833-5a54-80c3-32167dd61515",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/controller/OrderController.java",
+              "language": "java",
+              "start_line": 6,
+              "end_line": 8,
+              "content": "public final class OrderController {\n    private final RefundService refunds;\n\n",
+              "symbol": "OrderController",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.24758688
+            },
+            "channel_ranks": {
+              "dense": 16
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          },
+          {
+            "chunk_id": "6d465fb7-6d8e-5570-915a-3b3259310de3",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "backend/controller/OrderController.java",
+              "language": "java",
+              "start_line": 9,
+              "end_line": 11,
+              "content": "    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n",
+              "symbol": "OrderController.OrderController",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "OrderController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.22405687
+            },
+            "channel_ranks": {
+              "dense": 17
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:49b8eca9651071f6e7159428b310f856a2f76119e19c09158c6c6f2c0a3f7ba3"
+      },
+      "bm25": {
+        "repository": "demo-repository",
+        "query": "读取用户钱包余额时，未找到用户如何返回零？",
+        "channel": "bm25",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 15.665,
+        "candidates": [
+          {
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "repository": "demo-repository",
+            "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+            "source_metadata": {
+              "path": "frontend/src/RefundPanel.vue",
+              "language": "vue",
+              "start_line": 1,
+              "end_line": 22,
+              "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "bm25": 1.3560395190769396
+            },
+            "channel_ranks": {
+              "bm25": 1
+            },
+            "matched_queries": [
+              "读取用户钱包余额时，未找到用户如何返回零？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:49b8eca9651071f6e7159428b310f856a2f76119e19c09158c6c6f2c0a3f7ba3"
+      },
+      "exact": {
+        "repository": "demo-repository",
+        "query": "读取用户钱包余额时，未找到用户如何返回零？",
+        "channel": "exact",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 14.472,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:49b8eca9651071f6e7159428b310f856a2f76119e19c09158c6c6f2c0a3f7ba3",
+        "match": {
+          "kind": "text",
+          "value": "读取用户钱包余额时，未找到用户如何返回零？",
+          "mode": "full"
+        },
+        "reasons": {}
+      }
+    },
+    "fused": {
+      "repository": "demo-repository",
+      "query": "读取用户钱包余额时，未找到用户如何返回零？",
+      "channel": "rrf",
+      "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.217,
+      "candidates": [
+        {
+          "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.33311254,
+            "bm25": 1.3560395190769396,
+            "rrf": 0.029906956136464335
+          },
+          "channel_ranks": {
+            "dense": 14,
+            "bm25": 1,
+            "rrf": 1
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 20,
+            "end_line": 22,
+            "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+            "symbol": "WalletService.balanceOf",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.52640754,
+            "rrf": 0.01639344262295082
+          },
+          "channel_ranks": {
+            "dense": 1,
+            "rrf": 2
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.5118214,
+            "rrf": 0.016129032258064516
+          },
+          "channel_ranks": {
+            "dense": 2,
+            "rrf": 3
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4520517,
+            "rrf": 0.015873015873015872
+          },
+          "channel_ranks": {
+            "dense": 3,
+            "rrf": 4
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45026028,
+            "rrf": 0.015625
+          },
+          "channel_ranks": {
+            "dense": 4,
+            "rrf": 5
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "database/schema.sql",
+            "language": "sql",
+            "start_line": 1,
+            "end_line": 11,
+            "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42968756,
+            "rrf": 0.015384615384615385
+          },
+          "channel_ranks": {
+            "dense": 5,
+            "rrf": 6
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 5,
+            "end_line": 7,
+            "content": "public final class RefundService {\n    private final WalletService wallets;\n\n",
+            "symbol": "RefundService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42081895,
+            "rrf": 0.015151515151515152
+          },
+          "channel_ranks": {
+            "dense": 6,
+            "rrf": 7
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 12,
+            "end_line": 18,
+            "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+            "symbol": "RefundService.refund",
+            "node_type": "method_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40024105,
+            "rrf": 0.014925373134328358
+          },
+          "channel_ranks": {
+            "dense": 7,
+            "rrf": 8
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 10,
+            "end_line": 18,
+            "content": "    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n",
+            "symbol": "WalletService.credit",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.38660306,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "dense": 8,
+            "rrf": 9
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "a271029f-69fc-556c-b2eb-6a5aa50fef3b",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n",
+            "symbol": "RefundService.RefundService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "RefundService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.36311322,
+            "rrf": 0.014492753623188406
+          },
+          "channel_ranks": {
+            "dense": 9,
+            "rrf": 10
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 4,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35835013,
+            "rrf": 0.014285714285714285
+          },
+          "channel_ranks": {
+            "dense": 10,
+            "rrf": 11
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/controller/OrderController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3458407,
+            "rrf": 0.014084507042253521
+          },
+          "channel_ranks": {
+            "dense": 11,
+            "rrf": 12
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "frontend/src/types.ts",
+            "language": "typescript",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+            "symbol": "RefundRequest",
+            "node_type": "interface_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.34512696,
+            "rrf": 0.013888888888888888
+          },
+          "channel_ranks": {
+            "dense": 12,
+            "rrf": 13
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "deef259e-35b5-5852-b30d-f4551e15d7fc",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 6,
+            "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.34474432,
+            "rrf": 0.0136986301369863
+          },
+          "channel_ranks": {
+            "dense": 13,
+            "rrf": 14
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/controller/OrderController.java",
+            "language": "java",
+            "start_line": 13,
+            "end_line": 15,
+            "content": "    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n",
+            "symbol": "OrderController.refundOrder",
+            "node_type": "method_declaration",
+            "parent_symbol": "OrderController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3179984,
+            "rrf": 0.013333333333333334
+          },
+          "channel_ranks": {
+            "dense": 15,
+            "rrf": 15
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "efd3b6e3-0833-5a54-80c3-32167dd61515",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/controller/OrderController.java",
+            "language": "java",
+            "start_line": 6,
+            "end_line": 8,
+            "content": "public final class OrderController {\n    private final RefundService refunds;\n\n",
+            "symbol": "OrderController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.24758688,
+            "rrf": 0.013157894736842105
+          },
+          "channel_ranks": {
+            "dense": 16,
+            "rrf": 16
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        },
+        {
+          "chunk_id": "6d465fb7-6d8e-5570-915a-3b3259310de3",
+          "repository": "demo-repository",
+          "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+          "source_metadata": {
+            "path": "backend/controller/OrderController.java",
+            "language": "java",
+            "start_line": 9,
+            "end_line": 11,
+            "content": "    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n",
+            "symbol": "OrderController.OrderController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "OrderController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.22405687,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "dense": 17,
+            "rrf": 17
+          },
+          "matched_queries": [
+            "读取用户钱包余额时，未找到用户如何返回零？"
+          ]
+        }
+      ],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:49b8eca9651071f6e7159428b310f856a2f76119e19c09158c6c6f2c0a3f7ba3"
+    },
+    "untruncated_union_count": 17,
+    "retrieval_latency_ms": 61.668,
+    "rrf_contributions": {
+      "18a60241-e604-5bc6-8b8a-fb9b1e1e643f": {
+        "dense": {
+          "rank": 14,
+          "raw_score": 0.33311254,
+          "contribution": 0.013513513513513514
+        },
+        "bm25": {
+          "rank": 1,
+          "raw_score": 1.3560395190769396,
+          "contribution": 0.01639344262295082
+        }
+      },
+      "76a95f21-e994-518e-b9b0-46c8e20c262e": {
+        "dense": {
+          "rank": 1,
+          "raw_score": 0.52640754,
+          "contribution": 0.01639344262295082
+        }
+      },
+      "8c450f8e-df6e-58a1-affe-c4cea61a38be": {
+        "dense": {
+          "rank": 2,
+          "raw_score": 0.5118214,
+          "contribution": 0.016129032258064516
+        }
+      },
+      "233f25d1-e3cf-594a-99ca-c0818d6992f8": {
+        "dense": {
+          "rank": 3,
+          "raw_score": 0.4520517,
+          "contribution": 0.015873015873015872
+        }
+      },
+      "7803e3c0-85ee-5168-9f4c-453a5e45c8ef": {
+        "dense": {
+          "rank": 4,
+          "raw_score": 0.45026028,
+          "contribution": 0.015625
+        }
+      },
+      "a97c6dde-939b-572a-ad5b-676b3cd6f75f": {
+        "dense": {
+          "rank": 5,
+          "raw_score": 0.42968756,
+          "contribution": 0.015384615384615385
+        }
+      },
+      "0769b356-b5da-5c2b-ba79-82b721a7e740": {
+        "dense": {
+          "rank": 6,
+          "raw_score": 0.42081895,
+          "contribution": 0.015151515151515152
+        }
+      },
+      "66b8fac4-539e-5bd2-802f-2f88b7965a2a": {
+        "dense": {
+          "rank": 7,
+          "raw_score": 0.40024105,
+          "contribution": 0.014925373134328358
+        }
+      },
+      "3be29be2-e2ec-58d6-90c4-6374c6a1582e": {
+        "dense": {
+          "rank": 8,
+          "raw_score": 0.38660306,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "a271029f-69fc-556c-b2eb-6a5aa50fef3b": {
+        "dense": {
+          "rank": 9,
+          "raw_score": 0.36311322,
+          "contribution": 0.014492753623188406
+        }
+      },
+      "da70f9a5-48fa-58b1-8eba-d64804240344": {
+        "dense": {
+          "rank": 10,
+          "raw_score": 0.35835013,
+          "contribution": 0.014285714285714285
+        }
+      },
+      "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e": {
+        "dense": {
+          "rank": 11,
+          "raw_score": 0.3458407,
+          "contribution": 0.014084507042253521
+        }
+      },
+      "b332d057-e430-54ce-af37-c004a7f48f05": {
+        "dense": {
+          "rank": 12,
+          "raw_score": 0.34512696,
+          "contribution": 0.013888888888888888
+        }
+      },
+      "deef259e-35b5-5852-b30d-f4551e15d7fc": {
+        "dense": {
+          "rank": 13,
+          "raw_score": 0.34474432,
+          "contribution": 0.0136986301369863
+        }
+      },
+      "65f5df11-131b-5b65-9052-e1da2cda3c50": {
+        "dense": {
+          "rank": 15,
+          "raw_score": 0.3179984,
+          "contribution": 0.013333333333333334
+        }
+      },
+      "efd3b6e3-0833-5a54-80c3-32167dd61515": {
+        "dense": {
+          "rank": 16,
+          "raw_score": 0.24758688,
+          "contribution": 0.013157894736842105
+        }
+      },
+      "6d465fb7-6d8e-5570-915a-3b3259310de3": {
+        "dense": {
+          "rank": 17,
+          "raw_score": 0.22405687,
+          "contribution": 0.012987012987012988
+        }
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "score": 0.029906956136464335,
+        "path": "frontend/src/RefundPanel.vue",
+        "language": "vue",
+        "start_line": 1,
+        "end_line": 22,
+        "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+        "symbol": null,
+        "node_type": null,
+        "parent_symbol": null,
+        "chunking_strategy": "fallback",
+        "chunking_version": "ast-fallback-line-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+        "repository": "demo-repository",
+        "score": 0.01639344262295082,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 20,
+        "end_line": 22,
+        "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+        "symbol": "WalletService.balanceOf",
+        "node_type": "method_declaration",
+        "parent_symbol": "WalletService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+        "repository": "demo-repository",
+        "score": 0.016129032258064516,
+        "path": "backend/service/WalletService.java",
+        "language": "java",
+        "start_line": 7,
+        "end_line": 9,
+        "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+        "symbol": "WalletService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "score": 0.015873015873015872,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 21,
+        "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+        "symbol": null,
+        "node_type": null,
+        "parent_symbol": null,
+        "chunking_strategy": "fallback",
+        "chunking_version": "ast-fallback-line-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "score": 0.015625,
+        "path": "config/repository.json",
+        "language": "json",
+        "start_line": 1,
+        "end_line": 5,
+        "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+        "symbol": null,
+        "node_type": null,
+        "parent_symbol": null,
+        "chunking_strategy": "fallback",
+        "chunking_version": "ast-fallback-line-v1"
+      }
+    ]
+  },
+  "without_exact": {
+    "repository": "demo-repository",
+    "query": "读取用户钱包余额时，未找到用户如何返回零？",
+    "channel": "rrf",
+    "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+    "candidate_limit": 60,
+    "retrieval_latency_ms": 0.181,
+    "candidates": [
+      {
+        "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "frontend/src/RefundPanel.vue",
+          "language": "vue",
+          "start_line": 1,
+          "end_line": 22,
+          "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.33311254,
+          "bm25": 1.3560395190769396,
+          "rrf": 0.029906956136464335
+        },
+        "channel_ranks": {
+          "dense": 14,
+          "bm25": 1,
+          "rrf": 1
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 20,
+          "end_line": 22,
+          "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+          "symbol": "WalletService.balanceOf",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.52640754,
+          "rrf": 0.01639344262295082
+        },
+        "channel_ranks": {
+          "dense": 1,
+          "rrf": 2
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5118214,
+          "rrf": 0.016129032258064516
+        },
+        "channel_ranks": {
+          "dense": 2,
+          "rrf": 3
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 21,
+          "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4520517,
+          "rrf": 0.015873015873015872
+        },
+        "channel_ranks": {
+          "dense": 3,
+          "rrf": 4
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "config/repository.json",
+          "language": "json",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45026028,
+          "rrf": 0.015625
+        },
+        "channel_ranks": {
+          "dense": 4,
+          "rrf": 5
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "a97c6dde-939b-572a-ad5b-676b3cd6f75f",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "database/schema.sql",
+          "language": "sql",
+          "start_line": 1,
+          "end_line": 11,
+          "content": "CREATE TABLE orders (\n    id VARCHAR(64) PRIMARY KEY,\n    user_id VARCHAR(64) NOT NULL,\n    amount DECIMAL(12, 2) NOT NULL,\n    status VARCHAR(20) NOT NULL\n);\n\nCREATE TABLE wallets (\n    user_id VARCHAR(64) PRIMARY KEY,\n    balance DECIMAL(12, 2) NOT NULL DEFAULT 0\n);\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42968756,
+          "rrf": 0.015384615384615385
+        },
+        "channel_ranks": {
+          "dense": 5,
+          "rrf": 6
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "0769b356-b5da-5c2b-ba79-82b721a7e740",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 5,
+          "end_line": 7,
+          "content": "public final class RefundService {\n    private final WalletService wallets;\n\n",
+          "symbol": "RefundService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42081895,
+          "rrf": 0.015151515151515152
+        },
+        "channel_ranks": {
+          "dense": 6,
+          "rrf": 7
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "66b8fac4-539e-5bd2-802f-2f88b7965a2a",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 12,
+          "end_line": 18,
+          "content": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n",
+          "symbol": "RefundService.refund",
+          "node_type": "method_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40024105,
+          "rrf": 0.014925373134328358
+        },
+        "channel_ranks": {
+          "dense": 7,
+          "rrf": 8
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 10,
+          "end_line": 18,
+          "content": "    public void credit(String userId, BigDecimal amount) {\n        if (userId == null || userId.isBlank()) {\n            throw new IllegalArgumentException(\"User ID is required\");\n        }\n        if (amount == null || amount.signum() <= 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balances.merge(userId, amount, BigDecimal::add);\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.38660306,
+          "rrf": 0.014705882352941176
+        },
+        "channel_ranks": {
+          "dense": 8,
+          "rrf": 9
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "a271029f-69fc-556c-b2eb-6a5aa50fef3b",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public RefundService(WalletService wallets) {\n        this.wallets = wallets;\n    }\n",
+          "symbol": "RefundService.RefundService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "RefundService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.36311322,
+          "rrf": 0.014492753623188406
+        },
+        "channel_ranks": {
+          "dense": 9,
+          "rrf": 10
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "da70f9a5-48fa-58b1-8eba-d64804240344",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 4,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\n\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35835013,
+          "rrf": 0.014285714285714285
+        },
+        "channel_ranks": {
+          "dense": 10,
+          "rrf": 11
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "62e9a26d-d1a1-5437-9b8c-6a10fca1e96e",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "package demo.controller;\n\nimport demo.service.RefundService;\nimport java.math.BigDecimal;\n\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3458407,
+          "rrf": 0.014084507042253521
+        },
+        "channel_ranks": {
+          "dense": 11,
+          "rrf": 12
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "b332d057-e430-54ce-af37-c004a7f48f05",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "frontend/src/types.ts",
+          "language": "typescript",
+          "start_line": 1,
+          "end_line": 5,
+          "content": "export interface RefundRequest {\n  orderId: string\n  userId: string\n  amount: number\n}\n",
+          "symbol": "RefundRequest",
+          "node_type": "interface_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.34512696,
+          "rrf": 0.013888888888888888
+        },
+        "channel_ranks": {
+          "dense": 12,
+          "rrf": 13
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "deef259e-35b5-5852-b30d-f4551e15d7fc",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/service/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 6,
+          "content": "package demo.service;\n\nimport java.math.BigDecimal;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.34474432,
+          "rrf": 0.0136986301369863
+        },
+        "channel_ranks": {
+          "dense": 13,
+          "rrf": 14
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 13,
+          "end_line": 15,
+          "content": "    public void refundOrder(String orderId, String userId, BigDecimal amount) {\n        refunds.refund(orderId, userId, amount);\n    }\n",
+          "symbol": "OrderController.refundOrder",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3179984,
+          "rrf": 0.013333333333333334
+        },
+        "channel_ranks": {
+          "dense": 15,
+          "rrf": 15
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "efd3b6e3-0833-5a54-80c3-32167dd61515",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 6,
+          "end_line": 8,
+          "content": "public final class OrderController {\n    private final RefundService refunds;\n\n",
+          "symbol": "OrderController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.24758688,
+          "rrf": 0.013157894736842105
+        },
+        "channel_ranks": {
+          "dense": 16,
+          "rrf": 16
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      },
+      {
+        "chunk_id": "6d465fb7-6d8e-5570-915a-3b3259310de3",
+        "repository": "demo-repository",
+        "index_revision": "sha256:72c0e4700c0b6cc78390da1adfca95a5f7de9634596c967ed4758860c8f0ecb6",
+        "source_metadata": {
+          "path": "backend/controller/OrderController.java",
+          "language": "java",
+          "start_line": 9,
+          "end_line": 11,
+          "content": "    public OrderController(RefundService refunds) {\n        this.refunds = refunds;\n    }\n",
+          "symbol": "OrderController.OrderController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "OrderController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.22405687,
+          "rrf": 0.012987012987012988
+        },
+        "channel_ranks": {
+          "dense": 17,
+          "rrf": 17
+        },
+        "matched_queries": [
+          "读取用户钱包余额时，未找到用户如何返回零？"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:49b8eca9651071f6e7159428b310f856a2f76119e19c09158c6c6f2c0a3f7ba3"
+  },
+  "strategies": {
+    "hybrid": {
+      "id": "wallet-default-balance",
+      "retrieval": {
+        "repository": "demo-repository",
+        "query": "读取用户钱包余额时，未找到用户如何返回零？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "repository": "demo-repository",
+            "score": 0.029906956136464335,
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+            "repository": "demo-repository",
+            "score": 0.01639344262295082,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 20,
+            "end_line": 22,
+            "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+            "symbol": "WalletService.balanceOf",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+            "repository": "demo-repository",
+            "score": 0.016129032258064516,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+            "repository": "demo-repository",
+            "score": 0.015873015873015872,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+            "repository": "demo-repository",
+            "score": 0.015625,
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          }
+        ],
+        "retrieval_latency_ms": 61.668
+      },
+      "context": {
+        "repository": "demo-repository",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"frontend/src/RefundPanel.vue\",\n  \"language\": \"vue\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 22\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 22\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"<script setup lang=\\\"ts\\\">\\nimport { reactive } from 'vue'\\nimport type { RefundRequest } from './types'\\n\\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\\n\\nfunction submitRefund() {\\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\\n    emit('refund', { ...form })\\n  }\\n}\\n</script>\\n\\n<template>\\n  <form @submit.prevent=\\\"submitRefund\\\">\\n    <label>订单编号 <input v-model=\\\"form.orderId\\\" required /></label>\\n    <label>用户编号 <input v-model=\\\"form.userId\\\" required /></label>\\n    <label>退款金额 <input v-model.number=\\\"form.amount\\\" type=\\\"number\\\" min=\\\"0.01\\\" step=\\\"0.01\\\" required /></label>\\n    <button type=\\\"submit\\\">申请退款</button>\\n  </form>\\n</template>\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"backend/service/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.balanceOf\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 20,\n    \"end\": 22\n  },\n  \"original_lines\": {\n    \"start\": 20,\n    \"end\": 22\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public BigDecimal balanceOf(String userId) {\\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\\n    }\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"backend/service/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"original_lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class WalletService {\\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\\n\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"README.md\",\n  \"language\": \"markdown\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 21\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 21\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"# Refund workflow fixture\\n\\nThis small hand-written repository provides actual files for RepoPilot's local\\nscanner and later code retrieval exercises. It demonstrates an order refund,\\nwallet balance updates and a Vue refund form. It is not a production payment\\nsystem or a standalone deployable application.\\n\\nKey source files:\\n\\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\\n- `backend/service/WalletService.java`: validate amounts and update user balances.\\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\\n- `frontend/src/types.ts`: define the refund request structure.\\n- `database/schema.sql`: sample order and wallet tables.\\n- `config/repository.json`: fixture metadata without credentials.\\n\\n`notes.txt` is intentionally outside the scanner's supported extensions.\\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\\nand indexing explicitly.\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"config/repository.json\",\n  \"language\": \"json\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 5\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 5\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"{\\n  \\\"name\\\": \\\"demo-repository\\\",\\n  \\\"purpose\\\": \\\"RepoPilot local scanner and code retrieval fixture\\\",\\n  \\\"features\\\": [\\\"order-refund\\\", \\\"wallet-balance\\\"]\\n}\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "retrieval_rank": 1,
+            "score": 0.029906956136464335,
+            "repository": "demo-repository",
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 22,
+            "original_start_line": 1,
+            "original_end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+            "retrieval_rank": 2,
+            "score": 0.01639344262295082,
+            "repository": "demo-repository",
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "symbol": "WalletService.balanceOf",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 20,
+            "end_line": 22,
+            "original_start_line": 20,
+            "original_end_line": 22,
+            "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+            "retrieval_rank": 3,
+            "score": 0.016129032258064516,
+            "repository": "demo-repository",
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 7,
+            "end_line": 9,
+            "original_start_line": 7,
+            "original_end_line": 9,
+            "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+            "retrieval_rank": 4,
+            "score": 0.015873015873015872,
+            "repository": "demo-repository",
+            "path": "README.md",
+            "language": "markdown",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 21,
+            "original_start_line": 1,
+            "original_end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+            "retrieval_rank": 5,
+            "score": 0.015625,
+            "repository": "demo-repository",
+            "path": "config/repository.json",
+            "language": "json",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 5,
+            "original_start_line": 1,
+            "original_end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 4587,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": false,
+            "file_recall": 0.0,
+            "symbol_hit": false,
+            "symbol_recall": 0.0,
+            "evidence_mrr": 0.0,
+            "range_recall": 0.0,
+            "covered_ranges": 0,
+            "required_ranges": 1,
+            "line_coverage": 0.0,
+            "covered_lines": 0,
+            "required_lines": 3,
+            "all_evidence": false
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 0.5,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 3,
+            "required_lines": 3,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 0.5,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 3,
+            "required_lines": 3,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 3,
+          "required_lines": 3,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    },
+    "dense_bm25_rrf": {
+      "id": "wallet-default-balance",
+      "retrieval": {
+        "repository": "demo-repository",
+        "query": "读取用户钱包余额时，未找到用户如何返回零？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "repository": "demo-repository",
+            "score": 0.029906956136464335,
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "start_line": 1,
+            "end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+            "repository": "demo-repository",
+            "score": 0.01639344262295082,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 20,
+            "end_line": 22,
+            "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+            "symbol": "WalletService.balanceOf",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+            "repository": "demo-repository",
+            "score": 0.016129032258064516,
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+            "repository": "demo-repository",
+            "score": 0.015873015873015872,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+            "repository": "demo-repository",
+            "score": 0.015625,
+            "path": "config/repository.json",
+            "language": "json",
+            "start_line": 1,
+            "end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          }
+        ],
+        "retrieval_latency_ms": 0.181
+      },
+      "context": {
+        "repository": "demo-repository",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"frontend/src/RefundPanel.vue\",\n  \"language\": \"vue\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 22\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 22\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"<script setup lang=\\\"ts\\\">\\nimport { reactive } from 'vue'\\nimport type { RefundRequest } from './types'\\n\\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\\n\\nfunction submitRefund() {\\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\\n    emit('refund', { ...form })\\n  }\\n}\\n</script>\\n\\n<template>\\n  <form @submit.prevent=\\\"submitRefund\\\">\\n    <label>订单编号 <input v-model=\\\"form.orderId\\\" required /></label>\\n    <label>用户编号 <input v-model=\\\"form.userId\\\" required /></label>\\n    <label>退款金额 <input v-model.number=\\\"form.amount\\\" type=\\\"number\\\" min=\\\"0.01\\\" step=\\\"0.01\\\" required /></label>\\n    <button type=\\\"submit\\\">申请退款</button>\\n  </form>\\n</template>\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"backend/service/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService.balanceOf\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"WalletService\",\n  \"lines\": {\n    \"start\": 20,\n    \"end\": 22\n  },\n  \"original_lines\": {\n    \"start\": 20,\n    \"end\": 22\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public BigDecimal balanceOf(String userId) {\\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\\n    }\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"backend/service/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WalletService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"original_lines\": {\n    \"start\": 7,\n    \"end\": 9\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class WalletService {\\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\\n\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"README.md\",\n  \"language\": \"markdown\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 21\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 21\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"# Refund workflow fixture\\n\\nThis small hand-written repository provides actual files for RepoPilot's local\\nscanner and later code retrieval exercises. It demonstrates an order refund,\\nwallet balance updates and a Vue refund form. It is not a production payment\\nsystem or a standalone deployable application.\\n\\nKey source files:\\n\\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\\n- `backend/service/WalletService.java`: validate amounts and update user balances.\\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\\n- `frontend/src/types.ts`: define the refund request structure.\\n- `database/schema.sql`: sample order and wallet tables.\\n- `config/repository.json`: fixture metadata without credentials.\\n\\n`notes.txt` is intentionally outside the scanner's supported extensions.\\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\\nand indexing explicitly.\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"demo-repository\",\n  \"path\": \"config/repository.json\",\n  \"language\": \"json\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 5\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 5\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"{\\n  \\\"name\\\": \\\"demo-repository\\\",\\n  \\\"purpose\\\": \\\"RepoPilot local scanner and code retrieval fixture\\\",\\n  \\\"features\\\": [\\\"order-refund\\\", \\\"wallet-balance\\\"]\\n}\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "18a60241-e604-5bc6-8b8a-fb9b1e1e643f",
+            "retrieval_rank": 1,
+            "score": 0.029906956136464335,
+            "repository": "demo-repository",
+            "path": "frontend/src/RefundPanel.vue",
+            "language": "vue",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 22,
+            "original_start_line": 1,
+            "original_end_line": 22,
+            "content": "<script setup lang=\"ts\">\nimport { reactive } from 'vue'\nimport type { RefundRequest } from './types'\n\nconst emit = defineEmits<{ refund: [request: RefundRequest] }>()\nconst form = reactive<RefundRequest>({ orderId: '', userId: '', amount: 0 })\n\nfunction submitRefund() {\n  if (form.orderId.trim() && form.userId.trim() && form.amount > 0) {\n    emit('refund', { ...form })\n  }\n}\n</script>\n\n<template>\n  <form @submit.prevent=\"submitRefund\">\n    <label>订单编号 <input v-model=\"form.orderId\" required /></label>\n    <label>用户编号 <input v-model=\"form.userId\" required /></label>\n    <label>退款金额 <input v-model.number=\"form.amount\" type=\"number\" min=\"0.01\" step=\"0.01\" required /></label>\n    <button type=\"submit\">申请退款</button>\n  </form>\n</template>\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "76a95f21-e994-518e-b9b0-46c8e20c262e",
+            "retrieval_rank": 2,
+            "score": 0.01639344262295082,
+            "repository": "demo-repository",
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "symbol": "WalletService.balanceOf",
+            "node_type": "method_declaration",
+            "parent_symbol": "WalletService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 20,
+            "end_line": 22,
+            "original_start_line": 20,
+            "original_end_line": 22,
+            "content": "    public BigDecimal balanceOf(String userId) {\n        return balances.getOrDefault(userId, BigDecimal.ZERO);\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "8c450f8e-df6e-58a1-affe-c4cea61a38be",
+            "retrieval_rank": 3,
+            "score": 0.016129032258064516,
+            "repository": "demo-repository",
+            "path": "backend/service/WalletService.java",
+            "language": "java",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 7,
+            "end_line": 9,
+            "original_start_line": 7,
+            "original_end_line": 9,
+            "content": "public final class WalletService {\n    private final Map<String, BigDecimal> balances = new ConcurrentHashMap<>();\n\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "233f25d1-e3cf-594a-99ca-c0818d6992f8",
+            "retrieval_rank": 4,
+            "score": 0.015873015873015872,
+            "repository": "demo-repository",
+            "path": "README.md",
+            "language": "markdown",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 21,
+            "original_start_line": 1,
+            "original_end_line": 21,
+            "content": "# Refund workflow fixture\n\nThis small hand-written repository provides actual files for RepoPilot's local\nscanner and later code retrieval exercises. It demonstrates an order refund,\nwallet balance updates and a Vue refund form. It is not a production payment\nsystem or a standalone deployable application.\n\nKey source files:\n\n- `backend/service/RefundService.java`: validate an order reference and credit a wallet.\n- `backend/service/WalletService.java`: validate amounts and update user balances.\n- `backend/controller/OrderController.java`: delegate the refund request to the service.\n- `frontend/src/RefundPanel.vue`: collect order, user and amount fields.\n- `frontend/src/types.ts`: define the refund request structure.\n- `database/schema.sql`: sample order and wallet tables.\n- `config/repository.json`: fixture metadata without credentials.\n\n`notes.txt` is intentionally outside the scanner's supported extensions.\n`package-lock.json` demonstrates the fixed lock-file ignore rule.\nNeither file is indexed. Task 4 only scans files; subsequent tasks add chunking\nand indexing explicitly.\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "7803e3c0-85ee-5168-9f4c-453a5e45c8ef",
+            "retrieval_rank": 5,
+            "score": 0.015625,
+            "repository": "demo-repository",
+            "path": "config/repository.json",
+            "language": "json",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 5,
+            "original_start_line": 1,
+            "original_end_line": 5,
+            "content": "{\n  \"name\": \"demo-repository\",\n  \"purpose\": \"RepoPilot local scanner and code retrieval fixture\",\n  \"features\": [\"order-refund\", \"wallet-balance\"]\n}\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 4587,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": false,
+            "file_recall": 0.0,
+            "symbol_hit": false,
+            "symbol_recall": 0.0,
+            "evidence_mrr": 0.0,
+            "range_recall": 0.0,
+            "covered_ranges": 0,
+            "required_ranges": 1,
+            "line_coverage": 0.0,
+            "covered_lines": 0,
+            "required_lines": 3,
+            "all_evidence": false
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 0.5,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 3,
+            "required_lines": 3,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 0.5,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 3,
+            "required_lines": 3,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 3,
+          "required_lines": 3,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    }
+  },
+  "reference_metrics": {
+    "dense": {
+      "at_k": {
+        "1": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 3,
+          "required_lines": 3,
+          "all_evidence": true
+        },
+        "3": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 3,
+          "required_lines": 3,
+          "all_evidence": true
+        },
+        "5": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 3,
+          "required_lines": 3,
+          "all_evidence": true
+        }
+      },
+      "context": {
+        "range_recall": 1.0,
+        "covered_ranges": 1,
+        "required_ranges": 1,
+        "line_coverage": 1.0,
+        "covered_lines": 3,
+        "required_lines": 3,
+        "all_evidence": true
+      },
+      "negative": null
+    },
+    "bm25": {
+      "at_k": {
+        "1": {
+          "file_hit": false,
+          "file_recall": 0.0,
+          "symbol_hit": false,
+          "symbol_recall": 0.0,
+          "evidence_mrr": 0.0,
+          "range_recall": 0.0,
+          "covered_ranges": 0,
+          "required_ranges": 1,
+          "line_coverage": 0.0,
+          "covered_lines": 0,
+          "required_lines": 3,
+          "all_evidence": false
+        },
+        "3": {
+          "file_hit": false,
+          "file_recall": 0.0,
+          "symbol_hit": false,
+          "symbol_recall": 0.0,
+          "evidence_mrr": 0.0,
+          "range_recall": 0.0,
+          "covered_ranges": 0,
+          "required_ranges": 1,
+          "line_coverage": 0.0,
+          "covered_lines": 0,
+          "required_lines": 3,
+          "all_evidence": false
+        },
+        "5": {
+          "file_hit": false,
+          "file_recall": 0.0,
+          "symbol_hit": false,
+          "symbol_recall": 0.0,
+          "evidence_mrr": 0.0,
+          "range_recall": 0.0,
+          "covered_ranges": 0,
+          "required_ranges": 1,
+          "line_coverage": 0.0,
+          "covered_lines": 0,
+          "required_lines": 3,
+          "all_evidence": false
+        }
+      },
+      "context": {
+        "range_recall": 0.0,
+        "covered_ranges": 0,
+        "required_ranges": 1,
+        "line_coverage": 0.0,
+        "covered_lines": 0,
+        "required_lines": 3,
+        "all_evidence": false
+      },
+      "negative": null
+    }
+  },
+  "deltas_at_5": {
+    "dense": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": -0.5,
+      "all_evidence": 0
+    },
+    "bm25": {
+      "file_hit": 1,
+      "file_recall": 1.0,
+      "symbol_recall": 1.0,
+      "range_recall": 1.0,
+      "line_coverage": 1.0,
+      "evidence_mrr": 0.5,
+      "all_evidence": 1
+    },
+    "without_exact": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.0,
+      "all_evidence": 0
+    }
+  }
+}

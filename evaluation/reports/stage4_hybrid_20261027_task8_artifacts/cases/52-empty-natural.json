@@ -1,0 +1,217 @@
+{
+  "id": "empty-natural",
+  "snapshot_revision": "sha256:f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8",
+  "hybrid": {
+    "request": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "parameters": {
+      "version": "rrf-v1",
+      "k": 60,
+      "rank_start": 1,
+      "formula": "sum(1 / (k + original_channel_rank))",
+      "tie_break": "descending RRF score, then ascending Chunk UUID"
+    },
+    "channels": {
+      "dense": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "dense",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 1.982,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+      },
+      "bm25": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "bm25",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 1.897,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+      },
+      "exact": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "exact",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 1.987,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "match": {
+          "kind": "text",
+          "value": "空仓库哪里检查退款金额？",
+          "mode": "full"
+        },
+        "reasons": {}
+      }
+    },
+    "fused": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "channel": "rrf",
+      "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.007,
+      "candidates": [],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+    },
+    "untruncated_union_count": 0,
+    "retrieval_latency_ms": 7.923,
+    "rrf_contributions": {},
+    "results": []
+  },
+  "without_exact": {
+    "repository": "stage4-empty",
+    "query": "空仓库哪里检查退款金额？",
+    "channel": "rrf",
+    "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+    "candidate_limit": 60,
+    "retrieval_latency_ms": 0.005,
+    "candidates": [],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+  },
+  "strategies": {
+    "hybrid": {
+      "id": "empty-natural",
+      "retrieval": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "top_k": 5,
+        "results": [],
+        "retrieval_latency_ms": 7.923
+      },
+      "context": {
+        "repository": "stage4-empty",
+        "text": "",
+        "sources": [],
+        "retrieved_chunks": 0,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 0,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 0,
+        "budget_limited": false,
+        "empty_reason": "no_results"
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "empty_repository",
+          "returned_chunks": 0,
+          "empty_result": true,
+          "foreign_repository_chunks": 0
+        }
+      }
+    },
+    "dense_bm25_rrf": {
+      "id": "empty-natural",
+      "retrieval": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "top_k": 5,
+        "results": [],
+        "retrieval_latency_ms": 0.005
+      },
+      "context": {
+        "repository": "stage4-empty",
+        "text": "",
+        "sources": [],
+        "retrieved_chunks": 0,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 0,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 0,
+        "budget_limited": false,
+        "empty_reason": "no_results"
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "empty_repository",
+          "returned_chunks": 0,
+          "empty_result": true,
+          "foreign_repository_chunks": 0
+        }
+      }
+    }
+  },
+  "reference_metrics": {
+    "dense": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "empty_repository",
+        "returned_chunks": 0,
+        "empty_result": true,
+        "foreign_repository_chunks": 0
+      }
+    },
+    "bm25": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "empty_repository",
+        "returned_chunks": 0,
+        "empty_result": true,
+        "foreign_repository_chunks": 0
+      }
+    }
+  },
+  "deltas_at_5": {
+    "dense": {
+      "negative_empty_result_changed": false
+    },
+    "bm25": {
+      "negative_empty_result_changed": false
+    },
+    "without_exact": {
+      "negative_empty_result_changed": false
+    }
+  }
+}

@@ -1,0 +1,5085 @@
+{
+  "id": "shipping-behavior",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "hybrid": {
+    "request": {
+      "repository": "stage4-commerce",
+      "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "parameters": {
+      "version": "rrf-v1",
+      "k": 60,
+      "rank_start": 1,
+      "formula": "sum(1 / (k + original_channel_rank))",
+      "tie_break": "descending RRF score, then ascending Chunk UUID"
+    },
+    "channels": {
+      "dense": {
+        "repository": "stage4-commerce",
+        "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+        "channel": "dense",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 80.947,
+        "candidates": [
+          {
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shipping;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.55120355
+            },
+            "channel_ranks": {
+              "dense": 1
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+              "symbol": "ShippingService.dispatch",
+              "node_type": "method_declaration",
+              "parent_symbol": "ShippingService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.55007875
+            },
+            "channel_ranks": {
+              "dense": 2
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.48775187
+            },
+            "channel_ranks": {
+              "dense": 3
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "ShippingService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.47606793
+            },
+            "channel_ranks": {
+              "dense": 4
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 8,
+              "end_line": 10,
+              "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+              "symbol": "ShippingService.ShippingService",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "ShippingService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43341482
+            },
+            "channel_ranks": {
+              "dense": 5
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "5927ebb2-a953-5ff9-a3b2-51556259af60",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 2,
+              "end_line": 3,
+              "content": "public final class WorkflowController {\n    private final ShippingService service;\n",
+              "symbol": "WorkflowController",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43076032
+            },
+            "channel_ranks": {
+              "dense": 6
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.orders;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.41073573
+            },
+            "channel_ranks": {
+              "dense": 7
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "README.md",
+              "language": "markdown",
+              "start_line": 1,
+              "end_line": 7,
+              "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4093157
+            },
+            "channel_ranks": {
+              "dense": 8
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.40412307
+            },
+            "channel_ranks": {
+              "dense": 9
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 4,
+              "end_line": 6,
+              "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+              "symbol": "WorkflowController.WorkflowController",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3963113
+            },
+            "channel_ranks": {
+              "dense": 10
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.invoice;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.39346036
+            },
+            "channel_ranks": {
+              "dense": 11
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/subscription/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.subscription;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3797787
+            },
+            "channel_ranks": {
+              "dense": 12
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.inventory;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.37700438
+            },
+            "channel_ranks": {
+              "dense": 13
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/legacy/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.legacy;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.37253106
+            },
+            "channel_ranks": {
+              "dense": 14
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3724969
+            },
+            "channel_ranks": {
+              "dense": 15
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "OrderService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.37045425
+            },
+            "channel_ranks": {
+              "dense": 16
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/notification/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.notification;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3700263
+            },
+            "channel_ranks": {
+              "dense": 17
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.36759567
+            },
+            "channel_ranks": {
+              "dense": 18
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.36681977
+            },
+            "channel_ranks": {
+              "dense": 19
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "InvoiceService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.36186475
+            },
+            "channel_ranks": {
+              "dense": 20
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.refund;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.36047572
+            },
+            "channel_ranks": {
+              "dense": 21
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/FraudService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35992873
+            },
+            "channel_ranks": {
+              "dense": 22
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "26586670-8b66-5afe-b09a-e6c2b1847fc4",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/subscription/SubscriptionService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.subscription;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35507137
+            },
+            "channel_ranks": {
+              "dense": 23
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "d96d727e-8ff6-585b-be57-300869a00792",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/notification/NotificationService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.notification;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35244808
+            },
+            "channel_ranks": {
+              "dense": 24
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.fraud;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35189086
+            },
+            "channel_ranks": {
+              "dense": 25
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/coupon/CouponService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.35101855
+            },
+            "channel_ranks": {
+              "dense": 26
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shared/SharedRecorder.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shared;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3475911
+            },
+            "channel_ranks": {
+              "dense": 27
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "InventoryService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.3442182
+            },
+            "channel_ranks": {
+              "dense": 28
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+              "symbol": "OrderService.submit",
+              "node_type": "method_declaration",
+              "parent_symbol": "OrderService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.34416115
+            },
+            "channel_ranks": {
+              "dense": 29
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/LedgerService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "LedgerService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.33967277
+            },
+            "channel_ranks": {
+              "dense": 30
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "bm25": {
+        "repository": "stage4-commerce",
+        "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+        "channel": "bm25",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 81.701,
+        "candidates": [
+          {
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 11,
+              "end_line": 17,
+              "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+              "symbol": "ShippingService.dispatch",
+              "node_type": "method_declaration",
+              "parent_symbol": "ShippingService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 7.857522955029496
+            },
+            "channel_ranks": {
+              "bm25": 1
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 8,
+              "end_line": 10,
+              "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+              "symbol": "ShippingService.ShippingService",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "ShippingService",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.9090411245077785
+            },
+            "channel_ranks": {
+              "bm25": 2
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.601345690176189
+            },
+            "channel_ranks": {
+              "bm25": 3
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shipping;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.449664770693797
+            },
+            "channel_ranks": {
+              "bm25": 4
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "ShippingService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 4.038356496604631
+            },
+            "channel_ranks": {
+              "bm25": 5
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "5927ebb2-a953-5ff9-a3b2-51556259af60",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 2,
+              "end_line": 3,
+              "content": "public final class WorkflowController {\n    private final ShippingService service;\n",
+              "symbol": "WorkflowController",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 3.843501767677902
+            },
+            "channel_ranks": {
+              "bm25": 6
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 4,
+              "end_line": 6,
+              "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+              "symbol": "WorkflowController.WorkflowController",
+              "node_type": "constructor_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 3.6621382157335396
+            },
+            "channel_ranks": {
+              "bm25": 7
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "bf4694bb-3e90-5e6a-a018-74f72c618970",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.dispatch(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 2.664274618615666
+            },
+            "channel_ranks": {
+              "bm25": 8
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.refund;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 9
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.orders;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 10
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/subscription/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.subscription;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 11
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.wallet;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 12
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.ledger;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 13
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shared/SharedRecorder.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shared;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 14
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/notification/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.notification;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 15
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/coupon/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.coupon;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 16
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.auth;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 17
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/legacy/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.legacy;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 18
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.invoice;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 19
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.inventory;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 20
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.fraud;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.03166734775625661
+            },
+            "channel_ranks": {
+              "bm25": 21
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "ddf9a64f-6927-50a6-8d4d-fe1b686b9e02",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shared/SharedRecorder.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public int count() {\n        return events;\n    }\n",
+              "symbol": "SharedRecorder.count",
+              "node_type": "method_declaration",
+              "parent_symbol": "SharedRecorder",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027983421682018485
+            },
+            "channel_ranks": {
+              "bm25": 22
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "26586670-8b66-5afe-b09a-e6c2b1847fc4",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/subscription/SubscriptionService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.subscription;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 23
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/AuthService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 24
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 25
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/FraudService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 26
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 27
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 28
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/LedgerService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 29
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          },
+          {
+            "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "bm25": 0.027451179880418626
+            },
+            "channel_ranks": {
+              "bm25": 30
+            },
+            "matched_queries": [
+              "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "exact": {
+        "repository": "stage4-commerce",
+        "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+        "channel": "exact",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 46.785,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19",
+        "match": {
+          "kind": "path",
+          "value": "backend/shipping",
+          "mode": "full"
+        },
+        "reasons": {}
+      }
+    },
+    "fused": {
+      "repository": "stage4-commerce",
+      "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+      "channel": "rrf",
+      "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.635,
+      "candidates": [
+        {
+          "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.55007875,
+            "bm25": 7.857522955029496,
+            "rrf": 0.03252247488101534
+          },
+          "channel_ranks": {
+            "dense": 2,
+            "bm25": 1,
+            "rrf": 1
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.55120355,
+            "bm25": 4.449664770693797,
+            "rrf": 0.032018442622950824
+          },
+          "channel_ranks": {
+            "dense": 1,
+            "bm25": 4,
+            "rrf": 2
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.48775187,
+            "bm25": 4.601345690176189,
+            "rrf": 0.031746031746031744
+          },
+          "channel_ranks": {
+            "dense": 3,
+            "bm25": 3,
+            "rrf": 3
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "ShippingService.ShippingService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43341482,
+            "bm25": 4.9090411245077785,
+            "rrf": 0.0315136476426799
+          },
+          "channel_ranks": {
+            "dense": 5,
+            "bm25": 2,
+            "rrf": 4
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.47606793,
+            "bm25": 4.038356496604631,
+            "rrf": 0.031009615384615385
+          },
+          "channel_ranks": {
+            "dense": 4,
+            "bm25": 5,
+            "rrf": 5
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "5927ebb2-a953-5ff9-a3b2-51556259af60",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final ShippingService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43076032,
+            "bm25": 3.843501767677902,
+            "rrf": 0.030303030303030304
+          },
+          "channel_ranks": {
+            "dense": 6,
+            "bm25": 6,
+            "rrf": 6
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.orders;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41073573,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.029211087420042643
+          },
+          "channel_ranks": {
+            "dense": 7,
+            "bm25": 10,
+            "rrf": 7
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3963113,
+            "bm25": 3.6621382157335396,
+            "rrf": 0.029211087420042643
+          },
+          "channel_ranks": {
+            "dense": 10,
+            "bm25": 7,
+            "rrf": 8
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.subscription;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3797787,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.02797339593114241
+          },
+          "channel_ranks": {
+            "dense": 12,
+            "bm25": 11,
+            "rrf": 9
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.refund;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.36047572,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.026838432635534086
+          },
+          "channel_ranks": {
+            "dense": 21,
+            "bm25": 9,
+            "rrf": 10
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.invoice;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.39346036,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.026742734890354787
+          },
+          "channel_ranks": {
+            "dense": 11,
+            "bm25": 19,
+            "rrf": 11
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.37253106,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.026334026334026334
+          },
+          "channel_ranks": {
+            "dense": 14,
+            "bm25": 18,
+            "rrf": 12
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.notification;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3700263,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.02632034632034632
+          },
+          "channel_ranks": {
+            "dense": 17,
+            "bm25": 15,
+            "rrf": 13
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.inventory;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.37700438,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.0261986301369863
+          },
+          "channel_ranks": {
+            "dense": 13,
+            "bm25": 20,
+            "rrf": 14
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40412307,
+            "bm25": 0.027451179880418626,
+            "rrf": 0.025856389986824768
+          },
+          "channel_ranks": {
+            "dense": 9,
+            "bm25": 28,
+            "rrf": 15
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3724969,
+            "bm25": 0.027451179880418626,
+            "rrf": 0.025098039215686277
+          },
+          "channel_ranks": {
+            "dense": 15,
+            "bm25": 25,
+            "rrf": 16
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shared/SharedRecorder.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shared;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3475911,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.025007766387076732
+          },
+          "channel_ranks": {
+            "dense": 27,
+            "bm25": 14,
+            "rrf": 17
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.36681977,
+            "bm25": 0.027451179880418626,
+            "rrf": 0.024152480721664482
+          },
+          "channel_ranks": {
+            "dense": 19,
+            "bm25": 27,
+            "rrf": 18
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.fraud;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35189086,
+            "bm25": 0.03166734775625661,
+            "rrf": 0.02411038489469862
+          },
+          "channel_ranks": {
+            "dense": 25,
+            "bm25": 21,
+            "rrf": 19
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "26586670-8b66-5afe-b09a-e6c2b1847fc4",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/SubscriptionService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.subscription;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35507137,
+            "bm25": 0.027451179880418626,
+            "rrf": 0.024096385542168676
+          },
+          "channel_ranks": {
+            "dense": 23,
+            "bm25": 23,
+            "rrf": 20
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/FraudService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35992873,
+            "bm25": 0.027451179880418626,
+            "rrf": 0.0238230289279637
+          },
+          "channel_ranks": {
+            "dense": 22,
+            "bm25": 26,
+            "rrf": 21
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4093157,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "dense": 8,
+            "rrf": 22
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "bf4694bb-3e90-5e6a-a018-74f72c618970",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.dispatch(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 2.664274618615666,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "bm25": 8,
+            "rrf": 23
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.wallet;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.03166734775625661,
+            "rrf": 0.013888888888888888
+          },
+          "channel_ranks": {
+            "bm25": 12,
+            "rrf": 24
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.ledger;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.03166734775625661,
+            "rrf": 0.0136986301369863
+          },
+          "channel_ranks": {
+            "bm25": 13,
+            "rrf": 25
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.coupon;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.03166734775625661,
+            "rrf": 0.013157894736842105
+          },
+          "channel_ranks": {
+            "bm25": 16,
+            "rrf": 26
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "OrderService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.37045425,
+            "rrf": 0.013157894736842105
+          },
+          "channel_ranks": {
+            "dense": 16,
+            "rrf": 27
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.auth;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.03166734775625661,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "bm25": 17,
+            "rrf": 28
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.36759567,
+            "rrf": 0.01282051282051282
+          },
+          "channel_ranks": {
+            "dense": 18,
+            "rrf": 29
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "InvoiceService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.36186475,
+            "rrf": 0.0125
+          },
+          "channel_ranks": {
+            "dense": 20,
+            "rrf": 30
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ddf9a64f-6927-50a6-8d4d-fe1b686b9e02",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shared/SharedRecorder.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public int count() {\n        return events;\n    }\n",
+            "symbol": "SharedRecorder.count",
+            "node_type": "method_declaration",
+            "parent_symbol": "SharedRecorder",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.027983421682018485,
+            "rrf": 0.012195121951219513
+          },
+          "channel_ranks": {
+            "bm25": 22,
+            "rrf": 31
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/AuthService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.027451179880418626,
+            "rrf": 0.011904761904761904
+          },
+          "channel_ranks": {
+            "bm25": 24,
+            "rrf": 32
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "d96d727e-8ff6-585b-be57-300869a00792",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/NotificationService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.notification;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35244808,
+            "rrf": 0.011904761904761904
+          },
+          "channel_ranks": {
+            "dense": 24,
+            "rrf": 33
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/CouponService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.35101855,
+            "rrf": 0.011627906976744186
+          },
+          "channel_ranks": {
+            "dense": 26,
+            "rrf": 34
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "InventoryService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3442182,
+            "rrf": 0.011363636363636364
+          },
+          "channel_ranks": {
+            "dense": 28,
+            "rrf": 35
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/LedgerService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.027451179880418626,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "bm25": 29,
+            "rrf": 36
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+            "symbol": "OrderService.submit",
+            "node_type": "method_declaration",
+            "parent_symbol": "OrderService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.34416115,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "dense": 29,
+            "rrf": 37
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/LedgerService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "LedgerService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.33967277,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "dense": 30,
+            "rrf": 38
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 0.027451179880418626,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "bm25": 30,
+            "rrf": 39
+          },
+          "matched_queries": [
+            "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+          ]
+        }
+      ],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+    },
+    "untruncated_union_count": 39,
+    "retrieval_latency_ms": 258.643,
+    "rrf_contributions": {
+      "0523e35d-65a4-5282-a5c4-856b3cac1149": {
+        "dense": {
+          "rank": 2,
+          "raw_score": 0.55007875,
+          "contribution": 0.016129032258064516
+        },
+        "bm25": {
+          "rank": 1,
+          "raw_score": 7.857522955029496,
+          "contribution": 0.01639344262295082
+        }
+      },
+      "759e11e5-fee1-57d6-becf-0f7fbc1456a0": {
+        "dense": {
+          "rank": 1,
+          "raw_score": 0.55120355,
+          "contribution": 0.01639344262295082
+        },
+        "bm25": {
+          "rank": 4,
+          "raw_score": 4.449664770693797,
+          "contribution": 0.015625
+        }
+      },
+      "58340ac1-cf7d-5586-a072-6af3e6f0be2f": {
+        "dense": {
+          "rank": 3,
+          "raw_score": 0.48775187,
+          "contribution": 0.015873015873015872
+        },
+        "bm25": {
+          "rank": 3,
+          "raw_score": 4.601345690176189,
+          "contribution": 0.015873015873015872
+        }
+      },
+      "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c": {
+        "dense": {
+          "rank": 5,
+          "raw_score": 0.43341482,
+          "contribution": 0.015384615384615385
+        },
+        "bm25": {
+          "rank": 2,
+          "raw_score": 4.9090411245077785,
+          "contribution": 0.016129032258064516
+        }
+      },
+      "e83132f7-7dba-5add-96b0-94cfaf75fbbe": {
+        "dense": {
+          "rank": 4,
+          "raw_score": 0.47606793,
+          "contribution": 0.015625
+        },
+        "bm25": {
+          "rank": 5,
+          "raw_score": 4.038356496604631,
+          "contribution": 0.015384615384615385
+        }
+      },
+      "5927ebb2-a953-5ff9-a3b2-51556259af60": {
+        "dense": {
+          "rank": 6,
+          "raw_score": 0.43076032,
+          "contribution": 0.015151515151515152
+        },
+        "bm25": {
+          "rank": 6,
+          "raw_score": 3.843501767677902,
+          "contribution": 0.015151515151515152
+        }
+      },
+      "23e46499-2114-5be0-806f-8cbc93b9ff7c": {
+        "dense": {
+          "rank": 7,
+          "raw_score": 0.41073573,
+          "contribution": 0.014925373134328358
+        },
+        "bm25": {
+          "rank": 10,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.014285714285714285
+        }
+      },
+      "4362f1da-3301-5772-ab2e-bf3ee22b06cf": {
+        "dense": {
+          "rank": 10,
+          "raw_score": 0.3963113,
+          "contribution": 0.014285714285714285
+        },
+        "bm25": {
+          "rank": 7,
+          "raw_score": 3.6621382157335396,
+          "contribution": 0.014925373134328358
+        }
+      },
+      "24a6e7c3-1617-58ab-bec5-2d374c71c456": {
+        "dense": {
+          "rank": 12,
+          "raw_score": 0.3797787,
+          "contribution": 0.013888888888888888
+        },
+        "bm25": {
+          "rank": 11,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.014084507042253521
+        }
+      },
+      "12a5b28b-2523-519d-9111-996d8b6c8948": {
+        "dense": {
+          "rank": 21,
+          "raw_score": 0.36047572,
+          "contribution": 0.012345679012345678
+        },
+        "bm25": {
+          "rank": 9,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.014492753623188406
+        }
+      },
+      "cd9a1c18-230d-5243-b75d-0168f8b7a521": {
+        "dense": {
+          "rank": 11,
+          "raw_score": 0.39346036,
+          "contribution": 0.014084507042253521
+        },
+        "bm25": {
+          "rank": 19,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.012658227848101266
+        }
+      },
+      "ccab0bc3-4fa8-5f8e-961b-f42780968572": {
+        "dense": {
+          "rank": 14,
+          "raw_score": 0.37253106,
+          "contribution": 0.013513513513513514
+        },
+        "bm25": {
+          "rank": 18,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.01282051282051282
+        }
+      },
+      "82a9a08d-dd2f-501c-bdb4-69be90d738a0": {
+        "dense": {
+          "rank": 17,
+          "raw_score": 0.3700263,
+          "contribution": 0.012987012987012988
+        },
+        "bm25": {
+          "rank": 15,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.013333333333333334
+        }
+      },
+      "e7123ff7-9351-54c9-9bd2-1f906eef1de1": {
+        "dense": {
+          "rank": 13,
+          "raw_score": 0.37700438,
+          "contribution": 0.0136986301369863
+        },
+        "bm25": {
+          "rank": 20,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.0125
+        }
+      },
+      "566e0be1-edeb-546a-8123-571a702a4096": {
+        "dense": {
+          "rank": 9,
+          "raw_score": 0.40412307,
+          "contribution": 0.014492753623188406
+        },
+        "bm25": {
+          "rank": 28,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011363636363636364
+        }
+      },
+      "4ccea97a-1da2-5ad0-91ec-86383a1e5765": {
+        "dense": {
+          "rank": 15,
+          "raw_score": 0.3724969,
+          "contribution": 0.013333333333333334
+        },
+        "bm25": {
+          "rank": 25,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011764705882352941
+        }
+      },
+      "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c": {
+        "dense": {
+          "rank": 27,
+          "raw_score": 0.3475911,
+          "contribution": 0.011494252873563218
+        },
+        "bm25": {
+          "rank": 14,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.013513513513513514
+        }
+      },
+      "55e4994d-025d-5033-8798-8ee3a9dcebaf": {
+        "dense": {
+          "rank": 19,
+          "raw_score": 0.36681977,
+          "contribution": 0.012658227848101266
+        },
+        "bm25": {
+          "rank": 27,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011494252873563218
+        }
+      },
+      "ef4ef379-fbae-551e-90a1-05d7bbad1bed": {
+        "dense": {
+          "rank": 25,
+          "raw_score": 0.35189086,
+          "contribution": 0.011764705882352941
+        },
+        "bm25": {
+          "rank": 21,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.012345679012345678
+        }
+      },
+      "26586670-8b66-5afe-b09a-e6c2b1847fc4": {
+        "dense": {
+          "rank": 23,
+          "raw_score": 0.35507137,
+          "contribution": 0.012048192771084338
+        },
+        "bm25": {
+          "rank": 23,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.012048192771084338
+        }
+      },
+      "502877c5-d6c0-5510-9e3e-f0a6366bf04b": {
+        "dense": {
+          "rank": 22,
+          "raw_score": 0.35992873,
+          "contribution": 0.012195121951219513
+        },
+        "bm25": {
+          "rank": 26,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011627906976744186
+        }
+      },
+      "b7b83eb5-d10c-53b7-b638-583131392d3b": {
+        "dense": {
+          "rank": 8,
+          "raw_score": 0.4093157,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "bf4694bb-3e90-5e6a-a018-74f72c618970": {
+        "bm25": {
+          "rank": 8,
+          "raw_score": 2.664274618615666,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "38233493-8adc-5db6-bedd-2901a2a02451": {
+        "bm25": {
+          "rank": 12,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.013888888888888888
+        }
+      },
+      "70614747-e93c-5b62-b3e3-ca760606e298": {
+        "bm25": {
+          "rank": 13,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.0136986301369863
+        }
+      },
+      "959c90da-8694-50d5-b5a0-113fc8d8dec8": {
+        "bm25": {
+          "rank": 16,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.013157894736842105
+        }
+      },
+      "c58a7a9a-6919-565d-a2e4-b287256078dc": {
+        "dense": {
+          "rank": 16,
+          "raw_score": 0.37045425,
+          "contribution": 0.013157894736842105
+        }
+      },
+      "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d": {
+        "bm25": {
+          "rank": 17,
+          "raw_score": 0.03166734775625661,
+          "contribution": 0.012987012987012988
+        }
+      },
+      "e771afb4-e7da-512e-8cb2-8400c369b5bb": {
+        "dense": {
+          "rank": 18,
+          "raw_score": 0.36759567,
+          "contribution": 0.01282051282051282
+        }
+      },
+      "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5": {
+        "dense": {
+          "rank": 20,
+          "raw_score": 0.36186475,
+          "contribution": 0.0125
+        }
+      },
+      "ddf9a64f-6927-50a6-8d4d-fe1b686b9e02": {
+        "bm25": {
+          "rank": 22,
+          "raw_score": 0.027983421682018485,
+          "contribution": 0.012195121951219513
+        }
+      },
+      "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc": {
+        "bm25": {
+          "rank": 24,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011904761904761904
+        }
+      },
+      "d96d727e-8ff6-585b-be57-300869a00792": {
+        "dense": {
+          "rank": 24,
+          "raw_score": 0.35244808,
+          "contribution": 0.011904761904761904
+        }
+      },
+      "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a": {
+        "dense": {
+          "rank": 26,
+          "raw_score": 0.35101855,
+          "contribution": 0.011627906976744186
+        }
+      },
+      "eac24f76-9ed0-575a-812f-c929133d7320": {
+        "dense": {
+          "rank": 28,
+          "raw_score": 0.3442182,
+          "contribution": 0.011363636363636364
+        }
+      },
+      "5d0330bc-0d85-5d90-a50a-54fce7a1efe8": {
+        "bm25": {
+          "rank": 29,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011235955056179775
+        }
+      },
+      "e1091402-ec1e-5b33-82fe-3b689423c2fc": {
+        "dense": {
+          "rank": 29,
+          "raw_score": 0.34416115,
+          "contribution": 0.011235955056179775
+        }
+      },
+      "34057fa2-cc5a-595c-84c1-7ab96cf91951": {
+        "dense": {
+          "rank": 30,
+          "raw_score": 0.33967277,
+          "contribution": 0.011111111111111112
+        }
+      },
+      "7518cb78-99cf-5df2-98f1-8a38577f00a9": {
+        "bm25": {
+          "rank": 30,
+          "raw_score": 0.027451179880418626,
+          "contribution": 0.011111111111111112
+        }
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+        "repository": "stage4-commerce",
+        "score": 0.03252247488101534,
+        "path": "backend/shipping/ShippingService.java",
+        "language": "java",
+        "start_line": 11,
+        "end_line": 17,
+        "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+        "symbol": "ShippingService.dispatch",
+        "node_type": "method_declaration",
+        "parent_symbol": "ShippingService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+        "repository": "stage4-commerce",
+        "score": 0.032018442622950824,
+        "path": "backend/shipping/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.shipping;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+        "repository": "stage4-commerce",
+        "score": 0.031746031746031744,
+        "path": "backend/shipping/ShippingService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 2,
+        "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+        "repository": "stage4-commerce",
+        "score": 0.0315136476426799,
+        "path": "backend/shipping/ShippingService.java",
+        "language": "java",
+        "start_line": 8,
+        "end_line": 10,
+        "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+        "symbol": "ShippingService.ShippingService",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "ShippingService",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+        "repository": "stage4-commerce",
+        "score": 0.031009615384615385,
+        "path": "backend/shipping/ShippingService.java",
+        "language": "java",
+        "start_line": 3,
+        "end_line": 7,
+        "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+        "symbol": "ShippingService",
+        "node_type": "class_declaration",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "without_exact": {
+    "repository": "stage4-commerce",
+    "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+    "channel": "rrf",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 60,
+    "retrieval_latency_ms": 0.405,
+    "candidates": [
+      {
+        "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+          "symbol": "ShippingService.dispatch",
+          "node_type": "method_declaration",
+          "parent_symbol": "ShippingService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.55007875,
+          "bm25": 7.857522955029496,
+          "rrf": 0.03252247488101534
+        },
+        "channel_ranks": {
+          "dense": 2,
+          "bm25": 1,
+          "rrf": 1
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shipping;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.55120355,
+          "bm25": 4.449664770693797,
+          "rrf": 0.032018442622950824
+        },
+        "channel_ranks": {
+          "dense": 1,
+          "bm25": 4,
+          "rrf": 2
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.48775187,
+          "bm25": 4.601345690176189,
+          "rrf": 0.031746031746031744
+        },
+        "channel_ranks": {
+          "dense": 3,
+          "bm25": 3,
+          "rrf": 3
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 8,
+          "end_line": 10,
+          "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+          "symbol": "ShippingService.ShippingService",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "ShippingService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43341482,
+          "bm25": 4.9090411245077785,
+          "rrf": 0.0315136476426799
+        },
+        "channel_ranks": {
+          "dense": 5,
+          "bm25": 2,
+          "rrf": 4
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "ShippingService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.47606793,
+          "bm25": 4.038356496604631,
+          "rrf": 0.031009615384615385
+        },
+        "channel_ranks": {
+          "dense": 4,
+          "bm25": 5,
+          "rrf": 5
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "5927ebb2-a953-5ff9-a3b2-51556259af60",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final ShippingService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43076032,
+          "bm25": 3.843501767677902,
+          "rrf": 0.030303030303030304
+        },
+        "channel_ranks": {
+          "dense": 6,
+          "bm25": 6,
+          "rrf": 6
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.orders;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.41073573,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.029211087420042643
+        },
+        "channel_ranks": {
+          "dense": 7,
+          "bm25": 10,
+          "rrf": 7
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3963113,
+          "bm25": 3.6621382157335396,
+          "rrf": 0.029211087420042643
+        },
+        "channel_ranks": {
+          "dense": 10,
+          "bm25": 7,
+          "rrf": 8
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.subscription;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3797787,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.02797339593114241
+        },
+        "channel_ranks": {
+          "dense": 12,
+          "bm25": 11,
+          "rrf": 9
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.refund;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.36047572,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.026838432635534086
+        },
+        "channel_ranks": {
+          "dense": 21,
+          "bm25": 9,
+          "rrf": 10
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.invoice;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.39346036,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.026742734890354787
+        },
+        "channel_ranks": {
+          "dense": 11,
+          "bm25": 19,
+          "rrf": 11
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.37253106,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.026334026334026334
+        },
+        "channel_ranks": {
+          "dense": 14,
+          "bm25": 18,
+          "rrf": 12
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.notification;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3700263,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.02632034632034632
+        },
+        "channel_ranks": {
+          "dense": 17,
+          "bm25": 15,
+          "rrf": 13
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.inventory;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.37700438,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.0261986301369863
+        },
+        "channel_ranks": {
+          "dense": 13,
+          "bm25": 20,
+          "rrf": 14
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40412307,
+          "bm25": 0.027451179880418626,
+          "rrf": 0.025856389986824768
+        },
+        "channel_ranks": {
+          "dense": 9,
+          "bm25": 28,
+          "rrf": 15
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3724969,
+          "bm25": 0.027451179880418626,
+          "rrf": 0.025098039215686277
+        },
+        "channel_ranks": {
+          "dense": 15,
+          "bm25": 25,
+          "rrf": 16
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shared/SharedRecorder.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shared;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3475911,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.025007766387076732
+        },
+        "channel_ranks": {
+          "dense": 27,
+          "bm25": 14,
+          "rrf": 17
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.36681977,
+          "bm25": 0.027451179880418626,
+          "rrf": 0.024152480721664482
+        },
+        "channel_ranks": {
+          "dense": 19,
+          "bm25": 27,
+          "rrf": 18
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.fraud;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35189086,
+          "bm25": 0.03166734775625661,
+          "rrf": 0.02411038489469862
+        },
+        "channel_ranks": {
+          "dense": 25,
+          "bm25": 21,
+          "rrf": 19
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "26586670-8b66-5afe-b09a-e6c2b1847fc4",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/SubscriptionService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.subscription;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35507137,
+          "bm25": 0.027451179880418626,
+          "rrf": 0.024096385542168676
+        },
+        "channel_ranks": {
+          "dense": 23,
+          "bm25": 23,
+          "rrf": 20
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/FraudService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35992873,
+          "bm25": 0.027451179880418626,
+          "rrf": 0.0238230289279637
+        },
+        "channel_ranks": {
+          "dense": 22,
+          "bm25": 26,
+          "rrf": 21
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4093157,
+          "rrf": 0.014705882352941176
+        },
+        "channel_ranks": {
+          "dense": 8,
+          "rrf": 22
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "bf4694bb-3e90-5e6a-a018-74f72c618970",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.dispatch(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 2.664274618615666,
+          "rrf": 0.014705882352941176
+        },
+        "channel_ranks": {
+          "bm25": 8,
+          "rrf": 23
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.wallet;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.03166734775625661,
+          "rrf": 0.013888888888888888
+        },
+        "channel_ranks": {
+          "bm25": 12,
+          "rrf": 24
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.ledger;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.03166734775625661,
+          "rrf": 0.0136986301369863
+        },
+        "channel_ranks": {
+          "bm25": 13,
+          "rrf": 25
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.coupon;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.03166734775625661,
+          "rrf": 0.013157894736842105
+        },
+        "channel_ranks": {
+          "bm25": 16,
+          "rrf": 26
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "OrderService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.37045425,
+          "rrf": 0.013157894736842105
+        },
+        "channel_ranks": {
+          "dense": 16,
+          "rrf": 27
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.auth;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.03166734775625661,
+          "rrf": 0.012987012987012988
+        },
+        "channel_ranks": {
+          "bm25": 17,
+          "rrf": 28
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.36759567,
+          "rrf": 0.01282051282051282
+        },
+        "channel_ranks": {
+          "dense": 18,
+          "rrf": 29
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "3102acfb-45eb-5c6f-abb6-b2a6ca9509f5",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class InvoiceService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "InvoiceService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.36186475,
+          "rrf": 0.0125
+        },
+        "channel_ranks": {
+          "dense": 20,
+          "rrf": 30
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ddf9a64f-6927-50a6-8d4d-fe1b686b9e02",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shared/SharedRecorder.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public int count() {\n        return events;\n    }\n",
+          "symbol": "SharedRecorder.count",
+          "node_type": "method_declaration",
+          "parent_symbol": "SharedRecorder",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.027983421682018485,
+          "rrf": 0.012195121951219513
+        },
+        "channel_ranks": {
+          "bm25": 22,
+          "rrf": 31
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/AuthService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.027451179880418626,
+          "rrf": 0.011904761904761904
+        },
+        "channel_ranks": {
+          "bm25": 24,
+          "rrf": 32
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "d96d727e-8ff6-585b-be57-300869a00792",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/NotificationService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.notification;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35244808,
+          "rrf": 0.011904761904761904
+        },
+        "channel_ranks": {
+          "dense": 24,
+          "rrf": 33
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/CouponService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.35101855,
+          "rrf": 0.011627906976744186
+        },
+        "channel_ranks": {
+          "dense": 26,
+          "rrf": 34
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "InventoryService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.3442182,
+          "rrf": 0.011363636363636364
+        },
+        "channel_ranks": {
+          "dense": 28,
+          "rrf": 35
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.027451179880418626,
+          "rrf": 0.011235955056179775
+        },
+        "channel_ranks": {
+          "bm25": 29,
+          "rrf": 36
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e1091402-ec1e-5b33-82fe-3b689423c2fc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 11,
+          "end_line": 17,
+          "content": "    public void submit(String reference, int amount) {\n        if (amount < 1) {\n            throw new IllegalArgumentException(\"Cart must contain an item\");\n        }\n        state = \"PAID\";\n        recorder.record(\"orders.submit\");\n    }\n",
+          "symbol": "OrderService.submit",
+          "node_type": "method_declaration",
+          "parent_symbol": "OrderService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.34416115,
+          "rrf": 0.011235955056179775
+        },
+        "channel_ranks": {
+          "dense": 29,
+          "rrf": 37
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "LedgerService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.33967277,
+          "rrf": 0.011111111111111112
+        },
+        "channel_ranks": {
+          "dense": 30,
+          "rrf": 38
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 0.027451179880418626,
+          "rrf": 0.011111111111111112
+        },
+        "channel_ranks": {
+          "bm25": 30,
+          "rrf": 39
+        },
+        "matched_queries": [
+          "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+  },
+  "strategies": {
+    "hybrid": {
+      "id": "shipping-behavior",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "repository": "stage4-commerce",
+            "score": 0.03252247488101534,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "score": 0.032018442622950824,
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "repository": "stage4-commerce",
+            "score": 0.031746031746031744,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "repository": "stage4-commerce",
+            "score": 0.0315136476426799,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "ShippingService.ShippingService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "score": 0.031009615384615385,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 258.643
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService.dispatch\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"ShippingService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void dispatch(String reference, int amount) {\\n        if (reference.length() < 5) {\\n            throw new IllegalArgumentException(\\\"Shipping postcode invalid\\\");\\n        }\\n        state = \\\"TRACK-\\\" + reference;\\n        recorder.record(\\\"shipping.dispatch\\\");\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\nimport learning.shared.SharedRecorder;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService.ShippingService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"ShippingService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public ShippingService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class ShippingService {\\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\\n    private int total = 0, months = 0, queued = 0, discount = 0;\\n    private String state = \\\"NEW\\\";\\n    private final SharedRecorder recorder;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "retrieval_rank": 1,
+            "score": 0.03252247488101534,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 11,
+            "end_line": 17,
+            "original_start_line": 11,
+            "original_end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "retrieval_rank": 2,
+            "score": 0.032018442622950824,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.shipping;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "retrieval_rank": 3,
+            "score": 0.031746031746031744,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 2,
+            "original_start_line": 1,
+            "original_end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "retrieval_rank": 4,
+            "score": 0.0315136476426799,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService.ShippingService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 8,
+            "end_line": 10,
+            "original_start_line": 8,
+            "original_end_line": 10,
+            "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "retrieval_rank": 5,
+            "score": 0.031009615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 3,
+            "end_line": 7,
+            "original_start_line": 3,
+            "original_end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 3096,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    },
+    "dense_bm25_rrf": {
+      "id": "shipping-behavior",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "在 backend/shipping 的发货流程中，追踪号由 TRACK- 前缀和地址编号构成的代码在哪里？",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "repository": "stage4-commerce",
+            "score": 0.03252247488101534,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 11,
+            "end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "score": 0.032018442622950824,
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "repository": "stage4-commerce",
+            "score": 0.031746031746031744,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "repository": "stage4-commerce",
+            "score": 0.0315136476426799,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 8,
+            "end_line": 10,
+            "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "symbol": "ShippingService.ShippingService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "score": 0.031009615384615385,
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 0.405
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService.dispatch\",\n  \"node_type\": \"method_declaration\",\n  \"parent_symbol\": \"ShippingService\",\n  \"lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"original_lines\": {\n    \"start\": 11,\n    \"end\": 17\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public void dispatch(String reference, int amount) {\\n        if (reference.length() < 5) {\\n            throw new IllegalArgumentException(\\\"Shipping postcode invalid\\\");\\n        }\\n        state = \\\"TRACK-\\\" + reference;\\n        recorder.record(\\\"shipping.dispatch\\\");\\n    }\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 2\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\nimport learning.shared.SharedRecorder;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService.ShippingService\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"ShippingService\",\n  \"lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"original_lines\": {\n    \"start\": 8,\n    \"end\": 10\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public ShippingService(SharedRecorder recorder) {\\n        this.recorder = recorder;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/ShippingService.java\",\n  \"language\": \"java\",\n  \"symbol\": \"ShippingService\",\n  \"node_type\": \"class_declaration\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 3,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"public final class ShippingService {\\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\\n    private int total = 0, months = 0, queued = 0, discount = 0;\\n    private String state = \\\"NEW\\\";\\n    private final SharedRecorder recorder;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "0523e35d-65a4-5282-a5c4-856b3cac1149",
+            "retrieval_rank": 1,
+            "score": 0.03252247488101534,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService.dispatch",
+            "node_type": "method_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 11,
+            "end_line": 17,
+            "original_start_line": 11,
+            "original_end_line": 17,
+            "content": "    public void dispatch(String reference, int amount) {\n        if (reference.length() < 5) {\n            throw new IllegalArgumentException(\"Shipping postcode invalid\");\n        }\n        state = \"TRACK-\" + reference;\n        recorder.record(\"shipping.dispatch\");\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "retrieval_rank": 2,
+            "score": 0.032018442622950824,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.shipping;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "retrieval_rank": 3,
+            "score": 0.031746031746031744,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 2,
+            "original_start_line": 1,
+            "original_end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "46bf4523-2ab8-5a7f-bd8c-2d99bef8c62c",
+            "retrieval_rank": 4,
+            "score": 0.0315136476426799,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService.ShippingService",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "ShippingService",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 8,
+            "end_line": 10,
+            "original_start_line": 8,
+            "original_end_line": 10,
+            "content": "    public ShippingService(SharedRecorder recorder) {\n        this.recorder = recorder;\n    }\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "retrieval_rank": 5,
+            "score": 0.031009615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 3,
+            "end_line": 7,
+            "original_start_line": 3,
+            "original_end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 3096,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": {
+          "1": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          },
+          "3": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          },
+          "5": {
+            "file_hit": true,
+            "file_recall": 1.0,
+            "symbol_hit": true,
+            "symbol_recall": 1.0,
+            "evidence_mrr": 1.0,
+            "range_recall": 1.0,
+            "covered_ranges": 1,
+            "required_ranges": 1,
+            "line_coverage": 1.0,
+            "covered_lines": 7,
+            "required_lines": 7,
+            "all_evidence": true
+          }
+        },
+        "context": {
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        },
+        "negative": null
+      }
+    }
+  },
+  "reference_metrics": {
+    "dense": {
+      "at_k": {
+        "1": {
+          "file_hit": false,
+          "file_recall": 0.0,
+          "symbol_hit": false,
+          "symbol_recall": 0.0,
+          "evidence_mrr": 0.0,
+          "range_recall": 0.0,
+          "covered_ranges": 0,
+          "required_ranges": 1,
+          "line_coverage": 0.0,
+          "covered_lines": 0,
+          "required_lines": 7,
+          "all_evidence": false
+        },
+        "3": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 0.5,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        },
+        "5": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 0.5,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        }
+      },
+      "context": {
+        "range_recall": 1.0,
+        "covered_ranges": 1,
+        "required_ranges": 1,
+        "line_coverage": 1.0,
+        "covered_lines": 7,
+        "required_lines": 7,
+        "all_evidence": true
+      },
+      "negative": null
+    },
+    "bm25": {
+      "at_k": {
+        "1": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        },
+        "3": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        },
+        "5": {
+          "file_hit": true,
+          "file_recall": 1.0,
+          "symbol_hit": true,
+          "symbol_recall": 1.0,
+          "evidence_mrr": 1.0,
+          "range_recall": 1.0,
+          "covered_ranges": 1,
+          "required_ranges": 1,
+          "line_coverage": 1.0,
+          "covered_lines": 7,
+          "required_lines": 7,
+          "all_evidence": true
+        }
+      },
+      "context": {
+        "range_recall": 1.0,
+        "covered_ranges": 1,
+        "required_ranges": 1,
+        "line_coverage": 1.0,
+        "covered_lines": 7,
+        "required_lines": 7,
+        "all_evidence": true
+      },
+      "negative": null
+    }
+  },
+  "deltas_at_5": {
+    "dense": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.5,
+      "all_evidence": 0
+    },
+    "bm25": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.0,
+      "all_evidence": 0
+    },
+    "without_exact": {
+      "file_hit": 0,
+      "file_recall": 0.0,
+      "symbol_recall": 0.0,
+      "range_recall": 0.0,
+      "line_coverage": 0.0,
+      "evidence_mrr": 0.0,
+      "all_evidence": 0
+    }
+  }
+}

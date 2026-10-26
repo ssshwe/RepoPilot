@@ -1,0 +1,3382 @@
+{
+  "id": "foreign-symbol",
+  "snapshot_revision": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+  "hybrid": {
+    "request": {
+      "repository": "stage4-commerce",
+      "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "parameters": {
+      "version": "rrf-v1",
+      "k": 60,
+      "rank_start": 1,
+      "formula": "sum(1 / (k + original_channel_rank))",
+      "tie_break": "descending RRF score, then ascending Chunk UUID"
+    },
+    "channels": {
+      "dense": {
+        "repository": "stage4-commerce",
+        "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+        "channel": "dense",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 74.253,
+        "candidates": [
+          {
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "README.md",
+              "language": "markdown",
+              "start_line": 1,
+              "end_line": 7,
+              "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "dense": 0.5233874
+            },
+            "channel_ranks": {
+              "dense": 1
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.inventory;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.48744026
+            },
+            "channel_ranks": {
+              "dense": 2
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shipping;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.477956
+            },
+            "channel_ranks": {
+              "dense": 3
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/legacy/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.legacy;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.47564304
+            },
+            "channel_ranks": {
+              "dense": 4
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.wallet;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4716071
+            },
+            "channel_ranks": {
+              "dense": 5
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.ledger;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4711517
+            },
+            "channel_ranks": {
+              "dense": 6
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WalletService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.46006453
+            },
+            "channel_ranks": {
+              "dense": 7
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shared/SharedRecorder.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.shared;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4600582
+            },
+            "channel_ranks": {
+              "dense": 8
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.refund;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45770514
+            },
+            "channel_ranks": {
+              "dense": 9
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45750454
+            },
+            "channel_ranks": {
+              "dense": 10
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.orders;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45712537
+            },
+            "channel_ranks": {
+              "dense": 11
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "ShippingService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45520777
+            },
+            "channel_ranks": {
+              "dense": 12
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/shipping/ShippingService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.45002872
+            },
+            "channel_ranks": {
+              "dense": 13
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/AuthService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44414762
+            },
+            "channel_ranks": {
+              "dense": 14
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/refund/RefundService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.44070667
+            },
+            "channel_ranks": {
+              "dense": 15
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43962586
+            },
+            "channel_ranks": {
+              "dense": 16
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/inventory/InventoryService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "InventoryService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4378259
+            },
+            "channel_ranks": {
+              "dense": 17
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.fraud;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43570167
+            },
+            "channel_ranks": {
+              "dense": 18
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/wallet/WalletService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "WalletService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4334102
+            },
+            "channel_ranks": {
+              "dense": 19
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/LedgerService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.43141273
+            },
+            "channel_ranks": {
+              "dense": 20
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.invoice;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42957774
+            },
+            "channel_ranks": {
+              "dense": 21
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/fraud/FraudService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42903507
+            },
+            "channel_ranks": {
+              "dense": 22
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.auth;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42628247
+            },
+            "channel_ranks": {
+              "dense": 23
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/ledger/LedgerService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "LedgerService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42608416
+            },
+            "channel_ranks": {
+              "dense": 24
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/coupon/CouponService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.42429614
+            },
+            "channel_ranks": {
+              "dense": 25
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/auth/WorkflowController.java",
+              "language": "java",
+              "start_line": 7,
+              "end_line": 9,
+              "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+              "symbol": "WorkflowController.handle",
+              "node_type": "method_declaration",
+              "parent_symbol": "WorkflowController",
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4190696
+            },
+            "channel_ranks": {
+              "dense": 26
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/coupon/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.coupon;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4187539
+            },
+            "channel_ranks": {
+              "dense": 27
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/invoice/InvoiceService.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.4159106
+            },
+            "channel_ranks": {
+              "dense": 28
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/orders/OrderService.java",
+              "language": "java",
+              "start_line": 3,
+              "end_line": 7,
+              "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+              "symbol": "OrderService",
+              "node_type": "class_declaration",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.41501373
+            },
+            "channel_ranks": {
+              "dense": 29
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          },
+          {
+            "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "backend/subscription/WorkflowController.java",
+              "language": "java",
+              "start_line": 1,
+              "end_line": 1,
+              "content": "package learning.subscription;\n",
+              "symbol": null,
+              "node_type": "program",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "channel_scores": {
+              "dense": 0.41397274
+            },
+            "channel_ranks": {
+              "dense": 30
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "bm25": {
+        "repository": "stage4-commerce",
+        "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+        "channel": "bm25",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 53.057,
+        "candidates": [
+          {
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+            "source_metadata": {
+              "path": "README.md",
+              "language": "markdown",
+              "start_line": 1,
+              "end_line": 7,
+              "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+              "symbol": null,
+              "node_type": null,
+              "parent_symbol": null,
+              "chunking_strategy": "fallback",
+              "chunking_version": "ast-fallback-line-v1"
+            },
+            "channel_scores": {
+              "bm25": 2.5151931285961417
+            },
+            "channel_ranks": {
+              "bm25": 1
+            },
+            "matched_queries": [
+              "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+            ]
+          }
+        ],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+      },
+      "exact": {
+        "repository": "stage4-commerce",
+        "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+        "channel": "exact",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 46.11,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19",
+        "match": {
+          "kind": "symbol",
+          "value": "ShadowGateway.rotate",
+          "mode": "full"
+        },
+        "reasons": {}
+      }
+    },
+    "fused": {
+      "repository": "stage4-commerce",
+      "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+      "channel": "rrf",
+      "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.323,
+      "candidates": [
+        {
+          "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.5233874,
+            "bm25": 2.5151931285961417,
+            "rrf": 0.03278688524590164
+          },
+          "channel_ranks": {
+            "dense": 1,
+            "bm25": 1,
+            "rrf": 1
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.inventory;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.48744026,
+            "rrf": 0.016129032258064516
+          },
+          "channel_ranks": {
+            "dense": 2,
+            "rrf": 2
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.477956,
+            "rrf": 0.015873015873015872
+          },
+          "channel_ranks": {
+            "dense": 3,
+            "rrf": 3
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.47564304,
+            "rrf": 0.015625
+          },
+          "channel_ranks": {
+            "dense": 4,
+            "rrf": 4
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.wallet;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4716071,
+            "rrf": 0.015384615384615385
+          },
+          "channel_ranks": {
+            "dense": 5,
+            "rrf": 5
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.ledger;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4711517,
+            "rrf": 0.015151515151515152
+          },
+          "channel_ranks": {
+            "dense": 6,
+            "rrf": 6
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.46006453,
+            "rrf": 0.014925373134328358
+          },
+          "channel_ranks": {
+            "dense": 7,
+            "rrf": 7
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shared/SharedRecorder.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shared;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4600582,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "dense": 8,
+            "rrf": 8
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.refund;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45770514,
+            "rrf": 0.014492753623188406
+          },
+          "channel_ranks": {
+            "dense": 9,
+            "rrf": 9
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45750454,
+            "rrf": 0.014285714285714285
+          },
+          "channel_ranks": {
+            "dense": 10,
+            "rrf": 10
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.orders;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45712537,
+            "rrf": 0.014084507042253521
+          },
+          "channel_ranks": {
+            "dense": 11,
+            "rrf": 11
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "ShippingService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45520777,
+            "rrf": 0.013888888888888888
+          },
+          "channel_ranks": {
+            "dense": 12,
+            "rrf": 12
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/ShippingService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45002872,
+            "rrf": 0.0136986301369863
+          },
+          "channel_ranks": {
+            "dense": 13,
+            "rrf": 13
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/AuthService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44414762,
+            "rrf": 0.013513513513513514
+          },
+          "channel_ranks": {
+            "dense": 14,
+            "rrf": 14
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/RefundService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44070667,
+            "rrf": 0.013333333333333334
+          },
+          "channel_ranks": {
+            "dense": 15,
+            "rrf": 15
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43962586,
+            "rrf": 0.013157894736842105
+          },
+          "channel_ranks": {
+            "dense": 16,
+            "rrf": 16
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "InventoryService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4378259,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "dense": 17,
+            "rrf": 17
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.fraud;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43570167,
+            "rrf": 0.01282051282051282
+          },
+          "channel_ranks": {
+            "dense": 18,
+            "rrf": 18
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WalletService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "WalletService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4334102,
+            "rrf": 0.012658227848101266
+          },
+          "channel_ranks": {
+            "dense": 19,
+            "rrf": 19
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/LedgerService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43141273,
+            "rrf": 0.0125
+          },
+          "channel_ranks": {
+            "dense": 20,
+            "rrf": 20
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.invoice;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42957774,
+            "rrf": 0.012345679012345678
+          },
+          "channel_ranks": {
+            "dense": 21,
+            "rrf": 21
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/FraudService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42903507,
+            "rrf": 0.012195121951219513
+          },
+          "channel_ranks": {
+            "dense": 22,
+            "rrf": 22
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.auth;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42628247,
+            "rrf": 0.012048192771084338
+          },
+          "channel_ranks": {
+            "dense": 23,
+            "rrf": 23
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/LedgerService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "LedgerService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42608416,
+            "rrf": 0.011904761904761904
+          },
+          "channel_ranks": {
+            "dense": 24,
+            "rrf": 24
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/CouponService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42429614,
+            "rrf": 0.011764705882352941
+          },
+          "channel_ranks": {
+            "dense": 25,
+            "rrf": 25
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4190696,
+            "rrf": 0.011627906976744186
+          },
+          "channel_ranks": {
+            "dense": 26,
+            "rrf": 26
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.coupon;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4187539,
+            "rrf": 0.011494252873563218
+          },
+          "channel_ranks": {
+            "dense": 27,
+            "rrf": 27
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4159106,
+            "rrf": 0.011363636363636364
+          },
+          "channel_ranks": {
+            "dense": 28,
+            "rrf": 28
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/OrderService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "OrderService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41501373,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "dense": 29,
+            "rrf": 29
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        },
+        {
+          "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.subscription;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41397274,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "dense": 30,
+            "rrf": 30
+          },
+          "matched_queries": [
+            "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+          ]
+        }
+      ],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+    },
+    "untruncated_union_count": 30,
+    "retrieval_latency_ms": 227.426,
+    "rrf_contributions": {
+      "b7b83eb5-d10c-53b7-b638-583131392d3b": {
+        "dense": {
+          "rank": 1,
+          "raw_score": 0.5233874,
+          "contribution": 0.01639344262295082
+        },
+        "bm25": {
+          "rank": 1,
+          "raw_score": 2.5151931285961417,
+          "contribution": 0.01639344262295082
+        }
+      },
+      "e7123ff7-9351-54c9-9bd2-1f906eef1de1": {
+        "dense": {
+          "rank": 2,
+          "raw_score": 0.48744026,
+          "contribution": 0.016129032258064516
+        }
+      },
+      "759e11e5-fee1-57d6-becf-0f7fbc1456a0": {
+        "dense": {
+          "rank": 3,
+          "raw_score": 0.477956,
+          "contribution": 0.015873015873015872
+        }
+      },
+      "ccab0bc3-4fa8-5f8e-961b-f42780968572": {
+        "dense": {
+          "rank": 4,
+          "raw_score": 0.47564304,
+          "contribution": 0.015625
+        }
+      },
+      "38233493-8adc-5db6-bedd-2901a2a02451": {
+        "dense": {
+          "rank": 5,
+          "raw_score": 0.4716071,
+          "contribution": 0.015384615384615385
+        }
+      },
+      "70614747-e93c-5b62-b3e3-ca760606e298": {
+        "dense": {
+          "rank": 6,
+          "raw_score": 0.4711517,
+          "contribution": 0.015151515151515152
+        }
+      },
+      "7518cb78-99cf-5df2-98f1-8a38577f00a9": {
+        "dense": {
+          "rank": 7,
+          "raw_score": 0.46006453,
+          "contribution": 0.014925373134328358
+        }
+      },
+      "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c": {
+        "dense": {
+          "rank": 8,
+          "raw_score": 0.4600582,
+          "contribution": 0.014705882352941176
+        }
+      },
+      "12a5b28b-2523-519d-9111-996d8b6c8948": {
+        "dense": {
+          "rank": 9,
+          "raw_score": 0.45770514,
+          "contribution": 0.014492753623188406
+        }
+      },
+      "e771afb4-e7da-512e-8cb2-8400c369b5bb": {
+        "dense": {
+          "rank": 10,
+          "raw_score": 0.45750454,
+          "contribution": 0.014285714285714285
+        }
+      },
+      "23e46499-2114-5be0-806f-8cbc93b9ff7c": {
+        "dense": {
+          "rank": 11,
+          "raw_score": 0.45712537,
+          "contribution": 0.014084507042253521
+        }
+      },
+      "e83132f7-7dba-5add-96b0-94cfaf75fbbe": {
+        "dense": {
+          "rank": 12,
+          "raw_score": 0.45520777,
+          "contribution": 0.013888888888888888
+        }
+      },
+      "58340ac1-cf7d-5586-a072-6af3e6f0be2f": {
+        "dense": {
+          "rank": 13,
+          "raw_score": 0.45002872,
+          "contribution": 0.0136986301369863
+        }
+      },
+      "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc": {
+        "dense": {
+          "rank": 14,
+          "raw_score": 0.44414762,
+          "contribution": 0.013513513513513514
+        }
+      },
+      "55e4994d-025d-5033-8798-8ee3a9dcebaf": {
+        "dense": {
+          "rank": 15,
+          "raw_score": 0.44070667,
+          "contribution": 0.013333333333333334
+        }
+      },
+      "566e0be1-edeb-546a-8123-571a702a4096": {
+        "dense": {
+          "rank": 16,
+          "raw_score": 0.43962586,
+          "contribution": 0.013157894736842105
+        }
+      },
+      "eac24f76-9ed0-575a-812f-c929133d7320": {
+        "dense": {
+          "rank": 17,
+          "raw_score": 0.4378259,
+          "contribution": 0.012987012987012988
+        }
+      },
+      "ef4ef379-fbae-551e-90a1-05d7bbad1bed": {
+        "dense": {
+          "rank": 18,
+          "raw_score": 0.43570167,
+          "contribution": 0.01282051282051282
+        }
+      },
+      "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44": {
+        "dense": {
+          "rank": 19,
+          "raw_score": 0.4334102,
+          "contribution": 0.012658227848101266
+        }
+      },
+      "5d0330bc-0d85-5d90-a50a-54fce7a1efe8": {
+        "dense": {
+          "rank": 20,
+          "raw_score": 0.43141273,
+          "contribution": 0.0125
+        }
+      },
+      "cd9a1c18-230d-5243-b75d-0168f8b7a521": {
+        "dense": {
+          "rank": 21,
+          "raw_score": 0.42957774,
+          "contribution": 0.012345679012345678
+        }
+      },
+      "502877c5-d6c0-5510-9e3e-f0a6366bf04b": {
+        "dense": {
+          "rank": 22,
+          "raw_score": 0.42903507,
+          "contribution": 0.012195121951219513
+        }
+      },
+      "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d": {
+        "dense": {
+          "rank": 23,
+          "raw_score": 0.42628247,
+          "contribution": 0.012048192771084338
+        }
+      },
+      "34057fa2-cc5a-595c-84c1-7ab96cf91951": {
+        "dense": {
+          "rank": 24,
+          "raw_score": 0.42608416,
+          "contribution": 0.011904761904761904
+        }
+      },
+      "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a": {
+        "dense": {
+          "rank": 25,
+          "raw_score": 0.42429614,
+          "contribution": 0.011764705882352941
+        }
+      },
+      "13e0bb0e-0ea3-56f4-8605-68f20d5d573f": {
+        "dense": {
+          "rank": 26,
+          "raw_score": 0.4190696,
+          "contribution": 0.011627906976744186
+        }
+      },
+      "959c90da-8694-50d5-b5a0-113fc8d8dec8": {
+        "dense": {
+          "rank": 27,
+          "raw_score": 0.4187539,
+          "contribution": 0.011494252873563218
+        }
+      },
+      "4ccea97a-1da2-5ad0-91ec-86383a1e5765": {
+        "dense": {
+          "rank": 28,
+          "raw_score": 0.4159106,
+          "contribution": 0.011363636363636364
+        }
+      },
+      "c58a7a9a-6919-565d-a2e4-b287256078dc": {
+        "dense": {
+          "rank": 29,
+          "raw_score": 0.41501373,
+          "contribution": 0.011235955056179775
+        }
+      },
+      "24a6e7c3-1617-58ab-bec5-2d374c71c456": {
+        "dense": {
+          "rank": 30,
+          "raw_score": 0.41397274,
+          "contribution": 0.011111111111111112
+        }
+      }
+    },
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "score": 0.03278688524590164,
+        "path": "README.md",
+        "language": "markdown",
+        "start_line": 1,
+        "end_line": 7,
+        "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+        "symbol": null,
+        "node_type": null,
+        "parent_symbol": null,
+        "chunking_strategy": "fallback",
+        "chunking_version": "ast-fallback-line-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+        "repository": "stage4-commerce",
+        "score": 0.016129032258064516,
+        "path": "backend/inventory/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.inventory;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+        "repository": "stage4-commerce",
+        "score": 0.015873015873015872,
+        "path": "backend/shipping/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.shipping;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "score": 0.015625,
+        "path": "backend/legacy/WalletService.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.legacy;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "score": 0.015384615384615385,
+        "path": "backend/wallet/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.wallet;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "without_exact": {
+    "repository": "stage4-commerce",
+    "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+    "channel": "rrf",
+    "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+    "candidate_limit": 60,
+    "retrieval_latency_ms": 0.34,
+    "candidates": [
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.5233874,
+          "bm25": 2.5151931285961417,
+          "rrf": 0.03278688524590164
+        },
+        "channel_ranks": {
+          "dense": 1,
+          "bm25": 1,
+          "rrf": 1
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.inventory;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.48744026,
+          "rrf": 0.016129032258064516
+        },
+        "channel_ranks": {
+          "dense": 2,
+          "rrf": 2
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shipping;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.477956,
+          "rrf": 0.015873015873015872
+        },
+        "channel_ranks": {
+          "dense": 3,
+          "rrf": 3
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.47564304,
+          "rrf": 0.015625
+        },
+        "channel_ranks": {
+          "dense": 4,
+          "rrf": 4
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.wallet;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4716071,
+          "rrf": 0.015384615384615385
+        },
+        "channel_ranks": {
+          "dense": 5,
+          "rrf": 5
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.ledger;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4711517,
+          "rrf": 0.015151515151515152
+        },
+        "channel_ranks": {
+          "dense": 6,
+          "rrf": 6
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "7518cb78-99cf-5df2-98f1-8a38577f00a9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.wallet;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.46006453,
+          "rrf": 0.014925373134328358
+        },
+        "channel_ranks": {
+          "dense": 7,
+          "rrf": 7
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shared/SharedRecorder.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shared;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4600582,
+          "rrf": 0.014705882352941176
+        },
+        "channel_ranks": {
+          "dense": 8,
+          "rrf": 8
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "12a5b28b-2523-519d-9111-996d8b6c8948",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.refund;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45770514,
+          "rrf": 0.014492753623188406
+        },
+        "channel_ranks": {
+          "dense": 9,
+          "rrf": 9
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45750454,
+          "rrf": 0.014285714285714285
+        },
+        "channel_ranks": {
+          "dense": 10,
+          "rrf": 10
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.orders;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45712537,
+          "rrf": 0.014084507042253521
+        },
+        "channel_ranks": {
+          "dense": 11,
+          "rrf": 11
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "e83132f7-7dba-5add-96b0-94cfaf75fbbe",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class ShippingService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "ShippingService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45520777,
+          "rrf": 0.013888888888888888
+        },
+        "channel_ranks": {
+          "dense": 12,
+          "rrf": 12
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "58340ac1-cf7d-5586-a072-6af3e6f0be2f",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/ShippingService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.shipping;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45002872,
+          "rrf": 0.0136986301369863
+        },
+        "channel_ranks": {
+          "dense": 13,
+          "rrf": 13
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/AuthService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44414762,
+          "rrf": 0.013513513513513514
+        },
+        "channel_ranks": {
+          "dense": 14,
+          "rrf": 14
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "55e4994d-025d-5033-8798-8ee3a9dcebaf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/RefundService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.refund;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44070667,
+          "rrf": 0.013333333333333334
+        },
+        "channel_ranks": {
+          "dense": 15,
+          "rrf": 15
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "566e0be1-edeb-546a-8123-571a702a4096",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.orders;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43962586,
+          "rrf": 0.013157894736842105
+        },
+        "channel_ranks": {
+          "dense": 16,
+          "rrf": 16
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "eac24f76-9ed0-575a-812f-c929133d7320",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/InventoryService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class InventoryService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "InventoryService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4378259,
+          "rrf": 0.012987012987012988
+        },
+        "channel_ranks": {
+          "dense": 17,
+          "rrf": 17
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.fraud;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43570167,
+          "rrf": 0.01282051282051282
+        },
+        "channel_ranks": {
+          "dense": 18,
+          "rrf": 18
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "e3b8bac9-531a-5f0e-8f1d-1c74c7a2ea44",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class WalletService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4334102,
+          "rrf": 0.012658227848101266
+        },
+        "channel_ranks": {
+          "dense": 19,
+          "rrf": 19
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "5d0330bc-0d85-5d90-a50a-54fce7a1efe8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.ledger;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43141273,
+          "rrf": 0.0125
+        },
+        "channel_ranks": {
+          "dense": 20,
+          "rrf": 20
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.invoice;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42957774,
+          "rrf": 0.012345679012345678
+        },
+        "channel_ranks": {
+          "dense": 21,
+          "rrf": 21
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/FraudService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42903507,
+          "rrf": 0.012195121951219513
+        },
+        "channel_ranks": {
+          "dense": 22,
+          "rrf": 22
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.auth;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42628247,
+          "rrf": 0.012048192771084338
+        },
+        "channel_ranks": {
+          "dense": 23,
+          "rrf": 23
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "34057fa2-cc5a-595c-84c1-7ab96cf91951",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/LedgerService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class LedgerService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "LedgerService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42608416,
+          "rrf": 0.011904761904761904
+        },
+        "channel_ranks": {
+          "dense": 24,
+          "rrf": 24
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/CouponService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42429614,
+          "rrf": 0.011764705882352941
+        },
+        "channel_ranks": {
+          "dense": 25,
+          "rrf": 25
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 7,
+          "end_line": 9,
+          "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+          "symbol": "WorkflowController.handle",
+          "node_type": "method_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4190696,
+          "rrf": 0.011627906976744186
+        },
+        "channel_ranks": {
+          "dense": 26,
+          "rrf": 26
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.coupon;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4187539,
+          "rrf": 0.011494252873563218
+        },
+        "channel_ranks": {
+          "dense": 27,
+          "rrf": 27
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/InvoiceService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4159106,
+          "rrf": 0.011363636363636364
+        },
+        "channel_ranks": {
+          "dense": 28,
+          "rrf": 28
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "c58a7a9a-6919-565d-a2e4-b287256078dc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/OrderService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 7,
+          "content": "public final class OrderService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+          "symbol": "OrderService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.41501373,
+          "rrf": 0.011235955056179775
+        },
+        "channel_ranks": {
+          "dense": 29,
+          "rrf": 29
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      },
+      {
+        "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.subscription;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.41397274,
+          "rrf": 0.011111111111111112
+        },
+        "channel_ranks": {
+          "dense": 30,
+          "rrf": 30
+        },
+        "matched_queries": [
+          "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。"
+        ]
+      }
+    ],
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+  },
+  "strategies": {
+    "hybrid": {
+      "id": "foreign-symbol",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "score": 0.03278688524590164,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "repository": "stage4-commerce",
+            "score": 0.016129032258064516,
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.inventory;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "score": 0.015873015873015872,
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "score": 0.015625,
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "repository": "stage4-commerce",
+            "score": 0.015384615384615385,
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.wallet;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 227.426
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"README.md\",\n  \"language\": \"markdown\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"# Commerce retrieval learning fixture\\n\\nThis handwritten fixture is not a deployed payment application.\\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\\nThe database defaults wallet balance to zero and ledger status to PENDING.\\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/inventory/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.inventory;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.legacy;\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.wallet;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "retrieval_rank": 1,
+            "score": 0.03278688524590164,
+            "repository": "stage4-commerce",
+            "path": "README.md",
+            "language": "markdown",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 7,
+            "original_start_line": 1,
+            "original_end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "retrieval_rank": 2,
+            "score": 0.016129032258064516,
+            "repository": "stage4-commerce",
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.inventory;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "retrieval_rank": 3,
+            "score": 0.015873015873015872,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.shipping;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "retrieval_rank": 4,
+            "score": 0.015625,
+            "repository": "stage4-commerce",
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.legacy;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "retrieval_rank": 5,
+            "score": 0.015384615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.wallet;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 2745,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "repository_scope_mismatch",
+          "returned_chunks": 5,
+          "empty_result": false,
+          "foreign_repository_chunks": 0
+        }
+      }
+    },
+    "dense_bm25_rrf": {
+      "id": "foreign-symbol",
+      "retrieval": {
+        "repository": "stage4-commerce",
+        "query": "只在当前 commerce 仓库中定位 ShadowGateway.rotate，不搜索 shadow 仓库。",
+        "top_k": 5,
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "repository": "stage4-commerce",
+            "score": 0.03278688524590164,
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "repository": "stage4-commerce",
+            "score": 0.016129032258064516,
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.inventory;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "repository": "stage4-commerce",
+            "score": 0.015873015873015872,
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "repository": "stage4-commerce",
+            "score": 0.015625,
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "repository": "stage4-commerce",
+            "score": 0.015384615384615385,
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.wallet;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          }
+        ],
+        "retrieval_latency_ms": 0.34
+      },
+      "context": {
+        "repository": "stage4-commerce",
+        "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"README.md\",\n  \"language\": \"markdown\",\n  \"symbol\": null,\n  \"node_type\": null,\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 7\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 7\n  },\n  \"chunking_strategy\": \"fallback\",\n  \"chunking_version\": \"ast-fallback-line-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"# Commerce retrieval learning fixture\\n\\nThis handwritten fixture is not a deployed payment application.\\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\\nThe database defaults wallet balance to zero and ledger status to PENDING.\\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/inventory/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.inventory;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/shipping/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.shipping;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/legacy/WalletService.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.legacy;\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/wallet/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.wallet;\\n\"\n}\n[/SOURCE S5]",
+        "sources": [
+          {
+            "source_id": "S1",
+            "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+            "retrieval_rank": 1,
+            "score": 0.03278688524590164,
+            "repository": "stage4-commerce",
+            "path": "README.md",
+            "language": "markdown",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1",
+            "start_line": 1,
+            "end_line": 7,
+            "original_start_line": 1,
+            "original_end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S2",
+            "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+            "retrieval_rank": 2,
+            "score": 0.016129032258064516,
+            "repository": "stage4-commerce",
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.inventory;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S3",
+            "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+            "retrieval_rank": 3,
+            "score": 0.015873015873015872,
+            "repository": "stage4-commerce",
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.shipping;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S4",
+            "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+            "retrieval_rank": 4,
+            "score": 0.015625,
+            "repository": "stage4-commerce",
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.legacy;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          },
+          {
+            "source_id": "S5",
+            "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+            "retrieval_rank": 5,
+            "score": 0.015384615384615385,
+            "repository": "stage4-commerce",
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1",
+            "start_line": 1,
+            "end_line": 1,
+            "original_start_line": 1,
+            "original_end_line": 1,
+            "content": "package learning.wallet;\n",
+            "overlap_trimmed": false,
+            "budget_truncated": false
+          }
+        ],
+        "retrieved_chunks": 5,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 5,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 2745,
+        "budget_limited": false,
+        "empty_reason": null
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "repository_scope_mismatch",
+          "returned_chunks": 5,
+          "empty_result": false,
+          "foreign_repository_chunks": 0
+        }
+      }
+    }
+  },
+  "reference_metrics": {
+    "dense": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "repository_scope_mismatch",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    },
+    "bm25": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "repository_scope_mismatch",
+        "returned_chunks": 1,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    }
+  },
+  "deltas_at_5": {
+    "dense": {
+      "negative_empty_result_changed": false
+    },
+    "bm25": {
+      "negative_empty_result_changed": false
+    },
+    "without_exact": {
+      "negative_empty_result_changed": false
+    }
+  }
+}

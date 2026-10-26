@@ -1,0 +1,12 @@
+{
+  "rrf_k": 60,
+  "rank_start": 1,
+  "dense": 30,
+  "bm25": 30,
+  "exact": 10,
+  "fusion": 60,
+  "top_k": 5,
+  "context_sources": 5,
+  "context_characters": 16000,
+  "holdout": false
+}

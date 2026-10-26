@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–7**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–8**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -71,6 +71,16 @@ Twenty-four frozen probes, 52 unchanged BM25 results and five real Qdrant
 filter scenarios are saved and replayable offline. The current default backend
 suite passes 1221 tests (6 skipped), and evaluation passes 172 tests.
 Production still uses Dense; Hybrid/RRF is the next task.
+
+[Stage 4 Task 8](docs/stage-4-task-8-hybrid.md) adds guarded Hybrid retrieval
+and 1-based RRF with k=60. It preserves original channel ranks/scores, rejects
+scope/version/source conflicts, and returns at most 60 fused candidates before
+the existing final TopK adapter. On the same 52 frozen questions, development
+complete-range Recall@5 reaches 89.58% (Dense 79.69%); complete evidence rises
+from 22/32 to 24/32. Historical complete evidence stays at 8/12 while MRR declines
+from 0.6042 to 0.4667. Three real Qdrant Hybrid scenarios and offline replay pass.
+The default backend suite passes 1254 tests (6 skipped), and evaluation passes
+190 tests. Production remains Dense; Retrieval Debug integration is Task 9.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
