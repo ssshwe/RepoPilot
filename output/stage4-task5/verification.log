@@ -1,0 +1,157 @@
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/AuthService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/CouponService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/FraudService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/InventoryService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/InvoiceService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/LedgerService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/legacy/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/NotificationService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/OrderService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shared/SharedRecorder.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/ShippingService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/SubscriptionService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=config/application.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.service Index prepared repository=stage4-commerce files_scanned=29 ast_parsed_files=26 fallback_files=3 failed_files=0 chunks_created=106
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/ShadowGateway.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.service Index prepared repository=stage4-shadow files_scanned=2 ast_parsed_files=2 fallback_files=0 failed_files=0 chunks_created=6
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.indexing.service Index prepared repository=stage4-empty files_scanned=1 ast_parsed_files=0 fallback_files=0 failed_files=0 chunks_created=0
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/AuthService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/CouponService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/FraudService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/InventoryService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/InvoiceService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/LedgerService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/legacy/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/NotificationService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/OrderService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shared/SharedRecorder.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/ShippingService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/SubscriptionService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=config/application.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.service Index prepared repository=stage4-commerce files_scanned=29 ast_parsed_files=26 fallback_files=3 failed_files=0 chunks_created=106
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/ShadowGateway.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.service Index prepared repository=stage4-shadow files_scanned=2 ast_parsed_files=2 fallback_files=0 failed_files=0 chunks_created=6
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.indexing.service Index prepared repository=stage4-empty files_scanned=1 ast_parsed_files=0 fallback_files=0 failed_files=0 chunks_created=0
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.repository.scanner Repository scan repository=demo-repository files_scanned=10 supported=8 skipped=2 pruned=0 bytes=4076
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/controller/OrderController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=backend/service/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=config/repository.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/RefundPanel.vue strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=demo-repository path=frontend/src/types.ts strategy=ast fallback_reason=None chunks=1
+INFO app.indexing.service Index prepared repository=demo-repository files_scanned=10 ast_parsed_files=4 fallback_files=4 failed_files=0 chunks_created=17
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=README.md strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/AuthService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/auth/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/CouponService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/coupon/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/FraudService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/fraud/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/InventoryService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/inventory/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/InvoiceService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/invoice/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/LedgerService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/ledger/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/legacy/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/NotificationService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/notification/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/OrderService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/orders/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/RefundService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/refund/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shared/SharedRecorder.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/ShippingService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/shipping/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/SubscriptionService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/subscription/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=backend/wallet/WorkflowController.java strategy=ast fallback_reason=None chunks=4
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=config/application.json strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.ast_chunker chunk_file repository=stage4-commerce path=database/schema.sql strategy=fallback fallback_reason=unsupported_language chunks=1
+INFO app.indexing.service Index prepared repository=stage4-commerce files_scanned=29 ast_parsed_files=26 fallback_files=3 failed_files=0 chunks_created=106
+INFO app.repository.scanner Repository scan repository=stage4-shadow files_scanned=2 supported=2 skipped=0 pruned=0 bytes=325
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/ShadowGateway.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.ast_chunker chunk_file repository=stage4-shadow path=backend/wallet/WalletService.java strategy=ast fallback_reason=None chunks=3
+INFO app.indexing.service Index prepared repository=stage4-shadow files_scanned=2 ast_parsed_files=2 fallback_files=0 failed_files=0 chunks_created=6
+INFO app.repository.scanner Repository scan repository=stage4-empty files_scanned=1 supported=0 skipped=1 pruned=0 bytes=0
+INFO app.indexing.service Index prepared repository=stage4-empty files_scanned=1 ast_parsed_files=0 fallback_files=0 failed_files=0 chunks_created=0
+INFO app.repository.scanner Repository scan repository=stage4-commerce files_scanned=29 supported=29 skipped=0 pruned=0 bytes=12756
+Task 5 complete: 1160 backend / 141 evaluation tests; 14 live phases; 853 old files unchanged; zero offline network attempts

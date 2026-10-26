@@ -12,6 +12,9 @@ __pycache__/
 .tools/
 output/startup/
 .playwright-cli/
+# SQLite runtime sidecars; proof backups themselves remain versioned.
+*.sqlite3-wal
+*.sqlite3-shm
 
 # Frontend
 node_modules/

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "index": {
+    "scope": {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "stage4-empty"
+    },
+    "configuration": {
+      "chunking": {
+        "chunk_lines": 60,
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "max_chunk_characters": 8192,
+        "overlap_lines": 10
+      },
+      "dimension": 1024,
+      "distance": "Cosine",
+      "embedding": {
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_provider": "openai_compatible",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+        "schema_version": "code-points-v1"
+      }
+    },
+    "chunks": []
+  },
+  "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+  "source_sha256": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "tokenizer": {
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "field_separator": "newline",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "max_characters": 2000000,
+    "max_tokens": 200000,
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "stemming": false,
+    "stopwords": false,
+    "translation": false,
+    "unicode_version": "15.0.0",
+    "version": "code-lexical-v1"
+  },
+  "tokenizer_implementation_sha256": "sha256:10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773",
+  "documents": []
+}

@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "index": {
+    "scope": {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "stage4-shadow"
+    },
+    "configuration": {
+      "chunking": {
+        "chunk_lines": 60,
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "max_chunk_characters": 8192,
+        "overlap_lines": 10
+      },
+      "dimension": 1024,
+      "distance": "Cosine",
+      "embedding": {
+        "embedding_model": "qwen3-embedding:0.6b",
+        "embedding_provider": "openai_compatible",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+        "schema_version": "code-points-v1"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "19ee5211-b69e-5d97-b617-08a2e06f8852",
+        "source": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 5,
+          "content": "    public void credit(String reference, int amount) {\n        throw new IllegalArgumentException(\"Shadow wallet is disabled\");\n    }\n",
+          "symbol": "WalletService.credit",
+          "node_type": "method_declaration",
+          "parent_symbol": "WalletService",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:14cb79d1431484d68b311142891eb87a98f16328de34502519d8c0b941d60cc8",
+        "vector_sha256": "sha256:c674d908d9d090025ad6d94e5a709da8ff626bc97080ef999699b32346ffa182"
+      },
+      {
+        "chunk_id": "315926d9-838c-5db6-960a-3d5c2179f08a",
+        "source": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package shadow;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:068980e67c2d96979e13f1cd57a7f3588f5512c6bfcfce77e7fe12f9b5d02af0",
+        "vector_sha256": "sha256:fd911d0019b3fd60846ee2209b5404b2b5934ac3e5ea1244fdd61741b11906ef"
+      },
+      {
+        "chunk_id": "c5f5e56b-b650-5c94-8d89-97f7a0d96436",
+        "source": {
+          "path": "backend/ShadowGateway.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package shadow;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:6ca86ae7a17f7cee4e60623f5906de6c3d2b52aa2b9fb473bcd75fb904f90806",
+        "vector_sha256": "sha256:98c786cd3a91cc8ddbde054526ec19a62837cefc233bcf67a52596df3d727fe5"
+      },
+      {
+        "chunk_id": "cbd56165-d458-5f78-8237-aafdab73e571",
+        "source": {
+          "path": "backend/wallet/WalletService.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 2,
+          "content": "public final class WalletService {\n",
+          "symbol": "WalletService",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:b73c8817b7d98552104844af7f216371726cd080ac0f56e5c73b4cb9fb04a317",
+        "vector_sha256": "sha256:b37335c73b50382a5db7426991875d51c483fc13ef5f76015f1dfcdd966d36b6"
+      },
+      {
+        "chunk_id": "cf386ff5-0436-57f2-8e48-f1e7d56439b1",
+        "source": {
+          "path": "backend/ShadowGateway.java",
+          "language": "java",
+          "start_line": 3,
+          "end_line": 5,
+          "content": "    public void rotate() {\n        System.out.println(\"SHADOW_ONLY_ROTATION\");\n    }\n",
+          "symbol": "ShadowGateway.rotate",
+          "node_type": "method_declaration",
+          "parent_symbol": "ShadowGateway",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:783ffccb8ce84c9c666ad5c2e414b94685253954888ceda6f5568eafad7f0758",
+        "vector_sha256": "sha256:3a50886a3fc3e1f904705513b268be653c1c8ddf4f39d0784eefc69b621cdca4"
+      },
+      {
+        "chunk_id": "d3c518f9-a8e1-5909-a073-54391cb8c0c5",
+        "source": {
+          "path": "backend/ShadowGateway.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 2,
+          "content": "public final class ShadowGateway {\n",
+          "symbol": "ShadowGateway",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:ae973642c657bbe6fe433b7fcfe7ab57b655739b4d762c86958465ae82e4645a",
+        "vector_sha256": "sha256:77f386b6d93e125a4f47c60aaf332f2db8fc3f3c62ae707c5f6023bdaefeba99"
+      }
+    ]
+  },
+  "index_revision": "sha256:6cb0040b45f80f1a3508ff1775f453197db1ccf31615ad46ec4820d2dabcdf60",
+  "source_sha256": "sha256:1c88a9a09070890a4f9fac54b8d79878ff1dc2f487b3697d75b66064f5877612",
+  "tokenizer": {
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "field_separator": "newline",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "max_characters": 2000000,
+    "max_tokens": 200000,
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "stemming": false,
+    "stopwords": false,
+    "translation": false,
+    "unicode_version": "15.0.0",
+    "version": "code-lexical-v1"
+  },
+  "tokenizer_implementation_sha256": "sha256:10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773",
+  "documents": [
+    {
+      "chunk_id": "19ee5211-b69e-5d97-b617-08a2e06f8852",
+      "tokens": [
+        "public",
+        "void",
+        "credit",
+        "string",
+        "reference",
+        "int",
+        "amount",
+        "throw",
+        "new",
+        "illegalargumentexception",
+        "illegal",
+        "argument",
+        "exception",
+        "shadow",
+        "wallet",
+        "is",
+        "disabled",
+        "backend/wallet/walletservice.java",
+        "walletservice.java",
+        "backend",
+        "wallet",
+        "walletservice",
+        "wallet",
+        "service",
+        "java",
+        "walletservice.credit",
+        "walletservice",
+        "wallet",
+        "service",
+        "credit"
+      ],
+      "term_frequencies": {
+        "amount": 1,
+        "argument": 1,
+        "backend": 1,
+        "backend/wallet/walletservice.java": 1,
+        "credit": 2,
+        "disabled": 1,
+        "exception": 1,
+        "illegal": 1,
+        "illegalargumentexception": 1,
+        "int": 1,
+        "is": 1,
+        "java": 1,
+        "new": 1,
+        "public": 1,
+        "reference": 1,
+        "service": 2,
+        "shadow": 1,
+        "string": 1,
+        "throw": 1,
+        "void": 1,
+        "wallet": 4,
+        "walletservice": 2,
+        "walletservice.credit": 1,
+        "walletservice.java": 1
+      }
+    },
+    {
+      "chunk_id": "315926d9-838c-5db6-960a-3d5c2179f08a",
+      "tokens": [
+        "package",
+        "shadow",
+        "backend/wallet/walletservice.java",
+        "walletservice.java",
+        "backend",
+        "wallet",
+        "walletservice",
+        "wallet",
+        "service",
+        "java"
+      ],
+      "term_frequencies": {
+        "backend": 1,
+        "backend/wallet/walletservice.java": 1,
+        "java": 1,
+        "package": 1,
+        "service": 1,
+        "shadow": 1,
+        "wallet": 2,
+        "walletservice": 1,
+        "walletservice.java": 1
+      }
+    },
+    {
+      "chunk_id": "c5f5e56b-b650-5c94-8d89-97f7a0d96436",
+      "tokens": [
+        "package",
+        "shadow",
+        "backend/shadowgateway.java",
+        "shadowgateway.java",
+        "backend",
+        "shadowgateway",
+        "shadow",
+        "gateway",
+        "java"
+      ],
+      "term_frequencies": {
+        "backend": 1,
+        "backend/shadowgateway.java": 1,
+        "gateway": 1,
+        "java": 1,
+        "package": 1,
+        "shadow": 2,
+        "shadowgateway": 1,
+        "shadowgateway.java": 1
+      }
+    },
+    {
+      "chunk_id": "cbd56165-d458-5f78-8237-aafdab73e571",
+      "tokens": [
+        "public",
+        "final",
+        "class",
+        "walletservice",
+        "wallet",
+        "service",
+        "backend/wallet/walletservice.java",
+        "walletservice.java",
+        "backend",
+        "wallet",
+        "walletservice",
+        "wallet",
+        "service",
+        "java",
+        "walletservice",
+        "wallet",
+        "service"
+      ],
+      "term_frequencies": {
+        "backend": 1,
+        "backend/wallet/walletservice.java": 1,
+        "class": 1,
+        "final": 1,
+        "java": 1,
+        "public": 1,
+        "service": 3,
+        "wallet": 4,
+        "walletservice": 3,
+        "walletservice.java": 1
+      }
+    },
+    {
+      "chunk_id": "cf386ff5-0436-57f2-8e48-f1e7d56439b1",
+      "tokens": [
+        "public",
+        "void",
+        "rotate",
+        "system.out.println",
+        "system",
+        "out",
+        "println",
+        "shadow_only_rotation",
+        "shadow",
+        "only",
+        "rotation",
+        "backend/shadowgateway.java",
+        "shadowgateway.java",
+        "backend",
+        "shadowgateway",
+        "shadow",
+        "gateway",
+        "java",
+        "shadowgateway.rotate",
+        "shadowgateway",
+        "shadow",
+        "gateway",
+        "rotate"
+      ],
+      "term_frequencies": {
+        "backend": 1,
+        "backend/shadowgateway.java": 1,
+        "gateway": 2,
+        "java": 1,
+        "only": 1,
+        "out": 1,
+        "println": 1,
+        "public": 1,
+        "rotate": 2,
+        "rotation": 1,
+        "shadow": 3,
+        "shadow_only_rotation": 1,
+        "shadowgateway": 2,
+        "shadowgateway.java": 1,
+        "shadowgateway.rotate": 1,
+        "system": 1,
+        "system.out.println": 1,
+        "void": 1
+      }
+    },
+    {
+      "chunk_id": "d3c518f9-a8e1-5909-a073-54391cb8c0c5",
+      "tokens": [
+        "public",
+        "final",
+        "class",
+        "shadowgateway",
+        "shadow",
+        "gateway",
+        "backend/shadowgateway.java",
+        "shadowgateway.java",
+        "backend",
+        "shadowgateway",
+        "shadow",
+        "gateway",
+        "java",
+        "shadowgateway",
+        "shadow",
+        "gateway"
+      ],
+      "term_frequencies": {
+        "backend": 1,
+        "backend/shadowgateway.java": 1,
+        "class": 1,
+        "final": 1,
+        "gateway": 3,
+        "java": 1,
+        "public": 1,
+        "shadow": 3,
+        "shadowgateway": 3,
+        "shadowgateway.java": 1
+      }
+    }
+  ]
+}

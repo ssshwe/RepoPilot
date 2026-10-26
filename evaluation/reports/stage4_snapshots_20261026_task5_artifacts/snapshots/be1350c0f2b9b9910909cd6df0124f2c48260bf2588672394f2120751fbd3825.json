@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "index": {
+    "scope": {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+      "repository": "alpha"
+    },
+    "configuration": {
+      "chunking": {
+        "chunk_lines": 60,
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "max_chunk_characters": 8192,
+        "overlap_lines": 10
+      },
+      "dimension": 3,
+      "distance": "Cosine",
+      "embedding": {
+        "embedding_model": "task5-storage-test",
+        "embedding_provider": "openai_compatible",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+        "schema_version": "code-points-v1"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "49086d34-11cf-5fb5-96f4-0c9250713802",
+        "source": {
+          "path": "keep.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "def credit(amount):\r\n    return \"alpha-recovered\"\r\n",
+          "symbol": "credit",
+          "node_type": "function_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:8b69486a51f3223186221ad7f9b39edc878c1d15b12ae85cbb29b9e8b549d988",
+        "vector_sha256": "sha256:4038c71f32b1e0b99e22be8120608645adba7fe339e63085b8c9ca1580576685"
+      },
+      {
+        "chunk_id": "5bfe12d0-430b-5440-a726-0435a30cc7fe",
+        "source": {
+          "path": "new.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "def added():\r\n    return \"new\"\r\n",
+          "symbol": "added",
+          "node_type": "function_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:3c96c717a076bad403331d1cd64544ea0ba6c6bb4626dfde56a008055951c654",
+        "vector_sha256": "sha256:4038c71f32b1e0b99e22be8120608645adba7fe339e63085b8c9ca1580576685"
+      }
+    ]
+  },
+  "index_revision": "sha256:b9c05f40f8757fddc3f65cf8c84ae75cb741650bfe3d630509ebdefb8a9863c0",
+  "source_sha256": "sha256:1d412c3641870473894e28a40d50b6db4b1f69b55e709fdcc98c403b27d2fc10",
+  "tokenizer": {
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "field_separator": "newline",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "max_characters": 2000000,
+    "max_tokens": 200000,
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "stemming": false,
+    "stopwords": false,
+    "translation": false,
+    "unicode_version": "15.0.0",
+    "version": "code-lexical-v1"
+  },
+  "tokenizer_implementation_sha256": "sha256:10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773",
+  "documents": [
+    {
+      "chunk_id": "49086d34-11cf-5fb5-96f4-0c9250713802",
+      "tokens": [
+        "def",
+        "credit",
+        "amount",
+        "return",
+        "alpha",
+        "recovered",
+        "keep.py",
+        "keep",
+        "py",
+        "credit"
+      ],
+      "term_frequencies": {
+        "alpha": 1,
+        "amount": 1,
+        "credit": 2,
+        "def": 1,
+        "keep": 1,
+        "keep.py": 1,
+        "py": 1,
+        "recovered": 1,
+        "return": 1
+      }
+    },
+    {
+      "chunk_id": "5bfe12d0-430b-5440-a726-0435a30cc7fe",
+      "tokens": [
+        "def",
+        "added",
+        "return",
+        "new",
+        "new.py",
+        "new",
+        "py",
+        "added"
+      ],
+      "term_frequencies": {
+        "added": 2,
+        "def": 1,
+        "new": 2,
+        "new.py": 1,
+        "py": 1,
+        "return": 1
+      }
+    }
+  ]
+}

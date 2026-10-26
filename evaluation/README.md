@@ -1,5 +1,28 @@
 # Repository evaluation
 
+## Stage 4 Task 5 shared snapshot lifecycle
+
+[`stage4/verify_snapshots.py`](stage4/verify_snapshots.py) builds persistent
+snapshots from 129 saved Chunks and checks the production repository read-only.
+It then exercises real Qdrant writes in an isolated 3D storage fixture: source
+edits, deleted files, a confirmed partial-write failure, explicit recovery,
+delete-all and external vector drift. Fourteen phases preserve failure receipts;
+seven scope snapshots restore in a separate Python process.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_snapshots.py
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_snapshots.py `
+  --verify-only evaluation/reports/stage4_snapshots_20261026_task5.json
+```
+
+JSON generations and a SQLite backup are fingerprinted. Offline replay checks
+the intended Chunk manifests, scope/epoch state, Tokenizer compatibility,
+deleted evidence and failed/recovered inventories. No real embedding or
+generation calls occur; six deterministic fixture embedding calls provide
+storage-test vectors only. The temporary collection is deleted and original
+collections remain unchanged. This is lifecycle evidence, not retrieval-quality
+improvement. See [Task 5 interfaces and limits](../docs/stage-4-task-5-snapshots.md).
+
 ## Stage 4 Task 4 tokenizer receipts
 
 [`stage4/verify_tokenizer.py`](stage4/verify_tokenizer.py) checks the shared

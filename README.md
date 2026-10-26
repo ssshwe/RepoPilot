@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–4**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–5**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -43,7 +43,17 @@ parts, paths, error text and Chinese character bigrams. Its offline receipts cov
 129 frozen chunks and 52 development/regression queries without model calls or
 index writes. All 72 tokenizer tests pass; the current default backend suite has
 1128 passing tests and the evaluation suite has 130. Production retrieval remains
-Dense, with BM25 and shared lexical snapshots still scheduled for later tasks.
+Dense, with BM25 still scheduled for a later task.
+
+[Stage 4 Task 5](docs/stage-4-task-5-snapshots.md) adds durable shared lexical
+snapshots, immutable indexed code/Tokens, scoped writer leases and explicit
+ready/rebuilding/incomplete states. A declared complete Chunk inventory and
+before/after Dense checks prevent publishing a partial rebuild or combining it
+with old lexical data. A 14-phase real Qdrant proof covers restart, source edits,
+deletion, failure and recovery using private fixtures; production data stays
+unchanged. The production API still uses the original Dense path.
+The current default backend suite passes 1160 tests (6 skipped), and the
+evaluation suite passes 141 tests.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
@@ -1219,5 +1229,5 @@ The Stage 1 tool returns fixed simulated project data; Code Chat and Issue
 Analyzer provide no tools. Persistent sessions, streaming RAG, BM25/hybrid
 search, reranking and repository-agent orchestration remain outside the current
 scope. Stage 3 final functional acceptance and Stage 4 Task 1 Dense baseline
-and Tasks 2–4 evaluation/candidate/tokenizer contracts are complete; Stage 4 Task 5 and later modules have not started. The current local model's
+and Tasks 2–5 evaluation/candidate/tokenizer/snapshot contracts are complete; Stage 4 Task 6 and later modules have not started. The current local model's
 answer quality has not passed acceptance.

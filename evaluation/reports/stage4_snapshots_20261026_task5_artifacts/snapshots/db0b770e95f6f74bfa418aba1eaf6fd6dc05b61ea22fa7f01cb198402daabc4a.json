@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "index": {
+    "scope": {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+      "repository": "alpha"
+    },
+    "configuration": {
+      "chunking": {
+        "chunk_lines": 60,
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "max_chunk_characters": 8192,
+        "overlap_lines": 10
+      },
+      "dimension": 3,
+      "distance": "Cosine",
+      "embedding": {
+        "embedding_model": "task5-storage-test",
+        "embedding_provider": "openai_compatible",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+        "schema_version": "code-points-v1"
+      }
+    },
+    "chunks": []
+  },
+  "index_revision": "sha256:08afcacb784aa779e25e064ddebcf1e4a25f500fdfd70f3ed656a9da32ed351a",
+  "source_sha256": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "tokenizer": {
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "field_separator": "newline",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "max_characters": 2000000,
+    "max_tokens": 200000,
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "stemming": false,
+    "stopwords": false,
+    "translation": false,
+    "unicode_version": "15.0.0",
+    "version": "code-lexical-v1"
+  },
+  "tokenizer_implementation_sha256": "sha256:10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773",
+  "documents": []
+}

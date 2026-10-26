@@ -1,0 +1,16 @@
+frozen-demo-repository: ready
+frozen-stage4-commerce: ready
+frozen-stage4-shadow: ready
+frozen-stage4-empty: ready
+existing-production-read-only: ready
+initial-alpha: ready
+initial-beta: ready
+source-edited-before-reindex: ready
+changed-and-deleted-reindexed: ready
+Index replacement unconfirmed repository=alpha collection=repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776 chunks_created=2
+failed-rebuild-blocked: incomplete
+explicit-full-recovery: ready
+delete-all-reindexed-empty: ready
+external-vector-drift-blocked: incomplete
+beta-full-recovery: ready
+Complete: 14 lifecycle phases, 7 restored scopes; temporary collection deleted; D:\aaaagent开发文件\RepoPilot\evaluation\reports\stage4_snapshots_20261026_task5.json

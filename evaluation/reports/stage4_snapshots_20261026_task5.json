@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "task": "Stage 4 / Task 5",
+  "status": "complete",
+  "created_at": "2026-10-26T06:34:18.606532+00:00",
+  "reference_tokens": {
+    "path": "evaluation/reports/stage4_tokenizer_20261015_task4_final.json",
+    "sha256": "40e69c5cfc12fc2b3496b1b5f9c9caba0a86b41c836c2ebe701fb802f752acda"
+  },
+  "implementations": {
+    "services/api/app/retrieval/snapshot_models.py": {
+      "path": "services/api/app/retrieval/snapshot_models.py",
+      "sha256": "b9a26b760408da2d590c0012758198b42a82b3359247f6c1d121ae25ad3cf138"
+    },
+    "services/api/app/retrieval/snapshot_store.py": {
+      "path": "services/api/app/retrieval/snapshot_store.py",
+      "sha256": "8429e31e098f45b77f00d83b90eeec36a6c29a13b4bb78a754467fa0c9a03378"
+    },
+    "services/api/app/retrieval/snapshots.py": {
+      "path": "services/api/app/retrieval/snapshots.py",
+      "sha256": "a896b5806171d7aecaa6e70d608803cd9caad08dd6b8aab9be9469bd61379866"
+    },
+    "services/api/app/retrieval/tokenizer.py": {
+      "path": "services/api/app/retrieval/tokenizer.py",
+      "sha256": "10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773"
+    }
+  },
+  "configuration": {
+    "llm_provider": "openai_compatible",
+    "llm_model": "qwen2.5:0.5b",
+    "llm_timeout_seconds": 120.0,
+    "embedding_provider": "openai_compatible",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_timeout_seconds": 120.0,
+    "embedding_batch_size": 16,
+    "qdrant_collection": "repopilot_code",
+    "qdrant_timeout_seconds": 5.0,
+    "repository_max_file_bytes": 1048576,
+    "repository_max_entries": 10000,
+    "repository_max_total_bytes": 20971520,
+    "chunk_lines": 60,
+    "chunk_overlap_lines": 10,
+    "chunk_max_characters": 8192,
+    "chunk_max_chunks": 10000,
+    "indexing_max_text_characters": 2000000,
+    "indexing_max_vector_values": 2000000,
+    "max_context_chunks": 5,
+    "max_context_characters": 16000,
+    "llm_base_url_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+    "embedding_base_url_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+    "qdrant_url_sha256": "98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7"
+  },
+  "phases": [
+    {
+      "name": "frozen-demo-repository",
+      "scope": {
+        "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+        "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+        "repository": "demo-repository"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+          "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+          "repository": "demo-repository"
+        },
+        "state": "ready",
+        "ticket": "0d913bb27a4f44dab825e2817c9250f5",
+        "target_sources": "sha256:bbf6f8decee1c044c1e739143821969107efdb5b4141551e007ebe7c37e6c409",
+        "active": "sha256:6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3",
+        "reason": null,
+        "updated_at": "2026-10-26T06:32:47.028814+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3.json",
+        "sha256": "b3862cdc5cacde55204281785a034999844004e18c6cecdd32dfed2df317b8c5"
+      }
+    },
+    {
+      "name": "frozen-stage4-commerce",
+      "scope": {
+        "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+        "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+        "repository": "stage4-commerce"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+          "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+          "repository": "stage4-commerce"
+        },
+        "state": "ready",
+        "ticket": "d7b2969e668c4b3989ff1923c5f145af",
+        "target_sources": "sha256:3c3d05aa3890e3187e01283f50bbe59799ec2e36af789bc2b83c866063ec531c",
+        "active": "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+        "reason": null,
+        "updated_at": "2026-10-26T06:32:47.135457+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a.json",
+        "sha256": "093b1527d4ccfceb2f0c9b2935a73fe5c4da063d57a76590700b896639a31136"
+      }
+    },
+    {
+      "name": "frozen-stage4-shadow",
+      "scope": {
+        "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+        "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+        "repository": "stage4-shadow"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+          "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+          "repository": "stage4-shadow"
+        },
+        "state": "ready",
+        "ticket": "449ec62e97e544e9a1b74ec131dd4655",
+        "target_sources": "sha256:1c88a9a09070890a4f9fac54b8d79878ff1dc2f487b3697d75b66064f5877612",
+        "active": "sha256:498010bd33c4d93891162000b29e32cad47e1fdb3e1f86522162140cb139a082",
+        "reason": null,
+        "updated_at": "2026-10-26T06:32:47.199587+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/498010bd33c4d93891162000b29e32cad47e1fdb3e1f86522162140cb139a082.json",
+        "sha256": "e9b739ba3f46d12cc8d5e1369eded27b2d8355988df6192cbf2a479400a0fd9c"
+      }
+    },
+    {
+      "name": "frozen-stage4-empty",
+      "scope": {
+        "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+        "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+        "repository": "stage4-empty"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+          "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+          "repository": "stage4-empty"
+        },
+        "state": "ready",
+        "ticket": "5080a5ea513b4d18837703b3194437ea",
+        "target_sources": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "active": "sha256:f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8",
+        "reason": null,
+        "updated_at": "2026-10-26T06:32:47.230078+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8.json",
+        "sha256": "5a8c1480417ea3789aef796a5f817242696571bfc3e2ee0be86a5c1089c64346"
+      }
+    },
+    {
+      "name": "existing-production-read-only",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_code",
+        "repository": "demo-repository"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_code",
+          "repository": "demo-repository"
+        },
+        "state": "ready",
+        "ticket": "ce2047b536b74e63ad4bdde3dc559b89",
+        "target_sources": "sha256:bbf6f8decee1c044c1e739143821969107efdb5b4141551e007ebe7c37e6c409",
+        "active": "sha256:fc1e66d40f283b4078ca683e77036af10d1f76ee2d50cbb4619bf41e73efcc0a",
+        "reason": null,
+        "updated_at": "2026-10-26T06:32:56.027638+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/fc1e66d40f283b4078ca683e77036af10d1f76ee2d50cbb4619bf41e73efcc0a.json",
+        "sha256": "5b12cd424dc0d39cc973fec38427fe54c480c80dccd41f35e909a61728cb2599"
+      }
+    },
+    {
+      "name": "initial-alpha",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "ready",
+        "ticket": "09d423acef69477c8f265e011cd0ef71",
+        "target_sources": "sha256:4c1b69a26480de0dd6df0e5a32710db89c503ca167d0dab1d44a796acb7b6e65",
+        "active": "sha256:10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:06.595344+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6.json",
+        "sha256": "54fcbf2a12f2578b781cd8c0e4a9e7b0f4d77caef65e35146f0b18841357491a"
+      }
+    },
+    {
+      "name": "initial-beta",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "beta"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "beta"
+        },
+        "state": "ready",
+        "ticket": "5b98ab4e981a4264b5e1fdbd4cba9517",
+        "target_sources": "sha256:49a692fa3be2d00f79f46048349740967386428be55363382fcb47cd2563c387",
+        "active": "sha256:2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:14.729956+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781.json",
+        "sha256": "542249f2b3df34610ad08822921568813184b7771559ab67a12b1e86bc7970ef"
+      }
+    },
+    {
+      "name": "source-edited-before-reindex",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "ready",
+        "ticket": "09d423acef69477c8f265e011cd0ef71",
+        "target_sources": "sha256:4c1b69a26480de0dd6df0e5a32710db89c503ca167d0dab1d44a796acb7b6e65",
+        "active": "sha256:10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:06.595344+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6.json",
+        "sha256": "54fcbf2a12f2578b781cd8c0e4a9e7b0f4d77caef65e35146f0b18841357491a"
+      },
+      "frozen_code_unchanged": true
+    },
+    {
+      "name": "changed-and-deleted-reindexed",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "ready",
+        "ticket": "951681e35a51458ca50c1f2c8953d4d7",
+        "target_sources": "sha256:70de15c1a912a17768826441d9573a679280a9a8ddf1196baa4b32bce2910cd6",
+        "active": "sha256:5a1f39e38b265d73400aa1c18ff3410f82718f02db0edac86bcc2ae3d9287cb0",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:33.977194+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/5a1f39e38b265d73400aa1c18ff3410f82718f02db0edac86bcc2ae3d9287cb0.json",
+        "sha256": "43bf619d4b9e48b1014614df81545be5505cb74cfcdb3d8348d5eb4a0757dd07"
+      }
+    },
+    {
+      "name": "failed-rebuild-blocked",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "incomplete",
+        "ticket": "881183a9c25b4875bce97c9f0fcea524",
+        "target_sources": "sha256:1d412c3641870473894e28a40d50b6db4b1f69b55e709fdcc98c403b27d2fc10",
+        "active": "sha256:5a1f39e38b265d73400aa1c18ff3410f82718f02db0edac86bcc2ae3d9287cb0",
+        "reason": "rebuild_unconfirmed",
+        "updated_at": "2026-10-26T06:33:35.905715+00:00"
+      },
+      "snapshot": null,
+      "partial_dense_image": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "configuration": {
+          "chunking": {
+            "chunk_lines": 60,
+            "chunking_version": "ast-v1",
+            "fallback_chunking_version": "ast-fallback-line-v1",
+            "max_chunk_characters": 8192,
+            "overlap_lines": 10
+          },
+          "dimension": 3,
+          "distance": "Cosine",
+          "embedding": {
+            "embedding_model": "task5-storage-test",
+            "embedding_provider": "openai_compatible",
+            "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+            "schema_version": "code-points-v1"
+          }
+        },
+        "chunks": [
+          {
+            "chunk_id": "49086d34-11cf-5fb5-96f4-0c9250713802",
+            "source": {
+              "path": "keep.py",
+              "language": "python",
+              "start_line": 1,
+              "end_line": 2,
+              "content": "def credit(amount):\r\n    return \"alpha-recovered\"\r\n",
+              "symbol": "credit",
+              "node_type": "function_definition",
+              "parent_symbol": null,
+              "chunking_strategy": "ast",
+              "chunking_version": "ast-v1"
+            },
+            "payload_sha256": "sha256:8b69486a51f3223186221ad7f9b39edc878c1d15b12ae85cbb29b9e8b549d988",
+            "vector_sha256": "sha256:4038c71f32b1e0b99e22be8120608645adba7fe339e63085b8c9ca1580576685"
+          }
+        ]
+      },
+      "request_blocked": true
+    },
+    {
+      "name": "explicit-full-recovery",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "ready",
+        "ticket": "0d20403da52a49ecb1df9e14b5004714",
+        "target_sources": "sha256:1d412c3641870473894e28a40d50b6db4b1f69b55e709fdcc98c403b27d2fc10",
+        "active": "sha256:be1350c0f2b9b9910909cd6df0124f2c48260bf2588672394f2120751fbd3825",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:45.430300+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/be1350c0f2b9b9910909cd6df0124f2c48260bf2588672394f2120751fbd3825.json",
+        "sha256": "d5636d5fa89ea406c70062bc745a40d2fe1be90bbf1ac4eae17a2a93e51de657"
+      }
+    },
+    {
+      "name": "delete-all-reindexed-empty",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "alpha"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "alpha"
+        },
+        "state": "ready",
+        "ticket": "f0730014ca2048d5b8de43d01c65e7af",
+        "target_sources": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "active": "sha256:db0b770e95f6f74bfa418aba1eaf6fd6dc05b61ea22fa7f01cb198402daabc4a",
+        "reason": null,
+        "updated_at": "2026-10-26T06:33:58.908013+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/db0b770e95f6f74bfa418aba1eaf6fd6dc05b61ea22fa7f01cb198402daabc4a.json",
+        "sha256": "8babc62902542902d57c0a604402502b60e2ab1696cb52059fdf7ae1cbba29d6"
+      }
+    },
+    {
+      "name": "external-vector-drift-blocked",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "beta"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "beta"
+        },
+        "state": "incomplete",
+        "ticket": "5b98ab4e981a4264b5e1fdbd4cba9517",
+        "target_sources": "sha256:49a692fa3be2d00f79f46048349740967386428be55363382fcb47cd2563c387",
+        "active": "sha256:2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781",
+        "reason": "dense_index_drift",
+        "updated_at": "2026-10-26T06:34:07.600607+00:00"
+      },
+      "snapshot": null,
+      "request_blocked": true
+    },
+    {
+      "name": "beta-full-recovery",
+      "scope": {
+        "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+        "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+        "repository": "beta"
+      },
+      "state": {
+        "scope": {
+          "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+          "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+          "repository": "beta"
+        },
+        "state": "ready",
+        "ticket": "aabc61f6defb4446858b3d7ad07d46bb",
+        "target_sources": "sha256:49a692fa3be2d00f79f46048349740967386428be55363382fcb47cd2563c387",
+        "active": "sha256:2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781",
+        "reason": null,
+        "updated_at": "2026-10-26T06:34:15.800367+00:00"
+      },
+      "snapshot": {
+        "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781.json",
+        "sha256": "542249f2b3df34610ad08822921568813184b7771559ab67a12b1e86bc7970ef"
+      }
+    }
+  ],
+  "snapshots": {
+    "sha256:6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3.json",
+      "sha256": "b3862cdc5cacde55204281785a034999844004e18c6cecdd32dfed2df317b8c5"
+    },
+    "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a.json",
+      "sha256": "093b1527d4ccfceb2f0c9b2935a73fe5c4da063d57a76590700b896639a31136"
+    },
+    "sha256:498010bd33c4d93891162000b29e32cad47e1fdb3e1f86522162140cb139a082": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/498010bd33c4d93891162000b29e32cad47e1fdb3e1f86522162140cb139a082.json",
+      "sha256": "e9b739ba3f46d12cc8d5e1369eded27b2d8355988df6192cbf2a479400a0fd9c"
+    },
+    "sha256:f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8.json",
+      "sha256": "5a8c1480417ea3789aef796a5f817242696571bfc3e2ee0be86a5c1089c64346"
+    },
+    "sha256:fc1e66d40f283b4078ca683e77036af10d1f76ee2d50cbb4619bf41e73efcc0a": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/fc1e66d40f283b4078ca683e77036af10d1f76ee2d50cbb4619bf41e73efcc0a.json",
+      "sha256": "5b12cd424dc0d39cc973fec38427fe54c480c80dccd41f35e909a61728cb2599"
+    },
+    "sha256:10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/10da40da5cd9dbc7775aeeaa06f7a90d016568dc31c4a73b048125e3245c61a6.json",
+      "sha256": "54fcbf2a12f2578b781cd8c0e4a9e7b0f4d77caef65e35146f0b18841357491a"
+    },
+    "sha256:2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781.json",
+      "sha256": "542249f2b3df34610ad08822921568813184b7771559ab67a12b1e86bc7970ef"
+    },
+    "sha256:5a1f39e38b265d73400aa1c18ff3410f82718f02db0edac86bcc2ae3d9287cb0": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/5a1f39e38b265d73400aa1c18ff3410f82718f02db0edac86bcc2ae3d9287cb0.json",
+      "sha256": "43bf619d4b9e48b1014614df81545be5505cb74cfcdb3d8348d5eb4a0757dd07"
+    },
+    "sha256:be1350c0f2b9b9910909cd6df0124f2c48260bf2588672394f2120751fbd3825": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/be1350c0f2b9b9910909cd6df0124f2c48260bf2588672394f2120751fbd3825.json",
+      "sha256": "d5636d5fa89ea406c70062bc745a40d2fe1be90bbf1ac4eae17a2a93e51de657"
+    },
+    "sha256:db0b770e95f6f74bfa418aba1eaf6fd6dc05b61ea22fa7f01cb198402daabc4a": {
+      "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots/db0b770e95f6f74bfa418aba1eaf6fd6dc05b61ea22fa7f01cb198402daabc4a.json",
+      "sha256": "8babc62902542902d57c0a604402502b60e2ab1696cb52059fdf7ae1cbba29d6"
+    }
+  },
+  "database": {
+    "path": "evaluation/reports/stage4_snapshots_20261026_task5_artifacts/snapshots.sqlite3",
+    "sha256": "1ec546681f8aa61d03a3cc2c5393103f35f1121dfaadaea05c23dff695d19ed1"
+  },
+  "final_scopes": [
+    {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "demo-repository"
+    },
+    {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "stage4-commerce"
+    },
+    {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "stage4-shadow"
+    },
+    {
+      "backend_id": "sha256:4a177b3f30e11ddeebbe77ec4c86a809e93bb7ac79bec47bc2e69a76b5e26000",
+      "collection": "repopilot_stage4_task3_202254a236e54357951b89bc7617c4e9",
+      "repository": "stage4-empty"
+    },
+    {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_code",
+      "repository": "demo-repository"
+    },
+    {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+      "repository": "alpha"
+    },
+    {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+      "repository": "beta"
+    }
+  ],
+  "final_revisions": [
+    "sha256:6be85722747923abe52c0d72a95eefb111c26e5ee8fc99a292698708aac2dee3",
+    "sha256:fd5ad742900bdc0d5c543df8b6c75657c7b8d779c6276aeefcf12040a644700a",
+    "sha256:498010bd33c4d93891162000b29e32cad47e1fdb3e1f86522162140cb139a082",
+    "sha256:f3c730d0a166a9859477cb750c12b074d60bffff70dc191a8bd7f2f266cee1f8",
+    "sha256:fc1e66d40f283b4078ca683e77036af10d1f76ee2d50cbb4619bf41e73efcc0a",
+    "sha256:db0b770e95f6f74bfa418aba1eaf6fd6dc05b61ea22fa7f01cb198402daabc4a",
+    "sha256:2bf5e49bf2d59db5cde3d490deeb3c46c9212a254f893e2b3e8cf5dd77a80781"
+  ],
+  "frozen_index_chunks": 129,
+  "restored_in_separate_process": true,
+  "holdout_queried": false,
+  "calls": {
+    "real_embedding_calls": 0,
+    "generation_calls": 0,
+    "storage_fixture_embedding_calls": 6
+  },
+  "preservation": {
+    "original_collections_unchanged": true,
+    "temporary_collection_deleted": true,
+    "production_snapshot_built_read_only": true
+  },
+  "note": "Actual Qdrant lifecycle verification uses a private 3D synthetic embedding fixture; no retrieval quality claims"
+}

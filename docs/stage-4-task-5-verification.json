@@ -1,0 +1,133 @@
+{
+  "task": "Stage 4 / Task 5",
+  "completed": true,
+  "run_date": "2026-10-26",
+  "created_at": "2026-10-26T06:45:00.950086+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_snapshots_20261026_task5.json",
+    "sha256": "e2547f76d5e93f9cf2dd67f9881ad11ba70452e877c4f666d177f55d44ea6991"
+  },
+  "offline_network_attempts": 0,
+  "snapshot_replay": {
+    "offline_replay_passed": true,
+    "frozen_chunks": 129,
+    "phases": 14,
+    "restored_scopes": 7,
+    "generation_calls": 0
+  },
+  "task4_replay": "129 indexed Chunk/52 query tokenizer receipts replayed by snapshot verifier",
+  "task3_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "exact_legacy_comparisons": 156,
+    "generation_calls": 0
+  },
+  "task2_replay": "52 cases replayed by candidate verifier",
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "tests": {
+    "default_backend_passed": 1160,
+    "default_backend_skipped": 6,
+    "new_snapshot_tests": 32,
+    "evaluation_passed": 141,
+    "new_receipt_tests": 11,
+    "real_qdrant_lifecycle_phases": 14,
+    "prior_real_model_integrations_rerun": false,
+    "generation_calls": 0
+  },
+  "calls": {
+    "real_embedding_calls": 0,
+    "generation_calls": 0,
+    "storage_fixture_embedding_calls": 6
+  },
+  "restored_scopes": 7,
+  "immutable_generations": 10,
+  "test_receipts": {
+    "backend": {
+      "path": "output/stage4-task5/backend-tests.log",
+      "sha256": "d514d60374ee4f500710ad22671f7d2901b9ad85a0ddd29120d45791b08f0dc5"
+    },
+    "evaluation": {
+      "path": "output/stage4-task5/evaluation-tests-final.log",
+      "sha256": "6dc2b47e0d5b617576dc8501e269ebacf932175f0e8d23a9a2371e2b35d46822"
+    },
+    "real_lifecycle": {
+      "path": "output/stage4-task5/real-run.log",
+      "sha256": "91903d66949ad644967d7f93f75ca6e01dc2bc23d4b9153d52dfc97b8c73380d"
+    }
+  },
+  "implementations": {
+    "services/api/app/retrieval/snapshot_models.py": {
+      "path": "services/api/app/retrieval/snapshot_models.py",
+      "sha256": "b9a26b760408da2d590c0012758198b42a82b3359247f6c1d121ae25ad3cf138"
+    },
+    "services/api/app/retrieval/snapshot_store.py": {
+      "path": "services/api/app/retrieval/snapshot_store.py",
+      "sha256": "8429e31e098f45b77f00d83b90eeec36a6c29a13b4bb78a754467fa0c9a03378"
+    },
+    "services/api/app/retrieval/snapshots.py": {
+      "path": "services/api/app/retrieval/snapshots.py",
+      "sha256": "a896b5806171d7aecaa6e70d608803cd9caad08dd6b8aab9be9469bd61379866"
+    },
+    "services/api/app/retrieval/tokenizer.py": {
+      "path": "services/api/app/retrieval/tokenizer.py",
+      "sha256": "10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773"
+    },
+    "evaluation/stage4/verify_snapshots.py": {
+      "path": "evaluation/stage4/verify_snapshots.py",
+      "sha256": "7ea41d6cf5c8cce20a6104e9489833807424278ab11b39ffbb8fcb5ec45ac1fc"
+    },
+    "services/api/tests/test_lexical_snapshots.py": {
+      "path": "services/api/tests/test_lexical_snapshots.py",
+      "sha256": "51ce18e309c505c96a8deffecdff60d2f7385ff190c796bbc67f41f5195d63ef"
+    },
+    "evaluation/tests/test_snapshot_receipts.py": {
+      "path": "evaluation/tests/test_snapshot_receipts.py",
+      "sha256": "ee5de54b2c57df3c3ac2f74c4d7fc30e7316e3b3b1f5f192f334e92bf9348947"
+    }
+  },
+  "preservation": {
+    "protected_files": 856,
+    "expected_changed_files": [
+      ".gitignore",
+      "README.md",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 853,
+    "environment_and_locks_unchanged": true,
+    "public_api_and_frontend_unchanged": true,
+    "production_indexer_and_retrieval_unchanged": true,
+    "all_existing_collections_unchanged": true,
+    "temporary_collection_deleted": true,
+    "prior_datasets_reports_and_tokenizer_unchanged": true
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task5/workspace-before.json",
+      "sha256": "53deb0609b770f785584fa2ec9189af04f8f45b27f650ac3d27c3e6048e95b6d"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task5/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task5/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task5/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "git-before.json": {
+      "path": "output/stage4-task5/git-before.json",
+      "sha256": "933e12dc9a22d4813da40e6241a6df83a414e720b82d5cd2d3a33c1ec410f351"
+    }
+  },
+  "known_boundary": "Local cooperating writers; before/after digests do not provide distributed snapshot isolation against bypassing external ABA writers",
+  "next_task": "Stage 4 / Task 6 BM25; not started"
+}

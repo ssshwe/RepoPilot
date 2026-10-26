@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "index": {
+    "scope": {
+      "backend_id": "sha256:98bc4832231b530b250cf92ba437a7f26cac62b3246a8329be0bc2d0c4d54cf7",
+      "collection": "repopilot_stage4_task5_ca9a6c2614a54b39b2cd4f3e1f88c776",
+      "repository": "beta"
+    },
+    "configuration": {
+      "chunking": {
+        "chunk_lines": 60,
+        "chunking_version": "ast-v1",
+        "fallback_chunking_version": "ast-fallback-line-v1",
+        "max_chunk_characters": 8192,
+        "overlap_lines": 10
+      },
+      "dimension": 3,
+      "distance": "Cosine",
+      "embedding": {
+        "embedding_model": "task5-storage-test",
+        "embedding_provider": "openai_compatible",
+        "endpoint_sha256": "9b514b1a65f6ebfaa4da53a116ea003831b044dc32a989733eace74554ef5b0c",
+        "schema_version": "code-points-v1"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "b3491202-b596-53f2-add3-ff27429ba96f",
+        "source": {
+          "path": "keep.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "def credit(amount):\r\n    return \"beta-original\"\r\n",
+          "symbol": "credit",
+          "node_type": "function_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:5b18b56d49452917d8159c771f73a3e416905c1ef881e8ecf6fa5bdd211e8577",
+        "vector_sha256": "sha256:4038c71f32b1e0b99e22be8120608645adba7fe339e63085b8c9ca1580576685"
+      },
+      {
+        "chunk_id": "bb7a5169-3afa-527d-8c57-4bdbd148909d",
+        "source": {
+          "path": "stale.py",
+          "language": "python",
+          "start_line": 1,
+          "end_line": 2,
+          "content": "def obsolete():\r\n    return \"stale\"\r\n",
+          "symbol": "obsolete",
+          "node_type": "function_definition",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "payload_sha256": "sha256:fdbe48e06f71717a26ce31b3552f89951b58cb40e668381ca2260832d00e75a0",
+        "vector_sha256": "sha256:4038c71f32b1e0b99e22be8120608645adba7fe339e63085b8c9ca1580576685"
+      }
+    ]
+  },
+  "index_revision": "sha256:2cf8abe3d3093ec112dc4bde7d210aee83a68120c3da01ef9910871413c2070a",
+  "source_sha256": "sha256:49a692fa3be2d00f79f46048349740967386428be55363382fcb47cd2563c387",
+  "tokenizer": {
+    "chinese": "overlapping Han bigrams per run; a single Han character stays a unigram",
+    "field_separator": "newline",
+    "frequency": "repeated lexical occurrences and Chinese bigrams retained; no global deduplication",
+    "identifiers": "full word plus unique camel/acronym/snake/digit parts per occurrence",
+    "max_characters": 2000000,
+    "max_tokens": 200000,
+    "normalization": "NFKC then casefold after case-aware identifier splitting",
+    "paths": "full slash-normalized path, basename, then word/identifier parts; ASCII dotted suffixes",
+    "source_fields": [
+      "content",
+      "path",
+      "symbol"
+    ],
+    "stemming": false,
+    "stopwords": false,
+    "translation": false,
+    "unicode_version": "15.0.0",
+    "version": "code-lexical-v1"
+  },
+  "tokenizer_implementation_sha256": "sha256:10d6cf4d127986591d574689c2a1941368b05e676b535276549cdce237080773",
+  "documents": [
+    {
+      "chunk_id": "b3491202-b596-53f2-add3-ff27429ba96f",
+      "tokens": [
+        "def",
+        "credit",
+        "amount",
+        "return",
+        "beta",
+        "original",
+        "keep.py",
+        "keep",
+        "py",
+        "credit"
+      ],
+      "term_frequencies": {
+        "amount": 1,
+        "beta": 1,
+        "credit": 2,
+        "def": 1,
+        "keep": 1,
+        "keep.py": 1,
+        "original": 1,
+        "py": 1,
+        "return": 1
+      }
+    },
+    {
+      "chunk_id": "bb7a5169-3afa-527d-8c57-4bdbd148909d",
+      "tokens": [
+        "def",
+        "obsolete",
+        "return",
+        "stale",
+        "stale.py",
+        "stale",
+        "py",
+        "obsolete"
+      ],
+      "term_frequencies": {
+        "def": 1,
+        "obsolete": 2,
+        "py": 1,
+        "return": 1,
+        "stale": 2,
+        "stale.py": 1
+      }
+    }
+  ]
+}
