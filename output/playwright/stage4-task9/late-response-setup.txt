@@ -1,0 +1,6 @@
+### Result
+{"armed":true}
+### Ran Playwright code
+```js
+await (async (page) => { await page.evaluate(() => { const nativeFetch=window.fetch.bind(window); window.__task9Late={armed:true,delivered:0}; window.fetch=async (input,options) => { if (typeof input==='string' && input.endsWith('/api/retrieval/debug') && window.__task9Late.armed) { window.__task9Late.armed=false; const {signal,...rest}=options??{}; const response=await nativeFetch(input,rest); await new Promise(resolve=>setTimeout(resolve,8000)); window.__task9Late.delivered++; return response; } return nativeFetch(input,options); }; }); return {armed:true}; })(page);
+```

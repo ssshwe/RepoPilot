@@ -1,0 +1,196 @@
+{
+  "task": "Stage 4 / Task 9",
+  "date": "2026-10-31",
+  "passed": true,
+  "checks": {
+    "bm25-check": {
+      "summary": "BM25 · 5 个最终结果 / TopK 5",
+      "results": 5,
+      "futureDisabled": true,
+      "pageOverflow": false
+    },
+    "hybrid-check": {
+      "summary": "HYBRID · 5 个最终结果 / TopK 5",
+      "channels": [
+        "DENSE · 17 / 30 个候选 · Cosine similarity",
+        "BM25 · 16 / 30 个候选 · BM25 score",
+        "EXACT · 1 / 10 个候选 · Exact match tier",
+        "RRF · 17 / 60 个候选 · RRF score"
+      ],
+      "results": 5,
+      "reasons": 1
+    },
+    "source-expansion-check": {
+      "sourceExpanded": true,
+      "sourceText": "    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"
+    },
+    "rrf-expansion-check": {
+      "expanded": true,
+      "text": "展开 RRF 贡献dense：1 / (60 + 6) = 0.0151515152 · 原始分数 0.65027773bm25：1 / (60 + 1) = 0.0163934426 · 原始分数 4.280716323176162exact：1 / (60 + 1) = 0.0163934426 · 原始分数 100"
+    },
+    "filtered-check": {
+      "summary": "HYBRID · 5 个最终结果 / TopK 5",
+      "paths": [
+        "backend/service/RefundService.java",
+        "backend/service/RefundService.java",
+        "backend/service/RefundService.java",
+        "backend/service/RefundService.java",
+        "backend/service/WalletService.java"
+      ],
+      "languages": [
+        "qwen3-embedding:0.6b · 1024 维Collection repopilot_code21944.1 ms",
+        "java · Lines 12–18RefundService.refundast · ast-v1",
+        "java · Lines 5–7RefundServiceast · ast-v1",
+        "java · Lines 8–10RefundService.RefundServiceast · ast-v1",
+        "java · Lines 1–4无 Symbolast · ast-v1",
+        "java · Lines 7–9WalletServiceast · ast-v1"
+      ],
+      "error": null
+    },
+    "mobile-check": {
+      "viewport": 390,
+      "pageWidth": 390,
+      "summary": "HYBRID · 5 个最终结果 / TopK 5",
+      "futureDisabled": true
+    },
+    "empty-check": {
+      "summary": "BM25 · 0 个最终结果 / TopK 5",
+      "empty": "没有检索结果当前仓库与过滤范围内没有候选，请查看通道诊断。",
+      "results": 0
+    },
+    "late-response-check": {
+      "passed": true,
+      "lateDelivered": 1,
+      "summary": "BM25 · 5 个最终结果 / TopK 5",
+      "error": null,
+      "controlsEnabled": true
+    },
+    "validation-check": {
+      "error": "Path prefix 使用仓库相对路径和 /，不支持遍历或通配符。",
+      "controlsEnabled": true
+    },
+    "final-check": {
+      "summary": "HYBRID · 5 个最终结果 / TopK 5",
+      "results": 5,
+      "nativeFetchRestored": true,
+      "testHookRemoved": true,
+      "futureDisabled": true,
+      "error": null
+    }
+  },
+  "dense_observed": true,
+  "console_errors": 0,
+  "proof_interception_removed": true,
+  "normal_api_restored": true,
+  "health": {
+    "status": "ok"
+  },
+  "calls": {
+    "api_query_embeddings": 4,
+    "browser_query_embeddings": 5,
+    "total_real_query_embeddings": 9,
+    "generation_calls": 0
+  },
+  "embedding_events": {
+    "path": "output/playwright/stage4-task9/embedding-events.json",
+    "sha256": "1b71dd8ba05d9e12c1deb4fdbc705569cda19fc26080eb0ea66ffd79530708e7"
+  },
+  "artifacts": {
+    "bm25-check.txt": {
+      "path": "output/playwright/stage4-task9/bm25-check.txt",
+      "sha256": "a46828cd5bcc819cb7336f3df834c95310431c112c0e0717ff60782992739908"
+    },
+    "bm25-desktop.png": {
+      "path": "output/playwright/stage4-task9/bm25-desktop.png",
+      "sha256": "3136f6edd139133cd3c53f6ca7f8f661a7aa7549ae6706b9fa3cfc796834724b"
+    },
+    "bm25-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/bm25-snapshot.txt",
+      "sha256": "bf7851a9e696b6d033e3715facb80b9d052053a6334f365f6d3cbacf2f82dddb"
+    },
+    "browser-console.txt": {
+      "path": "output/playwright/stage4-task9/browser-console.txt",
+      "sha256": "bd97be5c2ad83024485e38ed8161c8216137a54c905224bf656bc3cf2eaba3b4"
+    },
+    "dense-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/dense-snapshot.txt",
+      "sha256": "c112aed1dc79dc922f6be15537cef4f90a9623666537e8768ebfc10b10a4c342"
+    },
+    "embedding-events.json": {
+      "path": "output/playwright/stage4-task9/embedding-events.json",
+      "sha256": "1b71dd8ba05d9e12c1deb4fdbc705569cda19fc26080eb0ea66ffd79530708e7"
+    },
+    "empty-check.txt": {
+      "path": "output/playwright/stage4-task9/empty-check.txt",
+      "sha256": "2397bd56e4dff07ebec98ac2a3cc57167a8c98b0adec1bd2d85c083f71caaaed"
+    },
+    "empty-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/empty-snapshot.txt",
+      "sha256": "1f1771b62486247eec630161e595649bd115c405ce15960aa1051a5417973d44"
+    },
+    "filtered-check.txt": {
+      "path": "output/playwright/stage4-task9/filtered-check.txt",
+      "sha256": "592ca838517c074f00b86582e5e9d1a7ce3ae9ee37b35da6e927fb52dee6ed55"
+    },
+    "final-check.txt": {
+      "path": "output/playwright/stage4-task9/final-check.txt",
+      "sha256": "6ca1d57d619e5f2e8709a83237341420b0d7e52386394640d2d4e01137bc8ac8"
+    },
+    "final-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/final-snapshot.txt",
+      "sha256": "32d60211a781cef20c3e8761cedc1c49a9d3fbde1135c89cef65b3f127fe9169"
+    },
+    "hybrid-check-first.txt": {
+      "path": "output/playwright/stage4-task9/hybrid-check-first.txt",
+      "sha256": "3bde2e3ce0af5b3b238c954629864a5ecbfb18768cceb02c8760af60e69592bd"
+    },
+    "hybrid-check.txt": {
+      "path": "output/playwright/stage4-task9/hybrid-check.txt",
+      "sha256": "954cc38f7df6d33742f25aa49037f62e8226f1092df31a7fec91feaada4b8975"
+    },
+    "hybrid-desktop.png": {
+      "path": "output/playwright/stage4-task9/hybrid-desktop.png",
+      "sha256": "387079bf58564a30bf41b4e1c680e754b7ee4f9207d32f346fe85c9411a88a03"
+    },
+    "hybrid-detail.png": {
+      "path": "output/playwright/stage4-task9/hybrid-detail.png",
+      "sha256": "a86bdef14185d3dd9bdb8c29112e6cc2456721f273226fa56bd8dd73aaf851d5"
+    },
+    "hybrid-mobile.png": {
+      "path": "output/playwright/stage4-task9/hybrid-mobile.png",
+      "sha256": "0b0a1c6783aa62be13f231ffa2e7fc85b515bc262cbc13922743ac9135b3f692"
+    },
+    "hybrid-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/hybrid-snapshot.txt",
+      "sha256": "0c49a04a47615c62a4e2eba664e6b2bb1ca8cd43b924267f60a3a3259899f084"
+    },
+    "late-pending-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/late-pending-snapshot.txt",
+      "sha256": "e8eb7773b861813a8a16df5b72454c0dfe757c97afb8c4c2d7107971a560eee4"
+    },
+    "late-response-check.txt": {
+      "path": "output/playwright/stage4-task9/late-response-check.txt",
+      "sha256": "6e595f99e236cee831146becb77836d8275c577754f71b881c6438edb77af6c2"
+    },
+    "late-response-setup.txt": {
+      "path": "output/playwright/stage4-task9/late-response-setup.txt",
+      "sha256": "b984b9f9ee4f3fb640bfa629527ab9146e6cb00430dfb6455c7f8a617d882efe"
+    },
+    "mobile-check.txt": {
+      "path": "output/playwright/stage4-task9/mobile-check.txt",
+      "sha256": "e76f91a897b9162024fac5658a80b2daa2d1f93b2707e4b3bce41328a576414d"
+    },
+    "rrf-expansion-check.txt": {
+      "path": "output/playwright/stage4-task9/rrf-expansion-check.txt",
+      "sha256": "0835a2eb7d5c77421a64eac632996e7d69b137652287b65ea872f395d4f06bfb"
+    },
+    "source-expansion-check.txt": {
+      "path": "output/playwright/stage4-task9/source-expansion-check.txt",
+      "sha256": "8f462190de8f33033e2da92c17661ef635b735de204a09162a622f6e65b4cd90"
+    },
+    "validation-check.txt": {
+      "path": "output/playwright/stage4-task9/validation-check.txt",
+      "sha256": "a8ce9cb00ac2e2dd61c040b2737edda193d3898956ee8e7741ad2a3e450c26e8"
+    }
+  }
+}

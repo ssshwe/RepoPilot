@@ -1,0 +1,6 @@
+### Result
+{"summary":"BM25 · 0 个最终结果 / TopK 5","empty":"没有检索结果当前仓库与过滤范围内没有候选，请查看通道诊断。","results":0}
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByText('没有检索结果',{exact:true}).waitFor({timeout:30000}); return await page.evaluate(() => ({summary:document.querySelector('.retrieval-result-summary strong').textContent, empty:document.querySelector('.retrieval-empty').textContent, results:document.querySelectorAll('.retrieval-result').length})); })(page);
+```

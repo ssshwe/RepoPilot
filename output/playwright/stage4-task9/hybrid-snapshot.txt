@@ -1,0 +1,198 @@
+### Page
+- Page URL: http://localhost:5173/#retrieval
+- Page Title: RepoPilot
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - region "RepoPilot 工作区" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "RepoPilot" [level=1] [ref=e7]
+        - paragraph [ref=e8]: LLM · 代码检索 · 仓库问答 · Issue 分析
+      - generic [ref=e77]: "Embedding: qwen3-embedding:0.6b"
+    - navigation "工作区切换" [ref=e9]:
+      - radiogroup "radio-group" [ref=e10]:
+        - generic [ref=e11]:
+          - radio "LLM 工作区" [ref=e12]
+          - generic [ref=e13] [cursor=pointer]: LLM 工作区
+        - generic [ref=e14]:
+          - radio "Retrieval Debug" [checked] [ref=e15]
+          - generic [ref=e16] [cursor=pointer]: Retrieval Debug
+        - generic [ref=e17]:
+          - radio "Code Chat" [ref=e18]
+          - generic [ref=e19] [cursor=pointer]: Code Chat
+        - generic [ref=e20]:
+          - radio "Issue Analyzer" [ref=e21]
+          - generic [ref=e22] [cursor=pointer]: Issue Analyzer
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - strong [ref=e26]: Retrieval Debug · 代码检索
+          - generic [ref=e27]: 查看代码从哪一路召回，如何融合，为什么进入最终结果。
+        - button "清空检索结果" [ref=e28] [cursor=pointer]
+      - form "代码检索参数" [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Repository
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - combobox "Repository" [ref=e37]
+              - generic [ref=e38]: demo-repository
+            - generic [ref=e40] [cursor=pointer]
+        - generic [ref=e43]:
+          - generic [ref=e44]: 检索模式
+          - combobox "检索模式" [ref=e45]:
+            - option "Dense · 语义"
+            - option "BM25 · 关键词"
+            - option "Hybrid · RRF 融合" [selected]
+        - generic [ref=e46]:
+          - generic [ref=e47]: TopK
+          - spinbutton "TopK" [ref=e48]: "5"
+          - generic [ref=e49]: 1–20 个最终代码块
+        - generic [ref=e50]:
+          - generic [ref=e51]: Language
+          - textbox "Language" [ref=e52]:
+            - /placeholder: 全部，例如 java
+        - generic [ref=e53]:
+          - generic [ref=e54]: Path prefix
+          - textbox "Path prefix" [ref=e55]:
+            - /placeholder: 例如 backend/service/
+          - generic [ref=e56]: 字面前缀；目录边界使用末尾 /。
+        - generic [ref=e57]:
+          - generic [ref=e58]: Query
+          - textbox "Query" [ref=e60]:
+            - /placeholder: 例如 RefundService.refund，或：退款逻辑在哪里？
+            - text: RefundService.refund
+          - generic [ref=e61]: 20 / 8192 字符 · Ctrl / ⌘ + Enter 搜索
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - checkbox "Rerank · 后续任务" [disabled] [ref=e64]
+            - text: Rerank · 后续任务
+          - generic [ref=e65]:
+            - checkbox "Query Expansion · 后续任务" [disabled] [ref=e66]
+            - text: Query Expansion · 后续任务
+        - generic [ref=e67]:
+          - button "Search" [ref=e68] [cursor=pointer]
+          - button "同步检索快照" [ref=e70] [cursor=pointer]
+          - generic [ref=e72]: 首次使用或索引更新后，从当前索引同步检索快照。
+      - region "检索结果" [ref=e73]:
+        - generic [ref=e290]:
+          - strong [ref=e291]: HYBRID · 5 个最终结果 / TopK 5
+          - paragraph [ref=e292]: demo-repository · RefundService.refund
+          - generic [ref=e293]:
+            - generic [ref=e294]: qwen3-embedding:0.6b · 1024 维
+            - generic [ref=e295]: Collection repopilot_code
+            - generic [ref=e296]: 22149.6 ms
+          - paragraph [ref=e297]: 索引版本（快照 SHA-256）：sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd
+          - generic "各阶段耗时" [ref=e298]:
+            - generic [ref=e299]: DENSE 6102.06 ms
+            - generic [ref=e300]: BM25 5376.79 ms
+            - generic [ref=e301]: EXACT 5371.56 ms
+            - generic [ref=e302]: RRF 0.45 ms · k=60
+            - generic [ref=e303]: 协调与校验 5298.77 ms
+          - paragraph [ref=e304]: 全部语言 · 全部路径 · 去重并集 17 → 融合池 17 → 最终 5
+          - paragraph [ref=e305]: Cosine 衡量向量相似度，BM25 衡量词法相关性，Exact 为匹配档位，RRF 融合排名；分数均不代表答案可信度。
+        - region "各通道候选与融合排名" [ref=e306]:
+          - heading "召回与融合诊断" [level=2] [ref=e307]
+          - group [ref=e308]:
+            - generic "DENSE · 17 / 30 个候选 · Cosine similarity" [ref=e309] [cursor=pointer]
+          - group [ref=e310]:
+            - generic "BM25 · 16 / 30 个候选 · BM25 score" [ref=e311] [cursor=pointer]
+          - group [ref=e312]:
+            - generic "EXACT · 1 / 10 个候选 · Exact match tier" [ref=e313] [cursor=pointer]
+          - group [ref=e314]:
+            - generic "RRF · 17 / 60 个候选 · RRF score" [ref=e315] [cursor=pointer]
+        - heading "最终 TopK · RRF score" [level=2] [ref=e316]
+        - article [ref=e317]:
+          - generic [ref=e318]:
+            - strong [ref=e319]: "#1"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e320]
+            - generic "0.04793840039741679" [ref=e321]: RRF score 0.04793840
+          - generic [ref=e323]:
+            - generic [ref=e324]: java · Lines 12–18
+            - generic [ref=e325]: RefundService.refund
+            - generic [ref=e326]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e327]:
+            - generic [ref=e328]: "DENSE #6 · 0.65027773"
+            - generic [ref=e329]: "BM25 #1 · 4.28071632"
+            - generic [ref=e330]: "EXACT #1 · 100.00000000"
+            - generic [ref=e331]: "RRF #1 · 0.04793840"
+          - paragraph [ref=e332]: Exact 完整匹配：RefundService.refund · 实际行 12–18
+          - group [ref=e333]:
+            - generic "展开 RRF 贡献" [ref=e334] [cursor=pointer]
+          - paragraph [ref=e335]: Chunk 66b8fac4-539e-5bd2-802f-2f88b7965a2a
+          - group [ref=e336]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e337] [cursor=pointer]
+            - code [ref=e339]: "public void refund(String orderId, String userId, BigDecimal amount) { if (orderId == null || orderId.isBlank()) { throw new IllegalArgumentException(\"Order ID is required\"); } // Fixture workflow: credit the refunded amount to the user's wallet. wallets.credit(userId, amount); }"
+        - article [ref=e340]:
+          - generic [ref=e341]:
+            - strong [ref=e342]: "#2"
+            - heading "backend/controller/OrderController.java" [level=2] [ref=e343]
+            - generic "0.03177805800756621" [ref=e344]: RRF score 0.03177806
+          - generic [ref=e346]:
+            - generic [ref=e347]: java · Lines 1–5
+            - generic [ref=e348]: 无 Symbol
+            - generic [ref=e349]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e350]:
+            - generic [ref=e351]: "DENSE #1 · 0.76613677"
+            - generic [ref=e352]: "BM25 #5 · 2.04000249"
+            - generic [ref=e353]: "RRF #2 · 0.03177806"
+          - group [ref=e354]:
+            - generic "展开 RRF 贡献" [ref=e355] [cursor=pointer]
+          - paragraph [ref=e356]: Chunk 62e9a26d-d1a1-5437-9b8c-6a10fca1e96e
+          - group [ref=e357]:
+            - generic "Code Preview · backend/controller/OrderController.java" [ref=e358] [cursor=pointer]
+        - article [ref=e359]:
+          - generic [ref=e360]:
+            - strong [ref=e361]: "#3"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e362]
+            - generic "0.03125763125763126" [ref=e363]: RRF score 0.03125763
+          - generic [ref=e365]:
+            - generic [ref=e366]: java · Lines 5–7
+            - generic [ref=e367]: RefundService
+            - generic [ref=e368]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e369]:
+            - generic [ref=e370]: "DENSE #5 · 0.65245306"
+            - generic [ref=e371]: "BM25 #3 · 2.92303963"
+            - generic [ref=e372]: "RRF #3 · 0.03125763"
+          - group [ref=e373]:
+            - generic "展开 RRF 贡献" [ref=e374] [cursor=pointer]
+          - paragraph [ref=e375]: Chunk 0769b356-b5da-5c2b-ba79-82b721a7e740
+          - group [ref=e376]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e377] [cursor=pointer]
+        - article [ref=e378]:
+          - generic [ref=e379]:
+            - strong [ref=e380]: "#4"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e381]
+            - generic "0.031054405392392875" [ref=e382]: RRF score 0.03105441
+          - generic [ref=e384]:
+            - generic [ref=e385]: java · Lines 8–10
+            - generic [ref=e386]: RefundService.RefundService
+            - generic [ref=e387]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e388]:
+            - generic [ref=e389]: "DENSE #7 · 0.64149000"
+            - generic [ref=e390]: "BM25 #2 · 3.02226566"
+            - generic [ref=e391]: "RRF #4 · 0.03105441"
+          - group [ref=e392]:
+            - generic "展开 RRF 贡献" [ref=e393] [cursor=pointer]
+          - paragraph [ref=e394]: Chunk a271029f-69fc-556c-b2eb-6a5aa50fef3b
+          - group [ref=e395]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e396] [cursor=pointer]
+        - article [ref=e397]:
+          - generic [ref=e398]:
+            - strong [ref=e399]: "#5"
+            - heading "README.md" [level=2] [ref=e400]
+            - generic "0.030834914611005692" [ref=e401]: RRF score 0.03083491
+          - generic [ref=e403]:
+            - generic [ref=e404]: markdown · Lines 1–21
+            - generic [ref=e405]: 无 Symbol
+            - generic [ref=e406]: fallback · ast-fallback-line-v1
+          - generic "结果来源与排名" [ref=e407]:
+            - generic [ref=e408]: "DENSE #2 · 0.67235410"
+            - generic [ref=e409]: "BM25 #8 · 1.38656976"
+            - generic [ref=e410]: "RRF #5 · 0.03083491"
+          - group [ref=e411]:
+            - generic "展开 RRF 贡献" [ref=e412] [cursor=pointer]
+          - paragraph [ref=e413]: Chunk 233f25d1-e3cf-594a-99ca-c0818d6992f8
+          - group [ref=e414]:
+            - generic "Code Preview · README.md" [ref=e415] [cursor=pointer]
+```

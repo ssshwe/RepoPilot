@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "collection": "repopilot_code",
+    "index_revision": "sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd",
+    "chunks": 17,
+    "elapsed_ms": 6747.055
+  }
+}

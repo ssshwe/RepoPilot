@@ -1,0 +1,74 @@
+{
+  "id": "empty_scope",
+  "url": "/api/retrieval/debug",
+  "request": {
+    "repository": "demo-repository",
+    "query": "RefundService.refund",
+    "top_k": 5,
+    "mode": "dense",
+    "filters": {
+      "language": "rust",
+      "path_prefix": null
+    },
+    "rerank": false,
+    "query_expansion": false
+  },
+  "expected_status": 200,
+  "status": 200,
+  "response": {
+    "repository": "demo-repository",
+    "query": "RefundService.refund",
+    "top_k": 5,
+    "collection": "repopilot_code",
+    "embedding_model": "qwen3-embedding:0.6b",
+    "embedding_dimension": 1024,
+    "retrieval_latency_ms": 5275.271,
+    "results": [],
+    "mode": "dense",
+    "filters": {
+      "language": "rust",
+      "path_prefix": null
+    },
+    "index_revision": "sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd",
+    "score_type": "cosine_similarity",
+    "limits": {
+      "dense": 30,
+      "bm25": 30,
+      "exact": 10,
+      "fusion": 60,
+      "rerank": 30,
+      "top_k": 5
+    },
+    "channels": {
+      "dense": {
+        "repository": "demo-repository",
+        "query": "RefundService.refund",
+        "channel": "dense",
+        "index_revision": "sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 5265.898,
+        "candidates": [],
+        "filters": {
+          "language": "rust",
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:d67dcedb1dd22f8ca815dd53a93697b40260c214d9a042e4c4e61fb27d9f3b67"
+      }
+    },
+    "fused": null,
+    "rrf_k": null,
+    "untruncated_union_count": 0,
+    "rrf_contributions": {},
+    "timings": {
+      "channel_ms": {
+        "dense": 5265.898
+      },
+      "fusion_ms": 0.0,
+      "overhead_ms": 9.373,
+      "total_ms": 5275.271
+    },
+    "rerank": false,
+    "query_expansion": false
+  },
+  "events": []
+}

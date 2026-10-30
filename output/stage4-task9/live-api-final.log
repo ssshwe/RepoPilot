@@ -1,0 +1,10 @@
+dense: HTTP 200
+bm25: HTTP 200
+hybrid: HTTP 200
+filtered: HTTP 200
+empty_scope: HTTP 200
+no_terms: HTTP 200
+missing_snapshot: HTTP 409
+future_feature: HTTP 422
+legacy: HTTP 200
+Complete: 9 real HTTP cases, 4 real query embeddings, zero generation

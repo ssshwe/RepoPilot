@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\aaaagent开发文件\RepoPilot\evaluation\stage4\verify_debug.py", line 167, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "D:\aaaagent开发文件\RepoPilot\evaluation\stage4\verify_debug.py", line 164, in main
+    asyncio.run(evaluate(path.resolve()))
+  File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\aaaagent开发文件\RepoPilot\evaluation\stage4\verify_debug.py", line 111, in evaluate
+    require(synced.status_code==200,"Real snapshot synchronization failed")
+  File "D:\aaaagent开发文件\RepoPilot\evaluation\retrieval\evaluate.py", line 28, in require
+    raise EvaluationError(message)
+evaluation.retrieval.evaluate.EvaluationError: Real snapshot synchronization failed

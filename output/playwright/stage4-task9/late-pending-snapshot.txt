@@ -1,0 +1,81 @@
+### Page
+- Page URL: http://localhost:5173/#retrieval
+- Page Title: RepoPilot
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - region "RepoPilot 工作区" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "RepoPilot" [level=1] [ref=e7]
+        - paragraph [ref=e8]: LLM · 代码检索 · 仓库问答 · Issue 分析
+      - generic [ref=e77]: "Embedding: 搜索后显示"
+    - navigation "工作区切换" [ref=e9]:
+      - radiogroup "radio-group" [ref=e10]:
+        - generic [ref=e11]:
+          - radio "LLM 工作区" [ref=e12]
+          - generic [ref=e13] [cursor=pointer]: LLM 工作区
+        - generic [ref=e14]:
+          - radio "Retrieval Debug" [checked] [ref=e15]
+          - generic [ref=e16] [cursor=pointer]: Retrieval Debug
+        - generic [ref=e17]:
+          - radio "Code Chat" [ref=e18]
+          - generic [ref=e19] [cursor=pointer]: Code Chat
+        - generic [ref=e20]:
+          - radio "Issue Analyzer" [ref=e21]
+          - generic [ref=e22] [cursor=pointer]: Issue Analyzer
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - strong [ref=e26]: Retrieval Debug · 代码检索
+          - generic [ref=e27]: 查看代码从哪一路召回，如何融合，为什么进入最终结果。
+        - button "清空检索结果" [disabled] [ref=e28]
+      - form "代码检索参数" [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Repository
+          - generic [ref=e34]:
+            - generic:
+              - combobox "Repository" [disabled] [ref=e37]
+              - generic [ref=e38]: demo-repository
+        - generic [ref=e43]:
+          - generic [ref=e44]: 检索模式
+          - combobox "检索模式" [disabled] [ref=e45]:
+            - option "Dense · 语义"
+            - option "BM25 · 关键词"
+            - option "Hybrid · RRF 融合" [selected]
+        - generic [ref=e46]:
+          - generic [ref=e47]: TopK
+          - spinbutton "TopK" [disabled] [ref=e48]: "5"
+          - generic [ref=e49]: 1–20 个最终代码块
+        - generic [ref=e50]:
+          - generic [ref=e51]: Language
+          - textbox "Language" [disabled] [ref=e52]:
+            - /placeholder: 全部，例如 java
+        - generic [ref=e53]:
+          - generic [ref=e54]: Path prefix
+          - textbox "Path prefix" [disabled] [ref=e55]:
+            - /placeholder: 例如 backend/service/
+          - generic [ref=e56]: 字面前缀；目录边界使用末尾 /。
+        - generic [ref=e57]:
+          - generic [ref=e58]: Query
+          - textbox "Query" [disabled] [ref=e60]:
+            - /placeholder: 例如 RefundService.refund，或：退款逻辑在哪里？
+            - text: RefundService.refund
+          - generic [ref=e61]: 20 / 8192 字符 · Ctrl / ⌘ + Enter 搜索
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - checkbox "Rerank · 后续任务" [disabled] [ref=e64]
+            - text: Rerank · 后续任务
+          - generic [ref=e65]:
+            - checkbox "Query Expansion · 后续任务" [disabled] [ref=e66]
+            - text: Query Expansion · 后续任务
+        - generic [ref=e67]:
+          - button "正在检索" [disabled]
+          - button "同步检索快照" [disabled] [ref=e70]
+          - button "取消等待" [ref=e600] [cursor=pointer]
+          - generic [ref=e72]: 首次使用或索引更新后，从当前索引同步检索快照。
+      - region "检索结果" [ref=e73]:
+        - status [ref=e602]:
+          - strong [ref=e603]: 正在检索代码…
+          - generic [ref=e604]: 完成后显示本次请求的结果与诊断。
+```

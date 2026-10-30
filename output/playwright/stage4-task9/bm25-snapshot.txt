@@ -1,0 +1,162 @@
+### Page
+- Page URL: http://localhost:5173/#retrieval
+- Page Title: RepoPilot
+### Snapshot
+```yaml
+- main [ref=e3]:
+  - region "RepoPilot 工作区" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "RepoPilot" [level=1] [ref=e7]
+        - paragraph [ref=e8]: LLM · 代码检索 · 仓库问答 · Issue 分析
+      - generic [ref=e77]: "Embedding: qwen3-embedding:0.6b"
+    - navigation "工作区切换" [ref=e9]:
+      - radiogroup "radio-group" [ref=e10]:
+        - generic [ref=e11]:
+          - radio "LLM 工作区" [ref=e12]
+          - generic [ref=e13] [cursor=pointer]: LLM 工作区
+        - generic [ref=e14]:
+          - radio "Retrieval Debug" [checked] [ref=e15]
+          - generic [ref=e16] [cursor=pointer]: Retrieval Debug
+        - generic [ref=e17]:
+          - radio "Code Chat" [ref=e18]
+          - generic [ref=e19] [cursor=pointer]: Code Chat
+        - generic [ref=e20]:
+          - radio "Issue Analyzer" [ref=e21]
+          - generic [ref=e22] [cursor=pointer]: Issue Analyzer
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - strong [ref=e26]: Retrieval Debug · 代码检索
+          - generic [ref=e27]: 查看代码从哪一路召回，如何融合，为什么进入最终结果。
+        - button "清空检索结果" [ref=e28] [cursor=pointer]
+      - form "代码检索参数" [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Repository
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - combobox "Repository" [ref=e37]
+              - generic [ref=e38]: demo-repository
+            - generic [ref=e40] [cursor=pointer]
+        - generic [ref=e43]:
+          - generic [ref=e44]: 检索模式
+          - combobox "检索模式" [ref=e45]:
+            - option "Dense · 语义"
+            - option "BM25 · 关键词" [selected]
+            - option "Hybrid · RRF 融合"
+        - generic [ref=e46]:
+          - generic [ref=e47]: TopK
+          - spinbutton "TopK" [ref=e48]: "5"
+          - generic [ref=e49]: 1–20 个最终代码块
+        - generic [ref=e50]:
+          - generic [ref=e51]: Language
+          - textbox "Language" [ref=e52]:
+            - /placeholder: 全部，例如 java
+        - generic [ref=e53]:
+          - generic [ref=e54]: Path prefix
+          - textbox "Path prefix" [ref=e55]:
+            - /placeholder: 例如 backend/service/
+          - generic [ref=e56]: 字面前缀；目录边界使用末尾 /。
+        - generic [ref=e57]:
+          - generic [ref=e58]: Query
+          - textbox "Query" [ref=e60]:
+            - /placeholder: 例如 RefundService.refund，或：退款逻辑在哪里？
+            - text: RefundService.refund
+          - generic [ref=e61]: 20 / 8192 字符 · Ctrl / ⌘ + Enter 搜索
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - checkbox "Rerank · 后续任务" [disabled] [ref=e64]
+            - text: Rerank · 后续任务
+          - generic [ref=e65]:
+            - checkbox "Query Expansion · 后续任务" [disabled] [ref=e66]
+            - text: Query Expansion · 后续任务
+        - generic [ref=e67]:
+          - button "Search" [ref=e68] [cursor=pointer]
+          - button "同步检索快照" [ref=e70] [cursor=pointer]
+          - generic [ref=e72]: 首次使用或索引更新后，从当前索引同步检索快照。
+      - region "检索结果" [ref=e73]:
+        - generic [ref=e189]:
+          - strong [ref=e190]: BM25 · 5 个最终结果 / TopK 5
+          - paragraph [ref=e191]: demo-repository · RefundService.refund
+          - generic [ref=e192]:
+            - generic [ref=e193]: qwen3-embedding:0.6b · 1024 维
+            - generic [ref=e194]: Collection repopilot_code
+            - generic [ref=e195]: 5357.0 ms
+          - paragraph [ref=e196]: 索引版本（快照 SHA-256）：sha256:045a8fbb6174b81de64b64db178b0a6af530b41841e9ae10ca75fb762a1bcabd
+          - generic "各阶段耗时" [ref=e197]:
+            - generic [ref=e198]: BM25 5348.17 ms
+            - generic [ref=e199]: 协调与校验 8.83 ms
+          - paragraph [ref=e200]: 全部语言 · 全部路径 · 去重并集 16 → 候选池 16 → 最终 5
+          - paragraph [ref=e201]: Cosine 衡量向量相似度，BM25 衡量词法相关性，Exact 为匹配档位，RRF 融合排名；分数均不代表答案可信度。
+        - region "各通道候选与融合排名" [ref=e202]:
+          - heading "召回与融合诊断" [level=2] [ref=e203]
+          - group [ref=e204]:
+            - generic "BM25 · 16 / 30 个候选 · BM25 score" [ref=e205] [cursor=pointer]
+        - heading "最终 TopK · BM25 score" [level=2] [ref=e206]
+        - article [ref=e207]:
+          - generic [ref=e208]:
+            - strong [ref=e209]: "#1"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e210]
+            - generic "4.280716323176162" [ref=e211]: BM25 score 4.28071632
+          - generic [ref=e213]:
+            - generic [ref=e214]: java · Lines 12–18
+            - generic [ref=e215]: RefundService.refund
+            - generic [ref=e216]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e217]: "BM25 #1 · 4.28071632"
+          - paragraph [ref=e219]: Chunk 66b8fac4-539e-5bd2-802f-2f88b7965a2a
+          - group [ref=e220]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e221] [cursor=pointer]
+            - code [ref=e223]: "public void refund(String orderId, String userId, BigDecimal amount) { if (orderId == null || orderId.isBlank()) { throw new IllegalArgumentException(\"Order ID is required\"); } // Fixture workflow: credit the refunded amount to the user's wallet. wallets.credit(userId, amount); }"
+        - article [ref=e224]:
+          - generic [ref=e225]:
+            - strong [ref=e226]: "#2"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e227]
+            - generic "3.022265663769441" [ref=e228]: BM25 score 3.02226566
+          - generic [ref=e230]:
+            - generic [ref=e231]: java · Lines 8–10
+            - generic [ref=e232]: RefundService.RefundService
+            - generic [ref=e233]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e234]: "BM25 #2 · 3.02226566"
+          - paragraph [ref=e236]: Chunk a271029f-69fc-556c-b2eb-6a5aa50fef3b
+          - group [ref=e237]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e238] [cursor=pointer]
+        - article [ref=e239]:
+          - generic [ref=e240]:
+            - strong [ref=e241]: "#3"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e242]
+            - generic "2.9230396287970466" [ref=e243]: BM25 score 2.92303963
+          - generic [ref=e245]:
+            - generic [ref=e246]: java · Lines 5–7
+            - generic [ref=e247]: RefundService
+            - generic [ref=e248]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e249]: "BM25 #3 · 2.92303963"
+          - paragraph [ref=e251]: Chunk 0769b356-b5da-5c2b-ba79-82b721a7e740
+          - group [ref=e252]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e253] [cursor=pointer]
+        - article [ref=e254]:
+          - generic [ref=e255]:
+            - strong [ref=e256]: "#4"
+            - heading "backend/service/RefundService.java" [level=2] [ref=e257]
+            - generic "2.2671847514119765" [ref=e258]: BM25 score 2.26718475
+          - generic [ref=e260]:
+            - generic [ref=e261]: java · Lines 1–4
+            - generic [ref=e262]: 无 Symbol
+            - generic [ref=e263]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e264]: "BM25 #4 · 2.26718475"
+          - paragraph [ref=e266]: Chunk da70f9a5-48fa-58b1-8eba-d64804240344
+          - group [ref=e267]:
+            - generic "Code Preview · backend/service/RefundService.java" [ref=e268] [cursor=pointer]
+        - article [ref=e269]:
+          - generic [ref=e270]:
+            - strong [ref=e271]: "#5"
+            - heading "backend/controller/OrderController.java" [level=2] [ref=e272]
+            - generic "2.0400024945573723" [ref=e273]: BM25 score 2.04000249
+          - generic [ref=e275]:
+            - generic [ref=e276]: java · Lines 1–5
+            - generic [ref=e277]: 无 Symbol
+            - generic [ref=e278]: ast · ast-v1
+          - generic "结果来源与排名" [ref=e279]: "BM25 #5 · 2.04000249"
+          - paragraph [ref=e281]: Chunk 62e9a26d-d1a1-5437-9b8c-6a10fca1e96e
+          - group [ref=e282]:
+            - generic "Code Preview · backend/controller/OrderController.java" [ref=e283] [cursor=pointer]
+```

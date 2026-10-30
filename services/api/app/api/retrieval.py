@@ -9,6 +9,9 @@ from app.schemas.retrieval import RetrievalSearchRequest, RetrievalSearchRespons
 
 router = APIRouter(prefix="/api/retrieval", tags=["retrieval"])
 
+from app.api.retrieval_debug import router as debug_router
+router.include_router(debug_router)
+
 
 @router.post("/search", response_model=RetrievalSearchResponse)
 async def search(request: RetrievalSearchRequest) -> RetrievalSearchResponse:

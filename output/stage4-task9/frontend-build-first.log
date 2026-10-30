@@ -1,0 +1,13 @@
+
+> @repopilot/web@0.1.0 build
+> vue-tsc -b && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1630 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.85 kB │ gzip:   0.54 kB
+dist/assets/index-BKJ-Hhkl.css  375.16 kB │ gzip:  51.34 kB
+dist/assets/index-U8vQSD72.js   330.30 kB │ gzip: 116.32 kB
+✓ built in 4.52s

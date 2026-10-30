@@ -10,7 +10,7 @@ import RetrievalDebug from '@/components/RetrievalDebug.vue'
 import { useChatStore } from '@/stores/chat'
 import { useCodeChatStore } from '@/stores/code-chat'
 import { useIssueAnalysisStore } from '@/stores/issue-analysis'
-import { useRetrievalStore } from '@/stores/retrieval'
+import { useRetrievalDebugStore } from '@/stores/retrieval-debug'
 
 type Workspace = 'llm' | 'retrieval' | 'code-chat' | 'issue-analysis'
 function workspaceFromHash(): Workspace {
@@ -19,7 +19,7 @@ function workspaceFromHash(): Workspace {
 }
 const activeWorkspace = ref<Workspace>(workspaceFromHash())
 const { model } = storeToRefs(useChatStore())
-const { response } = storeToRefs(useRetrievalStore())
+const { response } = storeToRefs(useRetrievalDebugStore())
 const { model: codeChatModel } = storeToRefs(useCodeChatStore())
 const { response: issueResponse } = storeToRefs(useIssueAnalysisStore())
 const displayedModel = computed(() => activeWorkspace.value === 'retrieval'

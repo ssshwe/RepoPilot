@@ -1,0 +1,9 @@
+### Result
+{
+  "expanded": true,
+  "text": "展开 RRF 贡献dense：1 / (60 + 6) = 0.0151515152 · 原始分数 0.65027773bm25：1 / (60 + 1) = 0.0163934426 · 原始分数 4.280716323176162exact：1 / (60 + 1) = 0.0163934426 · 原始分数 100"
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({expanded:document.querySelector(\'.debug-contributions\').open, text:document.querySelector(\'.debug-contributions\').textContent})');
+```

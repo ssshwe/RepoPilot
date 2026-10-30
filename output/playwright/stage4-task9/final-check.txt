@@ -1,0 +1,6 @@
+### Result
+{"summary":"HYBRID · 5 个最终结果 / TopK 5","results":5,"nativeFetchRestored":true,"testHookRemoved":true,"futureDisabled":true,"error":null}
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByText('HYBRID · 5 个最终结果 / TopK 5',{exact:true}).waitFor({timeout:30000}); return await page.evaluate(() => ({summary:document.querySelector('.retrieval-result-summary strong').textContent, results:document.querySelectorAll('.retrieval-result').length, nativeFetchRestored:window.fetch.toString().includes('[native code]'), testHookRemoved:!('__task9Late' in window), futureDisabled:Array.from(document.querySelectorAll('.debug-future-options input')).every(x=>x.disabled&&!x.checked), error:document.querySelector('.error-alert[role=alert]')?.textContent??null})); })(page);
+```

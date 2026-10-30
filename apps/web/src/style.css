@@ -90,6 +90,34 @@ h1 {
 
 .retrieval-heading { padding-top: 14px; }
 
+.debug-form { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 110px !important; }
+.debug-path-field { grid-column: span 2; }
+.debug-future-options { display: flex; gap: 18px; flex-wrap: wrap; grid-column: 1 / -1; color: #6b7280; font-size: 12px; }
+.debug-future-options label { display: inline-flex; align-items: center; gap: 6px; }
+.debug-stage-timings, .debug-provenance { display: flex; gap: 8px 16px; flex-wrap: wrap; margin: 12px 0; font-size: 12px; color: #374151; }
+.debug-channel-section { margin-bottom: 24px; }
+.debug-channel-section h2, .debug-final-heading { font-size: 15px; margin: 16px 0 12px; }
+.debug-candidates { margin: 8px 0; padding: 12px; border: 1px solid #dfe4ec; border-radius: 6px; }
+.debug-candidates > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #374151; }
+.debug-table-scroll { overflow-x: auto; margin-top: 12px; }
+.debug-table { width: 100%; min-width: 680px; border-collapse: collapse; text-align: left; font-size: 12px; }
+.debug-table caption { text-align: left; padding: 8px 0; color: #6b7280; }
+.debug-table th, .debug-table td { padding: 10px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+.debug-table th { background: #f8fafc; white-space: nowrap; }
+.debug-source-cell { min-width: 260px; overflow-wrap: anywhere; }
+.debug-source-cell > strong, .debug-source-cell > span { display: block; margin-bottom: 5px; }
+.debug-table pre { max-width: 640px; }
+.debug-identity { overflow-wrap: anywhere; color: #6b7280; font-size: 11px; font-family: ui-monospace, monospace; }
+.debug-match-reason { font-size: 12px; line-height: 1.6; color: #166534; overflow-wrap: anywhere; }
+.debug-contributions { margin: 12px 0; font-size: 12px; }
+.debug-contributions summary { cursor: pointer; }
+.debug-contributions li { padding: 4px 0; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .debug-form { grid-template-columns: minmax(0, 1fr) 110px !important; }
+  .debug-path-field { grid-column: 1 / -1; }
+  .debug-table { min-width: 640px; }
+}
+
 .retrieval-form {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 160px;

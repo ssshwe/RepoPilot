@@ -1,0 +1,46 @@
+{
+  "task": "Stage 4 / Task 9",
+  "passed": true,
+  "date": "2026-10-31",
+  "original_browser_run": {
+    "path": "output/playwright/stage4-task9/browser-verification.json",
+    "sha256": "25e2a2da80e6e215151bef6bf4211259dc6fdcb53f8a42c39065b563c3ac615e"
+  },
+  "metadata_check": {
+    "passed": true,
+    "meta": "java · Lines 12–18RefundService.refundNode method_declaration · Parent RefundServiceast · ast-v1",
+    "fusedOrigins": 17,
+    "firstOrigins": "来源：DENSE #6 · Cosine similarity 0.65027773 / BM25 #1 · BM25 score 4.280716323176162 / EXACT #1 · Exact match tier 100",
+    "summary": "HYBRID · 5 个最终结果 / TopK 5",
+    "nativeFetchRestored": true
+  },
+  "no_additional_model_calls_for_render_fix": true,
+  "final_ui_sources": {
+    "apps/web/src/components/RetrievalDebug.vue": {
+      "path": "apps/web/src/components/RetrievalDebug.vue",
+      "sha256": "32a4487f64ea9f069add4e77e27557c2fa92db028da5d3759d25b0cc21e0c188"
+    },
+    "apps/web/src/components/RetrievalCandidates.vue": {
+      "path": "apps/web/src/components/RetrievalCandidates.vue",
+      "sha256": "f97b5248c271d0d275e6ea546c3a1b284ec0afece4eef1f082ff4ce853a644d1"
+    }
+  },
+  "artifacts": {
+    "metadata-check.txt": {
+      "path": "output/playwright/stage4-task9/metadata-check.txt",
+      "sha256": "cf78a3459e42811651d568fd6b33adaae2bb1e328cb61afcbaffe8e21323d521"
+    },
+    "metadata-final-snapshot.txt": {
+      "path": "output/playwright/stage4-task9/metadata-final-snapshot.txt",
+      "sha256": "585f403fa97f40f95d69a93b27ac90ed90578c664ec22ab2edcb65e75bd596c1"
+    },
+    "hybrid-origins.png": {
+      "path": "output/playwright/stage4-task9/hybrid-origins.png",
+      "sha256": "8026b3dfdfdae4ed55aa927b6205f87d0a7d531b4e240da8c5120028fdb291fe"
+    },
+    "hybrid-final.png": {
+      "path": "output/playwright/stage4-task9/hybrid-final.png",
+      "sha256": "ced6c6ec6bae64585def8d7e489625375bdcd39a59defd8d6af193bd8a550dc2"
+    }
+  }
+}

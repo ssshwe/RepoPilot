@@ -1,0 +1,6 @@
+### Result
+{"sourceExpanded":true,"sourceText":"    public void refund(String orderId, String userId, BigDecimal amount) {\n        if (orderId == null || orderId.isBlank()) {\n            throw new IllegalArgumentException(\"Order ID is required\");\n        }\n        // Fixture workflow: credit the refunded amount to the user's wallet.\n        wallets.credit(userId, amount);\n    }\n"}
+### Ran Playwright code
+```js
+await (async (page) => { return await page.evaluate(() => ({sourceExpanded:document.querySelector('.debug-candidates[open] .code-preview')?.open, sourceText:document.querySelector('.debug-candidates[open] pre')?.textContent})); })(page);
+```

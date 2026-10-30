@@ -1,0 +1,9 @@
+### Result
+{
+  "error": "Path prefix 使用仓库相对路径和 /，不支持遍历或通配符。",
+  "controlsEnabled": true
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({error:document.querySelector(\'.error-alert[role=alert]\')?.textContent, controlsEnabled:!Array.from(document.querySelectorAll(\'button\')).find(x=>x.textContent.trim()===\'Search\')?.disabled})');
+```

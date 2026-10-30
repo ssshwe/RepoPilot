@@ -1,0 +1,6 @@
+### Result
+{"passed":true,"lateDelivered":1,"summary":"BM25 · 5 个最终结果 / TopK 5","error":null,"controlsEnabled":true}
+### Ran Playwright code
+```js
+await (async (page) => { await page.waitForFunction(() => window.__task9Late.delivered===1,null,{timeout:30000}); return await page.evaluate(() => { const summary=document.querySelector('.retrieval-result-summary strong')?.textContent; const error=document.querySelector('.error-alert[role=alert]')?.textContent??null; const enabled=!Array.from(document.querySelectorAll('button')).find(x=>x.textContent.trim()==='Search')?.disabled; if (!summary?.startsWith('BM25') || error || !enabled) throw new Error('Late response changed newer state'); return {passed:true,lateDelivered:window.__task9Late.delivered,summary,error,controlsEnabled:enabled}; }); })(page);
+```

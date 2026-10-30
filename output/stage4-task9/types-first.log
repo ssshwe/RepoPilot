@@ -1,0 +1,7 @@
+
+> @repopilot/web@0.1.0 type-check
+> vue-tsc -b
+
+src/api/retrieval-debug-contract.ts(57,13): error TS2550: Property 'at' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/api/retrieval-debug-contract.ts(89,78): error TS2550: Property 'at' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/api/retrieval-debug-contract.ts(89,128): error TS2550: Property 'at' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.

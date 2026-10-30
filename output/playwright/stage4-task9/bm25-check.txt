@@ -1,0 +1,11 @@
+### Result
+{
+  "summary": "BM25 · 5 个最终结果 / TopK 5",
+  "results": 5,
+  "futureDisabled": true,
+  "pageOverflow": false
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({summary: document.querySelector(\'.retrieval-result-summary strong\')?.textContent, results: document.querySelectorAll(\'.retrieval-result\').length, futureDisabled: Array.from(document.querySelectorAll(\'.debug-future-options input\')).every(x => x.disabled && !x.checked), pageOverflow: document.documentElement.scrollWidth > innerWidth})');
+```

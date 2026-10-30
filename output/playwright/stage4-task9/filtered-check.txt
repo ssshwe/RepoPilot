@@ -1,0 +1,6 @@
+### Result
+{"summary":"HYBRID · 5 个最终结果 / TopK 5","paths":["backend/service/RefundService.java","backend/service/RefundService.java","backend/service/RefundService.java","backend/service/RefundService.java","backend/service/WalletService.java"],"languages":["qwen3-embedding:0.6b · 1024 维Collection repopilot_code21944.1 ms","java · Lines 12–18RefundService.refundast · ast-v1","java · Lines 5–7RefundServiceast · ast-v1","java · Lines 8–10RefundService.RefundServiceast · ast-v1","java · Lines 1–4无 Symbolast · ast-v1","java · Lines 7–9WalletServiceast · ast-v1"],"error":null}
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByText('HYBRID · 5 个最终结果 / TopK 5',{exact:true}).waitFor({timeout:30000}); return await page.evaluate(() => ({summary:document.querySelector('.retrieval-result-summary strong').textContent, paths:Array.from(document.querySelectorAll('.retrieval-result-heading h2')).map(x=>x.textContent), languages:Array.from(document.querySelectorAll('.retrieval-result-meta')).map(x=>x.textContent), error:document.querySelector('.error-alert[role=alert]')?.textContent ?? null})); })(page);
+```

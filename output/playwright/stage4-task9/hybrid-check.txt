@@ -1,0 +1,16 @@
+### Result
+{
+  "summary": "HYBRID · 5 个最终结果 / TopK 5",
+  "channels": [
+    "DENSE · 17 / 30 个候选 · Cosine similarity",
+    "BM25 · 16 / 30 个候选 · BM25 score",
+    "EXACT · 1 / 10 个候选 · Exact match tier",
+    "RRF · 17 / 60 个候选 · RRF score"
+  ],
+  "results": 5,
+  "reasons": 1
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({summary:document.querySelector(\'.retrieval-result-summary strong\').textContent, channels:Array.from(document.querySelectorAll(\'.debug-candidates > summary\')).map(x=>x.textContent), results:document.querySelectorAll(\'.retrieval-result\').length, reasons:document.querySelectorAll(\'.retrieval-result .debug-match-reason\').length})');
+```

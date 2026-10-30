@@ -1,0 +1,27 @@
+..................................F..................................... [ 35%]
+........................................................................ [ 71%]
+..........................................................               [100%]
+================================== FAILURES ===================================
+__________ test_real_debug_receipts_recompute_without_service_calls ___________
+
+    def test_real_debug_receipts_recompute_without_service_calls():
+>       assert replay(REPORT)=={"offline_replay_passed":True,"real_http_cases":9,"real_query_embeddings":4,"generation_calls":0}
+               ^^^^^^^^^^^^^^
+
+evaluation\tests\test_debug_receipts.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+evaluation\stage4\verify_debug.py:154: in replay
+    require(report["cases"][0]["response"]["results"]==report["cases"][-1]["response"]["results"],"Dense legacy/new Top5 differs")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'Dense legacy/new Top5 differs'
+
+    def require(condition: bool, message: str) -> None:
+        if not condition:
+>           raise EvaluationError(message)
+E           evaluation.retrieval.evaluate.EvaluationError: Dense legacy/new Top5 differs
+
+evaluation\retrieval\evaluate.py:28: EvaluationError
+=========================== short test summary info ===========================
+FAILED evaluation/tests/test_debug_receipts.py::test_real_debug_receipts_recompute_without_service_calls
+1 failed, 201 passed in 54.47s

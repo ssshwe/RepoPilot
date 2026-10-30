@@ -1,0 +1,7 @@
+
+  VITE v7.3.6  ready in 265 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  press h + enter to show help
+01:25:12 [vite] (client) hmr update /src/components/RetrievalDebug.vue
+01:25:12 [vite] (client) hmr update /src/components/RetrievalCandidates.vue

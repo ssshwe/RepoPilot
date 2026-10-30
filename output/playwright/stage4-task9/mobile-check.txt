@@ -1,0 +1,11 @@
+### Result
+{
+  "viewport": 390,
+  "pageWidth": 390,
+  "summary": "HYBRID · 5 个最终结果 / TopK 5",
+  "futureDisabled": true
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({viewport:innerWidth, pageWidth:document.documentElement.scrollWidth, summary:document.querySelector(\'.retrieval-result-summary strong\')?.textContent, futureDisabled:Array.from(document.querySelectorAll(\'.debug-future-options input\')).every(x=>x.disabled)})');
+```

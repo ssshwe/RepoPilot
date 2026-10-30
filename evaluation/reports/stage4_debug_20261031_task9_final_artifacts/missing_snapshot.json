@@ -1,0 +1,22 @@
+{
+  "id": "missing_snapshot",
+  "url": "/api/retrieval/debug",
+  "request": {
+    "repository": "task9-missing-snapshot",
+    "query": "RefundService.refund",
+    "top_k": 5,
+    "mode": "dense",
+    "filters": {
+      "language": null,
+      "path_prefix": null
+    },
+    "rerank": false,
+    "query_expansion": false
+  },
+  "expected_status": 409,
+  "status": 409,
+  "response": {
+    "detail": "Snapshot missing, rebuilding or stale; synchronize the retrieval snapshot."
+  },
+  "events": []
+}

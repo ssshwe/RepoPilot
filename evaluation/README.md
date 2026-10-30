@@ -1,5 +1,29 @@
 # Repository evaluation
 
+## Stage 4 Task 9 real Debug API and browser acceptance
+
+[`stage4/verify_debug.py`](stage4/verify_debug.py) records nine real HTTP cases:
+Dense, BM25, Hybrid, structured filters, empty eligibility, no lexical terms,
+missing snapshots, unsupported future features and legacy Dense compatibility.
+The acceptance server records real query vectors and forbids generation calls.
+Offline replay validates actual indexed coordinates, each query's Cosine,
+BM25/Exact rankings, RRF provenance, response types and immutable index state.
+
+```powershell
+& '.\services\api\.venv\Scripts\python.exe' evaluation/stage4/verify_debug.py `
+  --verify-only evaluation/reports/stage4_debug_20261031_task9_release.json
+```
+
+The API proof used four real embeddings; browser flows used five more, with
+zero generation calls. Independent embedding outputs differed, so legacy/new
+Dense compatibility compares source identity/order and checks each raw score
+against its own vector. The final manifest reuses every original HTTP receipt
+after two render-only metadata improvements; it preserves the earlier report,
+source snapshots and receipt hashes, with zero new query calls.
+Playwright verifies all modes, filters, code/RRF expansion, cancellation followed
+by a truly late response, validation errors and 390px layout. The evaluation
+suite passes 207 tests. See [Task 9 interfaces and reproduction](../docs/stage-4-task-9-retrieval-debug.md).
+
 ## Stage 4 Task 8 frozen Hybrid/RRF comparison
 
 [`stage4/evaluate_hybrid.py`](stage4/evaluate_hybrid.py) compares Dense, BM25,
