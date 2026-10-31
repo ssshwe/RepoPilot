@@ -1,0 +1,4903 @@
+{
+  "id": "missing-path",
+  "rerank": {
+    "fused": {
+      "repository": "stage4-commerce",
+      "query": "backend/unknown/MissingController.java 在哪里？",
+      "channel": "rrf",
+      "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.546,
+      "candidates": [
+        {
+          "chunk_id": "9978793c-708e-58c9-b47c-ee205b83c79c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final FraudService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4392254,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.027651515151515153
+          },
+          "channel_ranks": {
+            "dense": 6,
+            "bm25": 20,
+            "rrf": 1
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "0eaf17eb-868d-5f30-ac58-380db44ae0af",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final InventoryService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.42316455,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.0273972602739726
+          },
+          "channel_ranks": {
+            "dense": 13,
+            "bm25": 13,
+            "rrf": 2
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "8ceb02e3-ba4c-56ef-8f55-461b860956ec",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final AuthService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4232295,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.026547116736990152
+          },
+          "channel_ranks": {
+            "dense": 12,
+            "bm25": 19,
+            "rrf": 3
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "2826862c-74f5-5249-9118-22708f263387",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final NotificationService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41625172,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.02649122807017544
+          },
+          "channel_ranks": {
+            "dense": 16,
+            "bm25": 15,
+            "rrf": 4
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "cfd78407-2757-54de-b90f-5114ab7b5a3d",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final LedgerService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41985202,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.02541827541827542
+          },
+          "channel_ranks": {
+            "dense": 14,
+            "bm25": 24,
+            "rrf": 5
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "513934f0-9352-5fe9-8789-1734778ddbbf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final WalletService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40298063,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.02478580171358629
+          },
+          "channel_ranks": {
+            "dense": 26,
+            "bm25": 16,
+            "rrf": 6
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "870ec1d3-43d1-5741-9f71-cdb32388a809",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final OrderService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40483725,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.024725274725274724
+          },
+          "channel_ranks": {
+            "dense": 24,
+            "bm25": 18,
+            "rrf": 7
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "9f359c6c-50bf-585e-8e63-487cb39960b6",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final InvoiceService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40173528,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.023709315375982042
+          },
+          "channel_ranks": {
+            "dense": 28,
+            "bm25": 21,
+            "rrf": 8
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "c8c6d498-56d9-5788-ba01-0598dc05ddb9",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final SubscriptionService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40270922,
+            "bm25": 1.4006558514189098,
+            "rrf": 0.023542445644647556
+          },
+          "channel_ranks": {
+            "dense": 27,
+            "bm25": 23,
+            "rrf": 9
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "2f71243a-7584-5044-aa7f-a8e326797a11",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(FraudService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.01639344262295082
+          },
+          "channel_ranks": {
+            "bm25": 1,
+            "rrf": 10
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/legacy/WalletService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.legacy;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.51483303,
+            "rrf": 0.01639344262295082
+          },
+          "channel_ranks": {
+            "dense": 1,
+            "rrf": 11
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "3a620534-10cf-51d4-9332-df4a680bf102",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(SubscriptionService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.016129032258064516
+          },
+          "channel_ranks": {
+            "bm25": 2,
+            "rrf": 12
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.ledger;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45121548,
+            "rrf": 0.016129032258064516
+          },
+          "channel_ranks": {
+            "dense": 2,
+            "rrf": 13
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.015873015873015872
+          },
+          "channel_ranks": {
+            "bm25": 3,
+            "rrf": 14
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.fraud;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4506532,
+            "rrf": 0.015873015873015872
+          },
+          "channel_ranks": {
+            "dense": 3,
+            "rrf": 15
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.015625
+          },
+          "channel_ranks": {
+            "bm25": 4,
+            "rrf": 16
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.notification;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.45041934,
+            "rrf": 0.015625
+          },
+          "channel_ranks": {
+            "dense": 4,
+            "rrf": 17
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "6f42e53b-774d-5686-bd64-a9e23e60b9e6",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/ledger/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(LedgerService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.015384615384615385
+          },
+          "channel_ranks": {
+            "bm25": 5,
+            "rrf": 18
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.invoice;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.44371274,
+            "rrf": 0.015384615384615385
+          },
+          "channel_ranks": {
+            "dense": 5,
+            "rrf": 19
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "7beec65f-17f9-543c-93d3-8c2a36fc8a1c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(CouponService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.015151515151515152
+          },
+          "channel_ranks": {
+            "bm25": 6,
+            "rrf": 20
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shared/SharedRecorder.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shared;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43667993,
+            "rrf": 0.014925373134328358
+          },
+          "channel_ranks": {
+            "dense": 7,
+            "rrf": 21
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(NotificationService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.014925373134328358
+          },
+          "channel_ranks": {
+            "bm25": 7,
+            "rrf": 22
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(AuthService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "bm25": 8,
+            "rrf": 23
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.auth;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4340896,
+            "rrf": 0.014705882352941176
+          },
+          "channel_ranks": {
+            "dense": 8,
+            "rrf": 24
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.014492753623188406
+          },
+          "channel_ranks": {
+            "bm25": 9,
+            "rrf": 25
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.inventory;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.43351495,
+            "rrf": 0.014492753623188406
+          },
+          "channel_ranks": {
+            "dense": 9,
+            "rrf": 26
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.coupon;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4251655,
+            "rrf": 0.014285714285714285
+          },
+          "channel_ranks": {
+            "dense": 10,
+            "rrf": 27
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "af550fd3-3903-50fe-acea-ec34ef27eebc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(InvoiceService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.014285714285714285
+          },
+          "channel_ranks": {
+            "bm25": 10,
+            "rrf": 28
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "README.md",
+            "language": "markdown",
+            "start_line": 1,
+            "end_line": 7,
+            "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+            "symbol": null,
+            "node_type": null,
+            "parent_symbol": null,
+            "chunking_strategy": "fallback",
+            "chunking_version": "ast-fallback-line-v1"
+          },
+          "channel_scores": {
+            "dense": 0.423989,
+            "rrf": 0.014084507042253521
+          },
+          "channel_ranks": {
+            "dense": 11,
+            "rrf": 29
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "bb0e8129-c340-53d5-9266-25d6da568147",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(InventoryService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.014084507042253521
+          },
+          "channel_ranks": {
+            "bm25": 11,
+            "rrf": 30
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "f9c42a9e-656b-5aca-9e33-d665c6831b58",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 4,
+            "end_line": 6,
+            "content": "    public WorkflowController(OrderService service) {\n        this.service = service;\n    }\n",
+            "symbol": "WorkflowController.WorkflowController",
+            "node_type": "constructor_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4638384843395973,
+            "rrf": 0.013888888888888888
+          },
+          "channel_ranks": {
+            "bm25": 12,
+            "rrf": 31
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "1ae5cd99-7a62-56ad-9397-609194e966db",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final CouponService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4006558514189098,
+            "rrf": 0.013513513513513514
+          },
+          "channel_ranks": {
+            "bm25": 14,
+            "rrf": 32
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/AuthService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.auth;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4176404,
+            "rrf": 0.013333333333333334
+          },
+          "channel_ranks": {
+            "dense": 15,
+            "rrf": 33
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/orders/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.orders;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.41403532,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "dense": 17,
+            "rrf": 34
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "5927ebb2-a953-5ff9-a3b2-51556259af60",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final ShippingService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4006558514189098,
+            "rrf": 0.012987012987012988
+          },
+          "channel_ranks": {
+            "bm25": 17,
+            "rrf": 35
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/FraudService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.fraud;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4107733,
+            "rrf": 0.01282051282051282
+          },
+          "channel_ranks": {
+            "dense": 18,
+            "rrf": 36
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/subscription/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.subscription;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40951562,
+            "rrf": 0.012658227848101266
+          },
+          "channel_ranks": {
+            "dense": 19,
+            "rrf": 37
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/shipping/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.shipping;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40896732,
+            "rrf": 0.0125
+          },
+          "channel_ranks": {
+            "dense": 20,
+            "rrf": 38
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "d96d727e-8ff6-585b-be57-300869a00792",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/NotificationService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.notification;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4069232,
+            "rrf": 0.012345679012345678
+          },
+          "channel_ranks": {
+            "dense": 21,
+            "rrf": 39
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/InvoiceService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.invoice;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.4066794,
+            "rrf": 0.012195121951219513
+          },
+          "channel_ranks": {
+            "dense": 22,
+            "rrf": 40
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/refund/WorkflowController.java",
+            "language": "java",
+            "start_line": 2,
+            "end_line": 3,
+            "content": "public final class WorkflowController {\n    private final RefundService service;\n",
+            "symbol": "WorkflowController",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.4006558514189098,
+            "rrf": 0.012195121951219513
+          },
+          "channel_ranks": {
+            "bm25": 22,
+            "rrf": 41
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/inventory/InventoryService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.inventory;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.406082,
+            "rrf": 0.012048192771084338
+          },
+          "channel_ranks": {
+            "dense": 23,
+            "rrf": 42
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/auth/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.login(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011764705882352941
+          },
+          "channel_ranks": {
+            "bm25": 25,
+            "rrf": 43
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "38233493-8adc-5db6-bedd-2901a2a02451",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 1,
+            "content": "package learning.wallet;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.40415597,
+            "rrf": 0.011764705882352941
+          },
+          "channel_ranks": {
+            "dense": 25,
+            "rrf": 44
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "254991d8-9d3c-5498-9a01-933d9d1854ef",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/notification/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.send(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011627906976744186
+          },
+          "channel_ranks": {
+            "bm25": 26,
+            "rrf": 45
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "2d6946d0-d82a-58b8-bd29-c4e36596ddad",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.apply(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011494252873563218
+          },
+          "channel_ranks": {
+            "bm25": 27,
+            "rrf": 46
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "3da5aa82-3ca5-51da-8cfd-6f79c31ce222",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.check(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011363636363636364
+          },
+          "channel_ranks": {
+            "bm25": 28,
+            "rrf": 47
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/wallet/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.credit(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "bm25": 29,
+            "rrf": 48
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "d1064187-513e-5004-bb33-74410dbccbd8",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/fraud/FraudService.java",
+            "language": "java",
+            "start_line": 3,
+            "end_line": 7,
+            "content": "public final class FraudService {\n    private int balance = 1000, stock = 100, refunded = 0, attempts = 0;\n    private int total = 0, months = 0, queued = 0, discount = 0;\n    private String state = \"NEW\";\n    private final SharedRecorder recorder;\n",
+            "symbol": "FraudService",
+            "node_type": "class_declaration",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.39962304,
+            "rrf": 0.011235955056179775
+          },
+          "channel_ranks": {
+            "dense": 29,
+            "rrf": 49
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "62df83b5-c501-5775-b04f-99ef456cf026",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/invoice/WorkflowController.java",
+            "language": "java",
+            "start_line": 7,
+            "end_line": 9,
+            "content": "    public void handle(String reference, int amount) {\n        service.issue(reference, amount);\n    }\n",
+            "symbol": "WorkflowController.handle",
+            "node_type": "method_declaration",
+            "parent_symbol": "WorkflowController",
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "bm25": 1.1933185149309626,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "bm25": 30,
+            "rrf": 50
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        },
+        {
+          "chunk_id": "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a",
+          "repository": "stage4-commerce",
+          "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+          "source_metadata": {
+            "path": "backend/coupon/CouponService.java",
+            "language": "java",
+            "start_line": 1,
+            "end_line": 2,
+            "content": "package learning.coupon;\nimport learning.shared.SharedRecorder;\n",
+            "symbol": null,
+            "node_type": "program",
+            "parent_symbol": null,
+            "chunking_strategy": "ast",
+            "chunking_version": "ast-v1"
+          },
+          "channel_scores": {
+            "dense": 0.3985455,
+            "rrf": 0.011111111111111112
+          },
+          "channel_ranks": {
+            "dense": 30,
+            "rrf": 51
+          },
+          "matched_queries": [
+            "backend/unknown/MissingController.java 在哪里？"
+          ]
+        }
+      ],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:96cc75231cbd6da7c7509a6ff530ee986ee9d3b8c89af9657667e1ad0e62db19"
+    },
+    "policy": {
+      "candidate_limit": 30,
+      "batch_size": 4,
+      "max_length": 512,
+      "max_query_tokens": 256,
+      "max_document_characters": 16000,
+      "timeout_seconds": 30.0
+    },
+    "top_k": 5,
+    "status": "reranked",
+    "reason": null,
+    "latency_ms": 195.802,
+    "reply": {
+      "model": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "manifest_sha256": "82bbd3823e4000f666d8c0f02f54b0c543566f8cf7a55befcccaed831b196a97",
+      "query_sha256": "6dfced8a791c690bffea7a740c8998a35c3ec38549a5eef2bd2cece833494fb7",
+      "policy": {
+        "candidate_limit": 30,
+        "batch_size": 4,
+        "max_length": 512,
+        "max_query_tokens": 256,
+        "max_document_characters": 16000,
+        "timeout_seconds": 30.0
+      },
+      "scores": [
+        -1.7978515625,
+        -2.103515625,
+        -1.970703125,
+        -1.822265625,
+        -1.904296875,
+        -1.775390625,
+        -1.8388671875,
+        -2.080078125,
+        -1.8515625,
+        -1.421875,
+        -3.958984375,
+        -1.4873046875,
+        -0.8046875,
+        -1.572265625,
+        -0.96337890625,
+        -1.3896484375,
+        -1.2236328125,
+        -1.5087890625,
+        -1.2548828125,
+        -1.958984375,
+        -3.671875,
+        -1.47265625,
+        -1.3779296875,
+        -1.3388671875,
+        -1.1904296875,
+        -1.1875,
+        -1.5078125,
+        -1.853515625,
+        -5.25390625,
+        -1.7841796875
+      ],
+      "inputs": [
+        {
+          "document_sha256": "33f9043cbff48eb01530d00b8f61503b705c3832d9ced9c5b199dfd573b9ae58",
+          "capped_sha256": "33f9043cbff48eb01530d00b8f61503b705c3832d9ced9c5b199dfd573b9ae58",
+          "original_characters": 160,
+          "capped_characters": 160,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            87040,
+            71,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            28519,
+            71,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "06d0b60644cb512f09ae3fbfad8864d081af432c53836a98bf404e2b97355048",
+          "capped_sha256": "06d0b60644cb512f09ae3fbfad8864d081af432c53836a98bf404e2b97355048",
+          "original_characters": 168,
+          "capped_characters": 168,
+          "query_tokens": 16,
+          "document_tokens": 38,
+          "used_document_tokens": 38,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            132894,
+            30675,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            360,
+            1353,
+            31667,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "904e16ab11b559d9c68ce17ae1ae099238145f21b0bcd7fd94bc04108d0fc88b",
+          "capped_sha256": "904e16ab11b559d9c68ce17ae1ae099238145f21b0bcd7fd94bc04108d0fc88b",
+          "original_characters": 158,
+          "capped_characters": 158,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            916,
+            927,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            5655,
+            927,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "7481374972b6fccffd514e36dea0d1aafa322d195b0f65f60472546788131816",
+          "capped_sha256": "7481374972b6fccffd514e36dea0d1aafa322d195b0f65f60472546788131816",
+          "original_characters": 174,
+          "capped_characters": 174,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            10869,
+            41274,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            11205,
+            41274,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "4cf00c8a77856a7597d4eba4ab60681361721df60ebccddf989a8b34fe7aa4ef",
+          "capped_sha256": "4cf00c8a77856a7597d4eba4ab60681361721df60ebccddf989a8b34fe7aa4ef",
+          "original_characters": 162,
+          "capped_characters": 162,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            181606,
+            42,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            45470,
+            1505,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "e8f05cdd81839d98b7cb31291a379eebe7e457f4cd23409b19d3575120a9d3da",
+          "capped_sha256": "e8f05cdd81839d98b7cb31291a379eebe7e457f4cd23409b19d3575120a9d3da",
+          "original_characters": 162,
+          "capped_characters": 162,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            66769,
+            126,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            23706,
+            126,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "f4eb45e8422a9329c659f1e9372de824f4a3e83ec9eff2f114bed4645bf7a079",
+          "capped_sha256": "f4eb45e8422a9329c659f1e9372de824f4a3e83ec9eff2f114bed4645bf7a079",
+          "original_characters": 161,
+          "capped_characters": 161,
+          "query_tokens": 16,
+          "document_tokens": 36,
+          "used_document_tokens": 36,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            80596,
+            7,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            81206,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "e9f4eab2559ad488495780846a6db44ac06408e05b7bb9cefe9e6750d5cba835",
+          "capped_sha256": "e9f4eab2559ad488495780846a6db44ac06408e05b7bb9cefe9e6750d5cba835",
+          "original_characters": 164,
+          "capped_characters": 164,
+          "query_tokens": 16,
+          "document_tokens": 39,
+          "used_document_tokens": 39,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            73,
+            965,
+            2980,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            360,
+            965,
+            2980,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "32219f449bd9847d8b3a5f887a06a184a99c139b0f56537bd0cd5763e72e2ada",
+          "capped_sha256": "32219f449bd9847d8b3a5f887a06a184a99c139b0f56537bd0cd5763e72e2ada",
+          "original_characters": 174,
+          "capped_characters": 174,
+          "query_tokens": 16,
+          "document_tokens": 37,
+          "used_document_tokens": 37,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            22144,
+            59478,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            2704,
+            18507,
+            27985,
+            118664,
+            175904,
+            603,
+            10666,
+            14375,
+            2704,
+            8273,
+            59478,
+            121979,
+            4516,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "7d2249a3b1952c1088f415cd6477e8fb39ddee99037019ea927807047704f55f",
+          "capped_sha256": "7d2249a3b1952c1088f415cd6477e8fb39ddee99037019ea927807047704f55f",
+          "original_characters": 191,
+          "capped_characters": 191,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            87040,
+            71,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            919,
+            112625,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "2b9a28856ee832309d2d47768482013a6ccda3f3f2127bc0a915e4b20c36cf8c",
+          "capped_sha256": "2b9a28856ee832309d2d47768482013a6ccda3f3f2127bc0a915e4b20c36cf8c",
+          "original_characters": 83,
+          "capped_characters": 83,
+          "query_tokens": 16,
+          "document_tokens": 23,
+          "used_document_tokens": 23,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            3257,
+            2408,
+            64,
+            198076,
+            126,
+            121979,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            3257,
+            2408,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "ae517584b0def371338e348444c11d699bae467fdd0107313abec3f1a55d8675",
+          "capped_sha256": "ae517584b0def371338e348444c11d699bae467fdd0107313abec3f1a55d8675",
+          "original_characters": 205,
+          "capped_characters": 205,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            22144,
+            59478,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            96472,
+            59478,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "07deb58d63de33772cb3d4690dc6047579eda9e05d52ab0bfcf1bd8b30cccac6",
+          "capped_sha256": "07deb58d63de33772cb3d4690dc6047579eda9e05d52ab0bfcf1bd8b30cccac6",
+          "original_characters": 88,
+          "capped_characters": 88,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            181606,
+            42,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            181606,
+            42,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "a7bf1bc516437b93c7b34b28533770be6842a5700a6dd618b4281ce63b49d284",
+          "capped_sha256": "a7bf1bc516437b93c7b34b28533770be6842a5700a6dd618b4281ce63b49d284",
+          "original_characters": 197,
+          "capped_characters": 197,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            3767,
+            26783,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            78567,
+            26783,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "2490c65fb9d78b03f0e42f157d16bea268e8bf4de6f1b934d30e3066fa315050",
+          "capped_sha256": "2490c65fb9d78b03f0e42f157d16bea268e8bf4de6f1b934d30e3066fa315050",
+          "original_characters": 86,
+          "capped_characters": 86,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            87040,
+            71,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            87040,
+            71,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "ad6a96fd001a4944598a71dd8f8d53027bd7696464c9b16c752cf63138afee40",
+          "capped_sha256": "ad6a96fd001a4944598a71dd8f8d53027bd7696464c9b16c752cf63138afee40",
+          "original_characters": 193,
+          "capped_characters": 193,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            66769,
+            126,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            198076,
+            126,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "bd5eeb9a2a26ef09d0c87383a4e3575a07685013afb725e230aeb9689d41560a",
+          "capped_sha256": "bd5eeb9a2a26ef09d0c87383a4e3575a07685013afb725e230aeb9689d41560a",
+          "original_characters": 100,
+          "capped_characters": 100,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            10869,
+            41274,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            10869,
+            41274,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "78df8b8c3aa4d3dbe080904bfbe42ec8a75ba6b8f7105ec14e255d302f52c62c",
+          "capped_sha256": "78df8b8c3aa4d3dbe080904bfbe42ec8a75ba6b8f7105ec14e255d302f52c62c",
+          "original_characters": 193,
+          "capped_characters": 193,
+          "query_tokens": 16,
+          "document_tokens": 47,
+          "used_document_tokens": 47,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            181606,
+            42,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            866,
+            297,
+            1505,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "9dce11da929091cccfc17c4b625ae0389b39ab184aaae9a0f4718ae1aff8ab79",
+          "capped_sha256": "9dce11da929091cccfc17c4b625ae0389b39ab184aaae9a0f4718ae1aff8ab79",
+          "original_characters": 90,
+          "capped_characters": 90,
+          "query_tokens": 16,
+          "document_tokens": 26,
+          "used_document_tokens": 26,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            73,
+            965,
+            2980,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            73,
+            965,
+            2980,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "2207d4681524a68e5eaf2a9a4ad3add4c94a8004c60900f08d17ae13eaa5937e",
+          "capped_sha256": "2207d4681524a68e5eaf2a9a4ad3add4c94a8004c60900f08d17ae13eaa5937e",
+          "original_characters": 193,
+          "capped_characters": 193,
+          "query_tokens": 16,
+          "document_tokens": 47,
+          "used_document_tokens": 47,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            12600,
+            5416,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            441,
+            796,
+            5416,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "b7fdeefc67d04a875192c5794e5ca552667fd9bc7f1afe2cf6abe20e6874c326",
+          "capped_sha256": "b7fdeefc67d04a875192c5794e5ca552667fd9bc7f1afe2cf6abe20e6874c326",
+          "original_characters": 84,
+          "capped_characters": 84,
+          "query_tokens": 16,
+          "document_tokens": 25,
+          "used_document_tokens": 25,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            67886,
+            71,
+            64,
+            69042,
+            71,
+            4332,
+            32271,
+            56,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            67886,
+            71,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "9b81a5ac0e9fdb98f312173115b5fe884d6fdd88e75f10902dcc11228a86f88f",
+          "capped_sha256": "9b81a5ac0e9fdb98f312173115b5fe884d6fdd88e75f10902dcc11228a86f88f",
+          "original_characters": 205,
+          "capped_characters": 205,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            10869,
+            41274,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            122116,
+            41274,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "d1150c0378d1a4596078c5284fb2613333a6430384f3a19c52352efd5e557d88",
+          "capped_sha256": "d1150c0378d1a4596078c5284fb2613333a6430384f3a19c52352efd5e557d88",
+          "original_characters": 189,
+          "capped_characters": 189,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            916,
+            927,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            67362,
+            927,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "3ac0134c25fbe733ef6924f144fa7f377b5444bd161e4d11970b61316bba8bd4",
+          "capped_sha256": "3ac0134c25fbe733ef6924f144fa7f377b5444bd161e4d11970b61316bba8bd4",
+          "original_characters": 84,
+          "capped_characters": 84,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            916,
+            927,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            916,
+            927,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "2fcd7da265d5f0f33ac46c5af3525f5b1c2e9724bb32bbd229348214c114e88e",
+          "capped_sha256": "2fcd7da265d5f0f33ac46c5af3525f5b1c2e9724bb32bbd229348214c114e88e",
+          "original_characters": 193,
+          "capped_characters": 193,
+          "query_tokens": 16,
+          "document_tokens": 46,
+          "used_document_tokens": 46,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            107,
+            25018,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            4332,
+            25018,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "d24e1af4f10b97114afd404699aefb377e8125ce50a66f13180285f221966e2d",
+          "capped_sha256": "d24e1af4f10b97114afd404699aefb377e8125ce50a66f13180285f221966e2d",
+          "original_characters": 94,
+          "capped_characters": 94,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            132894,
+            30675,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            132894,
+            30675,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "cd4a86ac1e74dabfcd6d12812e8f00aaf2b030dcce98a2020b14192dc847fee1",
+          "capped_sha256": "cd4a86ac1e74dabfcd6d12812e8f00aaf2b030dcce98a2020b14192dc847fee1",
+          "original_characters": 88,
+          "capped_characters": 88,
+          "query_tokens": 16,
+          "document_tokens": 24,
+          "used_document_tokens": 24,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            12600,
+            5416,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            70870,
+            12,
+            98169,
+            52080,
+            5,
+            12600,
+            5416,
+            74,
+            2
+          ]
+        },
+        {
+          "document_sha256": "c0e6a6e223f19c0681c063ae5ed14e3e0c834661672e6bbeffa496f16d28fea5",
+          "capped_sha256": "c0e6a6e223f19c0681c063ae5ed14e3e0c834661672e6bbeffa496f16d28fea5",
+          "original_characters": 195,
+          "capped_characters": 195,
+          "query_tokens": 16,
+          "document_tokens": 48,
+          "used_document_tokens": 48,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            73,
+            965,
+            2980,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            4153,
+            965,
+            2980,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        },
+        {
+          "document_sha256": "659071dde168047b4129dc15f024a1839c4e594932915d930ac9209f85e2b162",
+          "capped_sha256": "659071dde168047b4129dc15f024a1839c4e594932915d930ac9209f85e2b162",
+          "original_characters": 446,
+          "capped_characters": 446,
+          "query_tokens": 16,
+          "document_tokens": 117,
+          "used_document_tokens": 117,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            188300,
+            10611,
+            5,
+            54686,
+            131899,
+            12,
+            70870,
+            12,
+            468,
+            6,
+            82043,
+            456,
+            97351,
+            1405,
+            52080,
+            30022,
+            6644,
+            3293,
+            3535,
+            5429,
+            75639,
+            30022,
+            6644,
+            83,
+            959,
+            10,
+            8,
+            13158,
+            53,
+            297,
+            81997,
+            38415,
+            5,
+            90512,
+            259,
+            30058,
+            18151,
+            60742,
+            23,
+            4420,
+            3611,
+            64,
+            66769,
+            126,
+            74,
+            4420,
+            3611,
+            64,
+            3257,
+            2408,
+            41929,
+            7,
+            22299,
+            7,
+            5,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            79628,
+            102329,
+            90,
+            47,
+            10,
+            60213,
+            4516,
+            4,
+            7068,
+            29790,
+            71,
+            4332,
+            32271,
+            56,
+            115923,
+            142,
+            19732,
+            5,
+            581,
+            63399,
+            114977,
+            7,
+            259,
+            30058,
+            40197,
+            47,
+            45234,
+            136,
+            12441,
+            1505,
+            10778,
+            47,
+            43815,
+            156906,
+            5,
+            104921,
+            53550,
+            7,
+            4527,
+            313,
+            25182,
+            4,
+            18389,
+            4332,
+            18,
+            10484,
+            76067,
+            4,
+            1733,
+            6056,
+            594,
+            7,
+            1369,
+            14105,
+            5,
+            2
+          ]
+        },
+        {
+          "document_sha256": "d80d75abb6c5d5809eeb32d7f300f6d7464d9e387cdf8452c6923a393e0e25c4",
+          "capped_sha256": "d80d75abb6c5d5809eeb32d7f300f6d7464d9e387cdf8452c6923a393e0e25c4",
+          "original_characters": 199,
+          "capped_characters": 199,
+          "query_tokens": 16,
+          "document_tokens": 47,
+          "used_document_tokens": 47,
+          "input_ids": [
+            0,
+            4420,
+            3611,
+            64,
+            309,
+            69723,
+            19,
+            64,
+            135261,
+            214,
+            175904,
+            603,
+            5,
+            24071,
+            6,
+            164691,
+            32,
+            2,
+            2,
+            108421,
+            12,
+            4420,
+            3611,
+            64,
+            132894,
+            30675,
+            64,
+            108259,
+            118664,
+            175904,
+            603,
+            5,
+            24071,
+            131899,
+            12,
+            27985,
+            118664,
+            175904,
+            603,
+            5,
+            108259,
+            118664,
+            175904,
+            603,
+            70870,
+            12,
+            3835,
+            27985,
+            118664,
+            175904,
+            603,
+            132,
+            4153,
+            1353,
+            31667,
+            121979,
+            4516,
+            16,
+            10666,
+            903,
+            5,
+            22584,
+            2203,
+            4516,
+            74,
+            51912,
+            2
+          ]
+        }
+      ],
+      "performance": {
+        "inference_ms": 189.116,
+        "tokenization_ms": 3.887,
+        "rss_bytes": 2363805696,
+        "cuda_peak_allocated_bytes": 1150416896,
+        "cuda_peak_reserved_bytes": 1216348160,
+        "forward_calls": 8,
+        "pairs": 30,
+        "device": "cuda",
+        "dtype": "float16"
+      }
+    },
+    "document_version": "path-symbol-content-v1",
+    "score_type": "cross_encoder_logit",
+    "ordered": [
+      {
+        "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.ledger;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45121548,
+          "rrf": 0.016129032258064516,
+          "rerank": -0.8046875
+        },
+        "channel_ranks": {
+          "dense": 2,
+          "rrf": 13,
+          "rerank": 1
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.fraud;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4506532,
+          "rrf": 0.015873015873015872,
+          "rerank": -0.96337890625
+        },
+        "channel_ranks": {
+          "dense": 3,
+          "rrf": 15,
+          "rerank": 2
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.inventory;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43351495,
+          "rrf": 0.014492753623188406,
+          "rerank": -1.1875
+        },
+        "channel_ranks": {
+          "dense": 9,
+          "rrf": 26,
+          "rerank": 3
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.014492753623188406,
+          "rerank": -1.1904296875
+        },
+        "channel_ranks": {
+          "bm25": 9,
+          "rrf": 25,
+          "rerank": 4
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.notification;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.45041934,
+          "rrf": 0.015625,
+          "rerank": -1.2236328125
+        },
+        "channel_ranks": {
+          "dense": 4,
+          "rrf": 17,
+          "rerank": 5
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "cd9a1c18-230d-5243-b75d-0168f8b7a521",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.invoice;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.44371274,
+          "rrf": 0.015384615384615385,
+          "rerank": -1.2548828125
+        },
+        "channel_ranks": {
+          "dense": 5,
+          "rrf": 19,
+          "rerank": 6
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "acf9e492-dcf3-54fe-93eb-d7fd5459cf5d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.auth;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4340896,
+          "rrf": 0.014705882352941176,
+          "rerank": -1.3388671875
+        },
+        "channel_ranks": {
+          "dense": 8,
+          "rrf": 24,
+          "rerank": 7
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "9a5d2dba-4062-55c9-a99a-ae65ad4a1b25",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(AuthService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.014705882352941176,
+          "rerank": -1.3779296875
+        },
+        "channel_ranks": {
+          "bm25": 8,
+          "rrf": 23,
+          "rerank": 8
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "60474be8-61d7-505f-ab87-ac2052e7832c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(WalletService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.015625,
+          "rerank": -1.3896484375
+        },
+        "channel_ranks": {
+          "bm25": 4,
+          "rrf": 16,
+          "rerank": 9
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "2f71243a-7584-5044-aa7f-a8e326797a11",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(FraudService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.01639344262295082,
+          "rerank": -1.421875
+        },
+        "channel_ranks": {
+          "bm25": 1,
+          "rrf": 10,
+          "rerank": 10
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "809aa15a-566a-59ab-8d0a-5f1ab0ea70e1",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(NotificationService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.014925373134328358,
+          "rerank": -1.47265625
+        },
+        "channel_ranks": {
+          "bm25": 7,
+          "rrf": 22,
+          "rerank": 11
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "3a620534-10cf-51d4-9332-df4a680bf102",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(SubscriptionService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.016129032258064516,
+          "rerank": -1.4873046875
+        },
+        "channel_ranks": {
+          "bm25": 2,
+          "rrf": 12,
+          "rerank": 12
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "959c90da-8694-50d5-b5a0-113fc8d8dec8",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.coupon;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4251655,
+          "rrf": 0.014285714285714285,
+          "rerank": -1.5078125
+        },
+        "channel_ranks": {
+          "dense": 10,
+          "rrf": 27,
+          "rerank": 13
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "6f42e53b-774d-5686-bd64-a9e23e60b9e6",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(LedgerService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.015384615384615385,
+          "rerank": -1.5087890625
+        },
+        "channel_ranks": {
+          "bm25": 5,
+          "rrf": 18,
+          "rerank": 14
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "4362f1da-3301-5772-ab2e-bf3ee22b06cf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shipping/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(ShippingService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.015873015873015872,
+          "rerank": -1.572265625
+        },
+        "channel_ranks": {
+          "bm25": 3,
+          "rrf": 14,
+          "rerank": 15
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "513934f0-9352-5fe9-8789-1734778ddbbf",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/wallet/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final WalletService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40298063,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.02478580171358629,
+          "rerank": -1.775390625
+        },
+        "channel_ranks": {
+          "dense": 26,
+          "bm25": 16,
+          "rrf": 6,
+          "rerank": 16
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "bb0e8129-c340-53d5-9266-25d6da568147",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InventoryService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.014084507042253521,
+          "rerank": -1.7841796875
+        },
+        "channel_ranks": {
+          "bm25": 11,
+          "rrf": 30,
+          "rerank": 17
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "9978793c-708e-58c9-b47c-ee205b83c79c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final FraudService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4392254,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.027651515151515153,
+          "rerank": -1.7978515625
+        },
+        "channel_ranks": {
+          "dense": 6,
+          "bm25": 20,
+          "rrf": 1,
+          "rerank": 18
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "2826862c-74f5-5249-9118-22708f263387",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final NotificationService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.41625172,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.02649122807017544,
+          "rerank": -1.822265625
+        },
+        "channel_ranks": {
+          "dense": 16,
+          "bm25": 15,
+          "rrf": 4,
+          "rerank": 19
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "870ec1d3-43d1-5741-9f71-cdb32388a809",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/orders/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final OrderService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40483725,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.024725274725274724,
+          "rerank": -1.8388671875
+        },
+        "channel_ranks": {
+          "dense": 24,
+          "bm25": 18,
+          "rrf": 7,
+          "rerank": 20
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "c8c6d498-56d9-5788-ba01-0598dc05ddb9",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/subscription/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final SubscriptionService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40270922,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.023542445644647556,
+          "rerank": -1.8515625
+        },
+        "channel_ranks": {
+          "dense": 27,
+          "bm25": 23,
+          "rrf": 9,
+          "rerank": 21
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "af550fd3-3903-50fe-acea-ec34ef27eebc",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(InvoiceService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.014285714285714285,
+          "rerank": -1.853515625
+        },
+        "channel_ranks": {
+          "bm25": 10,
+          "rrf": 28,
+          "rerank": 22
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "cfd78407-2757-54de-b90f-5114ab7b5a3d",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final LedgerService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.41985202,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.02541827541827542,
+          "rerank": -1.904296875
+        },
+        "channel_ranks": {
+          "dense": 14,
+          "bm25": 24,
+          "rrf": 5,
+          "rerank": 23
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "7beec65f-17f9-543c-93d3-8c2a36fc8a1c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/coupon/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(CouponService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "bm25": 1.4638384843395973,
+          "rrf": 0.015151515151515152,
+          "rerank": -1.958984375
+        },
+        "channel_ranks": {
+          "bm25": 6,
+          "rrf": 20,
+          "rerank": 24
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "8ceb02e3-ba4c-56ef-8f55-461b860956ec",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/auth/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final AuthService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.4232295,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.026547116736990152,
+          "rerank": -1.970703125
+        },
+        "channel_ranks": {
+          "dense": 12,
+          "bm25": 19,
+          "rrf": 3,
+          "rerank": 25
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "9f359c6c-50bf-585e-8e63-487cb39960b6",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/invoice/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final InvoiceService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.40173528,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.023709315375982042,
+          "rerank": -2.080078125
+        },
+        "channel_ranks": {
+          "dense": 28,
+          "bm25": 21,
+          "rrf": 8,
+          "rerank": 26
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "0eaf17eb-868d-5f30-ac58-380db44ae0af",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 2,
+          "end_line": 3,
+          "content": "public final class WorkflowController {\n    private final InventoryService service;\n",
+          "symbol": "WorkflowController",
+          "node_type": "class_declaration",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.42316455,
+          "bm25": 1.4006558514189098,
+          "rrf": 0.0273972602739726,
+          "rerank": -2.103515625
+        },
+        "channel_ranks": {
+          "dense": 13,
+          "bm25": 13,
+          "rrf": 2,
+          "rerank": 27
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "76ddaf6b-dce3-5a90-a1b1-22beb2f9445c",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/shared/SharedRecorder.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.shared;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.43667993,
+          "rrf": 0.014925373134328358,
+          "rerank": -3.671875
+        },
+        "channel_ranks": {
+          "dense": 7,
+          "rrf": 21,
+          "rerank": 28
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "ccab0bc3-4fa8-5f8e-961b-f42780968572",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "backend/legacy/WalletService.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.legacy;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        "channel_scores": {
+          "dense": 0.51483303,
+          "rrf": 0.01639344262295082,
+          "rerank": -3.958984375
+        },
+        "channel_ranks": {
+          "dense": 1,
+          "rrf": 11,
+          "rerank": 29
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      },
+      {
+        "chunk_id": "b7b83eb5-d10c-53b7-b638-583131392d3b",
+        "repository": "stage4-commerce",
+        "index_revision": "sha256:7a2e234bce13f641f2a4f18a4b78d3fd63f10d2da00846c82f55ab42ffb01918",
+        "source_metadata": {
+          "path": "README.md",
+          "language": "markdown",
+          "start_line": 1,
+          "end_line": 7,
+          "content": "# Commerce retrieval learning fixture\n\nThis handwritten fixture is not a deployed payment application.\nOfficial wallet code lives in backend/wallet; backend/legacy doubles credits.\nWorkflowController.handle delegates to a feature service, then SharedRecorder records an event.\nThe database defaults wallet balance to zero and ledger status to PENDING.\nApplication settings use CNY, maxRetries=3, timeoutMs=1000.\n",
+          "symbol": null,
+          "node_type": null,
+          "parent_symbol": null,
+          "chunking_strategy": "fallback",
+          "chunking_version": "ast-fallback-line-v1"
+        },
+        "channel_scores": {
+          "dense": 0.423989,
+          "rrf": 0.014084507042253521,
+          "rerank": -5.25390625
+        },
+        "channel_ranks": {
+          "dense": 11,
+          "rrf": 29,
+          "rerank": 30
+        },
+        "matched_queries": [
+          "backend/unknown/MissingController.java 在哪里？"
+        ]
+      }
+    ],
+    "unscored_tail_ids": [
+      "f9c42a9e-656b-5aca-9e33-d665c6831b58",
+      "1ae5cd99-7a62-56ad-9397-609194e966db",
+      "47598d9e-32cc-5a6f-99c5-baf0b0e2d4dc",
+      "23e46499-2114-5be0-806f-8cbc93b9ff7c",
+      "5927ebb2-a953-5ff9-a3b2-51556259af60",
+      "502877c5-d6c0-5510-9e3e-f0a6366bf04b",
+      "24a6e7c3-1617-58ab-bec5-2d374c71c456",
+      "759e11e5-fee1-57d6-becf-0f7fbc1456a0",
+      "d96d727e-8ff6-585b-be57-300869a00792",
+      "4ccea97a-1da2-5ad0-91ec-86383a1e5765",
+      "ab790519-1ce6-54f4-b1bd-2ab44e1c5f93",
+      "e771afb4-e7da-512e-8cb2-8400c369b5bb",
+      "13e0bb0e-0ea3-56f4-8605-68f20d5d573f",
+      "38233493-8adc-5db6-bedd-2901a2a02451",
+      "254991d8-9d3c-5498-9a01-933d9d1854ef",
+      "2d6946d0-d82a-58b8-bd29-c4e36596ddad",
+      "3da5aa82-3ca5-51da-8cfd-6f79c31ce222",
+      "4ed09d97-104b-51e9-a1b8-5b766f7c0613",
+      "d1064187-513e-5004-bb33-74410dbccbd8",
+      "62df83b5-c501-5775-b04f-99ef456cf026",
+      "a7e8f0c9-e8cb-5fca-9915-ec4ee1b0405a"
+    ],
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+        "repository": "stage4-commerce",
+        "score": -0.8046875,
+        "path": "backend/ledger/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.ledger;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+        "repository": "stage4-commerce",
+        "score": -0.96337890625,
+        "path": "backend/fraud/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.fraud;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+        "repository": "stage4-commerce",
+        "score": -1.1875,
+        "path": "backend/inventory/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.inventory;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+        "repository": "stage4-commerce",
+        "score": -1.1904296875,
+        "path": "backend/refund/WorkflowController.java",
+        "language": "java",
+        "start_line": 4,
+        "end_line": 6,
+        "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+        "symbol": "WorkflowController.WorkflowController",
+        "node_type": "constructor_declaration",
+        "parent_symbol": "WorkflowController",
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+        "repository": "stage4-commerce",
+        "score": -1.2236328125,
+        "path": "backend/notification/WorkflowController.java",
+        "language": "java",
+        "start_line": 1,
+        "end_line": 1,
+        "content": "package learning.notification;\n",
+        "symbol": null,
+        "node_type": "program",
+        "parent_symbol": null,
+        "chunking_strategy": "ast",
+        "chunking_version": "ast-v1"
+      }
+    ]
+  },
+  "measured": {
+    "id": "missing-path",
+    "retrieval": {
+      "repository": "stage4-commerce",
+      "query": "backend/unknown/MissingController.java 在哪里？",
+      "top_k": 5,
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+          "repository": "stage4-commerce",
+          "score": -0.8046875,
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.ledger;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+          "repository": "stage4-commerce",
+          "score": -0.96337890625,
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.fraud;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+          "repository": "stage4-commerce",
+          "score": -1.1875,
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.inventory;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+          "repository": "stage4-commerce",
+          "score": -1.1904296875,
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "start_line": 4,
+          "end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+          "repository": "stage4-commerce",
+          "score": -1.2236328125,
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "start_line": 1,
+          "end_line": 1,
+          "content": "package learning.notification;\n",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1"
+        }
+      ],
+      "retrieval_latency_ms": 195.802
+    },
+    "context": {
+      "repository": "stage4-commerce",
+      "text": "[SOURCE S1]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/ledger/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.ledger;\\n\"\n}\n[/SOURCE S1]\n\n[SOURCE S2]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/fraud/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.fraud;\\n\"\n}\n[/SOURCE S2]\n\n[SOURCE S3]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/inventory/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.inventory;\\n\"\n}\n[/SOURCE S3]\n\n[SOURCE S4]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/refund/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": \"WorkflowController.WorkflowController\",\n  \"node_type\": \"constructor_declaration\",\n  \"parent_symbol\": \"WorkflowController\",\n  \"lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"original_lines\": {\n    \"start\": 4,\n    \"end\": 6\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"    public WorkflowController(RefundService service) {\\n        this.service = service;\\n    }\\n\"\n}\n[/SOURCE S4]\n\n[SOURCE S5]\n{\n  \"repository\": \"stage4-commerce\",\n  \"path\": \"backend/notification/WorkflowController.java\",\n  \"language\": \"java\",\n  \"symbol\": null,\n  \"node_type\": \"program\",\n  \"parent_symbol\": null,\n  \"lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"original_lines\": {\n    \"start\": 1,\n    \"end\": 1\n  },\n  \"chunking_strategy\": \"ast\",\n  \"chunking_version\": \"ast-v1\",\n  \"overlap_trimmed\": false,\n  \"budget_truncated\": false,\n  \"content\": \"package learning.notification;\\n\"\n}\n[/SOURCE S5]",
+      "sources": [
+        {
+          "source_id": "S1",
+          "chunk_id": "70614747-e93c-5b62-b3e3-ca760606e298",
+          "retrieval_rank": 1,
+          "score": -0.8046875,
+          "repository": "stage4-commerce",
+          "path": "backend/ledger/WorkflowController.java",
+          "language": "java",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1",
+          "start_line": 1,
+          "end_line": 1,
+          "original_start_line": 1,
+          "original_end_line": 1,
+          "content": "package learning.ledger;\n",
+          "overlap_trimmed": false,
+          "budget_truncated": false
+        },
+        {
+          "source_id": "S2",
+          "chunk_id": "ef4ef379-fbae-551e-90a1-05d7bbad1bed",
+          "retrieval_rank": 2,
+          "score": -0.96337890625,
+          "repository": "stage4-commerce",
+          "path": "backend/fraud/WorkflowController.java",
+          "language": "java",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1",
+          "start_line": 1,
+          "end_line": 1,
+          "original_start_line": 1,
+          "original_end_line": 1,
+          "content": "package learning.fraud;\n",
+          "overlap_trimmed": false,
+          "budget_truncated": false
+        },
+        {
+          "source_id": "S3",
+          "chunk_id": "e7123ff7-9351-54c9-9bd2-1f906eef1de1",
+          "retrieval_rank": 3,
+          "score": -1.1875,
+          "repository": "stage4-commerce",
+          "path": "backend/inventory/WorkflowController.java",
+          "language": "java",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1",
+          "start_line": 1,
+          "end_line": 1,
+          "original_start_line": 1,
+          "original_end_line": 1,
+          "content": "package learning.inventory;\n",
+          "overlap_trimmed": false,
+          "budget_truncated": false
+        },
+        {
+          "source_id": "S4",
+          "chunk_id": "9c52342f-6b70-502c-ba73-daf5431cdd6c",
+          "retrieval_rank": 4,
+          "score": -1.1904296875,
+          "repository": "stage4-commerce",
+          "path": "backend/refund/WorkflowController.java",
+          "language": "java",
+          "symbol": "WorkflowController.WorkflowController",
+          "node_type": "constructor_declaration",
+          "parent_symbol": "WorkflowController",
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1",
+          "start_line": 4,
+          "end_line": 6,
+          "original_start_line": 4,
+          "original_end_line": 6,
+          "content": "    public WorkflowController(RefundService service) {\n        this.service = service;\n    }\n",
+          "overlap_trimmed": false,
+          "budget_truncated": false
+        },
+        {
+          "source_id": "S5",
+          "chunk_id": "82a9a08d-dd2f-501c-bdb4-69be90d738a0",
+          "retrieval_rank": 5,
+          "score": -1.2236328125,
+          "repository": "stage4-commerce",
+          "path": "backend/notification/WorkflowController.java",
+          "language": "java",
+          "symbol": null,
+          "node_type": "program",
+          "parent_symbol": null,
+          "chunking_strategy": "ast",
+          "chunking_version": "ast-v1",
+          "start_line": 1,
+          "end_line": 1,
+          "original_start_line": 1,
+          "original_end_line": 1,
+          "content": "package learning.notification;\n",
+          "overlap_trimmed": false,
+          "budget_truncated": false
+        }
+      ],
+      "retrieved_chunks": 5,
+      "duplicate_chunks": 0,
+      "overlap_trimmed_chunks": 0,
+      "candidate_sources": 5,
+      "omitted_sources": 0,
+      "max_context_chunks": 5,
+      "max_context_characters": 16000,
+      "characters_used": 2511,
+      "budget_limited": false,
+      "empty_reason": null
+    },
+    "metrics": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "missing_path",
+        "returned_chunks": 5,
+        "empty_result": false,
+        "foreign_repository_chunks": 0
+      }
+    }
+  },
+  "comparison": {
+    "positive": false,
+    "empty_before": false,
+    "empty_after": false
+  },
+  "evidence_diagnostics": []
+}

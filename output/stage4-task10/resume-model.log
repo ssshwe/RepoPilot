@@ -1,0 +1,7 @@
+Verified config.json: 795 bytes
+Verified model.safetensors: 2271071852 bytes
+Verified sentencepiece.bpe.model: 5069051 bytes
+Verified special_tokens_map.json: 964 bytes
+Verified tokenizer.json: 17098273 bytes
+Verified tokenizer_config.json: 1173 bytes
+All model files verified

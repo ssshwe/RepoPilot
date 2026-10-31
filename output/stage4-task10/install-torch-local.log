@@ -1,0 +1,28 @@
+Processing d:\aaaagent�����ļ�\repopilot\.tools\reranker-wheels\torch-2.8.0+cu128-cp312-cp312-win_amd64.whl
+Requirement already satisfied: filelock in d:\aaaagent�����ļ�\repopilot\.tools\reranker-venv\lib\site-packages (from torch==2.8.0+cu128) (4.2.5)
+Requirement already satisfied: typing-extensions>=4.10.0 in d:\aaaagent�����ļ�\repopilot\.tools\reranker-venv\lib\site-packages (from torch==2.8.0+cu128) (4.16.0)
+Collecting sympy>=1.13.3 (from torch==2.8.0+cu128)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch==2.8.0+cu128)
+  Using cached networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting jinja2 (from torch==2.8.0+cu128)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Requirement already satisfied: fsspec in d:\aaaagent�����ļ�\repopilot\.tools\reranker-venv\lib\site-packages (from torch==2.8.0+cu128) (2026.9.0)
+Collecting setuptools (from torch==2.8.0+cu128)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.8.0+cu128)
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.8.0+cu128)
+  Downloading markupsafe-3.0.4-cp312-cp312-win_amd64.whl.metadata (2.8 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ---------------------------------------- 6.3/6.3 MB 2.2 MB/s eta 0:00:00
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+   ---------------------------------------- 2.1/2.1 MB 3.3 MB/s eta 0:00:00
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ---------------------------------------- 876.3/876.3 kB 4.9 MB/s eta 0:00:00
+Downloading markupsafe-3.0.4-cp312-cp312-win_amd64.whl (14 kB)
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ---------------------------------------- 536.2/536.2 kB 4.4 MB/s eta 0:00:00
+Installing collected packages: mpmath, sympy, setuptools, networkx, MarkupSafe, jinja2, torch
+Successfully installed MarkupSafe-3.0.4 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 setuptools-84.2.1 sympy-1.14.0 torch-2.8.0+cu128

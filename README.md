@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–9**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–10**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -91,7 +91,17 @@ Nine real HTTP cases and browser flows pass, including cancellation with a late
 response, source expansion and mobile layout. The current suites pass 1279
 backend tests (6 skipped), 207 evaluation tests and 76 frontend tests; the build
 passes. Legacy search, Code Chat and Issue Analyzer retain Dense retrieval.
-Rerank/Expansion controls are reserved and disabled. Task 10 is next.
+Rerank/Expansion controls remain reserved and disabled in the page/API.
+
+[Stage 4 Task 10](docs/stage-4-task-10-reranker.md) adds an independent optional
+BGE reranker with a pinned offline model, bounded single-worker execution,
+kill-and-reap timeouts, safe fusion fallback and preserved Chunk identities.
+On the same 52 frozen questions, development range Recall@5 rises from 89.58%
+to 92.71% (complete evidence 24/32 → 25/32); historical complete evidence rises
+from 8/12 to 9/12. Rerank-stage P50/P95 are 183/224ms on the target RTX 4060.
+Nine length/batch probes, real process-lock/timeout/missing-model checks and
+offline score/Context replay are retained. No new Embedding, generation or
+holdout calls were made. Default remains off pending Task 14; Task 11 is next.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
@@ -1264,8 +1274,10 @@ answer-support and Citation evaluation with explicit source reviews and bad case
 The API remains stateless: Stage 1 chat callers send the full conversation;
 Code Chat takes one repository question and retrieves fresh context.
 The Stage 1 tool returns fixed simulated project data; Code Chat and Issue
-Analyzer provide no tools. Persistent sessions, streaming RAG, BM25/hybrid
-search, reranking and repository-agent orchestration remain outside the current
-scope. Stage 3 final functional acceptance and Stage 4 Task 1 Dense baseline
-and Tasks 2–6 evaluation/candidate/tokenizer/snapshot/BM25 contracts are complete; Stage 4 Task 7 and later modules have not started. The current local model's
+Analyzer provide no tools. Persistent sessions, streaming RAG and repository-agent
+orchestration remain outside the current scope. Stage 3 final functional acceptance
+and Stage 4 Tasks 1–10 are complete: Dense baseline, evaluation, candidates,
+tokenizer, snapshots, BM25, Exact, Hybrid, Debug integration and optional independent
+reranking. Code Chat/Issue Analyzer still use Dense; expansion, Context Selection,
+RAG strategy integration and final ablation are later tasks. The current local model's
 answer quality has not passed acceptance.

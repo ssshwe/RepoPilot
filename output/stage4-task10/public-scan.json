@@ -1,0 +1,17 @@
+{
+  "files_scanned": 1437,
+  "actual_secret_values_checked": 0,
+  "blocked_paths": [],
+  "secret_matches": [
+    "README.md",
+    "docs/stage-2-acceptance.md",
+    "docs/stage-2.md"
+  ],
+  "broken_local_links": [
+    {
+      "document": "docs/stage-4-task-10-reranker.md",
+      "target": "stage-4-task-10-verification.json"
+    }
+  ],
+  "passed": false
+}

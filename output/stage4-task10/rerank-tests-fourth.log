@@ -1,0 +1,74 @@
+...................................F                                     [100%]
+================================== FAILURES ===================================
+____ test_snapshot_guard_covers_the_entire_rerank_and_rejects_drift[True] _____
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-103/test_snapshot_guard_covers_the1')
+drift = True
+
+    @pytest.mark.parametrize("drift", [False, True])
+    def test_snapshot_guard_covers_the_entire_rerank_and_rejects_drift(tmp_path, drift):
+        from app.retrieval.hybrid import HybridRetriever, HybridSearchRequest
+        from app.retrieval.rerank import RerankingRetriever
+        from app.retrieval.snapshot_models import SnapshotError
+        from app.retrieval.snapshot_store import SnapshotStore
+        from app.retrieval.snapshots import SnapshotCoordinator
+        from tests.test_hybrid_rrf import IMAGE, LIMITS, Channel
+        from tests.test_lexical_snapshots import Reader, publish
+        async def run():
+            store = SnapshotStore(tmp_path/"snapshots.sqlite3")
+            publish(store, IMAGE)
+            reader = Reader(IMAGE)
+            coordinator = SnapshotCoordinator(store, reader)
+            hybrid = HybridRetriever(coordinator, {n: Channel(n, coordinator) for n in ("dense", "bm25")})
+            class Failure:
+                async def score(self, query, documents, policy):
+                    if drift:
+                        from dataclasses import replace
+                        reader.images["demo"] = replace(IMAGE, configuration={**IMAGE.configuration, "drift": True})
+                    raise RerankFailure("timeout")
+            retriever = RerankingRetriever(hybrid, Failure())
+            request = HybridSearchRequest("demo", "credit", limits=LIMITS)
+            if drift:
+                with pytest.raises(SnapshotError):
+                    await retriever.search(request, enabled=True)
+            else:
+                before, result = await retriever.search(request, enabled=True)
+                assert result.reason == "timeout" and result.fused == before.fused
+>       asyncio.run(run())
+
+tests\test_rerank.py:203: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    async def run():
+        store = SnapshotStore(tmp_path/"snapshots.sqlite3")
+        publish(store, IMAGE)
+        reader = Reader(IMAGE)
+        coordinator = SnapshotCoordinator(store, reader)
+        hybrid = HybridRetriever(coordinator, {n: Channel(n, coordinator) for n in ("dense", "bm25")})
+        class Failure:
+            async def score(self, query, documents, policy):
+                if drift:
+                    from dataclasses import replace
+                    reader.images["demo"] = replace(IMAGE, configuration={**IMAGE.configuration, "drift": True})
+                raise RerankFailure("timeout")
+        retriever = RerankingRetriever(hybrid, Failure())
+        request = HybridSearchRequest("demo", "credit", limits=LIMITS)
+        if drift:
+>           with pytest.raises(SnapshotError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE <class 'app.retrieval.snapshot_models.SnapshotError'>
+
+tests\test_rerank.py:198: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_rerank.py::test_snapshot_guard_covers_the_entire_rerank_and_rejects_drift[True]
+1 failed, 35 passed in 2.44s

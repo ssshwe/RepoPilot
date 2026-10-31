@@ -1,0 +1,83 @@
+........................................................................ [ 30%]
+.....................................................F.................. [ 61%]
+........................................................................ [ 92%]
+..................                                                       [100%]
+================================== FAILURES ===================================
+_______ test_complete_receipts_replay_without_model_runtime_or_network ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000256D7BC0470>
+
+    def test_complete_receipts_replay_without_model_runtime_or_network(monkeypatch):
+        attempts = []
+        def deny(*args, **kwargs):
+            attempts.append(True)
+            raise AssertionError("Model-free replay must not use network")
+        monkeypatch.setattr(socket.socket, "connect", deny)
+        monkeypatch.setattr(socket, "create_connection", deny)
+>       result = asyncio.run(module.replay(REPORT))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evaluation\tests\test_rerank_receipts.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:194: in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:58: in __enter__
+    self._lazy_init()
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\events.py:823: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\events.py:720: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\windows_events.py:316: in __init__
+    super().__init__(proactor)
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\proactor_events.py:640: in __init__
+    self._make_self_pipe()
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\proactor_events.py:787: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\socket.py:623: in _fallback_socketpair
+    csock.connect((addr, port))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<socket.socket [closed] fd=-1, family=2, type=1, proto=0>, ('127.0.0.1', 50559))
+kwargs = {}
+
+    def deny(*args, **kwargs):
+        attempts.append(True)
+>       raise AssertionError("Model-free replay must not use network")
+E       AssertionError: Model-free replay must not use network
+
+evaluation\tests\test_rerank_receipts.py:31: AssertionError
+============================== warnings summary ===============================
+evaluation/tests/test_rerank_receipts.py::test_report_association_denominators_cost_and_probe_scope_cannot_change[holdout]
+  C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\copy.py:118: RuntimeWarning: coroutine 'replay' was never awaited
+    def deepcopy(x, memo=None, _nil=[]):
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+evaluation/tests/test_rerank_receipts.py::test_report_association_denominators_cost_and_probe_scope_cannot_change[holdout]
+  D:\aaaagent�����ļ�\RepoPilot\services\api\.venv\Lib\site-packages\_pytest\unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function BaseEventLoop.__del__ at 0x00000256A34389A0>
+  
+  Traceback (most recent call last):
+    File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 732, in __del__
+      self.close()
+    File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\proactor_events.py", line 697, in close
+      self._close_self_pipe()
+    File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\proactor_events.py", line 779, in _close_self_pipe
+      self._ssock.close()
+      ^^^^^^^^^^^
+  AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED evaluation/tests/test_rerank_receipts.py::test_complete_receipts_replay_without_model_runtime_or_network
+1 failed, 233 passed, 2 warnings in 147.93s (0:02:27)

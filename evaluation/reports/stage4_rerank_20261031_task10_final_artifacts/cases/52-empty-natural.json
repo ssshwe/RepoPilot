@@ -1,0 +1,78 @@
+{
+  "id": "empty-natural",
+  "rerank": {
+    "fused": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "channel": "rrf",
+      "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.007,
+      "candidates": [],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+    },
+    "policy": {
+      "candidate_limit": 30,
+      "batch_size": 4,
+      "max_length": 512,
+      "max_query_tokens": 256,
+      "max_document_characters": 16000,
+      "timeout_seconds": 30.0
+    },
+    "top_k": 5,
+    "status": "fallback",
+    "reason": "empty_pool",
+    "latency_ms": 0.0,
+    "reply": null,
+    "document_version": "path-symbol-content-v1",
+    "score_type": "rrf",
+    "ordered": [],
+    "unscored_tail_ids": [],
+    "results": []
+  },
+  "measured": {
+    "id": "empty-natural",
+    "retrieval": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "top_k": 5,
+      "results": [],
+      "retrieval_latency_ms": 0.0
+    },
+    "context": {
+      "repository": "stage4-empty",
+      "text": "",
+      "sources": [],
+      "retrieved_chunks": 0,
+      "duplicate_chunks": 0,
+      "overlap_trimmed_chunks": 0,
+      "candidate_sources": 0,
+      "omitted_sources": 0,
+      "max_context_chunks": 5,
+      "max_context_characters": 16000,
+      "characters_used": 0,
+      "budget_limited": false,
+      "empty_reason": "no_results"
+    },
+    "metrics": {
+      "at_k": null,
+      "context": null,
+      "negative": {
+        "kind": "empty_repository",
+        "returned_chunks": 0,
+        "empty_result": true,
+        "foreign_repository_chunks": 0
+      }
+    }
+  },
+  "comparison": {
+    "positive": false,
+    "empty_before": true,
+    "empty_after": true
+  },
+  "evidence_diagnostics": []
+}

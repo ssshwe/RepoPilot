@@ -1,0 +1,1427 @@
+FFFFFFFFFF..........FFFFFFFFFFFF.                                        [100%]
+================================== FAILURES ===================================
+___ test_success_preserves_all_identity_coordinates_and_channel_provenance ____
+
+    async def run():
+        adapter = worker(tmp_path)
+        try:
+>           fused = pool(6)
+                    ^^^^^^^
+
+services\api\tests\test_rerank.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_success_preserves_all_ide0')
+
+    def test_success_preserves_all_identity_coordinates_and_channel_provenance(tmp_path):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                fused = pool(6)
+                result = await rerank(fused, adapter, enabled=True, policy=RerankPolicy(candidate_limit=3), top_k=2)
+                assert result.status == "reranked" and result.reason is None
+                assert [c.chunk_id for c in result.ordered] == [c.chunk_id for c in fused.candidates[:3]][::-1]
+                by_id = {c.chunk_id: c for c in fused.candidates}
+                for candidate in result.ordered:
+                    old = by_id[candidate.chunk_id]
+                    assert candidate.source_metadata == old.source_metadata
+                    assert (candidate.repository, candidate.index_revision, candidate.matched_queries) == (old.repository, old.index_revision, old.matched_queries)
+                    assert all(candidate.channel_scores[k] == v for k, v in old.channel_scores.items())
+                    assert all(candidate.channel_ranks[k] == v for k, v in old.channel_ranks.items())
+                assert len(result.final_results()) == 2
+                assert result.to_dict()["unscored_tail_ids"] == [c.chunk_id for c in fused.candidates[3:]]
+                assert RerankResult.from_dict(result.to_dict()) == result
+                assert result.reply["query_sha256"] != result.reply["inputs"][0]["document_sha256"]
+                assert "Path: src/1.py\nSymbol: refund\nContent:\n" in render_document(fused.candidates[0])
+            finally:
+                process = adapter.process
+                await adapter.aclose()
+                assert process.returncode is not None and adapter.process is None
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    async def run():
+        adapter = worker(tmp_path)
+        try:
+            fused = pool(6)
+            result = await rerank(fused, adapter, enabled=True, policy=RerankPolicy(candidate_limit=3), top_k=2)
+            assert result.status == "reranked" and result.reason is None
+            assert [c.chunk_id for c in result.ordered] == [c.chunk_id for c in fused.candidates[:3]][::-1]
+            by_id = {c.chunk_id: c for c in fused.candidates}
+            for candidate in result.ordered:
+                old = by_id[candidate.chunk_id]
+                assert candidate.source_metadata == old.source_metadata
+                assert (candidate.repository, candidate.index_revision, candidate.matched_queries) == (old.repository, old.index_revision, old.matched_queries)
+                assert all(candidate.channel_scores[k] == v for k, v in old.channel_scores.items())
+                assert all(candidate.channel_ranks[k] == v for k, v in old.channel_ranks.items())
+            assert len(result.final_results()) == 2
+            assert result.to_dict()["unscored_tail_ids"] == [c.chunk_id for c in fused.candidates[3:]]
+            assert RerankResult.from_dict(result.to_dict()) == result
+            assert result.reply["query_sha256"] != result.reply["inputs"][0]["document_sha256"]
+            assert "Path: src/1.py\nSymbol: refund\nContent:\n" in render_document(fused.candidates[0])
+        finally:
+            process = adapter.process
+            await adapter.aclose()
+>           assert process.returncode is not None and adapter.process is None
+                   ^^^^^^^^^^^^^^^^^^
+E           AttributeError: 'NoneType' object has no attribute 'returncode'
+
+services\api\tests\test_rerank.py:50: AttributeError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[hang-timeout] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa0')
+mode = 'hang', reason = 'timeout'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[exit-worker_failed] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa1')
+mode = 'exit', reason = 'worker_failed'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[malformed-invalid_response] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa2')
+mode = 'malformed', reason = 'invalid_response'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[wrong-id-invalid_response] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa3')
+mode = 'wrong-id', reason = 'invalid_response'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[unavailable-model_unavailable] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa4')
+mode = 'unavailable', reason = 'model_unavailable'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_ test_failure_falls_back_to_exact_original_pool_and_stops_worker[input-input_limit] _
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_failure_falls_back_to_exa5')
+mode = 'input', reason = 'input_limit'
+
+    @pytest.mark.parametrize("mode,reason", [("hang", "timeout"), ("exit", "worker_failed"), ("malformed", "invalid_response"),
+                                             ("wrong-id", "invalid_response"), ("unavailable", "model_unavailable"), ("input", "input_limit")])
+    def test_failure_falls_back_to_exact_original_pool_and_stops_worker(tmp_path, mode, reason):
+        async def run():
+            adapter = worker(tmp_path, mode)
+            try:
+                if mode != "unavailable":
+                    await adapter.start()
+                process = adapter.process
+                result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                assert result.status == "fallback" and result.reason == reason and result.reply is None
+                assert result.ordered == result.fused.candidates
+                assert [r.score for r in result.final_results()] == [c.channel_scores["rrf"] for c in result.fused.candidates]
+                assert adapter.process is None
+                if process:
+                    assert process.returncode is not None
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:63: in run
+    result = await rerank(pool(), adapter, enabled=True, policy=RerankPolicy(timeout_seconds=.1 if mode == "hang" else 10))
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+____________ test_busy_is_immediate_and_cancellation_reaps_worker _____________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_busy_is_immediate_and_can0')
+
+    def test_busy_is_immediate_and_cancellation_reaps_worker(tmp_path):
+        async def run():
+            adapter = worker(tmp_path, "hang")
+            await adapter.start()
+            process = adapter.process
+            task = asyncio.create_task(rerank(pool(), adapter, enabled=True))
+            await asyncio.sleep(.02)
+            started = time.perf_counter()
+            result = await rerank(pool(), adapter, enabled=True)
+            assert result.reason == "busy" and time.perf_counter()-started < .2
+            assert adapter.process is process and process.returncode is None
+            task.cancel()
+            with pytest.raises(asyncio.CancelledError):
+                await task
+            assert process.returncode is not None and not adapter.busy
+            await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:80: in run
+    task = asyncio.create_task(rerank(pool(), adapter, enabled=True))
+                                      ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+____________ test_startup_timeout_and_missing_runtime_are_bounded _____________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_startup_timeout_and_missi0')
+
+    def test_startup_timeout_and_missing_runtime_are_bounded(tmp_path):
+        async def run():
+            adapter = worker(tmp_path, "startup-hang")
+            adapter.startup_timeout = .1
+            with pytest.raises(RerankFailure, match="timeout"):
+                await adapter.start()
+            assert adapter.process is None and not adapter.busy
+            await adapter.aclose()
+            missing = ProcessReranker(tmp_path/"missing-python.exe", tmp_path)
+            result = await rerank(pool(), missing, enabled=True)
+            assert result.reason == "model_unavailable" and missing.process is None
+            await missing.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:103: in run
+    result = await rerank(pool(), missing, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+___________ test_default_disabled_empty_and_closed_never_call_model ___________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_default_disabled_empty_an0')
+
+    def test_default_disabled_empty_and_closed_never_call_model(tmp_path):
+        async def run():
+            adapter = worker(tmp_path)
+            assert (await rerank(pool(), adapter)).reason == "disabled"
+            assert (await rerank(pool(0), adapter, enabled=True)).reason == "empty_pool"
+            assert adapter.process is None
+            await adapter.aclose()
+            assert (await rerank(pool(), adapter, enabled=True)).reason == "closed"
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:112: in run
+    assert (await rerank(pool(), adapter)).reason == "disabled"
+                         ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_____________ test_serialized_tampering_is_rejected[fused_source] _____________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r0')
+field = 'fused_source'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+____________ test_serialized_tampering_is_rejected[ordered_source] ____________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r1')
+field = 'ordered_source'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_________________ test_serialized_tampering_is_rejected[rank] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r2')
+field = 'rank'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+______________ test_serialized_tampering_is_rejected[raw_score] _______________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r3')
+field = 'raw_score'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[score] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r4')
+field = 'score'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[model] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r5')
+field = 'model'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[query] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r6')
+field = 'query'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_______________ test_serialized_tampering_is_rejected[document] _______________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r7')
+field = 'document'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[tokens] ________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r8')
+field = 'tokens'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[calls] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r9')
+field = 'calls'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+_________________ test_serialized_tampering_is_rejected[tail] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r10')
+field = 'tail'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+________________ test_serialized_tampering_is_rejected[scope] _________________
+
+tmp_path = WindowsPath('C:/Users/Administrator/AppData/Local/Temp/pytest-of-Administrator/pytest-100/test_serialized_tampering_is_r11')
+field = 'scope'
+
+    @pytest.mark.parametrize("field", ["fused_source", "ordered_source", "rank", "raw_score", "score", "model", "query", "document", "tokens", "calls", "tail", "scope"])
+    def test_serialized_tampering_is_rejected(tmp_path, field):
+        async def run():
+            adapter = worker(tmp_path)
+            try:
+                result = await rerank(pool(), adapter, enabled=True)
+                value = result.to_dict()
+                if field == "fused_source": value["fused"]["candidates"][0]["source_metadata"]["content"] = "changed\n"
+                if field == "ordered_source": value["ordered"][0]["source_metadata"]["start_line"] = 8
+                if field == "rank": value["ordered"][0]["channel_ranks"]["dense"] = 4
+                if field == "raw_score": value["ordered"][0]["channel_scores"]["rrf"] = .99
+                if field == "score": value["reply"]["scores"][0] = float("nan")
+                if field == "model": value["reply"]["revision"] = "other"
+                if field == "query": value["reply"]["query_sha256"] = "b"*64
+                if field == "document": value["reply"]["inputs"][0]["document_sha256"] = "b"*64
+                if field == "tokens": value["reply"]["inputs"][0]["input_ids"] *= 1000
+                if field == "calls": value["reply"]["performance"]["forward_calls"] = 0
+                if field == "tail": value["unscored_tail_ids"] = ["missing"]
+                if field == "scope": value["fused"]["filters"]["language"] = "java"
+                with pytest.raises((ValueError, TypeError)):
+                    RerankResult.from_dict(value)
+            finally:
+                await adapter.aclose()
+>       asyncio.run(run())
+
+services\api\tests\test_rerank.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+services\api\tests\test_rerank.py:133: in run
+    result = await rerank(pool(), adapter, enabled=True)
+                          ^^^^^^
+services\api\tests\test_rerank.py:17: in pool
+    candidates = tuple(RetrievalCandidate(f"00000000-0000-0000-0000-{i:012d}", "repo", "sha256:"+"a"*64,
+services\api\tests\test_rerank.py:18: in <genexpr>
+    SourceMetadata(f"src/{i}.py", "python", 11, 12, "def refund():\n    return 1\n", symbol="refund", node_type="function_definition", chunking_strategy="ast", chunking_version="test-v1"),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:13: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = SourceMetadata(path='src/1.py', language='python', start_line=11, end_line=12, content='def refund():\n    return 1\n'...bol='refund', node_type='function_definition', parent_symbol=None, chunking_strategy='ast', chunking_version='test-v1')
+
+    def __post_init__(self) -> None:
+        # Share the existing source validation, including inclusive lines and AST
+        # ownership. The placeholder rank is not an internal candidate rank.
+>       RetrievalResult(rank=1, score=0., chunk_id="00000000-0000-0000-0000-000000000000",
+                        repository="validation", **self.to_dict())
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for RetrievalResult
+E         Value error, Chunking strategy and version must agree [type=value_error, input_value={'rank': 1, 'score': 0.0,...ing_version': 'test-v1'}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+services\api\app\retrieval\candidates.py:79: ValidationError
+=========================== short test summary info ===========================
+FAILED services\api\tests\test_rerank.py::test_success_preserves_all_identity_coordinates_and_channel_provenance
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[hang-timeout]
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[exit-worker_failed]
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[malformed-invalid_response]
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[wrong-id-invalid_response]
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[unavailable-model_unavailable]
+FAILED services\api\tests\test_rerank.py::test_failure_falls_back_to_exact_original_pool_and_stops_worker[input-input_limit]
+FAILED services\api\tests\test_rerank.py::test_busy_is_immediate_and_cancellation_reaps_worker
+FAILED services\api\tests\test_rerank.py::test_startup_timeout_and_missing_runtime_are_bounded
+FAILED services\api\tests\test_rerank.py::test_default_disabled_empty_and_closed_never_call_model
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[fused_source]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[ordered_source]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[rank]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[raw_score]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[score]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[model]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[query]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[document]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[tokens]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[calls]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[tail]
+FAILED services\api\tests\test_rerank.py::test_serialized_tampering_is_rejected[scope]
+22 failed, 11 passed in 1.33s

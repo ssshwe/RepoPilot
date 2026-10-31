@@ -1,0 +1,19 @@
+{
+  "event": "ready",
+  "model": "BAAI/bge-reranker-v2-m3",
+  "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "manifest_sha256": "82bbd3823e4000f666d8c0f02f54b0c543566f8cf7a55befcccaed831b196a97",
+  "load_ms": 8914.513,
+  "rss_bytes": 1880981504,
+  "device": "cuda",
+  "dtype": "float16",
+  "pid": 22244,
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.6",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "cuda_runtime": "12.8",
+  "system_memory_bytes": 16978403328,
+  "gpu_total_memory_bytes": 8585216000,
+  "platform": "Windows-11-10.0.26100-SP0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+}

@@ -1,0 +1,16 @@
+{
+  "run": "evaluation/reports/stage4_rerank_20261031_task10_artifacts",
+  "log": "output/stage4-task10/real-evaluation.log",
+  "stage": "First case offline receipt validation, after one successful BGE inference",
+  "cause": "Reused online RetrievalSearchResponse validator requires collection, embedding_model and embedding_dimension fields absent from the frozen offline strategy receipt",
+  "model_loading_succeeded": true,
+  "completed_rerank_requests": 1,
+  "case_id": "refund-service",
+  "completed_forward_calls": null,
+  "raw_score_receipt_saved": false,
+  "limitation": "The first implementation saved the raw case after validation. Its first response was lost on abort; it is not claimed replayable. The corrected implementation writes the raw case before validation.",
+  "resolution": "Keep the failed directory and log; fix the inappropriate validator; execute a complete fresh fixed 52-case run, without inspecting or selecting earlier model scores",
+  "formal_quality_cases_selected_from_failed_run": 0,
+  "embedding_calls": 0,
+  "generation_calls": 0
+}

@@ -1,5 +1,33 @@
 # Repository evaluation
 
+## Stage 4 Task 10 real BGE reranking and offline replay
+
+The [Task 10 report](reports/stage4_rerank_20261031_task10_final.json) reuses all
+52 original Task 8 fused pools/questions, scores their first 30 candidates with
+pinned BAAI/bge-reranker-v2-m3, and rebuilds actual Top5 Context. Development
+complete-range Recall@5 is 92.71% (Hybrid 89.58%), complete evidence is 25/32
+(24/32); historical complete evidence is 9/12 (8/12). Symbol denominators remain
+28 development / 7 historical. Negatives stay separate, with 2/8 empty and zero
+foreign-repository results. Holdout was not queried.
+
+Fifty nonempty formal requests score 1320 pairs in 358 forwards, with P50/P95
+rerank-stage latency 183/224ms on the RTX 4060. Nine separate synthetic length/
+batch performance probes add 126 forwards; real process-lock, timeout/reaping
+and missing-model fallback receipts remain separate from quality metrics.
+Interrupted forward counts are explicitly unknown. One initial tool-validation
+failure and its extra model request are preserved separately, with no usable
+raw score receipt; the complete final fixed run is the only quality comparison.
+No new Embedding or generation calls were made. Default remains disabled.
+
+```powershell
+& services/api/.venv/Scripts/python.exe evaluation/stage4/evaluate_rerank.py --verify-only evaluation/reports/stage4_rerank_20261031_task10_final.json
+```
+
+Replay uses saved logits, immutable sources/candidates and actual ContextBuilder,
+without weights, CUDA, services or network. Full inference requires the pinned
+local model and isolated worker environment. See [Task 10 limits, examples,
+failures and reproduction](../docs/stage-4-task-10-reranker.md).
+
 ## Stage 4 Task 9 real Debug API and browser acceptance
 
 [`stage4/verify_debug.py`](stage4/verify_debug.py) records nine real HTTP cases:

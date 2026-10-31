@@ -1,0 +1,179 @@
+{
+  "task": "Stage 4 / Task 10",
+  "completed": true,
+  "run_date": "2026-10-31",
+  "created_at": "2026-10-31T01:46:53.580437+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_rerank_20261031_task10_final.json",
+    "sha256": "65e58e7267ce1994a4d31c8305863ff92bf9441fe8f6d2dcd40bd1f691658e5e"
+  },
+  "tests": {
+    "backend_passed": 1316,
+    "backend_skipped": 6,
+    "new_backend_tests": 37,
+    "evaluation_passed": 234,
+    "new_evaluation_tests": 27,
+    "frontend_passed": 76,
+    "build_passed": true
+  },
+  "offline_network_attempts": 0,
+  "rerank_replay": {
+    "offline_replay_passed": true,
+    "cases": 52,
+    "completed_rerank_requests": 50,
+    "performance_probes": 9,
+    "new_embedding_calls": 0,
+    "generation_calls": 0
+  },
+  "task9_replay": {
+    "offline_replay_passed": true,
+    "real_http_cases": 9,
+    "real_query_embeddings": 4,
+    "generation_calls": 0
+  },
+  "task7_replay": {
+    "offline_replay_passed": true,
+    "exact_probes": 24,
+    "bm25_compatibility_cases": 52,
+    "live_filter_scenarios": 5,
+    "generation_calls": 0
+  },
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "tasks2_through8_replay": "Recomputed through the frozen Hybrid report ancestry",
+  "calls": {
+    "formal_completed_rerank_requests": 50,
+    "empty_queries_without_inference": 2,
+    "formal_scored_pairs": 1320,
+    "formal_forward_calls": 358,
+    "completed_sweep_requests": 9,
+    "sweep_forward_calls": 126,
+    "timeout_interrupted_requests": 1,
+    "interrupted_forward_calls": "unknown",
+    "initial_tool_failure_completed_rerank_requests": 1,
+    "initial_tool_failure_forward_calls": "unknown; raw response was not saved",
+    "all_implementation_completed_rerank_requests": 60,
+    "new_embedding_calls": 0,
+    "generation_calls": 0
+  },
+  "initial_tool_failure": {
+    "path": "output/stage4-task10/first-run-failure.json",
+    "sha256": "f6645ed61325b770ef67877bd4f9676e54eba4b90f553241d6781150ce8570b9"
+  },
+  "worker_stopped": true,
+  "formal_parameters_retuned": false,
+  "holdout_queried": false,
+  "default_enabled": false,
+  "performance": {
+    "successful_queries": 50,
+    "empty_queries": 2,
+    "degraded_queries": 0,
+    "latency_ms": {
+      "p50": 183.4035,
+      "p95": 223.80974999999995,
+      "max": 473.254
+    },
+    "pairs": 1320,
+    "forward_calls": 358,
+    "truncated_pairs": 0,
+    "maximum_pair_tokens": 341,
+    "max_observed_rss_bytes": 2363834368,
+    "peak_cuda_allocated_bytes": 1175844864,
+    "peak_cuda_reserved_bytes": 1216348160
+  },
+  "normal_services": {
+    "api": 200,
+    "web": 200
+  },
+  "preservation": {
+    "protected_files": 1329,
+    "expected_changed_files": [
+      "README.md",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 1327,
+    "actual_environment_dependencies_locks_datasets_prior_reports_unchanged": true,
+    "all_qdrant_collections_unchanged": true,
+    "production_api_types_ui_and_existing_retrieval_algorithms_unchanged": true
+  },
+  "test_receipts": {
+    "backend-tests-final.log": {
+      "path": "output/stage4-task10/backend-tests-final.log",
+      "sha256": "97d002877460aaf50b046dc55bd420ef72f0c832d9de239b8363eb09d01e5719"
+    },
+    "evaluation-tests-final.log": {
+      "path": "output/stage4-task10/evaluation-tests-final.log",
+      "sha256": "a6632003cf6c54c73fec53de894e8b0d9389ecc44d96dc740c530ea5c1091c45"
+    },
+    "frontend-tests.log": {
+      "path": "output/stage4-task10/frontend-tests.log",
+      "sha256": "e70c9c8a61f5685668c0267717e3df564440a978e115646ae4e8dc590490d70d"
+    },
+    "frontend-build.log": {
+      "path": "output/stage4-task10/frontend-build.log",
+      "sha256": "fafe9443851174d24afdaccc5fd51757df526563a4ce774d41af54c094d7b6a1"
+    },
+    "worker-pip-check.txt": {
+      "path": "output/stage4-task10/worker-pip-check.txt",
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    "worker-freeze.txt": {
+      "path": "output/stage4-task10/worker-freeze.txt",
+      "sha256": "258ca21b751ad62a7d42c046c82576766a6cb9f8dc138e3337e72f82d965c5f1"
+    }
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task10/workspace-before.json",
+      "sha256": "c9da9079a416ff71c5714b9aa93ab4fbe053de1d5ad4d0ccd5643486a034cd84"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task10/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task10/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task10/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "git-before.json": {
+      "path": "output/stage4-task10/git-before.json",
+      "sha256": "3a46965d5cdd534062dea8901250d74fd37e4f27f272299375ae75708b42e283"
+    }
+  },
+  "implementation": {
+    "services/api/tests/test_rerank.py": {
+      "path": "services/api/tests/test_rerank.py",
+      "sha256": "81844f0ab7538418d6b52ca76ad52ab5b618c457735e468aa9d34ce8fa1092d9"
+    },
+    "services/api/tests/fixtures/reranker_worker_stub.py": {
+      "path": "services/api/tests/fixtures/reranker_worker_stub.py",
+      "sha256": "f79e472bbe7f31368b0ef70b7d22b0f1d71a211ef370270763ed7c10cc5f36b7"
+    },
+    "evaluation/tests/test_rerank_receipts.py": {
+      "path": "evaluation/tests/test_rerank_receipts.py",
+      "sha256": "28059ffbd2f0149dd5d8741fe8e4e9d8d7e785fe1ddf6fefbd674ae83f62b34e"
+    },
+    "evaluation/stage4/download_reranker.py": {
+      "path": "evaluation/stage4/download_reranker.py",
+      "sha256": "ee74d67900daec349826d40e588e34744a1790a96d3e06389752ec69b395da1e"
+    },
+    "evaluation/stage4/reranker-requirements.txt": {
+      "path": "evaluation/stage4/reranker-requirements.txt",
+      "sha256": "d5559cf90585e3b5f91ff2fa0b498d49bff4824fdb21168c9208cbb9efa4c4d7"
+    }
+  },
+  "documentation": {
+    "path": "docs/stage-4-task-10-reranker.md",
+    "sha256": "25edab1f5bc4269593604e289a478a0611218f57db85a19148f51926e2e6ab1b"
+  },
+  "next_task": "Stage 4 / Task 11 Query Expansion; not started"
+}
