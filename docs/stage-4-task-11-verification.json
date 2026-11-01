@@ -1,0 +1,209 @@
+{
+  "task": "Stage 4 / Task 11",
+  "completed": true,
+  "run_date": "2026-11-01",
+  "created_at": "2026-11-01T04:35:30.959097+00:00",
+  "report": {
+    "path": "evaluation/reports/stage4_expansion_20261101_task11.json",
+    "sha256": "622aab0da9376d5d0573bec0893303558b9032999781dc08fb43c2c7f779c870"
+  },
+  "analysis": {
+    "path": "evaluation/reports/stage4_expansion_20261101_task11_analysis_final.json",
+    "sha256": "ae7753c33b3de133b69f74b525a35ab326953bfceeaa02d665af1918071732e8"
+  },
+  "offline_network_attempts": 0,
+  "tests": {
+    "backend_passed": 1375,
+    "backend_skipped": 6,
+    "new_backend_tests": 59,
+    "evaluation_suite_passed": 258,
+    "separate_analysis_tests_passed": 2,
+    "current_evaluation_tests_collected_and_covered": 260,
+    "new_evaluation_tests": 26,
+    "frontend_passed": 76,
+    "build_passed": true
+  },
+  "formal_cases": 52,
+  "llm_probes": 4,
+  "live_scopes": 3,
+  "calls": {
+    "archived_original_dense_reuses": 56,
+    "new_embedding_calls": 92,
+    "native_qdrant_queries": 92,
+    "llm_logical_calls": 4,
+    "llm_http_attempts": 4,
+    "acknowledged_llm_usage": {
+      "prompt_tokens": 463,
+      "completion_tokens": 599,
+      "total_tokens": 1062
+    },
+    "llm_requests_with_unacknowledged_usage": 0,
+    "rerank_attempted_requests": 54,
+    "rerank_completed_requests": 54,
+    "answer_generation_calls": 0,
+    "formal_new_embedding_calls": 82,
+    "rerank_forward_calls": 387
+  },
+  "formal_top1_3_5_metrics_unchanged": true,
+  "independent_improvement": {
+    "case": "wallets-schema",
+    "fusion_range_recall_before": 0.0,
+    "after": 1.0
+  },
+  "ranking_regression": {
+    "id": "inventory-chain",
+    "required_range": {
+      "path": "backend/inventory/WorkflowController.java",
+      "start_line": 7,
+      "end_line": 9,
+      "snippet": "public void handle(String reference, int amount) {\n        service.reserve(reference, amount);\n    }"
+    },
+    "chunk": {
+      "chunk_id": "948223e9-4ada-5eb8-a7e2-7c6b781e2e23",
+      "path": "backend/inventory/WorkflowController.java",
+      "start_line": 7,
+      "end_line": 9,
+      "symbol": "WorkflowController.handle",
+      "fused_rank": 3,
+      "rerank_rank": 2
+    },
+    "before_fused_rank": 2,
+    "after_fused_rank": 3,
+    "receipt": {
+      "path": "evaluation/reports/stage4_expansion_20261101_task11_artifacts/cases/28-inventory-chain.json",
+      "sha256": "aa462d310badc611f9ee785921ad05a893a21b7de62429912ee6b99e6ee075e6"
+    }
+  },
+  "pipeline_latency_ms": {
+    "min": 6.724,
+    "p50": 2004.8890000000001,
+    "p95": 2184.5655,
+    "max": 4919.175
+  },
+  "expansion_replay": {
+    "offline_replay_passed": true,
+    "formal_cases": 52,
+    "llm_probes": 4,
+    "live_scopes": 3,
+    "new_embedding_calls": 92,
+    "llm_http_attempts": 4,
+    "answer_generation_calls": 0
+  },
+  "task9_replay": {
+    "offline_replay_passed": true,
+    "real_http_cases": 9,
+    "real_query_embeddings": 4,
+    "generation_calls": 0
+  },
+  "task7_replay": {
+    "offline_replay_passed": true,
+    "exact_probes": 24,
+    "bm25_compatibility_cases": 52,
+    "live_filter_scenarios": 5,
+    "generation_calls": 0
+  },
+  "task1_replay": {
+    "offline_replay_passed": true,
+    "canonical_queries": 12,
+    "chunk_count": 17,
+    "diagnostic_queries": 6,
+    "generation_calls": 0
+  },
+  "tasks2_through10_replay": "Validated through frozen Task10/Task8 ancestry",
+  "preservation": {
+    "protected_files": 1444,
+    "expected_changed_files": [
+      "README.md",
+      "evaluation/README.md"
+    ],
+    "other_existing_files_unchanged": 1442,
+    "environment_locks_dependencies_datasets_prior_reports_unchanged": true,
+    "qdrant_unchanged": true,
+    "temporary_collection_deleted": true,
+    "production_api_response_types_ui_and_prior_retrieval_algorithms_unchanged": true
+  },
+  "worker_stopped": true,
+  "normal_services": {
+    "api": 200,
+    "web": 200
+  },
+  "holdout_queried": false,
+  "model_or_prompt_retuned_after_results": false,
+  "default_expansion_enabled": false,
+  "default_rerank_enabled": false,
+  "implementation": {
+    "evaluation/stage4/analyze_expansion.py": {
+      "path": "evaluation/stage4/analyze_expansion.py",
+      "sha256": "60a53acfdd1155c775e30980111430e02ec773c7c632be6800e64757cc25c160"
+    },
+    "evaluation/tests/test_expansion_receipts.py": {
+      "path": "evaluation/tests/test_expansion_receipts.py",
+      "sha256": "2ab472ab1d3940167c33dfd1ce26ba5b9b634a4d614e44668bfdaf6b18089f9f"
+    },
+    "evaluation/tests/test_expansion_analysis.py": {
+      "path": "evaluation/tests/test_expansion_analysis.py",
+      "sha256": "6f65162d60815581dd697695cb9462225701f0c87a0f0fc969369b9b9344acbc"
+    },
+    "services/api/tests/test_query_expansion.py": {
+      "path": "services/api/tests/test_query_expansion.py",
+      "sha256": "6180cdca4c4e5aa9e7a49326b542f3eb85d14d2228a95868c221bce3154fa67c"
+    },
+    "services/api/tests/test_expanded_retrieval.py": {
+      "path": "services/api/tests/test_expanded_retrieval.py",
+      "sha256": "850ac449d48ba6b89c9b900994fba336bd17e81dc5c4885415037456c24c50a9"
+    }
+  },
+  "test_receipts": {
+    "backend-tests.log": {
+      "path": "output/stage4-task11/backend-tests.log",
+      "sha256": "682c264dfbf342a6362c6a643ae029e84fc0839bb9f081075592e3719e0116e8"
+    },
+    "evaluation-tests.log": {
+      "path": "output/stage4-task11/evaluation-tests.log",
+      "sha256": "270c39779931a89a63d18ed8ae34f69ba767cabc56a2a4b3894fde06d9a29d39"
+    },
+    "analysis-tests.log": {
+      "path": "output/stage4-task11/analysis-tests.log",
+      "sha256": "b19c27519a4a0b880c790b3794779108c48c0a21e7c8aaf2a4649583f58f9762"
+    },
+    "evaluation-collected.log": {
+      "path": "output/stage4-task11/evaluation-collected.log",
+      "sha256": "69c6c2968be378af77606a3e14269a4aa9528dcdd60d706e9469b7c21b90d72d"
+    },
+    "frontend-tests.log": {
+      "path": "output/stage4-task11/frontend-tests.log",
+      "sha256": "0c62badf9decaed6660e33574af801bc5142c8a6b844aa03c6d8bf157fed0e68"
+    },
+    "frontend-build.log": {
+      "path": "output/stage4-task11/frontend-build.log",
+      "sha256": "df0de636cb2feab0b511ba9e81d3e28b2ee1a5a4bfcdf59892457258f9db59f9"
+    }
+  },
+  "protection_inputs": {
+    "workspace-before.json": {
+      "path": "output/stage4-task11/workspace-before.json",
+      "sha256": "064457357d6a93a602aff08e61b06730f41f351e24d35a943be0c612ebb4c0e5"
+    },
+    "settings-before.json": {
+      "path": "output/stage4-task11/settings-before.json",
+      "sha256": "637b9a695a13cc7e6fa7ffee750894e95080cefa7df97cada458bcfe6146ca4f"
+    },
+    "qdrant-before.json": {
+      "path": "output/stage4-task11/qdrant-before.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "qdrant-after.json": {
+      "path": "output/stage4-task11/qdrant-after.json",
+      "sha256": "599cb4530069de59e64b2bfd0a759b2f02acee49f2e7a0186d1add0f592962ab"
+    },
+    "git-before.json": {
+      "path": "output/stage4-task11/git-before.json",
+      "sha256": "493783b485d847e41b9cb55fb17d078343a0943a490ea84da2c85b9d2941ff6f"
+    }
+  },
+  "documentation": {
+    "path": "docs/stage-4-task-11-expansion.md",
+    "sha256": "7c0b25fd57c21a502dd10274150275f0b16646cd80e0201ae72bfca6f4b25b3a"
+  },
+  "next_task": "Stage 4 / Task 12 Context Selection; not started"
+}

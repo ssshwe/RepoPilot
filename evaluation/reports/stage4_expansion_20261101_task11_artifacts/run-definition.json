@@ -1,0 +1,117 @@
+{
+  "definitions": {
+    "formal": "Fixed original 52 regression/development questions, archived original Dense ranks and identical 129 indexed Points; deterministic expansion; no holdout or new quality dataset",
+    "budgets": "At most original+2 variants, each extra <=2000 codepoints, total <=6000; 30/30/10 per query, <=210 reserved raw slots, merged channel caps 30/30/10, fusion<=60, rerank<=30, TopK5; Context5/16000",
+    "merge": "Within each channel select best original query rank; ties prefer earlier query then UUID; assign merged ranks; one RRF vote per channel k60; repeat matches do not sum query votes",
+    "provenance": "matched_queries contains only actual supporting queries; an expansion-only hit never claims the original matched it; original remains the request and rerank question",
+    "dense": "Original ranks reused only for the exact archived original request; every nonempty new variant uses its own real qwen3-embedding:0.6b vector and real Qdrant search on a private exact clone",
+    "guards": "Formal lexical corpus is the frozen Task5 image; private Qdrant clone checked before/after. Three independent live scopes use actual QdrantImageReader/FilteredDenseChannel guards",
+    "llm": "Four predeclared separate probes, one optional Structured Output call each, qwen2.5:0.5b unchanged; max_tokens512, temperature0, SDK retries0, deadline15s; raw invalid output retained; no answer generation",
+    "latency": "Formal wall time includes frozen-corpus checks, archived-original loading, real variant embedding/search and optional rerank; not a production service latency benchmark",
+    "defaults": "Expansion and Rerank remain off in product/API; Task14 freezes and evaluates final defaults on holdout"
+  },
+  "policy": {
+    "max_extra_queries": 2,
+    "max_original_characters": 2000,
+    "max_variant_characters": 2000,
+    "max_total_characters": 6000,
+    "max_llm_calls": 1,
+    "llm_timeout_seconds": 15.0,
+    "variant_timeout_seconds": 60.0,
+    "max_candidate_slots": 210
+  },
+  "limits": {
+    "dense": 30,
+    "bm25": 30,
+    "exact": 10,
+    "fusion": 60,
+    "rerank": 30,
+    "top_k": 5
+  },
+  "llm_cases": [
+    "wallet-symbol",
+    "wallet-behavior",
+    "refund-chain",
+    "wallets-schema"
+  ],
+  "hybrid": {
+    "path": "evaluation/reports/stage4_hybrid_20261027_task8.json",
+    "sha256": "c2e46f071f5b3aa74fea819ebd9b532536453b9932775aff520cab3dd88c696f"
+  },
+  "rerank": {
+    "path": "evaluation/reports/stage4_rerank_20261031_task10_final.json",
+    "sha256": "65e58e7267ce1994a4d31c8305863ff92bf9441fe8f6d2dcd40bd1f691658e5e"
+  },
+  "core": {
+    "services/api/app/retrieval/expansion.py": {
+      "path": "services/api/app/retrieval/expansion.py",
+      "sha256": "fd19653859f8c393ad8e041815c23a975cff3292e9dff2e5e657c4404cd0451f"
+    },
+    "services/api/app/retrieval/expansion_llm.py": {
+      "path": "services/api/app/retrieval/expansion_llm.py",
+      "sha256": "596ed41cd7962607724a0bc41d938a01a6f84ffdf3263601b4fce78d295b8fd7"
+    },
+    "services/api/app/retrieval/expanded_retrieval.py": {
+      "path": "services/api/app/retrieval/expanded_retrieval.py",
+      "sha256": "f106e982c0e179f2145cf85719de3a193b7ce4318ba1af2d3e140d94220efdf9"
+    },
+    "evaluation/stage4/evaluate_expansion.py": {
+      "path": "evaluation/stage4/evaluate_expansion.py",
+      "sha256": "1f2692fd2722d0a1e2becddb1a34e63228da483655d997cc3fdd4d407d5b2af7"
+    }
+  },
+  "case_ids": [
+    "refund-service",
+    "wallet-credit",
+    "wallet-default-balance",
+    "refund-controller",
+    "refund-form",
+    "refund-request-type",
+    "orders-schema",
+    "wallets-schema",
+    "fixture-documentation",
+    "repository-metadata",
+    "refund-validation-files",
+    "refund-call-chain",
+    "wallet-symbol",
+    "wallet-behavior",
+    "wallet-error",
+    "wallet-chain",
+    "refund-symbol",
+    "refund-behavior",
+    "refund-literal",
+    "refund-chain",
+    "orders-symbol",
+    "orders-behavior",
+    "orders-error",
+    "orders-chain",
+    "inventory-symbol",
+    "inventory-behavior",
+    "inventory-literal",
+    "inventory-chain",
+    "shipping-symbol",
+    "shipping-behavior",
+    "shipping-error",
+    "shipping-chain",
+    "auth-symbol",
+    "auth-behavior",
+    "auth-literal",
+    "auth-chain",
+    "ledger-symbol",
+    "ledger-behavior",
+    "ledger-error",
+    "ledger-chain",
+    "config-retries",
+    "schema-wallet-default",
+    "fixture-wallet-documentation",
+    "config-explicit-path",
+    "missing-symbol-a",
+    "missing-symbol-b",
+    "missing-path",
+    "missing-literal",
+    "foreign-symbol",
+    "scope-shadow-wallet",
+    "empty-symbol",
+    "empty-natural"
+  ]
+}

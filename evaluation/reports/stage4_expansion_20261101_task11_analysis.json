@@ -1,0 +1,5117 @@
+{
+  "report": {
+    "path": "evaluation/reports/stage4_expansion_20261101_task11.json",
+    "sha256": "622aab0da9376d5d0573bec0893303558b9032999781dc08fb43c2c7f779c870"
+  },
+  "quality_summaries": {
+    "expansion": {
+      "split": {
+        "dev": {
+          "cases": 40,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.90625,
+              "file_recall": 0.7447916666666666,
+              "range_recall": 0.6927083333333334,
+              "line_coverage": 0.7213942307692308,
+              "evidence_mrr": 0.8125,
+              "all_evidence": 0.625,
+              "symbol_hit": 0.8214285714285714,
+              "symbol_recall": 0.6845238095238095
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9166666666666666,
+              "range_recall": 0.8333333333333334,
+              "line_coverage": 0.8557692307692307,
+              "evidence_mrr": 0.8697916666666666,
+              "all_evidence": 0.71875,
+              "symbol_hit": 0.9285714285714286,
+              "symbol_recall": 0.8095238095238095
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.8958333333333334,
+              "line_coverage": 0.9182692307692307,
+              "evidence_mrr": 0.8776041666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8809523809523809
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.8958333333333334,
+            "line_coverage": 0.9182692307692307,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 40,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "regression": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.25,
+              "file_recall": 0.25,
+              "range_recall": 0.25,
+              "line_coverage": 0.25,
+              "evidence_mrr": 0.25,
+              "all_evidence": 0.25,
+              "symbol_hit": 0.14285714285714285,
+              "symbol_recall": 0.14285714285714285
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.4166666666666667,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.4666666666666667,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        }
+      },
+      "category": {
+        "config": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "documentation": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 0,
+              "file_recall": 0.0,
+              "range_recall": 0.0,
+              "line_coverage": 0.0,
+              "evidence_mrr": 0.0,
+              "all_evidence": 0,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "error_text": {
+          "cases": 4,
+          "at_k": {
+            "1": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 4,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 4,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "literal": {
+          "cases": 3,
+          "at_k": {
+            "1": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 3,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 3,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "multi_file": {
+          "cases": 9,
+          "at_k": {
+            "1": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.7777777777777778,
+              "file_recall": 0.25925925925925924,
+              "range_recall": 0.18518518518518517,
+              "line_coverage": 0.26495726495726496,
+              "evidence_mrr": 0.5555555555555556,
+              "all_evidence": 0,
+              "symbol_hit": 0.5555555555555556,
+              "symbol_recall": 0.18518518518518517
+            },
+            "3": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.8888888888888888,
+              "file_recall": 0.5185185185185185,
+              "range_recall": 0.4074074074074074,
+              "line_coverage": 0.48717948717948717,
+              "evidence_mrr": 0.6481481481481481,
+              "all_evidence": 0,
+              "symbol_hit": 0.7777777777777778,
+              "symbol_recall": 0.4074074074074074
+            },
+            "5": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.6481481481481481,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.6925925925925926,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            }
+          },
+          "context": {
+            "cases": 9,
+            "range_recall": 0.611111111111111,
+            "line_coverage": 0.6878373819163293,
+            "all_evidence": 0
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 9,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "natural_language": {
+          "cases": 17,
+          "at_k": {
+            "1": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.47058823529411764,
+              "file_recall": 0.47058823529411764,
+              "range_recall": 0.47058823529411764,
+              "line_coverage": 0.47058823529411764,
+              "evidence_mrr": 0.47058823529411764,
+              "all_evidence": 0.47058823529411764,
+              "symbol_hit": 0.5,
+              "symbol_recall": 0.5
+            },
+            "3": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.7647058823529411,
+              "line_coverage": 0.7647058823529411,
+              "evidence_mrr": 0.6176470588235294,
+              "all_evidence": 0.7647058823529411,
+              "symbol_hit": 0.75,
+              "symbol_recall": 0.75
+            },
+            "5": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.8235294117647058,
+              "line_coverage": 0.8235294117647058,
+              "evidence_mrr": 0.6294117647058823,
+              "all_evidence": 0.8235294117647058,
+              "symbol_hit": 0.8333333333333334,
+              "symbol_recall": 0.8333333333333334
+            }
+          },
+          "context": {
+            "cases": 17,
+            "range_recall": 0.8235294117647058,
+            "line_coverage": 0.8235294117647058,
+            "all_evidence": 0.8235294117647058
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 17,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "negative": {
+          "cases": 8,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 8,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "path": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "sql": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "symbol": {
+          "cases": 7,
+          "at_k": {
+            "1": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 0.9285714285714286,
+              "range_recall": 0.7857142857142857,
+              "line_coverage": 0.8142857142857143,
+              "evidence_mrr": 0.8571428571428571,
+              "all_evidence": 0.7142857142857143,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.7857142857142857
+            },
+            "3": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 0.8571428571428571,
+              "line_coverage": 0.8571428571428571,
+              "evidence_mrr": 0.8571428571428571,
+              "all_evidence": 0.8571428571428571,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.8571428571428571
+            },
+            "5": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.8928571428571429,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 7,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 7,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        }
+      },
+      "repository": {
+        "demo-repository": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.25,
+              "file_recall": 0.25,
+              "range_recall": 0.25,
+              "line_coverage": 0.25,
+              "evidence_mrr": 0.25,
+              "all_evidence": 0.25,
+              "symbol_hit": 0.14285714285714285,
+              "symbol_recall": 0.14285714285714285
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.4166666666666667,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.4666666666666667,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "stage4-commerce": {
+          "cases": 37,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.90625,
+              "file_recall": 0.7447916666666666,
+              "range_recall": 0.6927083333333334,
+              "line_coverage": 0.7213942307692308,
+              "evidence_mrr": 0.8125,
+              "all_evidence": 0.625,
+              "symbol_hit": 0.8214285714285714,
+              "symbol_recall": 0.6845238095238095
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9166666666666666,
+              "range_recall": 0.8333333333333334,
+              "line_coverage": 0.8557692307692307,
+              "evidence_mrr": 0.8697916666666666,
+              "all_evidence": 0.71875,
+              "symbol_hit": 0.9285714285714286,
+              "symbol_recall": 0.8095238095238095
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.8958333333333334,
+              "line_coverage": 0.9182692307692307,
+              "evidence_mrr": 0.8776041666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8809523809523809
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.8958333333333334,
+            "line_coverage": 0.9182692307692307,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 5,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 37,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "stage4-empty": {
+          "cases": 2,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 2,
+            "empty_results": 2,
+            "empty_result_rate": 1,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 2,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "stage4-shadow": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 1,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        }
+      }
+    },
+    "expansion_rerank": {
+      "split": {
+        "dev": {
+          "cases": 40,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.96875,
+              "file_recall": 0.828125,
+              "range_recall": 0.828125,
+              "line_coverage": 0.8314903846153846,
+              "evidence_mrr": 0.96875,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8035714285714286
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.9270833333333334,
+            "line_coverage": 0.9495192307692307,
+            "all_evidence": 0.78125
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 40,
+            "p50": 304.7215,
+            "p95": 371.92214999999993
+          }
+        },
+        "regression": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.6666666666666666,
+              "line_coverage": 0.6666666666666666,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.5714285714285714,
+              "symbol_recall": 0.5714285714285714
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8194444444444444,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.8194444444444444,
+            "line_coverage": 0.8171600877192983,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 113.46350000000001,
+            "p95": 379.06079999999974
+          }
+        }
+      },
+      "category": {
+        "config": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 127.074,
+            "p95": 127.074
+          }
+        },
+        "documentation": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 122.92,
+            "p95": 122.92
+          }
+        },
+        "error_text": {
+          "cases": 4,
+          "at_k": {
+            "1": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 4,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 4,
+            "p50": 127.538,
+            "p95": 130.35315
+          }
+        },
+        "literal": {
+          "cases": 3,
+          "at_k": {
+            "1": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 3,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 3,
+            "p50": 348.211,
+            "p95": 368.9983
+          }
+        },
+        "multi_file": {
+          "cases": 9,
+          "at_k": {
+            "1": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.2222222222222222,
+              "range_recall": 0.2222222222222222,
+              "line_coverage": 0.2564102564102564,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0,
+              "symbol_hit": 0.6666666666666666,
+              "symbol_recall": 0.2222222222222222
+            },
+            "3": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.611111111111111,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            },
+            "5": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.6481481481481481,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            }
+          },
+          "context": {
+            "cases": 9,
+            "range_recall": 0.611111111111111,
+            "line_coverage": 0.6878373819163293,
+            "all_evidence": 0
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 9,
+            "p50": 293.62,
+            "p95": 381.6448
+          }
+        },
+        "natural_language": {
+          "cases": 17,
+          "at_k": {
+            "1": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.8823529411764706,
+              "file_recall": 0.8823529411764706,
+              "range_recall": 0.8823529411764706,
+              "line_coverage": 0.8823529411764706,
+              "evidence_mrr": 0.8823529411764706,
+              "all_evidence": 0.8823529411764706,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            },
+            "3": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.9411764705882353,
+              "line_coverage": 0.9411764705882353,
+              "evidence_mrr": 0.9117647058823529,
+              "all_evidence": 0.9411764705882353,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.9411764705882353,
+              "line_coverage": 0.9411764705882353,
+              "evidence_mrr": 0.9117647058823529,
+              "all_evidence": 0.9411764705882353,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 17,
+            "range_recall": 0.9411764705882353,
+            "line_coverage": 0.9411764705882353,
+            "all_evidence": 0.9411764705882353
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 17,
+            "p50": 208.644,
+            "p95": 424.26639999999986
+          }
+        },
+        "negative": {
+          "cases": 8,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 8,
+            "p50": 277.303,
+            "p95": 354.55629999999996
+          }
+        },
+        "path": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 265.079,
+            "p95": 265.079
+          }
+        },
+        "sql": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 206.902,
+            "p95": 206.902
+          }
+        },
+        "symbol": {
+          "cases": 7,
+          "at_k": {
+            "1": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 0.9285714285714286,
+              "range_recall": 0.9285714285714286,
+              "line_coverage": 0.9,
+              "evidence_mrr": 1.0,
+              "all_evidence": 0.8571428571428571,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9285714285714286
+            },
+            "3": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 7,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 7,
+            "p50": 365.772,
+            "p95": 371.2767
+          }
+        }
+      },
+      "repository": {
+        "demo-repository": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.6666666666666666,
+              "line_coverage": 0.6666666666666666,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.5714285714285714,
+              "symbol_recall": 0.5714285714285714
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8194444444444444,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.8194444444444444,
+            "line_coverage": 0.8171600877192983,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 113.46350000000001,
+            "p95": 379.06079999999974
+          }
+        },
+        "stage4-commerce": {
+          "cases": 37,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.96875,
+              "file_recall": 0.828125,
+              "range_recall": 0.828125,
+              "line_coverage": 0.8314903846153846,
+              "evidence_mrr": 0.96875,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8035714285714286
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.9270833333333334,
+            "line_coverage": 0.9495192307692307,
+            "all_evidence": 0.78125
+          },
+          "negative": {
+            "cases": 5,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 37,
+            "p50": 331.39,
+            "p95": 373.74959999999993
+          }
+        },
+        "stage4-empty": {
+          "cases": 2,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 2,
+            "empty_results": 2,
+            "empty_result_rate": 1,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 2,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "stage4-shadow": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 1,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 23.814,
+            "p95": 23.814
+          }
+        }
+      }
+    }
+  },
+  "before_summaries": {
+    "hybrid": {
+      "split": {
+        "dev": {
+          "cases": 40,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.90625,
+              "file_recall": 0.7447916666666666,
+              "range_recall": 0.6927083333333334,
+              "line_coverage": 0.7213942307692308,
+              "evidence_mrr": 0.8125,
+              "all_evidence": 0.625,
+              "symbol_hit": 0.8214285714285714,
+              "symbol_recall": 0.6845238095238095
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9166666666666666,
+              "range_recall": 0.8333333333333334,
+              "line_coverage": 0.8557692307692307,
+              "evidence_mrr": 0.8697916666666666,
+              "all_evidence": 0.71875,
+              "symbol_hit": 0.9285714285714286,
+              "symbol_recall": 0.8095238095238095
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.8958333333333334,
+              "line_coverage": 0.9182692307692307,
+              "evidence_mrr": 0.8776041666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8809523809523809
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.8958333333333334,
+            "line_coverage": 0.9182692307692307,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 40,
+            "p50": 251.7905,
+            "p95": 300.6809999999999
+          }
+        },
+        "regression": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.25,
+              "file_recall": 0.25,
+              "range_recall": 0.25,
+              "line_coverage": 0.25,
+              "evidence_mrr": 0.25,
+              "all_evidence": 0.25,
+              "symbol_hit": 0.14285714285714285,
+              "symbol_recall": 0.14285714285714285
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.4166666666666667,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.4666666666666667,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 57.6005,
+            "p95": 63.74205
+          }
+        }
+      },
+      "category": {
+        "config": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 272.839,
+            "p95": 272.839
+          }
+        },
+        "documentation": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 0,
+              "file_recall": 0.0,
+              "range_recall": 0.0,
+              "line_coverage": 0.0,
+              "evidence_mrr": 0.0,
+              "all_evidence": 0,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.5,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 238.471,
+            "p95": 238.471
+          }
+        },
+        "error_text": {
+          "cases": 4,
+          "at_k": {
+            "1": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 4,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 4,
+            "p50": 267.046,
+            "p95": 285.9366
+          }
+        },
+        "literal": {
+          "cases": 3,
+          "at_k": {
+            "1": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 3,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 3,
+            "p50": 246.739,
+            "p95": 284.3248
+          }
+        },
+        "multi_file": {
+          "cases": 9,
+          "at_k": {
+            "1": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.7777777777777778,
+              "file_recall": 0.25925925925925924,
+              "range_recall": 0.18518518518518517,
+              "line_coverage": 0.26495726495726496,
+              "evidence_mrr": 0.5555555555555556,
+              "all_evidence": 0,
+              "symbol_hit": 0.5555555555555556,
+              "symbol_recall": 0.18518518518518517
+            },
+            "3": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.8888888888888888,
+              "file_recall": 0.5185185185185185,
+              "range_recall": 0.4074074074074074,
+              "line_coverage": 0.48717948717948717,
+              "evidence_mrr": 0.6481481481481481,
+              "all_evidence": 0,
+              "symbol_hit": 0.7777777777777778,
+              "symbol_recall": 0.4074074074074074
+            },
+            "5": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.6481481481481481,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.6925925925925926,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            }
+          },
+          "context": {
+            "cases": 9,
+            "range_recall": 0.611111111111111,
+            "line_coverage": 0.6878373819163293,
+            "all_evidence": 0
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 9,
+            "p50": 258.068,
+            "p95": 328.778
+          }
+        },
+        "natural_language": {
+          "cases": 17,
+          "at_k": {
+            "1": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.47058823529411764,
+              "file_recall": 0.47058823529411764,
+              "range_recall": 0.47058823529411764,
+              "line_coverage": 0.47058823529411764,
+              "evidence_mrr": 0.47058823529411764,
+              "all_evidence": 0.47058823529411764,
+              "symbol_hit": 0.5,
+              "symbol_recall": 0.5
+            },
+            "3": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.7647058823529411,
+              "line_coverage": 0.7647058823529411,
+              "evidence_mrr": 0.6176470588235294,
+              "all_evidence": 0.7647058823529411,
+              "symbol_hit": 0.75,
+              "symbol_recall": 0.75
+            },
+            "5": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.8235294117647058,
+              "line_coverage": 0.8235294117647058,
+              "evidence_mrr": 0.6294117647058823,
+              "all_evidence": 0.8235294117647058,
+              "symbol_hit": 0.8333333333333334,
+              "symbol_recall": 0.8333333333333334
+            }
+          },
+          "context": {
+            "cases": 17,
+            "range_recall": 0.8235294117647058,
+            "line_coverage": 0.8235294117647058,
+            "all_evidence": 0.8235294117647058
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 17,
+            "p50": 61.668,
+            "p95": 283.7394
+          }
+        },
+        "negative": {
+          "cases": 8,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 8,
+            "p50": 235.119,
+            "p95": 288.8692
+          }
+        },
+        "path": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 294.106,
+            "p95": 294.106
+          }
+        },
+        "sql": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 224.473,
+            "p95": 224.473
+          }
+        },
+        "symbol": {
+          "cases": 7,
+          "at_k": {
+            "1": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 0.9285714285714286,
+              "range_recall": 0.7857142857142857,
+              "line_coverage": 0.8142857142857143,
+              "evidence_mrr": 0.8571428571428571,
+              "all_evidence": 0.7142857142857143,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.7857142857142857
+            },
+            "3": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 0.8571428571428571,
+              "line_coverage": 0.8571428571428571,
+              "evidence_mrr": 0.8571428571428571,
+              "all_evidence": 0.8571428571428571,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.8571428571428571
+            },
+            "5": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 0.8928571428571429,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 7,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 7,
+            "p50": 247.065,
+            "p95": 280.5811
+          }
+        }
+      },
+      "repository": {
+        "demo-repository": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.25,
+              "file_recall": 0.25,
+              "range_recall": 0.25,
+              "line_coverage": 0.25,
+              "evidence_mrr": 0.25,
+              "all_evidence": 0.25,
+              "symbol_hit": 0.14285714285714285,
+              "symbol_recall": 0.14285714285714285
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.8333333333333334,
+              "file_recall": 0.7777777777777778,
+              "range_recall": 0.5833333333333334,
+              "line_coverage": 0.5833333333333334,
+              "evidence_mrr": 0.4166666666666667,
+              "all_evidence": 0.5833333333333334,
+              "symbol_hit": 0.42857142857142855,
+              "symbol_recall": 0.42857142857142855
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.7361111111111112,
+              "line_coverage": 0.7338267543859649,
+              "evidence_mrr": 0.4666666666666667,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.7361111111111112,
+            "line_coverage": 0.7338267543859649,
+            "all_evidence": 0.6666666666666666
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 57.6005,
+            "p95": 63.74205
+          }
+        },
+        "stage4-commerce": {
+          "cases": 37,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.90625,
+              "file_recall": 0.7447916666666666,
+              "range_recall": 0.6927083333333334,
+              "line_coverage": 0.7213942307692308,
+              "evidence_mrr": 0.8125,
+              "all_evidence": 0.625,
+              "symbol_hit": 0.8214285714285714,
+              "symbol_recall": 0.6845238095238095
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9166666666666666,
+              "range_recall": 0.8333333333333334,
+              "line_coverage": 0.8557692307692307,
+              "evidence_mrr": 0.8697916666666666,
+              "all_evidence": 0.71875,
+              "symbol_hit": 0.9285714285714286,
+              "symbol_recall": 0.8095238095238095
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.8958333333333334,
+              "line_coverage": 0.9182692307692307,
+              "evidence_mrr": 0.8776041666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8809523809523809
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.8958333333333334,
+            "line_coverage": 0.9182692307692307,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 5,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 37,
+            "p50": 252.317,
+            "p95": 304.5479999999999
+          }
+        },
+        "stage4-empty": {
+          "cases": 2,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 2,
+            "empty_results": 2,
+            "empty_result_rate": 1,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 2,
+            "p50": 9.1015,
+            "p95": 10.162149999999999
+          }
+        },
+        "stage4-shadow": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 1,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 19.689,
+            "p95": 19.689
+          }
+        }
+      }
+    },
+    "hybrid_rerank": {
+      "split": {
+        "dev": {
+          "cases": 40,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.96875,
+              "file_recall": 0.828125,
+              "range_recall": 0.828125,
+              "line_coverage": 0.8314903846153846,
+              "evidence_mrr": 0.96875,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8035714285714286
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.9270833333333334,
+            "line_coverage": 0.9495192307692307,
+            "all_evidence": 0.78125
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 40,
+            "p50": 191.845,
+            "p95": 218.21724999999995
+          }
+        },
+        "regression": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.6666666666666666,
+              "line_coverage": 0.6666666666666666,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.5714285714285714,
+              "symbol_recall": 0.5714285714285714
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8194444444444444,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.8194444444444444,
+            "line_coverage": 0.8171600877192983,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 149.85,
+            "p95": 301.7513499999998
+          }
+        }
+      },
+      "category": {
+        "config": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 193.464,
+            "p95": 193.464
+          }
+        },
+        "documentation": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 212.748,
+            "p95": 212.748
+          }
+        },
+        "error_text": {
+          "cases": 4,
+          "at_k": {
+            "1": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 4,
+              "symbol_cases": 4,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 4,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 4,
+            "p50": 183.523,
+            "p95": 192.87789999999998
+          }
+        },
+        "literal": {
+          "cases": 3,
+          "at_k": {
+            "1": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "3": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 3,
+              "symbol_cases": 3,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 3,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 3,
+            "p50": 184.444,
+            "p95": 196.7893
+          }
+        },
+        "multi_file": {
+          "cases": 9,
+          "at_k": {
+            "1": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.2222222222222222,
+              "range_recall": 0.2222222222222222,
+              "line_coverage": 0.2564102564102564,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0,
+              "symbol_hit": 0.6666666666666666,
+              "symbol_recall": 0.2222222222222222
+            },
+            "3": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.611111111111111,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            },
+            "5": {
+              "positive_cases": 9,
+              "symbol_cases": 9,
+              "file_hit": 1,
+              "file_recall": 0.6481481481481481,
+              "range_recall": 0.611111111111111,
+              "line_coverage": 0.6878373819163293,
+              "evidence_mrr": 0.8333333333333334,
+              "all_evidence": 0,
+              "symbol_hit": 1,
+              "symbol_recall": 0.611111111111111
+            }
+          },
+          "context": {
+            "cases": 9,
+            "range_recall": 0.611111111111111,
+            "line_coverage": 0.6878373819163293,
+            "all_evidence": 0
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 9,
+            "p50": 183.717,
+            "p95": 203.0716
+          }
+        },
+        "natural_language": {
+          "cases": 17,
+          "at_k": {
+            "1": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.8823529411764706,
+              "file_recall": 0.8823529411764706,
+              "range_recall": 0.8823529411764706,
+              "line_coverage": 0.8823529411764706,
+              "evidence_mrr": 0.8823529411764706,
+              "all_evidence": 0.8823529411764706,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            },
+            "3": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.9411764705882353,
+              "line_coverage": 0.9411764705882353,
+              "evidence_mrr": 0.9117647058823529,
+              "all_evidence": 0.9411764705882353,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 17,
+              "symbol_cases": 12,
+              "file_hit": 0.9411764705882353,
+              "file_recall": 0.9411764705882353,
+              "range_recall": 0.9411764705882353,
+              "line_coverage": 0.9411764705882353,
+              "evidence_mrr": 0.9117647058823529,
+              "all_evidence": 0.9411764705882353,
+              "symbol_hit": 0.9166666666666666,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 17,
+            "range_recall": 0.9411764705882353,
+            "line_coverage": 0.9411764705882353,
+            "all_evidence": 0.9411764705882353
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 17,
+            "p50": 161.431,
+            "p95": 268.7771999999998
+          }
+        },
+        "negative": {
+          "cases": 8,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 8,
+            "empty_results": 2,
+            "empty_result_rate": 0.25,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 8,
+            "p50": 178.29000000000002,
+            "p95": 197.2073
+          }
+        },
+        "path": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 183.209,
+            "p95": 183.209
+          }
+        },
+        "sql": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 1,
+              "symbol_cases": 0,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 1,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 235.243,
+            "p95": 235.243
+          }
+        },
+        "symbol": {
+          "cases": 7,
+          "at_k": {
+            "1": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 0.9285714285714286,
+              "range_recall": 0.9285714285714286,
+              "line_coverage": 0.9,
+              "evidence_mrr": 1.0,
+              "all_evidence": 0.8571428571428571,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9285714285714286
+            },
+            "3": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            },
+            "5": {
+              "positive_cases": 7,
+              "symbol_cases": 7,
+              "file_hit": 1,
+              "file_recall": 1.0,
+              "range_recall": 1.0,
+              "line_coverage": 1.0,
+              "evidence_mrr": 1.0,
+              "all_evidence": 1,
+              "symbol_hit": 1,
+              "symbol_recall": 1.0
+            }
+          },
+          "context": {
+            "cases": 7,
+            "range_recall": 1.0,
+            "line_coverage": 1.0,
+            "all_evidence": 1
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 7,
+            "p50": 174.015,
+            "p95": 220.74989999999997
+          }
+        }
+      },
+      "repository": {
+        "demo-repository": {
+          "cases": 12,
+          "at_k": {
+            "1": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.6666666666666666,
+              "file_recall": 0.6666666666666666,
+              "range_recall": 0.6666666666666666,
+              "line_coverage": 0.6666666666666666,
+              "evidence_mrr": 0.6666666666666666,
+              "all_evidence": 0.6666666666666666,
+              "symbol_hit": 0.5714285714285714,
+              "symbol_recall": 0.5714285714285714
+            },
+            "3": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8194444444444444,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            },
+            "5": {
+              "positive_cases": 12,
+              "symbol_cases": 7,
+              "file_hit": 0.9166666666666666,
+              "file_recall": 0.8472222222222222,
+              "range_recall": 0.8194444444444444,
+              "line_coverage": 0.8171600877192983,
+              "evidence_mrr": 0.7916666666666666,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.8571428571428571,
+              "symbol_recall": 0.6904761904761905
+            }
+          },
+          "context": {
+            "cases": 12,
+            "range_recall": 0.8194444444444444,
+            "line_coverage": 0.8171600877192983,
+            "all_evidence": 0.75
+          },
+          "negative": {
+            "cases": 0,
+            "empty_results": 0,
+            "empty_result_rate": null,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 12,
+            "p50": 149.85,
+            "p95": 301.7513499999998
+          }
+        },
+        "stage4-commerce": {
+          "cases": 37,
+          "at_k": {
+            "1": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 0.96875,
+              "file_recall": 0.828125,
+              "range_recall": 0.828125,
+              "line_coverage": 0.8314903846153846,
+              "evidence_mrr": 0.96875,
+              "all_evidence": 0.75,
+              "symbol_hit": 0.9642857142857143,
+              "symbol_recall": 0.8035714285714286
+            },
+            "3": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            },
+            "5": {
+              "positive_cases": 32,
+              "symbol_cases": 28,
+              "file_hit": 1,
+              "file_recall": 0.9270833333333334,
+              "range_recall": 0.9270833333333334,
+              "line_coverage": 0.9495192307692307,
+              "evidence_mrr": 0.984375,
+              "all_evidence": 0.78125,
+              "symbol_hit": 1,
+              "symbol_recall": 0.9166666666666666
+            }
+          },
+          "context": {
+            "cases": 32,
+            "range_recall": 0.9270833333333334,
+            "line_coverage": 0.9495192307692307,
+            "all_evidence": 0.78125
+          },
+          "negative": {
+            "cases": 5,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 37,
+            "p50": 192.798,
+            "p95": 219.89499999999995
+          }
+        },
+        "stage4-empty": {
+          "cases": 2,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 2,
+            "empty_results": 2,
+            "empty_result_rate": 1,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 2,
+            "p50": 0.0,
+            "p95": 0.0
+          }
+        },
+        "stage4-shadow": {
+          "cases": 1,
+          "at_k": {
+            "1": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "3": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            },
+            "5": {
+              "positive_cases": 0,
+              "symbol_cases": 0,
+              "file_hit": null,
+              "file_recall": null,
+              "range_recall": null,
+              "line_coverage": null,
+              "evidence_mrr": null,
+              "all_evidence": null,
+              "symbol_hit": null,
+              "symbol_recall": null
+            }
+          },
+          "context": {
+            "cases": 0,
+            "range_recall": null,
+            "line_coverage": null,
+            "all_evidence": null
+          },
+          "negative": {
+            "cases": 1,
+            "empty_results": 0,
+            "empty_result_rate": 0,
+            "foreign_repository_chunks": 0
+          },
+          "latency_ms": {
+            "samples": 1,
+            "p50": 51.224,
+            "p95": 51.224
+          }
+        }
+      }
+    }
+  },
+  "cost_definition": "Actual expanded.retrieval_latency_ms per request, including original rank reuse, frozen guards, new variant embedding/search and rerank; strategy helper fusion latency is a zero placeholder and its rerank latency is stage-only; those strategy latency summary fields are not end-to-end costs",
+  "formal_costs": [
+    {
+      "id": "refund-service",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 4919.175,
+      "expansion_ms": 0.066,
+      "rerank_stage_ms": 587.348,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-credit",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 842.964,
+      "expansion_ms": 0.072,
+      "rerank_stage_ms": 110.837,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-default-balance",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 842.23,
+      "expansion_ms": 0.058,
+      "rerank_stage_ms": 111.885,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-controller",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 796.925,
+      "expansion_ms": 0.05,
+      "rerank_stage_ms": 112.893,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-form",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 823.511,
+      "expansion_ms": 0.187,
+      "rerank_stage_ms": 105.849,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 58,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-request-type",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1564.597,
+      "expansion_ms": 0.211,
+      "rerank_stage_ms": 208.644,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 96,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "orders-schema",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 827.411,
+      "expansion_ms": 0.047,
+      "rerank_stage_ms": 124.203,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallets-schema",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 839.174,
+      "expansion_ms": 0.048,
+      "rerank_stage_ms": 127.952,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 34,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "fixture-documentation",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 849.685,
+      "expansion_ms": 0.047,
+      "rerank_stage_ms": 118.59,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 34,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "repository-metadata",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 844.206,
+      "expansion_ms": 0.097,
+      "rerank_stage_ms": 114.034,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-validation-files",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 790.79,
+      "expansion_ms": 0.052,
+      "rerank_stage_ms": 98.754,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-call-chain",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 845.059,
+      "expansion_ms": 0.049,
+      "rerank_stage_ms": 99.06,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 36,
+      "fused_candidates": 17,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2049.229,
+      "expansion_ms": 0.153,
+      "rerank_stage_ms": 294.975,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 186,
+      "fused_candidates": 48,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1962.846,
+      "expansion_ms": 0.123,
+      "rerank_stage_ms": 275.28,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 46,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-error",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1073.591,
+      "expansion_ms": 0.109,
+      "rerank_stage_ms": 125.691,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 114,
+      "fused_candidates": 40,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "wallet-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2041.296,
+      "expansion_ms": 0.192,
+      "rerank_stage_ms": 293.62,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 40,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2201.786,
+      "expansion_ms": 0.144,
+      "rerank_stage_ms": 344.584,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 52,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2205.089,
+      "expansion_ms": 0.119,
+      "rerank_stage_ms": 334.526,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 52,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-literal",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2038.662,
+      "expansion_ms": 0.126,
+      "rerank_stage_ms": 371.308,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 117,
+      "fused_candidates": 30,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "refund-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2149.84,
+      "expansion_ms": 0.355,
+      "rerank_stage_ms": 388.954,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 42,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "orders-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2124.623,
+      "expansion_ms": 0.145,
+      "rerank_stage_ms": 371.192,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 52,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "orders-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2068.465,
+      "expansion_ms": 0.144,
+      "rerank_stage_ms": 331.39,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 40,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "orders-error",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1038.247,
+      "expansion_ms": 0.11,
+      "rerank_stage_ms": 129.385,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 68,
+      "fused_candidates": 31,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "orders-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2126.377,
+      "expansion_ms": 0.206,
+      "rerank_stage_ms": 280.971,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 49,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "inventory-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2074.325,
+      "expansion_ms": 0.148,
+      "rerank_stage_ms": 365.772,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 51,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "inventory-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2144.731,
+      "expansion_ms": 0.13,
+      "rerank_stage_ms": 383.496,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 50,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "inventory-literal",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1999.1,
+      "expansion_ms": 0.137,
+      "rerank_stage_ms": 296.777,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 117,
+      "fused_candidates": 32,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "inventory-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2126.613,
+      "expansion_ms": 0.193,
+      "rerank_stage_ms": 370.681,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 49,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "shipping-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2119.491,
+      "expansion_ms": 0.155,
+      "rerank_stage_ms": 367.107,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 52,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "shipping-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1996.716,
+      "expansion_ms": 0.155,
+      "rerank_stage_ms": 312.666,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 39,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "shipping-error",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1063.523,
+      "expansion_ms": 0.094,
+      "rerank_stage_ms": 124.41,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 82,
+      "fused_candidates": 32,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "shipping-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2123.083,
+      "expansion_ms": 0.269,
+      "rerank_stage_ms": 349.729,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 48,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "auth-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2170.476,
+      "expansion_ms": 0.145,
+      "rerank_stage_ms": 293.54,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 52,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "auth-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2098.164,
+      "expansion_ms": 0.137,
+      "rerank_stage_ms": 334.768,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 40,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "auth-literal",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1986.08,
+      "expansion_ms": 0.121,
+      "rerank_stage_ms": 348.211,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 117,
+      "fused_candidates": 32,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "auth-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2145.771,
+      "expansion_ms": 0.188,
+      "rerank_stage_ms": 365.026,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 49,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "ledger-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2116.53,
+      "expansion_ms": 0.143,
+      "rerank_stage_ms": 371.313,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 51,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "ledger-behavior",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2077.601,
+      "expansion_ms": 0.131,
+      "rerank_stage_ms": 348.549,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 47,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "ledger-error",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1078.29,
+      "expansion_ms": 0.091,
+      "rerank_stage_ms": 130.524,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 112,
+      "fused_candidates": 39,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "ledger-chain",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2057.703,
+      "expansion_ms": 0.198,
+      "rerank_stage_ms": 287.911,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 43,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "config-retries",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1052.079,
+      "expansion_ms": 0.049,
+      "rerank_stage_ms": 127.074,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 60,
+      "fused_candidates": 30,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "schema-wallet-default",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1148.313,
+      "expansion_ms": 0.078,
+      "rerank_stage_ms": 206.902,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 64,
+      "fused_candidates": 30,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "fixture-wallet-documentation",
+      "planned_queries": 2,
+      "used_queries": 2,
+      "pipeline_wall_ms": 1074.068,
+      "expansion_ms": 0.117,
+      "rerank_stage_ms": 122.92,
+      "new_embedding_calls": 1,
+      "reserved_candidate_slots": 140,
+      "returned_candidate_slots": 68,
+      "fused_candidates": 31,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "config-explicit-path",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1944.847,
+      "expansion_ms": 0.116,
+      "rerank_stage_ms": 265.079,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 99,
+      "fused_candidates": 30,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "missing-symbol-a",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2018.308,
+      "expansion_ms": 0.112,
+      "rerank_stage_ms": 287.445,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 60,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "missing-symbol-b",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2126.205,
+      "expansion_ms": 0.117,
+      "rerank_stage_ms": 361.564,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 126,
+      "fused_candidates": 35,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "missing-path",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2118.742,
+      "expansion_ms": 0.123,
+      "rerank_stage_ms": 339.722,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 180,
+      "fused_candidates": 49,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "missing-literal",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2010.678,
+      "expansion_ms": 0.158,
+      "rerank_stage_ms": 267.161,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 168,
+      "fused_candidates": 55,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "foreign-symbol",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 2143.975,
+      "expansion_ms": 0.166,
+      "rerank_stage_ms": 341.542,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 93,
+      "fused_candidates": 30,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "scope-shadow-wallet",
+      "planned_queries": 3,
+      "used_queries": 3,
+      "pipeline_wall_ms": 1292.06,
+      "expansion_ms": 0.124,
+      "rerank_stage_ms": 23.814,
+      "new_embedding_calls": 2,
+      "reserved_candidate_slots": 210,
+      "returned_candidate_slots": 33,
+      "fused_candidates": 6,
+      "variant_failure": null,
+      "rerank_status": "reranked"
+    },
+    {
+      "id": "empty-symbol",
+      "planned_queries": 1,
+      "used_queries": 1,
+      "pipeline_wall_ms": 7.181,
+      "expansion_ms": 0.001,
+      "rerank_stage_ms": 0.0,
+      "new_embedding_calls": 0,
+      "reserved_candidate_slots": 70,
+      "returned_candidate_slots": 0,
+      "fused_candidates": 0,
+      "variant_failure": "empty_scope",
+      "rerank_status": "fallback"
+    },
+    {
+      "id": "empty-natural",
+      "planned_queries": 1,
+      "used_queries": 1,
+      "pipeline_wall_ms": 6.724,
+      "expansion_ms": 0.001,
+      "rerank_stage_ms": 0.0,
+      "new_embedding_calls": 0,
+      "reserved_candidate_slots": 70,
+      "returned_candidate_slots": 0,
+      "fused_candidates": 0,
+      "variant_failure": "empty_scope",
+      "rerank_status": "fallback"
+    }
+  ],
+  "formal_pipeline_wall_ms": {
+    "min": 6.724,
+    "p50": 2004.8890000000001,
+    "p95": 2184.5655,
+    "max": 4919.175
+  },
+  "formal_nonempty_pipeline_wall_ms": {
+    "min": 790.79,
+    "p50": 2014.493,
+    "p95": 2187.6965,
+    "max": 4919.175
+  },
+  "formal_new_embedding_calls": 82,
+  "query_counts": {
+    "1": 2,
+    "2": 18,
+    "3": 32
+  },
+  "changed_cases": [],
+  "unresolved_evidence_ranges": [
+    {
+      "id": "refund-controller",
+      "required_range": {
+        "path": "backend/controller/OrderController.java",
+        "start_line": 13,
+        "end_line": 15,
+        "snippet": "refunds.refund(orderId, userId, amount);"
+      },
+      "stage": "after_final_top5",
+      "chunks": [
+        {
+          "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "symbol": "OrderController.refundOrder",
+          "fused_rank": 9,
+          "rerank_rank": 11
+        }
+      ]
+    },
+    {
+      "id": "refund-validation-files",
+      "required_range": {
+        "path": "backend/service/WalletService.java",
+        "start_line": 10,
+        "end_line": 18,
+        "snippet": "amount == null || amount.signum() <= 0"
+      },
+      "stage": "after_final_top5",
+      "chunks": [
+        {
+          "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "symbol": "WalletService.credit",
+          "fused_rank": 17,
+          "rerank_rank": 11
+        }
+      ]
+    },
+    {
+      "id": "refund-call-chain",
+      "required_range": {
+        "path": "backend/controller/OrderController.java",
+        "start_line": 13,
+        "end_line": 15,
+        "snippet": "refunds.refund(orderId, userId, amount);"
+      },
+      "stage": "after_final_top5",
+      "chunks": [
+        {
+          "chunk_id": "65f5df11-131b-5b65-9052-e1da2cda3c50",
+          "path": "backend/controller/OrderController.java",
+          "start_line": 13,
+          "end_line": 15,
+          "symbol": "OrderController.refundOrder",
+          "fused_rank": 7,
+          "rerank_rank": 14
+        }
+      ]
+    },
+    {
+      "id": "refund-call-chain",
+      "required_range": {
+        "path": "backend/service/WalletService.java",
+        "start_line": 10,
+        "end_line": 18,
+        "snippet": "balances.merge(userId, amount, BigDecimal::add);"
+      },
+      "stage": "after_final_top5",
+      "chunks": [
+        {
+          "chunk_id": "3be29be2-e2ec-58d6-90c4-6374c6a1582e",
+          "path": "backend/service/WalletService.java",
+          "start_line": 10,
+          "end_line": 18,
+          "symbol": "WalletService.credit",
+          "fused_rank": 15,
+          "rerank_rank": 9
+        }
+      ]
+    },
+    {
+      "id": "wallet-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "refund-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "orders-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "inventory-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "shipping-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "auth-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    },
+    {
+      "id": "ledger-chain",
+      "required_range": {
+        "path": "backend/shared/SharedRecorder.java",
+        "start_line": 4,
+        "end_line": 6,
+        "snippet": "public void record(String event) {\n        events += 1;\n    }"
+      },
+      "stage": "outside_fused_pool",
+      "chunks": []
+    }
+  ],
+  "unresolved_stage_counts": {
+    "after_final_top5": 4,
+    "outside_fused_pool": 7
+  },
+  "llm_probes": [
+    {
+      "id": "wallet-symbol",
+      "status": "fallback",
+      "reason": "invalid_output",
+      "queries": [
+        "当前仓库中 WalletService.credit 有哪些实现？请同时列出正式钱包和 legacy 钱包。"
+      ],
+      "rejections": [],
+      "http_attempts": 1,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 512,
+        "total_tokens": 630
+      },
+      "finish_reason": "length",
+      "raw_output_characters": 1771,
+      "expansion_ms": 3170.965,
+      "pipeline_wall_ms": 3469.185,
+      "comparison": {
+        "fusion": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "symbol_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          }
+        },
+        "rerank": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "symbol_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          }
+        }
+      },
+      "receipt": {
+        "path": "evaluation/reports/stage4_expansion_20261101_task11_artifacts/llm/wallet-symbol.json",
+        "sha256": "bf58be1bd8e0ba74d19cf7824c2ec6a665c7b37bbd1b6f88eb465d18e00657b4"
+      }
+    },
+    {
+      "id": "wallet-behavior",
+      "status": "expanded",
+      "reason": null,
+      "queries": [
+        "在 backend/wallet 的钱包入账流程中，钱包余额增加入账金额的代码在哪里？",
+        "backend/wallet 背后钱包入账流程代码在哪里？",
+        "backend/wallet 背后钱包入账流程代码哪里？"
+      ],
+      "rejections": [],
+      "http_attempts": 1,
+      "usage": {
+        "prompt_tokens": 114,
+        "completion_tokens": 36,
+        "total_tokens": 150
+      },
+      "finish_reason": "stop",
+      "raw_output_characters": 78,
+      "expansion_ms": 167.556,
+      "pipeline_wall_ms": 2201.237,
+      "comparison": {
+        "fusion": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "line_coverage": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "symbol_recall": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "evidence_mrr": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "line_coverage": {
+              "before": 0.0,
+              "after": 0.0
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          }
+        },
+        "rerank": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "symbol_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          }
+        }
+      },
+      "receipt": {
+        "path": "evaluation/reports/stage4_expansion_20261101_task11_artifacts/llm/wallet-behavior.json",
+        "sha256": "8afd149bdfb1d4654c1de97a2d6884e2bfaafe62011c07f925f5a7ca37af5ccd"
+      }
+    },
+    {
+      "id": "refund-chain",
+      "status": "no_variants",
+      "reason": "no_variants",
+      "queries": [
+        "backend/refund 的订单退款请求如何从 WorkflowController.handle 到 RefundService.refund 再记录审计事件？"
+      ],
+      "rejections": [
+        {
+          "proposal_index": 0,
+          "reason": "protected_missing"
+        },
+        {
+          "proposal_index": 1,
+          "reason": "protected_missing"
+        }
+      ],
+      "http_attempts": 1,
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 26,
+        "total_tokens": 156
+      },
+      "finish_reason": "stop",
+      "raw_output_characters": 123,
+      "expansion_ms": 149.253,
+      "pipeline_wall_ms": 508.487,
+      "comparison": {
+        "fusion": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "line_coverage": {
+              "before": 0.7692307692307693,
+              "after": 0.7692307692307693
+            },
+            "symbol_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "line_coverage": {
+              "before": 0.7692307692307693,
+              "after": 0.7692307692307693
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          }
+        },
+        "rerank": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "line_coverage": {
+              "before": 0.7692307692307693,
+              "after": 0.7692307692307693
+            },
+            "symbol_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 0.6666666666666666,
+              "after": 0.6666666666666666
+            },
+            "line_coverage": {
+              "before": 0.7692307692307693,
+              "after": 0.7692307692307693
+            },
+            "all_evidence": {
+              "before": false,
+              "after": false
+            }
+          }
+        }
+      },
+      "receipt": {
+        "path": "evaluation/reports/stage4_expansion_20261101_task11_artifacts/llm/refund-chain.json",
+        "sha256": "7a0c0c889dcc8f27a91c2dea9d79d2083cb0ba4acd1355c104a340e71c87b254"
+      }
+    },
+    {
+      "id": "wallets-schema",
+      "status": "expanded",
+      "reason": null,
+      "queries": [
+        "钱包表余额的默认值在哪里设置为零？",
+        "设置钱包表余额的默认值为零",
+        "查看设置钱包表余额的默认值"
+      ],
+      "rejections": [],
+      "http_attempts": 1,
+      "usage": {
+        "prompt_tokens": 101,
+        "completion_tokens": 25,
+        "total_tokens": 126
+      },
+      "finish_reason": "stop",
+      "raw_output_characters": 47,
+      "expansion_ms": 201.194,
+      "pipeline_wall_ms": 1793.108,
+      "comparison": {
+        "fusion": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 0.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 0.0,
+              "after": 1.0
+            },
+            "symbol_recall": {
+              "before": null,
+              "after": null
+            },
+            "evidence_mrr": {
+              "before": 0.0,
+              "after": 0.3333333333333333
+            },
+            "all_evidence": {
+              "before": false,
+              "after": true
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 0.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 0.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": false,
+              "after": true
+            }
+          }
+        },
+        "rerank": {
+          "positive": true,
+          "at_5": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "symbol_recall": {
+              "before": null,
+              "after": null
+            },
+            "evidence_mrr": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          },
+          "context": {
+            "range_recall": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "line_coverage": {
+              "before": 1.0,
+              "after": 1.0
+            },
+            "all_evidence": {
+              "before": true,
+              "after": true
+            }
+          }
+        }
+      },
+      "receipt": {
+        "path": "evaluation/reports/stage4_expansion_20261101_task11_artifacts/llm/wallets-schema.json",
+        "sha256": "d89d06f3a50096e0b24d97aab97985bbe9282a7a18dbf67f2f390ef6eb4c51d1"
+      }
+    }
+  ],
+  "calls": {
+    "archived_original_dense_reuses": 56,
+    "new_embedding_calls": 92,
+    "native_qdrant_queries": 92,
+    "llm_logical_calls": 4,
+    "llm_http_attempts": 4,
+    "acknowledged_llm_usage": {
+      "prompt_tokens": 463,
+      "completion_tokens": 599,
+      "total_tokens": 1062
+    },
+    "llm_requests_with_unacknowledged_usage": 0,
+    "rerank_attempted_requests": 54,
+    "rerank_completed_requests": 54,
+    "answer_generation_calls": 0
+  },
+  "formal_denominator": 52,
+  "llm_probe_denominator": 4,
+  "live_scope_denominator": 3
+}

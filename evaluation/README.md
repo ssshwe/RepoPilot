@@ -1,5 +1,35 @@
 # Repository evaluation
 
+## Stage 4 Task 11 bounded expansion, actual new vectors and retained failures
+
+The [Task 11 report](reports/stage4_expansion_20261101_task11.json) retains all
+52 original development/regression questions and uses fresh real vectors only
+for new query variants. Within-channel best-rank merging precedes one-vote RRF;
+actual matched queries remain separate from the unchanged request/rerank question.
+Limits are original+2 queries, 210 reserved raw slots, 30/30/10 merged channel
+caps, 60 fused candidates, 30 rerank candidates and TopK5 / Context5/16000.
+
+Deterministic expansion makes 82 additional embedding calls without changing
+K=1/3/5 metrics: development complete evidence stays 24/32 (25/32 with Rerank),
+historical evidence 8/12 (9/12 with Rerank). Four independent one-call LLM probes
+include a schema-query Fusion improvement, a truncated 512-token failure and
+rejected missing locators. The formal inventory-chain Controller drops from
+fusion rank 2 to 3 without changing cutoff metrics. All cases and costs remain;
+no holdout query, new quality dataset, Prompt retuning or answer generation ran.
+Defaults remain disabled, and product/API integration is deferred to Task 13.
+
+```powershell
+& services/api/.venv/Scripts/python.exe evaluation/stage4/evaluate_expansion.py --verify-only evaluation/reports/stage4_expansion_20261101_task11.json
+& services/api/.venv/Scripts/python.exe evaluation/stage4/analyze_expansion.py evaluation/reports/stage4_expansion_20261101_task11.json --output evaluation/reports/stage4_expansion_20261101_task11_analysis_final.json --verify-only
+```
+
+The [final analysis](reports/stage4_expansion_20261101_task11_analysis_final.json)
+uses actual per-query `expanded.retrieval_latency_ms`, not the helper strategy
+latency fields. It keeps formal 52, LLM 4 and live scope 3 denominators separate.
+Across formal/probe/live work there are 92 real embeddings/searches, four LLM
+HTTP attempts (1062 acknowledged tokens) and 54 completed rerank requests.
+See [limits, raw examples, costs and reproduction](../docs/stage-4-task-11-expansion.md).
+
 ## Stage 4 Task 10 real BGE reranking and offline replay
 
 The [Task 10 report](reports/stage4_rerank_20261031_task10_final.json) reuses all

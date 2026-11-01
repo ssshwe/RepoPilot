@@ -1,0 +1,62 @@
+....................................FF...................                [100%]
+================================== FAILURES ===================================
+______ test_bad_variant_scope_or_source_fails_before_truncation[filter] _______
+
+change = 'filter'
+
+    @pytest.mark.parametrize("change", ["query", "repository", "revision", "filter", "source", "nested", "limit"])
+    def test_bad_variant_scope_or_source_fails_before_truncation(change):
+        from app.retrieval.scope import SearchFilters
+        original = batch("dense", query="credit")
+        variant = batch("dense", query="credit wallet")
+        if change == "query": variant = replace(variant, query="other", candidates=tuple(replace(c,matched_queries=("other",)) for c in variant.candidates))
+        if change == "repository": variant = replace(variant, repository="other", candidates=tuple(replace(c,repository="other") for c in variant.candidates))
+        if change == "revision": variant = replace(variant, index_revision="sha256:"+"b"*64, candidates=tuple(replace(c,index_revision="sha256:"+"b"*64) for c in variant.candidates))
+>       if change == "filter": variant = replace(variant, filters=SearchFilters(path_prefix="" if False else "backend"), candidates=variant.candidates[:2])
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_expanded_retrieval.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\dataclasses.py:1588: in replace
+    return obj.__class__(**changes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:11: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ScopedCandidateBatch(repository='demo', query='credit wallet', channel='dense', index_revision='sha256:32765953b5c1215...ed_queries=('credit wallet',))), retrieval_latency_ms=1.0, filters=SearchFilters(language=None, path_prefix='backend'))
+
+    def __post_init__(self):
+        super().__post_init__()
+        if not isinstance(self.filters, SearchFilters) or any(not self.filters.matches(c.source_metadata) for c in self.candidates):
+>           raise ValueError("Candidate batch contains code outside its declared filters.")
+E           ValueError: Candidate batch contains code outside its declared filters.
+
+app\retrieval\scope.py:69: ValueError
+______ test_bad_variant_scope_or_source_fails_before_truncation[source] _______
+
+change = 'source'
+
+    @pytest.mark.parametrize("change", ["query", "repository", "revision", "filter", "source", "nested", "limit"])
+    def test_bad_variant_scope_or_source_fails_before_truncation(change):
+        from app.retrieval.scope import SearchFilters
+        original = batch("dense", query="credit")
+        variant = batch("dense", query="credit wallet")
+        if change == "query": variant = replace(variant, query="other", candidates=tuple(replace(c,matched_queries=("other",)) for c in variant.candidates))
+        if change == "repository": variant = replace(variant, repository="other", candidates=tuple(replace(c,repository="other") for c in variant.candidates))
+        if change == "revision": variant = replace(variant, index_revision="sha256:"+"b"*64, candidates=tuple(replace(c,index_revision="sha256:"+"b"*64) for c in variant.candidates))
+        if change == "filter": variant = replace(variant, filters=SearchFilters(path_prefix="" if False else "backend"), candidates=variant.candidates[:2])
+        if change == "source":
+            candidate = variant.candidates[-1]
+            variant = replace(variant, candidates=(*variant.candidates[:-1], replace(candidate, source_metadata=replace(candidate.source_metadata, content=candidate.source_metadata.content.replace("pass", "none")))))
+        if change == "nested": variant = merge_channel([variant], (variant.query,), 3)
+        if change == "limit": variant = replace(variant, candidate_limit=4)
+>       with pytest.raises((ValueError, SnapshotError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'app.retrieval.snapshot_models.SnapshotError'>)
+
+tests\test_expanded_retrieval.py:53: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_expanded_retrieval.py::test_bad_variant_scope_or_source_fails_before_truncation[filter]
+FAILED tests/test_expanded_retrieval.py::test_bad_variant_scope_or_source_fails_before_truncation[source]
+2 failed, 55 passed in 4.46s

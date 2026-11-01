@@ -1,0 +1,322 @@
+{
+  "id": "empty-natural",
+  "expanded": {
+    "request": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "limits": {
+        "dense": 30,
+        "bm25": 30,
+        "exact": 10,
+        "fusion": 60,
+        "rerank": 30,
+        "top_k": 5
+      },
+      "exact_match": null
+    },
+    "plan": {
+      "version": "query-expansion-v1",
+      "original": "空仓库哪里检查退款金额？",
+      "method": "disabled",
+      "policy": {
+        "max_extra_queries": 2,
+        "max_original_characters": 2000,
+        "max_variant_characters": 2000,
+        "max_total_characters": 6000,
+        "max_llm_calls": 1,
+        "llm_timeout_seconds": 15.0,
+        "variant_timeout_seconds": 60.0,
+        "max_candidate_slots": 210
+      },
+      "status": "disabled",
+      "reason": "disabled",
+      "protected_values": [],
+      "proposals": [],
+      "accepted": [],
+      "queries": [
+        "空仓库哪里检查退款金额？"
+      ],
+      "rejections": [],
+      "llm_calls": 0,
+      "llm_receipt": null,
+      "latency_ms": 0.001
+    },
+    "used_queries": [
+      "空仓库哪里检查退款金额？"
+    ],
+    "attempts": [
+      {
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "dense",
+        "status": "completed"
+      },
+      {
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "bm25",
+        "status": "completed"
+      },
+      {
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "exact",
+        "status": "completed"
+      }
+    ],
+    "batches": [
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "dense",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 1.982,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+      },
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "bm25",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 2.182,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f"
+      },
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "exact",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 2.089,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "match": {
+          "kind": "text",
+          "value": "空仓库哪里检查退款金额？",
+          "mode": "full"
+        },
+        "reasons": {}
+      }
+    ],
+    "reason": "empty_scope",
+    "merged": [
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "dense",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 1.982,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "queries": [
+          "空仓库哪里检查退款金额？"
+        ],
+        "merge_version": "best-query-rank-v1"
+      },
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "bm25",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 30,
+        "retrieval_latency_ms": 2.182,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "queries": [
+          "空仓库哪里检查退款金额？"
+        ],
+        "merge_version": "best-query-rank-v1"
+      },
+      {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "exact",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 10,
+        "retrieval_latency_ms": 2.089,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "queries": [
+          "空仓库哪里检查退款金额？"
+        ],
+        "merge_version": "best-query-rank-v1"
+      }
+    ],
+    "fused": {
+      "repository": "stage4-empty",
+      "query": "空仓库哪里检查退款金额？",
+      "channel": "rrf",
+      "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+      "candidate_limit": 60,
+      "retrieval_latency_ms": 0.0,
+      "candidates": [],
+      "filters": {
+        "language": null,
+        "path_prefix": null
+      },
+      "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+      "queries": [
+        "空仓库哪里检查退款金额？"
+      ],
+      "merge_version": "best-query-rank-v1"
+    },
+    "reranked": {
+      "fused": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "channel": "rrf",
+        "index_revision": "sha256:308ece075bb36d570054516abd1478c15ece78cf47ee0bef5422a3a3d583f866",
+        "candidate_limit": 60,
+        "retrieval_latency_ms": 0.0,
+        "candidates": [],
+        "filters": {
+          "language": null,
+          "path_prefix": null
+        },
+        "scope_fingerprint": "sha256:47ce3fd3b0708fecd63fe712e76971f89903cc9c655366ea57ba29427932fb7f",
+        "queries": [
+          "空仓库哪里检查退款金额？"
+        ],
+        "merge_version": "best-query-rank-v1"
+      },
+      "policy": {
+        "candidate_limit": 30,
+        "batch_size": 4,
+        "max_length": 512,
+        "max_query_tokens": 256,
+        "max_document_characters": 16000,
+        "timeout_seconds": 30.0
+      },
+      "top_k": 5,
+      "status": "fallback",
+      "reason": "empty_pool",
+      "latency_ms": 0.0,
+      "reply": null,
+      "document_version": "path-symbol-content-v1",
+      "score_type": "rrf",
+      "ordered": [],
+      "unscored_tail_ids": [],
+      "results": []
+    },
+    "retrieval_latency_ms": 6.724,
+    "reserved_candidate_slots": 70,
+    "returned_candidate_slots": 0,
+    "results": []
+  },
+  "events": [],
+  "strategies": {
+    "expansion": {
+      "id": "empty-natural",
+      "retrieval": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "top_k": 5,
+        "results": [],
+        "retrieval_latency_ms": 0.0
+      },
+      "context": {
+        "repository": "stage4-empty",
+        "text": "",
+        "sources": [],
+        "retrieved_chunks": 0,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 0,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 0,
+        "budget_limited": false,
+        "empty_reason": "no_results"
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "empty_repository",
+          "returned_chunks": 0,
+          "empty_result": true,
+          "foreign_repository_chunks": 0
+        }
+      }
+    },
+    "expansion_rerank": {
+      "id": "empty-natural",
+      "retrieval": {
+        "repository": "stage4-empty",
+        "query": "空仓库哪里检查退款金额？",
+        "top_k": 5,
+        "results": [],
+        "retrieval_latency_ms": 0.0
+      },
+      "context": {
+        "repository": "stage4-empty",
+        "text": "",
+        "sources": [],
+        "retrieved_chunks": 0,
+        "duplicate_chunks": 0,
+        "overlap_trimmed_chunks": 0,
+        "candidate_sources": 0,
+        "omitted_sources": 0,
+        "max_context_chunks": 5,
+        "max_context_characters": 16000,
+        "characters_used": 0,
+        "budget_limited": false,
+        "empty_reason": "no_results"
+      },
+      "metrics": {
+        "at_k": null,
+        "context": null,
+        "negative": {
+          "kind": "empty_repository",
+          "returned_chunks": 0,
+          "empty_result": true,
+          "foreign_repository_chunks": 0
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "fusion": {
+      "positive": false,
+      "empty_before": true,
+      "empty_after": true
+    },
+    "rerank": {
+      "positive": false,
+      "empty_before": true,
+      "empty_after": true
+    }
+  },
+  "evidence_diagnostics": []
+}

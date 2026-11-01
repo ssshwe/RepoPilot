@@ -2,7 +2,7 @@
 
 RepoPilot is a repository-level AI software engineering agent developed in small,
 explicit stages. The current codebase completes **Stage 1 / Task 8**, **Stage 2 / Task 10**
-and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–10**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
+and **Stage 3 / Tasks 1–13**, plus **Stage 4 / Tasks 1–11**: a Vue app with LLM, retrieval, Code Chat and Issue Analyzer
 workspaces. The LLM workspace exposes normal chat, streaming chat, structured requirement
 analysis, and native tool calling through a configurable FastAPI LLM API.
 The backend also exposes embedding preview, cosine similarity and read-only
@@ -101,7 +101,18 @@ to 92.71% (complete evidence 24/32 → 25/32); historical complete evidence rise
 from 8/12 to 9/12. Rerank-stage P50/P95 are 183/224ms on the target RTX 4060.
 Nine length/batch probes, real process-lock/timeout/missing-model checks and
 offline score/Context replay are retained. No new Embedding, generation or
-holdout calls were made. Default remains off pending Task 14; Task 11 is next.
+holdout calls were made. Default remains off pending Task 14.
+
+[Stage 4 Task 11](docs/stage-4-task-11-expansion.md) adds bounded deterministic
+and optional Structured Output expansion. It retains the original question,
+locks supplied locators, admits at most two variants, merges within each channel
+before one-vote RRF, and reranks using the original question. The fixed 52-case
+run adds 82 real variant embeddings with no K=1/3/5 metric gain. Four separate
+LLM probes preserve one Fusion improvement, one ranking interference case is
+documented from the formal run, and invalid/truncated or locator-changing
+outputs fall back without retries. All raw requests, vectors, ranks, Context,
+costs and before/after evidence are replayable offline. Expansion remains off;
+the existing API/UI contracts are unchanged. Task 12 Context Selection is next.
 
 Stage 2 **finds code**; Stage 3 Task 7 adds a backend RAG endpoint using real
 retrieved context. The Retrieval Debug endpoint still returns source chunks.
@@ -1276,8 +1287,8 @@ Code Chat takes one repository question and retrieves fresh context.
 The Stage 1 tool returns fixed simulated project data; Code Chat and Issue
 Analyzer provide no tools. Persistent sessions, streaming RAG and repository-agent
 orchestration remain outside the current scope. Stage 3 final functional acceptance
-and Stage 4 Tasks 1–10 are complete: Dense baseline, evaluation, candidates,
+and Stage 4 Tasks 1–11 are complete: Dense baseline, evaluation, candidates,
 tokenizer, snapshots, BM25, Exact, Hybrid, Debug integration and optional independent
-reranking. Code Chat/Issue Analyzer still use Dense; expansion, Context Selection,
+reranking and bounded optional query expansion. Code Chat/Issue Analyzer still use Dense; Context Selection,
 RAG strategy integration and final ablation are later tasks. The current local model's
 answer quality has not passed acceptance.
